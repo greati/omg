@@ -33,6 +33,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # executables
 # --------------------------------------- #
+add_executable(rayt src/driver.cpp)
+target_include_directories(rayt PRIVATE include)
 
 # test definitions
 # use googletest framework
@@ -51,8 +53,7 @@ include(GoogleTest)
 
 set(test_sources ${test_sources}
     tests/main.cpp
-    tests/adder_tests.cpp
-    tests/subtract_tests.cpp
+    tests/math/vec3_tests.cpp
 )
 
 add_executable(maintest ${test_sources})
