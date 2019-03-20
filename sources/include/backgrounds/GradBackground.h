@@ -15,19 +15,19 @@ class GradBackground : public Background {
 
     private:
 
-        Color ulc, urc, llc, lrc;
+        RGBColor ulc, urc, llc, lrc;
         Size<2> size;
 
     public:
 
         GradBackground (const Size<2>& _size,
-                        const Color & _ulc,
-                        const Color & _urc,
-                        const Color & _llc,
-                        const Color & _lrc)
+                        const RGBColor & _ulc,
+                        const RGBColor & _urc,
+                        const RGBColor & _lrc,
+                        const RGBColor & _llc)
         : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_lrc}, size {_size} {/* empty */}
 
-        Color find(const Point2& p) const override {
+        RGBColor find(const Point2& p) const override {
             auto [x, y] = p;
             auto [w, h] = size;
 
@@ -37,8 +37,8 @@ class GradBackground : public Background {
             float y2 = h-1;
 
             auto [r11, g11, b11] = llc;
-            auto [r21, g21, b21] = ulc;
-            auto [r12, g12, b12] = lrc;
+            auto [r12, g12, b12] = ulc;
+            auto [r21, g21, b21] = lrc;
             auto [r22, g22, b22] = urc;
 
             return {

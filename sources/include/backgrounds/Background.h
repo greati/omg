@@ -18,7 +18,7 @@ class Background {
          *
          * @param p the point
          * */
-        virtual Color find(const Point2& p) const = 0;
+        virtual RGBColor find(const Point2& p) const = 0;
 
 };
 };
