@@ -25,7 +25,7 @@ class GradBackground : public Background {
                         const Color & _urc,
                         const Color & _llc,
                         const Color & _lrc)
-        : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_llc}, size {_size} {/* empty */}
+        : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_lrc}, size {_size} {/* empty */}
 
         Color find(const Point2& p) const override {
             auto [x, y] = p;
@@ -50,7 +50,7 @@ class GradBackground : public Background {
 
         float bilinear_interp(float x, float y, float x1, float x2, float y1, float y2,
                 float v11, float v12, float v21, float v22) const {
-            float f1 = 1.0 / (x2-x1)*(y2-y1);
+            float f1 = 1.0 / ((x2-x1)*(y2-y1));
             float f2 = v11 * (x2 - x) * (y2 - y);
             float f3 = v21 * (x - x1) * (y2 - y);
             float f4 = v12 * (x2 - x) * (y - y1);
