@@ -1,0 +1,3 @@
+[submodule "sources/extern/tao"]
+	path = sources/extern/tao
+	url = https://github.com/greati/tao.git
