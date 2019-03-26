@@ -1,9 +1,22 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(cppmathlib VERSION 0.1.0 LANGUAGES CXX)
+project(rayt VERSION 0.1.0 LANGUAGES CXX)
 
 include(FetchContent)
 
+set(YAML_CPP_BUILD_TESTS CACHE BOOL OFF)
+
+# deps
+#-----------------------------------------#
+FetchContent_Declare(yamlcpp
+    GIT_REPOSITORY  https://github.com/jbeder/yaml-cpp
+    GIT_TAG         562aefc114938e388457e6a531ed7b54d9dc1b62 # 0.6.2
+)
+FetchContent_GetProperties(yamlcpp)
+if (NOT yamlcpp_POPULATED)
+    FetchContent_Populate(yamlcpp)
+    add_subdirectory(${yamlcpp_SOURCE_DIR} ${yamlcpp_BINARY_DIR})
+endif()
 
 # define build types and configurations
 # --------------------------------------- #
