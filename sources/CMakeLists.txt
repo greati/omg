@@ -92,7 +92,6 @@ include(GoogleTest)
 
 set(test_sources ${test_sources}
     tests/main.cpp
-    tests/math/vec3_tests.cpp
 )
 
 add_executable(maintest ${test_sources})
