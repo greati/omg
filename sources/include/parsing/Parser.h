@@ -3,6 +3,7 @@
 
 #include <memory>
 #include "scene/Scene.h"
+#include "exceptions.h"
 
 namespace rayt {
 /**
