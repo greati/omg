@@ -16,9 +16,10 @@ class Background {
         /**
          * Find a color in a given point.
          *
-         * @param p the point
+         * @param col the width percentage
+         * @param row the height percentage
          * */
-        virtual RGBColor find(const Point2& p) const = 0;
+        virtual RGBColor find(float col, float row) const = 0;
 
 };
 };

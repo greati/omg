@@ -48,7 +48,7 @@ target_include_directories(lodepng PUBLIC include/external)
 
 # executables
 # --------------------------------------- #
-add_executable(rayt src/driver.cpp src/canvas/Canvas2D.cpp src/printer/NetpbmPrinter.cpp)
+add_executable(rayt src/rayt.cpp src/printer/NetpbmPrinter.cpp src/buffer/Buffer.cpp)
 target_link_libraries(rayt PRIVATE lodepng)
 target_include_directories(rayt PRIVATE include)
 

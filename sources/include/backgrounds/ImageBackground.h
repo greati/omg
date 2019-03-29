@@ -31,8 +31,7 @@ class ImageBackground : public Background {
              }
         }
 
-        RGBColor find(const Point2& p) const override {
-            auto [x, y] = p;
+        RGBColor find(float x, float y) const override {
             int index = y * width * 4 + 4 * x;
             return {image[index], image[index+1], image[index+2]};
         }

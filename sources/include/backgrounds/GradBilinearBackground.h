@@ -4,37 +4,32 @@
 #include "common.h"
 #include "Background.h"
 
+namespace rayt {
 /**
- * Gradient background.
+ * Gradient background based on bilinear interpolation.
  *
  * @author Vitor Greati
  * */
-
-namespace rayt {
-class GradBackground : public Background {
+class GradBilinearBackground : public Background {
 
     private:
 
         RGBColor ulc, urc, llc, lrc;
-        Size<2> size;
 
     public:
 
-        GradBackground (const Size<2>& _size,
-                        const RGBColor & _ulc,
-                        const RGBColor & _urc,
-                        const RGBColor & _lrc,
-                        const RGBColor & _llc)
-        : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_lrc}, size {_size} {/* empty */}
+        GradBilinearBackground(const RGBColor & _ulc,
+                       const RGBColor & _urc,
+                       const RGBColor & _lrc,
+                       const RGBColor & _llc)
+        : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_lrc} {/* empty */}
 
-        RGBColor find(const Point2& p) const override {
-            auto [x, y] = p;
-            auto [w, h] = size;
+        RGBColor find(float x, float y) const override {
 
-            float x1 = 0;
-            float y1 = 0;
-            float x2 = w-1;
-            float y2 = h-1;
+            float x1 = 0.0;
+            float y1 = 0.0;
+            float x2 = 1.0;
+            float y2 = 1.0;
 
             auto [r11, g11, b11] = llc;
             auto [r12, g12, b12] = ulc;

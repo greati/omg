@@ -22,7 +22,7 @@ class SolidBackground : public Background {
         SolidBackground (const RGBColor & _color)
         : color {_color} {/* empty */}
 
-        RGBColor find(const Point2& p) const override {
+        RGBColor find(float x, float y) const override {
             return color;
         }
 
