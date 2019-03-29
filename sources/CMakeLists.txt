@@ -48,9 +48,9 @@ target_include_directories(lodepng PUBLIC include/external)
 
 # executables
 # --------------------------------------- #
-add_executable(rayt src/rayt.cpp src/printer/NetpbmPrinter.cpp src/buffer/Buffer.cpp)
+add_executable(rayt src/rayt.cpp src/printer/NetpbmPrinter.cpp src/buffer/Buffer.cpp src/parsing/YAMLParser.cpp)
 target_link_libraries(rayt PRIVATE lodepng)
-target_include_directories(rayt PRIVATE include)
+target_include_directories(rayt PUBLIC include)
 
 # submodules
 # ----------------------------------------#
