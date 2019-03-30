@@ -2,6 +2,7 @@
 #define __SCENE__
 
 #include "SceneNode.h"
+#include "cameras/Camera.h"
 #include "backgrounds/Background.h"
 
 namespace rayt {
@@ -14,9 +15,8 @@ class Scene : public SceneNode {
 
     private:
 
-        std::shared_ptr<Background> _background;     /** Background reference */
-        int _width {0};                              /** Scene width */
-        int _height {0};                             /** Scene height */
+        std::shared_ptr<Background> _background;        /** Background reference */
+        std::shared_ptr<Camera> _camera;                /** Camera reference */
 
     public:
 
@@ -28,12 +28,10 @@ class Scene : public SceneNode {
         /**
          * Complete scene constructor.
          * */
-        Scene(std::shared_ptr<Background> background, 
-              int width,
-              int height) 
-            : _background {background}, 
-              _width {width}, 
-              _height {height}
+        Scene(std::shared_ptr<Background> background,
+              std::shared_ptr<Camera> camera)
+            : _background {background},
+              _camera {camera}
         { /* empty */ }
 
         /**
@@ -51,12 +49,12 @@ class Scene : public SceneNode {
                     _result = std::make_unique<Scene>();
                 }
             
-                inline void set_height(int height) { _result->set_height(height); }
-
-                inline void set_width(int width) { _result->set_width(width); }
-
                 inline void set_background(std::shared_ptr<Background> background) { 
                     _result->set_background(background); 
+                }
+
+                inline void set_camera(std::shared_ptr<Camera> camera) { 
+                    _result->set_camera(camera); 
                 }
 
                 inline std::unique_ptr<Scene> build() {
@@ -69,42 +67,28 @@ class Scene : public SceneNode {
          *
          * @return a pointer to the background
          * */
-        std::shared_ptr<Background> get_background() const { return this->_background; }
-
-        /**
-         * The scene width
-         *
-         * @return the scene width
-         * */
-        int get_width() const { return this->_width; }
-
-        /**
-         * The scene height
-         *
-         * @return the scene height
-         * */
-        int get_height() const { return this->_height; }
-
-        /**
-         * Set the scene width
-         *
-         * @param width the scene width
-         * */
-        void set_width(int width) { this->_width = width; }
-
-        /**
-         * Set the scene height
-         *
-         * @param width the scene height
-         * */
-        void set_height(int height) { this->_height = height; }
+        inline std::shared_ptr<Background> get_background() const { return this->_background; }
 
         /**
          * Set the scene background
          *
          * @param width the scene background
          * */
-        void set_background(std::shared_ptr<Background> background) { this->_background = background; }
+        inline void set_background(std::shared_ptr<Background> background) { this->_background = background; }
+
+        /**
+         * Retrieve the camera
+         *
+         * @return the camera
+         * */
+        inline std::shared_ptr<Camera> get_camera() const { return this->_camera; }
+
+        /**
+         * Set the scene camera
+         *
+         * @param camera the camera
+         * */
+        inline void set_camera(std::shared_ptr<Camera> camera) { this->_camera = camera; }
 
         void accept(Visitor& visitor) override {
             visitor.visit(std::shared_ptr<Scene>(this));
