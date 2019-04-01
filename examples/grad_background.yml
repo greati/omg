@@ -1,0 +1,13 @@
+raytracer:
+    background:
+        type: gradient
+        uleft: [255, 0, 0]
+        uright: [0, 255, 0]
+        lleft: [0, 0, 255]
+        lright: [0, 255, 255]
+    camera:
+        type: orthographic
+        width: 800
+        height: 200
+
+

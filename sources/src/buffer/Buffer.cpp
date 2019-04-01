@@ -62,9 +62,9 @@ std::pair<int, int> Buffer<N,StoredType>::real_pos(int row, int col) const {
 template<int N, typename StoredType>
 void Buffer<N,StoredType>::validate(int row, int col) const {
     if (col < 0 || col >= _width)
-        throw std::invalid_argument("point outsite the width range, " + std::to_string(col));
+        throw std::invalid_argument("point outside the width range, " + std::to_string(col));
     if (row < 0 || row >= _height)
-        throw std::invalid_argument("point outsite the height range, " + std::to_string(row));
+        throw std::invalid_argument("point outside the height range, " + std::to_string(row));
 }
 
 template<int N, typename StoredType>

@@ -4,6 +4,8 @@
 #include "backgrounds/ImageBackground.h"
 #include "buffer/Buffer.h"
 #include "printer/NetpbmPrinter.h"
+#include "parsing/yaml/YAMLParser.h"
+#include "raytracer/RaytracerVisitor.h"
 
 int main(int argn, char* args[]) {
     std::string file_path;
@@ -21,13 +23,21 @@ int main(int argn, char* args[]) {
 
     destination = std::string(args[2]);
 
-  rayt::GradBilinearBackground grad {
+    rayt::YAMLParser yaml_parser;
+
+    auto scene = yaml_parser.parse_file(file_path);
+
+    rayt::RaytracerVisitor raytracer;
+
+    raytracer.visit(scene);
+
+/*  rayt::GradBilinearBackground grad {
       {255, 0, 0},
       {0, 255, 0},
       {0, 0, 255},
       {255, 255, 255}
   };
-
+*/
    //rayt::SolidBackground grad {
    //    {255, 0, 0}
    //};
@@ -35,7 +45,7 @@ int main(int argn, char* args[]) {
   //rayt::ImageBackground grad {
   //    file_path
   //};
-
+/*
     rayt::Buffer<3> buffer {300, 300};
 
     for (int x = 0; x < 300; ++x) {
@@ -44,19 +54,21 @@ int main(int argn, char* args[]) {
             buffer.set({x, y}, {r, g, b});
         }
     }
+*/
+    auto buffer = raytracer.get_buffer();
 
     NetpbmPrinter<unsigned char> printer;
 
     Configs<NetpbmParams> configs {{
-        {NetpbmParams::IMAGE_WIDTH, buffer.width()},
-        {NetpbmParams::IMAGE_HEIGHT, buffer.height()},
-        {NetpbmParams::IMAGE_CHANNELS, buffer.channels()},
+        {NetpbmParams::IMAGE_WIDTH, buffer->width()},
+        {NetpbmParams::IMAGE_HEIGHT, buffer->height()},
+        {NetpbmParams::IMAGE_CHANNELS, buffer->channels()},
         {NetpbmParams::PBM_TYPE, (int) NetpbmType::PIX_MAP},
         {NetpbmParams::PBM_ENCODING, (int) NetpbmEncoding::ASCII},
         {NetpbmParams::MAX_INTENSITY, 255}
     }};
 
-    printer.print(buffer.data(), configs, destination);
+    printer.print(buffer->data(), configs, destination);
 
     return 0;
 }

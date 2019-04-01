@@ -1,14 +1,45 @@
 #include "parsing/yaml/YAMLParser.h"
+#include "backgrounds/GradBilinearBackground.h"
+#include "backgrounds/SolidBackground.h"
 
 using namespace rayt;
 
 template<>
+struct YAML::convert<RGBColor> {
+    static YAML::Node encode(const RGBColor& rhs) {
+        YAML::Node node;
+        return node;
+    }
+    static bool decode(const YAML::Node& node, RGBColor & rgbColor) {
+        if (!node.IsSequence() || node.size() != 3)
+            return false;
+        std::get<0>(rgbColor) = node[0].as<int>(); 
+        std::get<1>(rgbColor) = node[1].as<int>(); 
+        std::get<2>(rgbColor) = node[2].as<int>(); 
+        return true;
+    }
+};
+
+template<>
 std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
     hard_require(node, "background");
-
     auto background_node = node["background"];
 
+    hard_require(background_node, "type");
+    auto background_type = background_node["type"].as<std::string>();
 
+    if (background_type == "gradient") {
+        auto ulc = background_node["uleft"].as<RGBColor>();
+        auto urc = background_node["uright"].as<RGBColor>();
+        auto llc = background_node["lleft"].as<RGBColor>();
+        auto lrc = background_node["lright"].as<RGBColor>();
+        return std::make_shared<GradBilinearBackground>(ulc, urc, lrc, llc);
+    } else if (background_type == "solid") {
+        auto color = background_node["color"].as<RGBColor>(); 
+        return std::make_shared<SolidBackground>(color); 
+    } else {
+        return nullptr;
+    }
 }
 
 template<>
@@ -41,7 +72,8 @@ std::shared_ptr<Scene> YAMLParser::parse_text(const std::string & text) {
 
 std::shared_ptr<Scene> YAMLParser::parse_file(const std::string & file_path) {
     YAML::Node root = YAML::LoadFile(file_path);
-    return this->parse<Scene>(root);
+    hard_require(root, "raytracer");
+    return this->parse<Scene>(root["raytracer"]);
 }
 
 void YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {
