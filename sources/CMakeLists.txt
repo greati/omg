@@ -54,8 +54,8 @@ add_executable(rayt
     src/buffer/Buffer.cpp 
     src/parsing/yaml/YAMLParser.cpp 
     src/raytracer/RaytracerVisitor.cpp)
-target_link_libraries(rayt PRIVATE lodepng PUBLIC yaml-cpp)
-target_include_directories(rayt PUBLIC include)
+target_link_libraries(rayt PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
+target_include_directories(rayt PUBLIC include PUBLIC extern/tao/sources/include)
 
 # submodules
 # ----------------------------------------#

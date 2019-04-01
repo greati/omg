@@ -13,9 +13,13 @@ struct YAML::convert<RGBColor> {
     static bool decode(const YAML::Node& node, RGBColor & rgbColor) {
         if (!node.IsSequence() || node.size() != 3)
             return false;
-        std::get<0>(rgbColor) = node[0].as<int>(); 
-        std::get<1>(rgbColor) = node[1].as<int>(); 
-        std::get<2>(rgbColor) = node[2].as<int>(); 
+
+       rgbColor(0) = node[0].as<float>(); 
+       rgbColor(1) = node[1].as<float>(); 
+       rgbColor(2) = node[2].as<float>(); 
+       //std::get<0>(rgbColor) = node[0].as<int>(); 
+       //std::get<1>(rgbColor) = node[1].as<int>(); 
+       //std::get<2>(rgbColor) = node[2].as<int>(); 
         return true;
     }
 };

@@ -31,10 +31,10 @@ class GradBilinearBackground : public Background {
             float x2 = 1.0;
             float y2 = 1.0;
 
-            auto [r11, g11, b11] = llc;
-            auto [r12, g12, b12] = ulc;
-            auto [r21, g21, b21] = lrc;
-            auto [r22, g22, b22] = urc;
+            auto [r11, g11, b11] = std::tuple{llc(0), llc(1), llc(2)};
+            auto [r12, g12, b12] = std::tuple{ulc(0), ulc(1), ulc(2)};
+            auto [r21, g21, b21] = std::tuple{lrc(0), lrc(1), lrc(2)};
+            auto [r22, g22, b22] = std::tuple(urc(0), urc(1), urc(2));
 
             return {
                 bilinear_interp(x, y, x1, x2, y1, y2, r11, r12, r21, r22),
