@@ -35,7 +35,7 @@ execute:
 ```bash
 ./raytracer <path to .yml file> <image destination>
 ```
-### Available features
+### Features
 
 - [ ] Backgrounds
     - [x] Solid
