@@ -13,13 +13,13 @@ class ParseException : public std::exception {
 
     private:
 
-        const char* _info;
+        std::string _info;
 
     public:
 
-        ParseException(const std::string& info) : _info {info.c_str()} {/* empty */}
+        ParseException(const std::string& info) : _info {info} {/* empty */}
 
-        const char* get_info() const { return _info; }
+        std::string get_info() const { return _info; }
 };
 };
 #endif

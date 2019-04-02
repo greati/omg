@@ -31,7 +31,7 @@ class YAMLParser : public Parser {
          * @param node_name the name of the node
          * @return if the node exists in the current one
          * */
-        void hard_require(const YAML::Node & curr_node, const std::string& node_name) const;
+        YAML::Node hard_require(const YAML::Node & curr_node, const std::string& node_name) const;
 
         /**
          * Check if a node exists in the current one. If not, print a warning.

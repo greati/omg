@@ -1,0 +1,88 @@
+\hypertarget{classomg_1_1_y_a_m_l_parser}{}\section{omg\+::Y\+A\+M\+L\+Parser Class Reference}
+\label{classomg_1_1_y_a_m_l_parser}\index{omg::YAMLParser@{omg::YAMLParser}}
+
+
+A scene parser using Y\+A\+ML.  
+
+
+
+
+{\ttfamily \#include $<$Y\+A\+M\+L\+Parser.\+h$>$}
+
+Inheritance diagram for omg\+::Y\+A\+M\+L\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_y_a_m_l_parser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}{parse\+\_\+text}} (const std\+::string \&text) override
+\begin{DoxyCompactList}\small\item\em Parse a text. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}{parse\+\_\+file}} (const std\+::string \&file\+\_\+path) override
+\begin{DoxyCompactList}\small\item\em Parse a text from a file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ad0148bff25d36e0f0a46ab52647e5ef7}\label{classomg_1_1_y_a_m_l_parser_ad0148bff25d36e0f0a46ab52647e5ef7}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_aae786077463e555fc165bf237cd71835}\label{classomg_1_1_y_a_m_l_parser_aae786077463e555fc165bf237cd71835}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a164befb2f6725d60dd2d127651497ec9}\label{classomg_1_1_y_a_m_l_parser_a164befb2f6725d60dd2d127651497ec9}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A scene parser using Y\+A\+ML. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}\label{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}} 
+\index{omg::YAMLParser@{omg::YAMLParser}!parse\_file@{parse\_file}}
+\index{parse\_file@{parse\_file}!omg::YAMLParser@{omg::YAMLParser}}
+\subsubsection{\texorpdfstring{parse\_file()}{parse\_file()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parse a text from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the file path \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_parser_a327a60ea0092d0b969a3ec393248ca8f}{omg\+::\+Parser}}.
+
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}\label{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}} 
+\index{omg::YAMLParser@{omg::YAMLParser}!parse\_text@{parse\_text}}
+\index{parse\_text@{parse\_text}!omg::YAMLParser@{omg::YAMLParser}}
+\subsubsection{\texorpdfstring{parse\_text()}{parse\_text()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parse a text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to be parsed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_parser_a50199f934cb3471777cb859a7289739f}{omg\+::\+Parser}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/parsing/yaml/Y\+A\+M\+L\+Parser.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/parsing/yaml/Y\+A\+M\+L\+Parser.\+cpp\end{DoxyCompactItemize}

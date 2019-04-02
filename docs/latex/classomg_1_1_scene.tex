@@ -1,0 +1,144 @@
+\hypertarget{classomg_1_1_scene}{}\section{omg\+::Scene Class Reference}
+\label{classomg_1_1_scene}\index{omg::Scene@{omg::Scene}}
+
+
+Represents a 3D scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for omg\+::Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_scene}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classomg_1_1_scene_1_1_builder}{Builder}}
+\begin{DoxyCompactList}\small\item\em A builder for building scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} reference. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}\label{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}} 
+\mbox{\hyperlink{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}{Scene}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ background, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Complete scene constructor. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ \mbox{\hyperlink{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}{get\+\_\+background}} () const
+\begin{DoxyCompactList}\small\item\em The scene background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classomg_1_1_scene_a66a4d47f99b8cf56d0ffeec665400d56}{set\+\_\+background}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ background)
+\begin{DoxyCompactList}\small\item\em Set the scene background. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ \mbox{\hyperlink{classomg_1_1_scene_a7f9aac9cd9ea4d984ac2df98ae553967}{get\+\_\+camera}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classomg_1_1_scene_a07875fddcc199bc2f70b1c20fd294af4}{set\+\_\+camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Set the scene camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}{accept}} (\mbox{\hyperlink{classomg_1_1_visitor}{Visitor}} \&visitor) override
+\begin{DoxyCompactList}\small\item\em Accept a visitor to process this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a 3D scene. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}\label{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}} 
+\index{omg::Scene@{omg::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily omg\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_camera}{Camera}} reference. 
+
+Empty constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}\label{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}} 
+\index{omg::Scene@{omg::Scene}!accept@{accept}}
+\index{accept@{accept}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void omg\+::\+Scene\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classomg_1_1_visitor}{Visitor}} \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accept a visitor to process this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_scene_node_ad8e1595d15c4b92ab505828a0633a4d9}{omg\+::\+Scene\+Node}}.
+
+\mbox{\Hypertarget{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}\label{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}} 
+\index{omg::Scene@{omg::Scene}!get\_background@{get\_background}}
+\index{get\_background@{get\_background}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{get\_background()}{get\_background()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classomg_1_1_background}{Background}}$>$ omg\+::\+Scene\+::get\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The scene background. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the background 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_scene_a7f9aac9cd9ea4d984ac2df98ae553967}\label{classomg_1_1_scene_a7f9aac9cd9ea4d984ac2df98ae553967}} 
+\index{omg::Scene@{omg::Scene}!get\_camera@{get\_camera}}
+\index{get\_camera@{get\_camera}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{get\_camera()}{get\_camera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classomg_1_1_camera}{Camera}}$>$ omg\+::\+Scene\+::get\+\_\+camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the camera. 
+
+\begin{DoxyReturn}{Returns}
+the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_scene_a66a4d47f99b8cf56d0ffeec665400d56}\label{classomg_1_1_scene_a66a4d47f99b8cf56d0ffeec665400d56}} 
+\index{omg::Scene@{omg::Scene}!set\_background@{set\_background}}
+\index{set\_background@{set\_background}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{set\_background()}{set\_background()}}
+{\footnotesize\ttfamily void omg\+::\+Scene\+::set\+\_\+background (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$}]{background }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the scene background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the scene background \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classomg_1_1_scene_a07875fddcc199bc2f70b1c20fd294af4}\label{classomg_1_1_scene_a07875fddcc199bc2f70b1c20fd294af4}} 
+\index{omg::Scene@{omg::Scene}!set\_camera@{set\_camera}}
+\index{set\_camera@{set\_camera}!omg::Scene@{omg::Scene}}
+\subsubsection{\texorpdfstring{set\_camera()}{set\_camera()}}
+{\footnotesize\ttfamily void omg\+::\+Scene\+::set\+\_\+camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the scene camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & the camera \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/scene/Scene.\+h\end{DoxyCompactItemize}

@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['scene',['Scene',['../classrayt_1_1_scene.html',1,'rayt::Scene'],['../classrayt_1_1_scene.html#a97534e52f4f218ad80d23babcbc758ad',1,'rayt::Scene::Scene()'],['../classrayt_1_1_scene.html#a539d8be48d2a6e2516dbae4bf0ebc7da',1,'rayt::Scene::Scene(std::shared_ptr&lt; Background &gt; background, std::shared_ptr&lt; Camera &gt; camera)']]],
-  ['scenenode',['SceneNode',['../classrayt_1_1_scene_node.html',1,'rayt']]],
-  ['set',['set',['../classrayt_1_1_buffer.html#ae41a09f4b386e06e73c0da5fa47e7535',1,'rayt::Buffer::set(int row, int col, const Value &amp;v)'],['../classrayt_1_1_buffer.html#a3253e5e62b54e4787dd773ba7b897980',1,'rayt::Buffer::set(const Cartesian &amp;cartesian, const Value &amp;v)']]],
-  ['set_5fbackground',['set_background',['../classrayt_1_1_scene.html#a13012312e90ffd74e9b5ef34d7a19f17',1,'rayt::Scene']]],
-  ['set_5fcamera',['set_camera',['../classrayt_1_1_scene.html#afde427e2d1e5d79942758a2ba91de66f',1,'rayt::Scene']]],
-  ['set_5fheight',['set_height',['../class_camera.html#a32ef096bdf350255ff195cdaed585342',1,'Camera']]],
-  ['set_5fwidth',['set_width',['../class_camera.html#a0c86ad9f103e2e06cd83f7fc6e8e4c91',1,'Camera']]],
-  ['solidbackground',['SolidBackground',['../classrayt_1_1_solid_background.html',1,'rayt']]]
+  ['scene',['Scene',['../classomg_1_1_scene.html',1,'omg::Scene'],['../classomg_1_1_scene.html#af5d02c499b861b1293e0d6232dabd2c8',1,'omg::Scene::Scene()'],['../classomg_1_1_scene.html#a83a49456e4edc7d5cf5c6dc652b128ef',1,'omg::Scene::Scene(std::shared_ptr&lt; Background &gt; background, std::shared_ptr&lt; Camera &gt; camera)']]],
+  ['scenenode',['SceneNode',['../classomg_1_1_scene_node.html',1,'omg']]],
+  ['set',['set',['../classomg_1_1_buffer.html#a8b3d3ee363be87e1051a157a2f3abed6',1,'omg::Buffer::set(int row, int col, const Value &amp;v)'],['../classomg_1_1_buffer.html#a80204f5078fb0445eb21e586ec3644c3',1,'omg::Buffer::set(const Cartesian &amp;cartesian, const Value &amp;v)']]],
+  ['set_5fbackground',['set_background',['../classomg_1_1_scene.html#a66a4d47f99b8cf56d0ffeec665400d56',1,'omg::Scene']]],
+  ['set_5fcamera',['set_camera',['../classomg_1_1_scene.html#a07875fddcc199bc2f70b1c20fd294af4',1,'omg::Scene']]],
+  ['set_5fheight',['set_height',['../classomg_1_1_camera.html#a75d3baca3bae25365e5d3dddc005676e',1,'omg::Camera']]],
+  ['set_5fwidth',['set_width',['../classomg_1_1_camera.html#a3ef1ff0d4ca0deb6b32b5e08d7dcb159',1,'omg::Camera']]],
+  ['solidbackground',['SolidBackground',['../classomg_1_1_solid_background.html',1,'omg']]],
+  ['standardlogger',['StandardLogger',['../class_standard_logger.html',1,'StandardLogger'],['../class_standard_logger.html#aa037227d1766af8b649e46849d466d8c',1,'StandardLogger::StandardLogger()']]]
 ];

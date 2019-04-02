@@ -14,15 +14,24 @@ class GradBilinearBackground : public Background {
 
     private:
 
-        RGBColor ulc, urc, llc, lrc;
+        std::array<RGBColor, 4> corners;
 
     public:
 
-        GradBilinearBackground(const RGBColor & _ulc,
-                       const RGBColor & _urc,
-                       const RGBColor & _lrc,
-                       const RGBColor & _llc)
-        : ulc {_ulc}, urc {_urc}, llc {_llc}, lrc {_lrc} {/* empty */}
+        GradBilinearBackground(const std::vector<RGBColor>& colors) {
+            if (colors.size() == 0)
+                throw std::invalid_argument("provide at least one color");
+            int i = 0;
+            for (auto c : colors) {
+                if (i >= 4) break;
+                corners[i] = c;
+                i++;
+            }
+            while (i <= 3) {
+                corners[i] = corners[i - 1];
+                i++;
+            }
+        }
 
         RGBColor find(float x, float y) const override {
 
@@ -30,6 +39,8 @@ class GradBilinearBackground : public Background {
             float y1 = 0.0;
             float x2 = 1.0;
             float y2 = 1.0;
+
+            auto [ulc, urc, lrc, llc] = corners;
 
             auto [r11, g11, b11] = std::tuple{llc(0), llc(1), llc(2)};
             auto [r12, g12, b12] = std::tuple{ulc(0), ulc(1), ulc(2)};

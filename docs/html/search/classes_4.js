@@ -8,5 +8,6 @@ var searchData=
   ['lodepngencodersettings',['LodePNGEncoderSettings',['../struct_lode_p_n_g_encoder_settings.html',1,'']]],
   ['lodepnginfo',['LodePNGInfo',['../struct_lode_p_n_g_info.html',1,'']]],
   ['lodepngstate',['LodePNGState',['../struct_lode_p_n_g_state.html',1,'']]],
-  ['lodepngtime',['LodePNGTime',['../struct_lode_p_n_g_time.html',1,'']]]
+  ['lodepngtime',['LodePNGTime',['../struct_lode_p_n_g_time.html',1,'']]],
+  ['logger',['Logger',['../class_logger.html',1,'']]]
 ];

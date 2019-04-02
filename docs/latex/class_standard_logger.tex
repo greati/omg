@@ -1,0 +1,115 @@
+\hypertarget{class_standard_logger}{}\section{Standard\+Logger Class Reference}
+\label{class_standard_logger}\index{StandardLogger@{StandardLogger}}
+
+
+An interface for loggers, using the standard output.  
+
+
+
+
+{\ttfamily \#include $<$Standard\+Logger.\+h$>$}
+
+Inheritance diagram for Standard\+Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_standard_logger}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_standard_logger_aa037227d1766af8b649e46849d466d8c}\label{class_standard_logger_aa037227d1766af8b649e46849d466d8c}} 
+\mbox{\hyperlink{class_standard_logger_aa037227d1766af8b649e46849d466d8c}{Standard\+Logger}} (const std\+::string \&prefix)
+\begin{DoxyCompactList}\small\item\em Basic constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_standard_logger_ad116629c2fb7d023442df24f5c0951a1}\label{class_standard_logger_ad116629c2fb7d023442df24f5c0951a1}} 
+void {\bfseries print\+\_\+header} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg) const
+\item 
+void \mbox{\hyperlink{class_standard_logger_a11c29fca1b05d7ff331b298e9c91cd81}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg) const
+\begin{DoxyCompactList}\small\item\em Print a standard string log. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_standard_logger_a4e63f888143cf77d576056b626f8de00}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg, int line, int col) const
+\begin{DoxyCompactList}\small\item\em Print a log with file location info. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_standard_logger_a5803969715008363869dfd47326790bb}{label\+\_\+msg\+\_\+type}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type) const
+\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface for loggers, using the standard output. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_standard_logger_a5803969715008363869dfd47326790bb}\label{class_standard_logger_a5803969715008363869dfd47326790bb}} 
+\index{StandardLogger@{StandardLogger}!label\_msg\_type@{label\_msg\_type}}
+\index{label\_msg\_type@{label\_msg\_type}!StandardLogger@{StandardLogger}}
+\subsubsection{\texorpdfstring{label\_msg\_type()}{label\_msg\_type()}}
+{\footnotesize\ttfamily std\+::string Standard\+Logger\+::label\+\_\+msg\+\_\+type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Gives a label for a type of message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type \\
+\hline
+{\em the} & label representing the type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_logger_abe4434e4ae0efd8b41cb2a61458a710d}{Logger}}.
+
+\mbox{\Hypertarget{class_standard_logger_a11c29fca1b05d7ff331b298e9c91cd81}\label{class_standard_logger_a11c29fca1b05d7ff331b298e9c91cd81}} 
+\index{StandardLogger@{StandardLogger}!log@{log}}
+\index{log@{log}!StandardLogger@{StandardLogger}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Standard\+Logger\+::log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type,  }\item[{const std\+::string \&}]{label,  }\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Print a standard string log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type of the log \\
+\hline
+{\em msg} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_logger_a124934c1b2661b229aca0493f7ec5f30}{Logger}}.
+
+\mbox{\Hypertarget{class_standard_logger_a4e63f888143cf77d576056b626f8de00}\label{class_standard_logger_a4e63f888143cf77d576056b626f8de00}} 
+\index{StandardLogger@{StandardLogger}!log@{log}}
+\index{log@{log}!StandardLogger@{StandardLogger}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Standard\+Logger\+::log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type,  }\item[{const std\+::string \&}]{label,  }\item[{const std\+::string \&}]{msg,  }\item[{int}]{line,  }\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Print a log with file location info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type of the log \\
+\hline
+{\em msg} & the log message \\
+\hline
+{\em line} & the line to where the log refers \\
+\hline
+{\em col} & the col to where the log refers \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_logger_a9bdd18a8fb9cd19134b9ddf37f74b5bd}{Logger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/logger/Standard\+Logger.\+h\end{DoxyCompactItemize}

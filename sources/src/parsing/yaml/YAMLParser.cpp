@@ -1,6 +1,7 @@
 #include "omg/parsing/yaml/YAMLParser.h"
 #include "omg/backgrounds/GradBilinearBackground.h"
 #include "omg/backgrounds/SolidBackground.h"
+#include <iostream>
 
 using namespace omg;
 
@@ -14,48 +15,55 @@ struct YAML::convert<RGBColor> {
         if (!node.IsSequence() || node.size() != 3)
             return false;
 
-       rgbColor(0) = node[0].as<float>(); 
-       rgbColor(1) = node[1].as<float>(); 
-       rgbColor(2) = node[2].as<float>(); 
-       //std::get<0>(rgbColor) = node[0].as<int>(); 
-       //std::get<1>(rgbColor) = node[1].as<int>(); 
-       //std::get<2>(rgbColor) = node[2].as<int>(); 
+        rgbColor(0) = node[0].as<float>(); 
+        rgbColor(1) = node[1].as<float>(); 
+        rgbColor(2) = node[2].as<float>(); 
         return true;
     }
 };
 
 template<>
 std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
-    hard_require(node, "background");
-    auto background_node = node["background"];
+    try {
+        auto background_node = hard_require(node, "background");
 
-    hard_require(background_node, "type");
-    auto background_type = background_node["type"].as<std::string>();
+        auto background_type = hard_require(background_node, "type").as<std::string>();
 
-    if (background_type == "gradient") {
-        auto ulc = background_node["uleft"].as<RGBColor>();
-        auto urc = background_node["uright"].as<RGBColor>();
-        auto llc = background_node["lleft"].as<RGBColor>();
-        auto lrc = background_node["lright"].as<RGBColor>();
-        return std::make_shared<GradBilinearBackground>(ulc, urc, lrc, llc);
-    } else if (background_type == "solid") {
-        auto color = background_node["color"].as<RGBColor>(); 
-        return std::make_shared<SolidBackground>(color); 
-    } else {
-        return nullptr;
+        if (background_type == "gradient") {
+            auto colors = hard_require(background_node, "colors").as<std::vector<RGBColor>>();
+            if (colors.size() > 4)
+                omg::logger.log(Logger::Type::WARNING, "parsing", "only first four gradient colors were considered");
+            return std::make_shared<GradBilinearBackground>(colors);
+        } else if (background_type == "solid") {
+            auto color = hard_require(background_node, "color").as<RGBColor>(); 
+            return std::make_shared<SolidBackground>(color); 
+        } else {
+            return nullptr;
+        }
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
     }
 }
 
 template<>
 std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
-    hard_require(node, "camera");
+    try {
+        auto camera_node = hard_require(node, "camera");
+        int width = hard_require(camera_node, "width").as<int>();
+        int height = hard_require(camera_node, "height").as<int>();
+    
+        if (camera_node["type"])
+            omg::logger.log(Logger::Type::WARNING, "parsing", "type for camera not supported yet");
 
-    auto camera_node = node["camera"];
-
-    int width = camera_node["width"].as<int>();
-    int height = camera_node["height"].as<int>();
-
-    return std::make_shared<Camera>(width, height);
+        return std::make_shared<Camera>(width, height);
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
+    }
+    return nullptr;
 }
 
 template<>
@@ -80,9 +88,11 @@ std::shared_ptr<Scene> YAMLParser::parse_file(const std::string & file_path) {
     return this->parse<Scene>(root["raytracer"]);
 }
 
-void YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {
-    if (!curr_node[node_name])
-        throw ParseException("missing something " + node_name);
+YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {
+    if (!curr_node[node_name]) {
+        throw ParseException("missing node " + node_name);
+    }
+    return curr_node[node_name];
 }
 
 bool YAMLParser::soft_require(const YAML::Node & curr_node, const std::string& node_name) const {

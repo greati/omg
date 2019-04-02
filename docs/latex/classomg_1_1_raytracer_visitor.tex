@@ -1,0 +1,75 @@
+\hypertarget{classomg_1_1_raytracer_visitor}{}\section{omg\+::Raytracer\+Visitor Class Reference}
+\label{classomg_1_1_raytracer_visitor}\index{omg::RaytracerVisitor@{omg::RaytracerVisitor}}
+
+
+Executes the main operations of the ray tracer as a visitor of a parsed scene.  
+
+
+
+
+{\ttfamily \#include $<$Raytracer\+Visitor.\+h$>$}
+
+Inheritance diagram for omg\+::Raytracer\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_raytracer_visitor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classomg_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}{visit}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \&scene) override
+\begin{DoxyCompactList}\small\item\em Raytracer buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_buffer}{Buffer}}$<$ 3 $>$ $\ast$ \mbox{\hyperlink{classomg_1_1_raytracer_visitor_a02b6a31ad96feae340a34be792fa698e}{get\+\_\+buffer}} () const
+\begin{DoxyCompactList}\small\item\em Raytracer buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Executes the main operations of the ray tracer as a visitor of a parsed scene. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_raytracer_visitor_a02b6a31ad96feae340a34be792fa698e}\label{classomg_1_1_raytracer_visitor_a02b6a31ad96feae340a34be792fa698e}} 
+\index{omg::RaytracerVisitor@{omg::RaytracerVisitor}!get\_buffer@{get\_buffer}}
+\index{get\_buffer@{get\_buffer}!omg::RaytracerVisitor@{omg::RaytracerVisitor}}
+\subsubsection{\texorpdfstring{get\_buffer()}{get\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_buffer}{Buffer}}$<$3$>$$\ast$ omg\+::\+Raytracer\+Visitor\+::get\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Raytracer buffer. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the raytracer buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}\label{classomg_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}} 
+\index{omg::RaytracerVisitor@{omg::RaytracerVisitor}!visit@{visit}}
+\index{visit@{visit}!omg::RaytracerVisitor@{omg::RaytracerVisitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void Raytracer\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Raytracer buffer. 
+
+Perform the raytracer algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & a pointer to the scene to be drawn \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_visitor_af697e96f0f5da7c9b882ae316c81e80c}{omg\+::\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/raytracer/Raytracer\+Visitor.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/raytracer/Raytracer\+Visitor.\+cpp\end{DoxyCompactItemize}

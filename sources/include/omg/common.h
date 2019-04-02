@@ -1,9 +1,10 @@
-#ifndef __COMMON__
-#define __COMMON__
+#ifndef __OMG_COMMON__
+#define __OMG_COMMON__
 
 #include <array>
 #include <tuple>
 #include "linalg.h"
+#include "logger/StandardLogger.h"
 
 namespace omg {
 
@@ -20,6 +21,8 @@ namespace omg {
 
     template<int N>
     using Size = std::array<float, N>;
+
+    static StandardLogger logger {"[omg]"};
 
 };
 

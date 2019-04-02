@@ -1,0 +1,72 @@
+\hypertarget{namespaceomg}{}\section{omg Namespace Reference}
+\label{namespaceomg}\index{omg@{omg}}
+
+
+Interface for backgrounds.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classomg_1_1_background}{Background}}
+\item 
+class \mbox{\hyperlink{classomg_1_1_buffer}{Buffer}}
+\begin{DoxyCompactList}\small\item\em A buffer for 2D images. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_camera}{Camera}}
+\begin{DoxyCompactList}\small\item\em Represents a camera. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_grad_bilinear_background}{Grad\+Bilinear\+Background}}
+\begin{DoxyCompactList}\small\item\em Gradient background based on bilinear interpolation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_image_background}{Image\+Background}}
+\item 
+class \mbox{\hyperlink{classomg_1_1_parse_exception}{Parse\+Exception}}
+\begin{DoxyCompactList}\small\item\em Parsing exception. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_parser}{Parser}}
+\begin{DoxyCompactList}\small\item\em An interface for scene parsers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_raytracer_visitor}{Raytracer\+Visitor}}
+\begin{DoxyCompactList}\small\item\em Executes the main operations of the ray tracer as a visitor of a parsed scene. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_scene}{Scene}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D scene. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_scene_node}{Scene\+Node}}
+\begin{DoxyCompactList}\small\item\em Represents a scene node that can be visited by a visitor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_solid_background}{Solid\+Background}}
+\item 
+class \mbox{\hyperlink{classomg_1_1_visitor}{Visitor}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_visitor}{Visitor}} class for omg scene descriptions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser}{Y\+A\+M\+L\+Parser}}
+\begin{DoxyCompactList}\small\item\em A scene parser using Y\+A\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceomg_af31bce5e0c003ffa803dffd7540cdec5}\label{namespaceomg_af31bce5e0c003ffa803dffd7540cdec5}} 
+using {\bfseries Vec2} = std\+::tuple$<$ float, float $>$
+\item 
+\mbox{\Hypertarget{namespaceomg_a115f08615ca70091ccd64afc8793b7c0}\label{namespaceomg_a115f08615ca70091ccd64afc8793b7c0}} 
+using {\bfseries Point2} = std\+::tuple$<$ float, float $>$
+\item 
+\mbox{\Hypertarget{namespaceomg_ad3d75c19a8d2e77af4db82dcc3c70659}\label{namespaceomg_ad3d75c19a8d2e77af4db82dcc3c70659}} 
+using {\bfseries Vec3} = std\+::tuple$<$ float, float, float $>$
+\item 
+\mbox{\Hypertarget{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}\label{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}} 
+using {\bfseries Point3} = Vec3
+\item 
+\mbox{\Hypertarget{namespaceomg_a92d9bbc48ad35def2aa4b0ac3a5b22ae}\label{namespaceomg_a92d9bbc48ad35def2aa4b0ac3a5b22ae}} 
+using {\bfseries R\+G\+B\+Color} = \mbox{\hyperlink{namespacetao_acdec2e843192294a6f3d4ab911c6cbae}{tao\+::\+VecF}}
+\item 
+\mbox{\Hypertarget{namespaceomg_adfd06c82d92702d5d6411fb77c25af04}\label{namespaceomg_adfd06c82d92702d5d6411fb77c25af04}} 
+{\footnotesize template$<$int N\+Channels$>$ }\\using {\bfseries Pixel\+Value} = std\+::array$<$ unsigned char, N\+Channels $>$
+\item 
+\mbox{\Hypertarget{namespaceomg_a3f437d3821402dd1b1d1ddb5c73f6597}\label{namespaceomg_a3f437d3821402dd1b1d1ddb5c73f6597}} 
+{\footnotesize template$<$int N$>$ }\\using {\bfseries Size} = std\+::array$<$ float, N $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for backgrounds. 
+
+Solid background.
+
+Image background.
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}

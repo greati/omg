@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['accept',['accept',['../classrayt_1_1_scene.html#ab39817d306a68ed6b2f7d734c0815f1c',1,'rayt::Scene::accept()'],['../classrayt_1_1_scene_node.html#ad1505599b13aa1cac1f9bba9df7bec4b',1,'rayt::SceneNode::accept()']]]
+  ['accept',['accept',['../classomg_1_1_scene.html#a460b3582d6dc72fcaeff4c08d44335d9',1,'omg::Scene::accept()'],['../classomg_1_1_scene_node.html#ad8e1595d15c4b92ab505828a0633a4d9',1,'omg::SceneNode::accept()']]]
 ];

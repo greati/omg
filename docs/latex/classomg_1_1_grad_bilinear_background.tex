@@ -1,0 +1,65 @@
+\hypertarget{classomg_1_1_grad_bilinear_background}{}\section{omg\+::Grad\+Bilinear\+Background Class Reference}
+\label{classomg_1_1_grad_bilinear_background}\index{omg::GradBilinearBackground@{omg::GradBilinearBackground}}
+
+
+Gradient background based on bilinear interpolation.  
+
+
+
+
+{\ttfamily \#include $<$Grad\+Bilinear\+Background.\+h$>$}
+
+Inheritance diagram for omg\+::Grad\+Bilinear\+Background\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_grad_bilinear_background}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_grad_bilinear_background_ab65634d8eb49ebe3303cb171d41b9d15}\label{classomg_1_1_grad_bilinear_background_ab65634d8eb49ebe3303cb171d41b9d15}} 
+{\bfseries Grad\+Bilinear\+Background} (const std\+::vector$<$ \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} $>$ \&colors)
+\item 
+\mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \mbox{\hyperlink{classomg_1_1_grad_bilinear_background_a074c489f7e8514420bd1e1f362202b03}{find}} (float x, float y) const override
+\begin{DoxyCompactList}\small\item\em Find a color in a given point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_grad_bilinear_background_a335f0acd0a4c56bcec29c33891ea5f44}\label{classomg_1_1_grad_bilinear_background_a335f0acd0a4c56bcec29c33891ea5f44}} 
+float {\bfseries bilinear\+\_\+interp} (float x, float y, float x1, float x2, float y1, float y2, float v11, float v12, float v21, float v22) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gradient background based on bilinear interpolation. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_grad_bilinear_background_a074c489f7e8514420bd1e1f362202b03}\label{classomg_1_1_grad_bilinear_background_a074c489f7e8514420bd1e1f362202b03}} 
+\index{omg::GradBilinearBackground@{omg::GradBilinearBackground}!find@{find}}
+\index{find@{find}!omg::GradBilinearBackground@{omg::GradBilinearBackground}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} omg\+::\+Grad\+Bilinear\+Background\+::find (\begin{DoxyParamCaption}\item[{float}]{col,  }\item[{float}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Find a color in a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & the width percentage \\
+\hline
+{\em row} & the height percentage \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_background_a9f98d6bc2e213de258b5c3e45040b462}{omg\+::\+Background}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/backgrounds/Grad\+Bilinear\+Background.\+h\end{DoxyCompactItemize}

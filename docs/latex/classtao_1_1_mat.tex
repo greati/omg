@@ -9,8 +9,11 @@ Inheritance diagram for tao\+::Mat$<$ T $>$\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classtao_1_1_mat_a22ea16d2a3e3a1da5eb7de57e5bf02c2}{Mat}} (int dim)
+\mbox{\Hypertarget{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}\label{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}} 
+\mbox{\hyperlink{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}{Mat}} ()
 \begin{DoxyCompactList}\small\item\em Number of cols. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_mat_a22ea16d2a3e3a1da5eb7de57e5bf02c2}{Mat}} (int dim)
+\begin{DoxyCompactList}\small\item\em Constructor of square matrices based on size only. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_mat_a8b2f68a1f5539462e6f4186bc5f8a5c7}{Mat}} (int \mbox{\hyperlink{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}{rows}}, int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}})
 \begin{DoxyCompactList}\small\item\em Constructor based on size only. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_mat_a83589751aea3dcecc363068fd540a930}{Mat}} (int \mbox{\hyperlink{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}{rows}}, int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}}, T val)
@@ -19,6 +22,8 @@ Inheritance diagram for tao\+::Mat$<$ T $>$\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Construtor based on an initializer list. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_mat_a74c591cbc3893506d9f97cf9f54e7adf}{Mat}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}{operator=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&other)
+\begin{DoxyCompactList}\small\item\em Copy-\/assignment operator. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{classtao_1_1_mat_a814d02bbf96dab62938912f792aa7994}{operator()}} (int row, int col) const
 \begin{DoxyCompactList}\small\item\em Row-\/column read-\/only access operator. \end{DoxyCompactList}\item 
 T \& \mbox{\hyperlink{classtao_1_1_mat_ac0372cf9e7da0ab734e7c58888e5d85a}{operator()}} (int row, int col)
@@ -85,9 +90,7 @@ int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}} 
 
 
 
-Number of cols. 
-
-Constructor of square matrices based on size only.
+Constructor of square matrices based on size only. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -495,6 +498,22 @@ Divide by scalar and assignment.
 \begin{DoxyReturn}{Returns}
 the result of multiplication as a reference 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}\label{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}} 
+\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy-\/assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}\label{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}} 
 \index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
@@ -548,5 +567,5 @@ a new matrix which is the transpose
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/vitorgreati/git-\/repos/rayt/sources/extern/tao/sources/include/linalg/Mat.\+h\item 
-/home/vitorgreati/git-\/repos/rayt/sources/extern/tao/sources/src/linalg/Mat.\+cpp\end{DoxyCompactItemize}
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/include/linalg/Mat.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/src/linalg/Mat.\+cpp\end{DoxyCompactItemize}
