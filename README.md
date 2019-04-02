@@ -35,3 +35,13 @@ execute:
 ```bash
 ./raytracer <path to .yml file> <image destination>
 ```
+### Available resources
+
+- [ ] Backgrounds
+    - [x] Solid
+    - [x] Bilinear gradient
+    - [ ] Texture
+- [ ] Camera
+    - [x] Size
+    - [ ] Orthographic
+    - [ ] Perspective
