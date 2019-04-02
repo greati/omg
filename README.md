@@ -1,5 +1,13 @@
 # omg - Open Machinery for Graphics
 
+**omg** is a library for computer graphics applications that provides
+some executables, like a ready-to-go raytracer that uses YAML
+scene descriptions to produce 3D images.
+
+**omg** uses [tao](http://github.com/greati/tao), a mathematical
+library written by the author. Caution: it is not optimized yet,
+but works well.
+
 ## Installing
 ### Build
 
@@ -15,10 +23,11 @@ cmake --build .
 ```
 make test
 ```
+
 ## Raytracer
 
-omg comes with a raytracer library and executable, which takes a scene
-described in YAML and produces an image. In order to run it,
+**omg** comes with a raytracer library and executable, which takes a scene
+described in YAML (check the [YAML Raytracer wiki](#)) and produces an image. In order to run it,
 execute:
 
 ```bash
