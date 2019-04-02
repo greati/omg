@@ -1,2 +1,1 @@
-# rayt
-A simple ray tracer
+# omg - Open Machinery for Graphics
