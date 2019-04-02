@@ -1,0 +1,70 @@
+\hypertarget{namespacerayt}{}\section{rayt Namespace Reference}
+\label{namespacerayt}\index{rayt@{rayt}}
+
+
+Interface for backgrounds.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrayt_1_1_background}{Background}}
+\item 
+class \mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}}
+\begin{DoxyCompactList}\small\item\em A buffer for 2D images. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_grad_bilinear_background}{Grad\+Bilinear\+Background}}
+\begin{DoxyCompactList}\small\item\em Gradient background based on bilinear interpolation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_image_background}{Image\+Background}}
+\item 
+class \mbox{\hyperlink{classrayt_1_1_parse_exception}{Parse\+Exception}}
+\begin{DoxyCompactList}\small\item\em Parsing exception. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_parser}{Parser}}
+\begin{DoxyCompactList}\small\item\em An interface for scene parsers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_raytracer_visitor}{Raytracer\+Visitor}}
+\begin{DoxyCompactList}\small\item\em Executes the main operations of the ray tracer as a visitor of a parsed scene. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_scene}{Scene}}
+\begin{DoxyCompactList}\small\item\em Represents a 3D scene. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_scene_node}{Scene\+Node}}
+\begin{DoxyCompactList}\small\item\em Represents a scene node that can be visited by a visitor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_solid_background}{Solid\+Background}}
+\item 
+class \mbox{\hyperlink{classrayt_1_1_visitor}{Visitor}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classrayt_1_1_visitor}{Visitor}} class for rayt scene descriptions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classrayt_1_1_y_a_m_l_parser}{Y\+A\+M\+L\+Parser}}
+\begin{DoxyCompactList}\small\item\em A scene parser using Y\+A\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespacerayt_a3a5e1628e85e38c81b38506c119f30aa}\label{namespacerayt_a3a5e1628e85e38c81b38506c119f30aa}} 
+using {\bfseries Vec2} = std\+::tuple$<$ float, float $>$
+\item 
+\mbox{\Hypertarget{namespacerayt_a9544d78fd57b38b80c71fafb5e097d5f}\label{namespacerayt_a9544d78fd57b38b80c71fafb5e097d5f}} 
+using {\bfseries Point2} = std\+::tuple$<$ float, float $>$
+\item 
+\mbox{\Hypertarget{namespacerayt_a30e5d54dd5092618c5035ccf243b817d}\label{namespacerayt_a30e5d54dd5092618c5035ccf243b817d}} 
+using {\bfseries Vec3} = std\+::tuple$<$ float, float, float $>$
+\item 
+\mbox{\Hypertarget{namespacerayt_a6ab48c41b6e7e5f296c571a9ee315fd6}\label{namespacerayt_a6ab48c41b6e7e5f296c571a9ee315fd6}} 
+using {\bfseries Point3} = Vec3
+\item 
+\mbox{\Hypertarget{namespacerayt_a3a8cba490cb2c3d842882bf900ae25dd}\label{namespacerayt_a3a8cba490cb2c3d842882bf900ae25dd}} 
+using {\bfseries R\+G\+B\+Color} = \mbox{\hyperlink{namespacetao_acdec2e843192294a6f3d4ab911c6cbae}{tao\+::\+VecF}}
+\item 
+\mbox{\Hypertarget{namespacerayt_a3e68e13facd362d016b5336e1ed10056}\label{namespacerayt_a3e68e13facd362d016b5336e1ed10056}} 
+{\footnotesize template$<$int N\+Channels$>$ }\\using {\bfseries Pixel\+Value} = std\+::array$<$ unsigned char, N\+Channels $>$
+\item 
+\mbox{\Hypertarget{namespacerayt_afd460c6085b0cd5ccd92c4f10c6c4b62}\label{namespacerayt_afd460c6085b0cd5ccd92c4f10c6c4b62}} 
+{\footnotesize template$<$int N$>$ }\\using {\bfseries Size} = std\+::array$<$ float, N $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for backgrounds. 
+
+Solid background.
+
+Image background.
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}

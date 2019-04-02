@@ -1,0 +1,65 @@
+\hypertarget{classrayt_1_1_grad_bilinear_background}{}\section{rayt\+::Grad\+Bilinear\+Background Class Reference}
+\label{classrayt_1_1_grad_bilinear_background}\index{rayt::GradBilinearBackground@{rayt::GradBilinearBackground}}
+
+
+Gradient background based on bilinear interpolation.  
+
+
+
+
+{\ttfamily \#include $<$Grad\+Bilinear\+Background.\+h$>$}
+
+Inheritance diagram for rayt\+::Grad\+Bilinear\+Background\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrayt_1_1_grad_bilinear_background}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrayt_1_1_grad_bilinear_background_a5ab1152bde3de5e7f2a6f82d1487addc}\label{classrayt_1_1_grad_bilinear_background_a5ab1152bde3de5e7f2a6f82d1487addc}} 
+{\bfseries Grad\+Bilinear\+Background} (const \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \&\+\_\+ulc, const \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \&\+\_\+urc, const \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \&\+\_\+lrc, const \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \&\+\_\+llc)
+\item 
+\mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} \mbox{\hyperlink{classrayt_1_1_grad_bilinear_background_a5619e0167b3ca7a7fb1ab7b9dec1b910}{find}} (float x, float y) const override
+\begin{DoxyCompactList}\small\item\em Find a color in a given point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrayt_1_1_grad_bilinear_background_a5fd61f89857c87a839ab04a513817faf}\label{classrayt_1_1_grad_bilinear_background_a5fd61f89857c87a839ab04a513817faf}} 
+float {\bfseries bilinear\+\_\+interp} (float x, float y, float x1, float x2, float y1, float y2, float v11, float v12, float v21, float v22) const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gradient background based on bilinear interpolation. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_grad_bilinear_background_a5619e0167b3ca7a7fb1ab7b9dec1b910}\label{classrayt_1_1_grad_bilinear_background_a5619e0167b3ca7a7fb1ab7b9dec1b910}} 
+\index{rayt::GradBilinearBackground@{rayt::GradBilinearBackground}!find@{find}}
+\index{find@{find}!rayt::GradBilinearBackground@{rayt::GradBilinearBackground}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classtao_1_1_col}{R\+G\+B\+Color}} rayt\+::\+Grad\+Bilinear\+Background\+::find (\begin{DoxyParamCaption}\item[{float}]{col,  }\item[{float}]{row }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Find a color in a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & the width percentage \\
+\hline
+{\em row} & the height percentage \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrayt_1_1_background_ada66e69d97dada79872cd7f79326b8cd}{rayt\+::\+Background}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/backgrounds/Grad\+Bilinear\+Background.\+h\end{DoxyCompactItemize}

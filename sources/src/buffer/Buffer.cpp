@@ -1,7 +1,7 @@
-#include "buffer/Buffer.h"
+#include "omg/buffer/Buffer.h"
 #include <iostream>
 
-using namespace rayt;
+using namespace omg;
 
 template<int N, typename StoredType>
 Buffer<N,StoredType>::Buffer(int width, int height) : _width{width}, _height{height} {

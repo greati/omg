@@ -1,8 +1,8 @@
-#include "parsing/yaml/YAMLParser.h"
-#include "backgrounds/GradBilinearBackground.h"
-#include "backgrounds/SolidBackground.h"
+#include "omg/parsing/yaml/YAMLParser.h"
+#include "omg/backgrounds/GradBilinearBackground.h"
+#include "omg/backgrounds/SolidBackground.h"
 
-using namespace rayt;
+using namespace omg;
 
 template<>
 struct YAML::convert<RGBColor> {

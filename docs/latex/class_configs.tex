@@ -1,0 +1,85 @@
+\hypertarget{class_configs}{}\section{Configs$<$ Key\+Type $>$ Class Template Reference}
+\label{class_configs}\index{Configs$<$ KeyType $>$@{Configs$<$ KeyType $>$}}
+
+
+Represents a bundle of configurations.  
+
+
+
+
+{\ttfamily \#include $<$Configs.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_configs_aec48de783d43244d4ecf7c6cd30120c6}{Configs}} (Configs\+Data configs)
+\begin{DoxyCompactList}\small\item\em Construtor based on data. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Get\+Type  = std\+::string$>$ }\\Get\+Type \mbox{\hyperlink{class_configs_a6e7f850ce09a2298daf3634bfc0aba35}{get}} (const Key\+Type \&key) const
+\begin{DoxyCompactList}\small\item\em Takes a value from the configurations and try to convert it to a given type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_configs_a488e3df4d36531b3cdca25e65c48575d}\label{class_configs_a488e3df4d36531b3cdca25e65c48575d}} 
+using {\bfseries Config\+Value} = std\+::variant$<$ char, int, long, float, double, std\+::string $>$
+\item 
+\mbox{\Hypertarget{class_configs_afd64cca5a5b670043325f538d7582d40}\label{class_configs_afd64cca5a5b670043325f538d7582d40}} 
+using {\bfseries Configs\+Data} = std\+::map$<$ Key\+Type, Config\+Value $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Key\+Type = std\+::string$>$\newline
+class Configs$<$ Key\+Type $>$}
+
+Represents a bundle of configurations. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_configs_aec48de783d43244d4ecf7c6cd30120c6}\label{class_configs_aec48de783d43244d4ecf7c6cd30120c6}} 
+\index{Configs$<$ KeyType $>$@{Configs$<$ KeyType $>$}!Configs@{Configs}}
+\index{Configs@{Configs}!Configs$<$ KeyType $>$@{Configs$<$ KeyType $>$}}
+\subsubsection{\texorpdfstring{Configs()}{Configs()}}
+{\footnotesize\ttfamily template$<$typename Key\+Type = std\+::string$>$ \\
+\mbox{\hyperlink{class_configs}{Configs}}$<$ Key\+Type $>$\+::\mbox{\hyperlink{class_configs}{Configs}} (\begin{DoxyParamCaption}\item[{Configs\+Data}]{configs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor based on data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em configs} & configs data \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configs_a6e7f850ce09a2298daf3634bfc0aba35}\label{class_configs_a6e7f850ce09a2298daf3634bfc0aba35}} 
+\index{Configs$<$ KeyType $>$@{Configs$<$ KeyType $>$}!get@{get}}
+\index{get@{get}!Configs$<$ KeyType $>$@{Configs$<$ KeyType $>$}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename Key\+Type = std\+::string$>$ \\
+template$<$typename Get\+Type  = std\+::string$>$ \\
+Get\+Type \mbox{\hyperlink{class_configs}{Configs}}$<$ Key\+Type $>$\+::get (\begin{DoxyParamCaption}\item[{const Key\+Type \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Takes a value from the configurations and try to convert it to a given type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the indicated type 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/configs/Configs.\+h\end{DoxyCompactItemize}

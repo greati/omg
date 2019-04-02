@@ -1,0 +1,144 @@
+\hypertarget{classrayt_1_1_scene}{}\section{rayt\+::Scene Class Reference}
+\label{classrayt_1_1_scene}\index{rayt::Scene@{rayt::Scene}}
+
+
+Represents a 3D scene.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+Inheritance diagram for rayt\+::Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrayt_1_1_scene}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrayt_1_1_scene_1_1_builder}{Builder}}
+\begin{DoxyCompactList}\small\item\em A builder for building scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrayt_1_1_scene_a97534e52f4f218ad80d23babcbc758ad}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_camera}{Camera}} reference. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrayt_1_1_scene_a539d8be48d2a6e2516dbae4bf0ebc7da}\label{classrayt_1_1_scene_a539d8be48d2a6e2516dbae4bf0ebc7da}} 
+\mbox{\hyperlink{classrayt_1_1_scene_a539d8be48d2a6e2516dbae4bf0ebc7da}{Scene}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_background}{Background}} $>$ background, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Complete scene constructor. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_background}{Background}} $>$ \mbox{\hyperlink{classrayt_1_1_scene_add7bcaeaf2268a63634613d70cc7c345}{get\+\_\+background}} () const
+\begin{DoxyCompactList}\small\item\em The scene background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_scene_a13012312e90ffd74e9b5ef34d7a19f17}{set\+\_\+background}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_background}{Background}} $>$ background)
+\begin{DoxyCompactList}\small\item\em Set the scene background. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_camera}{Camera}} $>$ \mbox{\hyperlink{classrayt_1_1_scene_aae90d3f219fb89a471f84b1653310b33}{get\+\_\+camera}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_scene_afde427e2d1e5d79942758a2ba91de66f}{set\+\_\+camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Set the scene camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_scene_ab39817d306a68ed6b2f7d734c0815f1c}{accept}} (\mbox{\hyperlink{classrayt_1_1_visitor}{Visitor}} \&visitor) override
+\begin{DoxyCompactList}\small\item\em Accept a visitor to process this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a 3D scene. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrayt_1_1_scene_a97534e52f4f218ad80d23babcbc758ad}\label{classrayt_1_1_scene_a97534e52f4f218ad80d23babcbc758ad}} 
+\index{rayt::Scene@{rayt::Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily rayt\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_camera}{Camera}} reference. 
+
+Empty constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_scene_ab39817d306a68ed6b2f7d734c0815f1c}\label{classrayt_1_1_scene_ab39817d306a68ed6b2f7d734c0815f1c}} 
+\index{rayt::Scene@{rayt::Scene}!accept@{accept}}
+\index{accept@{accept}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{accept()}{accept()}}
+{\footnotesize\ttfamily void rayt\+::\+Scene\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrayt_1_1_visitor}{Visitor}} \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Accept a visitor to process this node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & the visitor \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrayt_1_1_scene_node_ad1505599b13aa1cac1f9bba9df7bec4b}{rayt\+::\+Scene\+Node}}.
+
+\mbox{\Hypertarget{classrayt_1_1_scene_add7bcaeaf2268a63634613d70cc7c345}\label{classrayt_1_1_scene_add7bcaeaf2268a63634613d70cc7c345}} 
+\index{rayt::Scene@{rayt::Scene}!get\_background@{get\_background}}
+\index{get\_background@{get\_background}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{get\_background()}{get\_background()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classrayt_1_1_background}{Background}}$>$ rayt\+::\+Scene\+::get\+\_\+background (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The scene background. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the background 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_scene_aae90d3f219fb89a471f84b1653310b33}\label{classrayt_1_1_scene_aae90d3f219fb89a471f84b1653310b33}} 
+\index{rayt::Scene@{rayt::Scene}!get\_camera@{get\_camera}}
+\index{get\_camera@{get\_camera}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{get\_camera()}{get\_camera()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_camera}{Camera}}$>$ rayt\+::\+Scene\+::get\+\_\+camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the camera. 
+
+\begin{DoxyReturn}{Returns}
+the camera 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_scene_a13012312e90ffd74e9b5ef34d7a19f17}\label{classrayt_1_1_scene_a13012312e90ffd74e9b5ef34d7a19f17}} 
+\index{rayt::Scene@{rayt::Scene}!set\_background@{set\_background}}
+\index{set\_background@{set\_background}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{set\_background()}{set\_background()}}
+{\footnotesize\ttfamily void rayt\+::\+Scene\+::set\+\_\+background (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_background}{Background}} $>$}]{background }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the scene background. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the scene background \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrayt_1_1_scene_afde427e2d1e5d79942758a2ba91de66f}\label{classrayt_1_1_scene_afde427e2d1e5d79942758a2ba91de66f}} 
+\index{rayt::Scene@{rayt::Scene}!set\_camera@{set\_camera}}
+\index{set\_camera@{set\_camera}!rayt::Scene@{rayt::Scene}}
+\subsubsection{\texorpdfstring{set\_camera()}{set\_camera()}}
+{\footnotesize\ttfamily void rayt\+::\+Scene\+::set\+\_\+camera (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_camera}{Camera}} $>$}]{camera }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the scene camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em camera} & the camera \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/scene/Scene.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,295 @@
+\hypertarget{classrayt_1_1_buffer}{}\section{rayt\+::Buffer$<$ N, Stored\+Type $>$ Class Template Reference}
+\label{classrayt_1_1_buffer}\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+
+
+A buffer for 2D images.  
+
+
+
+
+{\ttfamily \#include $<$Buffer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrayt_1_1_buffer_aea5eaa6530d6506d47a4efee72485c42}{Buffer}} (int \mbox{\hyperlink{classrayt_1_1_buffer_a905edf4ca7a7b88dc2d3dddf7d3b50b6}{width}}, int \mbox{\hyperlink{classrayt_1_1_buffer_a575f281f1549488685df3b0a61489de9}{height}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}} values components. \end{DoxyCompactList}\item 
+Value \mbox{\hyperlink{classrayt_1_1_buffer_ae9b4a3c2c3357ca29b1b1847c303b1f7}{operator()}} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em Access a value in the buffer, origin is upper left corner (row, col). \end{DoxyCompactList}\item 
+Value \mbox{\hyperlink{classrayt_1_1_buffer_a168bbd5188d83c5c003c291c23a84cfd}{operator()}} (const Cartesian \&cartesian) const
+\begin{DoxyCompactList}\small\item\em Access a value in the buffer, origin is lower left corder (col, row). \end{DoxyCompactList}\item 
+Stored\+Type \& \mbox{\hyperlink{classrayt_1_1_buffer_aa7c3e86a02ffd0801cdff9c03222afb6}{operator()}} (int row, int col, int channel)
+\begin{DoxyCompactList}\small\item\em Modify a value at the (row, col) position, origin is upper left corner. \end{DoxyCompactList}\item 
+Stored\+Type \& \mbox{\hyperlink{classrayt_1_1_buffer_ab262e04b68ac078bbd8cca4fe6f0f5a3}{operator()}} (const Cartesian \&cartesian, int channel)
+\begin{DoxyCompactList}\small\item\em Modify a value at the (col, row) position, origin is lower left corner. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_buffer_ae41a09f4b386e06e73c0da5fa47e7535}{set}} (int row, int col, const Value \&v)
+\begin{DoxyCompactList}\small\item\em Set directly a composed value in the buffer, (row, col) based. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_buffer_a3253e5e62b54e4787dd773ba7b897980}{set}} (const Cartesian \&cartesian, const Value \&v)
+\begin{DoxyCompactList}\small\item\em Set directly a composed value in the buffer, (col, row) based. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classrayt_1_1_buffer_acb80ea36f8563bfa775eb9a23d316e32}{channels}} () const noexcept
+\begin{DoxyCompactList}\small\item\em The number of channels in the canvas. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classrayt_1_1_buffer_a905edf4ca7a7b88dc2d3dddf7d3b50b6}{width}} () const noexcept
+\begin{DoxyCompactList}\small\item\em The width (number of cols). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classrayt_1_1_buffer_a575f281f1549488685df3b0a61489de9}{height}} () const noexcept
+\begin{DoxyCompactList}\small\item\em The height (number of rows) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_buffer_a674041ad7b285bf2418b75b7653ded36}{reset}} (int \mbox{\hyperlink{classrayt_1_1_buffer_a905edf4ca7a7b88dc2d3dddf7d3b50b6}{width}}, int \mbox{\hyperlink{classrayt_1_1_buffer_a575f281f1549488685df3b0a61489de9}{height}})
+\begin{DoxyCompactList}\small\item\em Recreate the buffer data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrayt_1_1_buffer_a817affcd52f40b49c3f8e3417747de3d}{clear}} (const Value \&value)
+\begin{DoxyCompactList}\small\item\em Set a value in every position. \end{DoxyCompactList}\item 
+unsigned char $\ast$ \mbox{\hyperlink{classrayt_1_1_buffer_a286e9c67444c67b3dc5734d0127549db}{data}} () noexcept
+\begin{DoxyCompactList}\small\item\em A pointer to the canvas data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int N, typename Stored\+Type = unsigned char$>$\newline
+class rayt\+::\+Buffer$<$ N, Stored\+Type $>$}
+
+A buffer for 2D images. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrayt_1_1_buffer_aea5eaa6530d6506d47a4efee72485c42}\label{classrayt_1_1_buffer_aea5eaa6530d6506d47a4efee72485c42}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{Buffer()}{Buffer()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type $>$ \\
+Buffer\+::\+Buffer (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}} values components. 
+
+Constructor based on scene size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the scene width \\
+\hline
+{\em height} & the scene height \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_buffer_acb80ea36f8563bfa775eb9a23d316e32}\label{classrayt_1_1_buffer_acb80ea36f8563bfa775eb9a23d316e32}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!channels@{channels}}
+\index{channels@{channels}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{channels()}{channels()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+int \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+The number of channels in the canvas. 
+
+\begin{DoxyReturn}{Returns}
+the number of channels 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a817affcd52f40b49c3f8e3417747de3d}\label{classrayt_1_1_buffer_a817affcd52f40b49c3f8e3417747de3d}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!clear@{clear}}
+\index{clear@{clear}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+void Buffer\+::clear (\begin{DoxyParamCaption}\item[{const Value \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a value in every position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & value to be put in every position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a286e9c67444c67b3dc5734d0127549db}\label{classrayt_1_1_buffer_a286e9c67444c67b3dc5734d0127549db}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!data@{data}}
+\index{data@{data}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+unsigned char$\ast$ \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+A pointer to the canvas data. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the canvas data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a575f281f1549488685df3b0a61489de9}\label{classrayt_1_1_buffer_a575f281f1549488685df3b0a61489de9}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!height@{height}}
+\index{height@{height}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+int \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+The height (number of rows) 
+
+\begin{DoxyReturn}{Returns}
+the buffer height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_ae9b4a3c2c3357ca29b1b1847c303b1f7}\label{classrayt_1_1_buffer_ae9b4a3c2c3357ca29b1b1847c303b1f7}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type $>$ \\
+\mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}}$<$ N, Stored\+Type $>$\+::Value Buffer\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const}
+
+
+
+Access a value in the buffer, origin is upper left corner (row, col). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row \\
+\hline
+{\em col} & the col \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value at the (row, col) position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a168bbd5188d83c5c003c291c23a84cfd}\label{classrayt_1_1_buffer_a168bbd5188d83c5c003c291c23a84cfd}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+Value \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::operator() (\begin{DoxyParamCaption}\item[{const Cartesian \&}]{cartesian }\end{DoxyParamCaption}) const}
+
+
+
+Access a value in the buffer, origin is lower left corder (col, row). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartesian} & the cartesian coordinates (col, row) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value at the (col, row) position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_aa7c3e86a02ffd0801cdff9c03222afb6}\label{classrayt_1_1_buffer_aa7c3e86a02ffd0801cdff9c03222afb6}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type $>$ \\
+Stored\+Type \& Buffer\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Modify a value at the (row, col) position, origin is upper left corner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row \\
+\hline
+{\em col} & the col \\
+\hline
+{\em channel} & the channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value at (row, col) position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_ab262e04b68ac078bbd8cca4fe6f0f5a3}\label{classrayt_1_1_buffer_ab262e04b68ac078bbd8cca4fe6f0f5a3}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+Stored\+Type\& \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::operator() (\begin{DoxyParamCaption}\item[{const Cartesian \&}]{cartesian,  }\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Modify a value at the (col, row) position, origin is lower left corner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartesian} & the cartesian coordinates (col, row) \\
+\hline
+{\em channel} & the channel \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the value at (col, row) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a674041ad7b285bf2418b75b7653ded36}\label{classrayt_1_1_buffer_a674041ad7b285bf2418b75b7653ded36}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!reset@{reset}}
+\index{reset@{reset}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type $>$ \\
+void Buffer\+::reset (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Recreate the buffer data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & the new width \\
+\hline
+{\em height} & the new height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrayt_1_1_buffer_ae41a09f4b386e06e73c0da5fa47e7535}\label{classrayt_1_1_buffer_ae41a09f4b386e06e73c0da5fa47e7535}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!set@{set}}
+\index{set@{set}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+void \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::set (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{const Value \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set directly a composed value in the buffer, (row, col) based. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & the row \\
+\hline
+{\em col} & the col \\
+\hline
+{\em v} & the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a3253e5e62b54e4787dd773ba7b897980}\label{classrayt_1_1_buffer_a3253e5e62b54e4787dd773ba7b897980}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!set@{set}}
+\index{set@{set}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+void \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::set (\begin{DoxyParamCaption}\item[{const Cartesian \&}]{cartesian,  }\item[{const Value \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set directly a composed value in the buffer, (col, row) based. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cartesian} & cartesian coordinates \\
+\hline
+{\em v} & the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrayt_1_1_buffer_a905edf4ca7a7b88dc2d3dddf7d3b50b6}\label{classrayt_1_1_buffer_a905edf4ca7a7b88dc2d3dddf7d3b50b6}} 
+\index{rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}!width@{width}}
+\index{width@{width}!rayt::Buffer$<$ N, StoredType $>$@{rayt::Buffer$<$ N, StoredType $>$}}
+\subsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily template$<$int N, typename Stored\+Type = unsigned char$>$ \\
+int \mbox{\hyperlink{classrayt_1_1_buffer}{rayt\+::\+Buffer}}$<$ N, Stored\+Type $>$\+::width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+The width (number of cols). 
+
+\begin{DoxyReturn}{Returns}
+the buffer width 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/buffer/Buffer.\+h\item 
+/home/vitorgreati/git-\/repos/rayt/sources/src/buffer/Buffer.\+cpp\end{DoxyCompactItemize}

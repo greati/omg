@@ -1,0 +1,75 @@
+\hypertarget{classrayt_1_1_raytracer_visitor}{}\section{rayt\+::Raytracer\+Visitor Class Reference}
+\label{classrayt_1_1_raytracer_visitor}\index{rayt::RaytracerVisitor@{rayt::RaytracerVisitor}}
+
+
+Executes the main operations of the ray tracer as a visitor of a parsed scene.  
+
+
+
+
+{\ttfamily \#include $<$Raytracer\+Visitor.\+h$>$}
+
+Inheritance diagram for rayt\+::Raytracer\+Visitor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrayt_1_1_raytracer_visitor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classrayt_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}{visit}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \&scene) override
+\begin{DoxyCompactList}\small\item\em Raytracer buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}}$<$ 3 $>$ $\ast$ \mbox{\hyperlink{classrayt_1_1_raytracer_visitor_aecfbe163d3bf3ba0e88ab64d6abdec60}{get\+\_\+buffer}} () const
+\begin{DoxyCompactList}\small\item\em Raytracer buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Executes the main operations of the ray tracer as a visitor of a parsed scene. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_raytracer_visitor_aecfbe163d3bf3ba0e88ab64d6abdec60}\label{classrayt_1_1_raytracer_visitor_aecfbe163d3bf3ba0e88ab64d6abdec60}} 
+\index{rayt::RaytracerVisitor@{rayt::RaytracerVisitor}!get\_buffer@{get\_buffer}}
+\index{get\_buffer@{get\_buffer}!rayt::RaytracerVisitor@{rayt::RaytracerVisitor}}
+\subsubsection{\texorpdfstring{get\_buffer()}{get\_buffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrayt_1_1_buffer}{Buffer}}$<$3$>$$\ast$ rayt\+::\+Raytracer\+Visitor\+::get\+\_\+buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Raytracer buffer. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the raytracer buffer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrayt_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}\label{classrayt_1_1_raytracer_visitor_ac469c21e8ac5e9a01ca6a58108bc860e}} 
+\index{rayt::RaytracerVisitor@{rayt::RaytracerVisitor}!visit@{visit}}
+\index{visit@{visit}!rayt::RaytracerVisitor@{rayt::RaytracerVisitor}}
+\subsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily void Raytracer\+Visitor\+::visit (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Raytracer buffer. 
+
+Perform the raytracer algorithm.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & a pointer to the scene to be drawn \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrayt_1_1_visitor_a86711f9694cba733e9ce9c7720ee9197}{rayt\+::\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/raytracer/Raytracer\+Visitor.\+h\item 
+/home/vitorgreati/git-\/repos/rayt/sources/src/raytracer/Raytracer\+Visitor.\+cpp\end{DoxyCompactItemize}

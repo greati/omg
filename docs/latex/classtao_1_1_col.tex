@@ -1,0 +1,265 @@
+\hypertarget{classtao_1_1_col}{}\section{tao\+::Col$<$ T $>$ Class Template Reference}
+\label{classtao_1_1_col}\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+Inheritance diagram for tao\+::Col$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtao_1_1_col}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtao_1_1_col_a9133bec2b352e2e139e51e1f9107473d}{Col}} (const std\+::initializer\+\_\+list$<$ T $>$ \&components)
+\begin{DoxyCompactList}\small\item\em Construct a column vector from its components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}\label{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}} 
+\mbox{\hyperlink{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}{Col}} (const \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \&colmat)
+\begin{DoxyCompactList}\small\item\em Construct a column vector from an Nx1 matrix. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1_col_a7d08ac2d077bed978eb783b5fe707a7c}{operator()}} (int i) const
+\begin{DoxyCompactList}\small\item\em Vector read-\/only access operator. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classtao_1_1_col_ad7f3279e2764f5e1b0762e62517e738a}{operator()}} (int i)
+\begin{DoxyCompactList}\small\item\em Vector reference access operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col_a661dd9512fad58cfbedfdf52ca6806fb}{operator $\ast$}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col_a9274e5a0efd840c97741d05dca7bd5a2}{operator $\ast$=}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise multiplication with assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col_ab51f1d091fdb1b5a6a4199f4253ecfaa}{operator/=}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise division with assignment. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1_col_a229cd5a26d1fa4424150329127ca31d5}{norm}} () const
+\begin{DoxyCompactList}\small\item\em Euclidean norm of the vector. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ $>$ \mbox{\hyperlink{classtao_1_1_col_ae913e98d4ed12cc7ee1975b2aff07c05}{unit}} (bool inplace=false)
+\begin{DoxyCompactList}\small\item\em The corresponding unit vector. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1_col_a605b320d536f27395162eff375af8514}{dot}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector dot product. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col_a29c998087d6d7b98ecee1ba9fb7237a9}{operator $\ast$=}} (const T scalar)
+\begin{DoxyCompactList}\small\item\em Multiply by scalar and assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col_abddd1e9737a0cafd50a52fd5063e4851}{operator/=}} (const T scalar)
+\begin{DoxyCompactList}\small\item\em Divide by scalar and assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col_a734ed22497ede69a2ed0f791bd503355}{operator $\ast$}} (const T scalar)
+\begin{DoxyCompactList}\small\item\em Product between vector and scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtao_1_1_col_a9133bec2b352e2e139e51e1f9107473d}\label{classtao_1_1_col_a9133bec2b352e2e139e51e1f9107473d}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!Col@{Col}}
+\index{Col@{Col}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{Col()}{Col()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_col}{Col}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{components }\end{DoxyParamCaption})}
+
+
+
+Construct a column vector from its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em components} & the components \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtao_1_1_col_a605b320d536f27395162eff375af8514}\label{classtao_1_1_col_a605b320d536f27395162eff375af8514}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!dot@{dot}}
+\index{dot@{dot}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector dot product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtao_1_1_col_a229cd5a26d1fa4424150329127ca31d5}\label{classtao_1_1_col_a229cd5a26d1fa4424150329127ca31d5}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!norm@{norm}}
+\index{norm@{norm}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Euclidean norm of the vector. 
+
+\begin{DoxyReturn}{Returns}
+the euclidean norm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_a661dd9512fad58cfbedfdf52ca6806fb}\label{classtao_1_1_col_a661dd9512fad58cfbedfdf52ca6806fb}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtao_1_1_col_a734ed22497ede69a2ed0f791bd503355}\label{classtao_1_1_col_a734ed22497ede69a2ed0f791bd503355}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Product between vector and scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & the scalar rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matrix multiplied by the scalar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_a9274e5a0efd840c97741d05dca7bd5a2}\label{classtao_1_1_col_a9274e5a0efd840c97741d05dca7bd5a2}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise multiplication with assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the modified version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_a29c998087d6d7b98ecee1ba9fb7237a9}\label{classtao_1_1_col_a29c998087d6d7b98ecee1ba9fb7237a9}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Multiply by scalar and assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the matrix to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of multiplication as a reference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_a7d08ac2d077bed978eb783b5fe707a7c}\label{classtao_1_1_col_a7d08ac2d077bed978eb783b5fe707a7c}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Vector read-\/only access operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+component value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_ad7f3279e2764f5e1b0762e62517e738a}\label{classtao_1_1_col_ad7f3279e2764f5e1b0762e62517e738a}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Vector reference access operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+component value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_ab51f1d091fdb1b5a6a4199f4253ecfaa}\label{classtao_1_1_col_ab51f1d091fdb1b5a6a4199f4253ecfaa}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise division with assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the modified version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_abddd1e9737a0cafd50a52fd5063e4851}\label{classtao_1_1_col_abddd1e9737a0cafd50a52fd5063e4851}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Divide by scalar and assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the matrix to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of multiplication as a reference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_ae913e98d4ed12cc7ee1975b2aff07c05}\label{classtao_1_1_col_ae913e98d4ed12cc7ee1975b2aff07c05}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!unit@{unit}}
+\index{unit@{unit}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{unit()}{unit()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::optional$<$ \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$ $>$ \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::unit (\begin{DoxyParamCaption}\item[{bool}]{inplace = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+The corresponding unit vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inplace} & if the vector should be modified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new vector or nothing, depending on the inplace value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/extern/tao/sources/include/linalg/Col.\+h\item 
+/home/vitorgreati/git-\/repos/rayt/sources/extern/tao/sources/src/linalg/Col.\+cpp\end{DoxyCompactItemize}

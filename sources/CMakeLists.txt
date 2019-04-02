@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)
 
-project(rayt VERSION 0.1.0 LANGUAGES CXX)
+project(omg VERSION 0.1.0 LANGUAGES CXX)
 
 include(FetchContent)
 
@@ -48,14 +48,14 @@ target_include_directories(lodepng PUBLIC include/external)
 
 # executables
 # --------------------------------------- #
-add_executable(rayt 
-    src/rayt.cpp 
+add_executable(raytracer 
+    src/raytracer.cpp 
     src/printer/NetpbmPrinter.cpp 
     src/buffer/Buffer.cpp 
     src/parsing/yaml/YAMLParser.cpp 
     src/raytracer/RaytracerVisitor.cpp)
-target_link_libraries(rayt PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
-target_include_directories(rayt PUBLIC include PUBLIC extern/tao/sources/include)
+target_link_libraries(raytracer PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
+target_include_directories(raytracer PUBLIC include PUBLIC extern/tao/sources/include)
 
 # submodules
 # ----------------------------------------#

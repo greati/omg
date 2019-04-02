@@ -1,0 +1,78 @@
+\hypertarget{classrayt_1_1_parser}{}\section{rayt\+::Parser Class Reference}
+\label{classrayt_1_1_parser}\index{rayt::Parser@{rayt::Parser}}
+
+
+An interface for scene parsers.  
+
+
+
+
+{\ttfamily \#include $<$Parser.\+h$>$}
+
+Inheritance diagram for rayt\+::Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrayt_1_1_parser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classrayt_1_1_parser_a70296f0148b00574553a519156806fef}{parse\+\_\+text}} (const std\+::string \&text)=0
+\begin{DoxyCompactList}\small\item\em Parse a text. \end{DoxyCompactList}\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classrayt_1_1_parser_aa8ccda646d36c2c33013535947593def}{parse\+\_\+file}} (const std\+::string \&file\+\_\+path)=0
+\begin{DoxyCompactList}\small\item\em Parse a text from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface for scene parsers. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_parser_aa8ccda646d36c2c33013535947593def}\label{classrayt_1_1_parser_aa8ccda646d36c2c33013535947593def}} 
+\index{rayt::Parser@{rayt::Parser}!parse\_file@{parse\_file}}
+\index{parse\_file@{parse\_file}!rayt::Parser@{rayt::Parser}}
+\subsubsection{\texorpdfstring{parse\_file()}{parse\_file()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classrayt_1_1_scene}{Scene}}$>$ rayt\+::\+Parser\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Parse a text from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the file path \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrayt_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}{rayt\+::\+Y\+A\+M\+L\+Parser}}.
+
+\mbox{\Hypertarget{classrayt_1_1_parser_a70296f0148b00574553a519156806fef}\label{classrayt_1_1_parser_a70296f0148b00574553a519156806fef}} 
+\index{rayt::Parser@{rayt::Parser}!parse\_text@{parse\_text}}
+\index{parse\_text@{parse\_text}!rayt::Parser@{rayt::Parser}}
+\subsubsection{\texorpdfstring{parse\_text()}{parse\_text()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classrayt_1_1_scene}{Scene}}$>$ rayt\+::\+Parser\+::parse\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Parse a text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to be parsed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrayt_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}{rayt\+::\+Y\+A\+M\+L\+Parser}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/parsing/Parser.\+h\end{DoxyCompactItemize}

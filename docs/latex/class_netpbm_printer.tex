@@ -1,0 +1,93 @@
+\hypertarget{class_netpbm_printer}{}\section{Netpbm\+Printer$<$ T, Config\+Key\+Type $>$ Class Template Reference}
+\label{class_netpbm_printer}\index{NetpbmPrinter$<$ T, ConfigKeyType $>$@{NetpbmPrinter$<$ T, ConfigKeyType $>$}}
+
+
+A printer for the netpbm format.  
+
+
+
+
+{\ttfamily \#include $<$Netpbm\+Printer.\+h$>$}
+
+Inheritance diagram for Netpbm\+Printer$<$ T, Config\+Key\+Type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_netpbm_printer}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ std\+::pair$<$ Netpbm\+Type, Netpbm\+Encoding $>$, std\+::string $>$ {\bfseries magic\+\_\+number\+\_\+table}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_netpbm_printer_a7a361fc4d114a12cb5c2311744dc3d3d}{convert}} (const T $\ast$data, const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&configs) const override
+\begin{DoxyCompactList}\small\item\em Convert the data array into a string in netpbm format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename Config\+Key\+Type = Netpbm\+Params$>$\newline
+class Netpbm\+Printer$<$ T, Config\+Key\+Type $>$}
+
+A printer for the netpbm format. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_netpbm_printer_a7a361fc4d114a12cb5c2311744dc3d3d}\label{class_netpbm_printer_a7a361fc4d114a12cb5c2311744dc3d3d}} 
+\index{NetpbmPrinter$<$ T, ConfigKeyType $>$@{NetpbmPrinter$<$ T, ConfigKeyType $>$}!convert@{convert}}
+\index{convert@{convert}!NetpbmPrinter$<$ T, ConfigKeyType $>$@{NetpbmPrinter$<$ T, ConfigKeyType $>$}}
+\subsubsection{\texorpdfstring{convert()}{convert()}}
+{\footnotesize\ttfamily template$<$typename T , typename Config\+Key\+Type $>$ \\
+std\+::string \mbox{\hyperlink{class_netpbm_printer}{Netpbm\+Printer}}$<$ T, Config\+Key\+Type $>$\+::convert (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&}]{configs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Convert the data array into a string in netpbm format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representation of that data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_printer_a76931150a7fb3d4a69c3483bd08eed17}{Printer$<$ T, Config\+Key\+Type $>$}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_netpbm_printer_a8ca68fe204b021de766e45d6d71569c5}\label{class_netpbm_printer_a8ca68fe204b021de766e45d6d71569c5}} 
+\index{NetpbmPrinter$<$ T, ConfigKeyType $>$@{NetpbmPrinter$<$ T, ConfigKeyType $>$}!magic\_number\_table@{magic\_number\_table}}
+\index{magic\_number\_table@{magic\_number\_table}!NetpbmPrinter$<$ T, ConfigKeyType $>$@{NetpbmPrinter$<$ T, ConfigKeyType $>$}}
+\subsubsection{\texorpdfstring{magic\_number\_table}{magic\_number\_table}}
+{\footnotesize\ttfamily template$<$typename T , typename Config\+Key\+Type  = Netpbm\+Params$>$ \\
+std\+::map$<$std\+::pair$<$Netpbm\+Type, Netpbm\+Encoding$>$, std\+::string$>$ \mbox{\hyperlink{class_netpbm_printer}{Netpbm\+Printer}}$<$ T, Config\+Key\+Type $>$\+::magic\+\_\+number\+\_\+table}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{            \{\{BIT\_MAP, ASCII\}, \textcolor{stringliteral}{"P1"}\},}
+\DoxyCodeLine{            \{\{BIT\_MAP, BINARY\}, \textcolor{stringliteral}{"P4"}\},}
+\DoxyCodeLine{            \{\{GRAY\_MAP, ASCII\}, \textcolor{stringliteral}{"P2"}\},}
+\DoxyCodeLine{            \{\{GRAY\_MAP, BINARY\}, \textcolor{stringliteral}{"P5"}\},}
+\DoxyCodeLine{            \{\{PIX\_MAP, ASCII\}, \textcolor{stringliteral}{"P3"}\},}
+\DoxyCodeLine{            \{\{PIX\_MAP, BINARY\}, \textcolor{stringliteral}{"P6"}\},}
+\DoxyCodeLine{        \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/printer/Netpbm\+Printer.\+h\item 
+/home/vitorgreati/git-\/repos/rayt/sources/src/printer/Netpbm\+Printer.\+cpp\end{DoxyCompactItemize}

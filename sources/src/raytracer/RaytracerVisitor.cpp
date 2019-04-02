@@ -1,8 +1,8 @@
-#include "raytracer/RaytracerVisitor.h"
-#include "scene/Scene.h"
+#include "omg/raytracer/RaytracerVisitor.h"
+#include "omg/scene/Scene.h"
 #include <iostream>
 
-using namespace rayt;
+using namespace omg;
 
 void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
 

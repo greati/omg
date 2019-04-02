@@ -1,0 +1,88 @@
+\hypertarget{classrayt_1_1_y_a_m_l_parser}{}\section{rayt\+::Y\+A\+M\+L\+Parser Class Reference}
+\label{classrayt_1_1_y_a_m_l_parser}\index{rayt::YAMLParser@{rayt::YAMLParser}}
+
+
+A scene parser using Y\+A\+ML.  
+
+
+
+
+{\ttfamily \#include $<$Y\+A\+M\+L\+Parser.\+h$>$}
+
+Inheritance diagram for rayt\+::Y\+A\+M\+L\+Parser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classrayt_1_1_y_a_m_l_parser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classrayt_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}{parse\+\_\+text}} (const std\+::string \&text) override
+\begin{DoxyCompactList}\small\item\em Parse a text. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classrayt_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}{parse\+\_\+file}} (const std\+::string \&file\+\_\+path) override
+\begin{DoxyCompactList}\small\item\em Parse a text from a file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrayt_1_1_y_a_m_l_parser_a4941b74352196625b28329189603fea7}\label{classrayt_1_1_y_a_m_l_parser_a4941b74352196625b28329189603fea7}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_background}{Background}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classrayt_1_1_y_a_m_l_parser_aa432a888b0dcb701c776300202e0adac}\label{classrayt_1_1_y_a_m_l_parser_aa432a888b0dcb701c776300202e0adac}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_camera}{Camera}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classrayt_1_1_y_a_m_l_parser_a37aa462d299309063f9b6de402f8c3f2}\label{classrayt_1_1_y_a_m_l_parser_a37aa462d299309063f9b6de402f8c3f2}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A scene parser using Y\+A\+ML. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classrayt_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}\label{classrayt_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}} 
+\index{rayt::YAMLParser@{rayt::YAMLParser}!parse\_file@{parse\_file}}
+\index{parse\_file@{parse\_file}!rayt::YAMLParser@{rayt::YAMLParser}}
+\subsubsection{\texorpdfstring{parse\_file()}{parse\_file()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parse a text from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & the file path \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrayt_1_1_parser_aa8ccda646d36c2c33013535947593def}{rayt\+::\+Parser}}.
+
+\mbox{\Hypertarget{classrayt_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}\label{classrayt_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}} 
+\index{rayt::YAMLParser@{rayt::YAMLParser}!parse\_text@{parse\_text}}
+\index{parse\_text@{parse\_text}!rayt::YAMLParser@{rayt::YAMLParser}}
+\subsubsection{\texorpdfstring{parse\_text()}{parse\_text()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrayt_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Parse a text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & the text to be parsed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classrayt_1_1_parser_a70296f0148b00574553a519156806fef}{rayt\+::\+Parser}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/rayt/sources/include/parsing/yaml/Y\+A\+M\+L\+Parser.\+h\item 
+/home/vitorgreati/git-\/repos/rayt/sources/src/parsing/yaml/Y\+A\+M\+L\+Parser.\+cpp\end{DoxyCompactItemize}
