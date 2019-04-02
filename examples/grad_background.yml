@@ -2,13 +2,13 @@ raytracer:
     background:
         type: gradient
         colors:
-            - [255, 0, 0]
-            - [0, 255, 0]
-            - [0, 0, 255]
-            - [0, 255, 255]
+            - [0, 0, 51]
+            - [0, 255, 51]
+            - [255, 255, 51]
+            - [255, 0, 51]
     camera:
         type: orthographic
-        width: 800
-        height: 200
+        width: 200
+        height: 100
 
 
