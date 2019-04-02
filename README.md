@@ -8,6 +8,8 @@ scene descriptions to produce 3D images.
 library written by the author. Caution: it is not optimized yet,
 but works well.
 
+Learn how to use **omg** by [reading the docs](https://greati.github.io/omg/docs/html/index.html)!
+
 ## Installing
 ### Build
 
@@ -27,7 +29,7 @@ make test
 ## Raytracer
 
 **omg** comes with a raytracer library and executable, which takes a scene
-described in YAML (check the [YAML Raytracer wiki](#)) and produces an image. In order to run it,
+described in YAML (check the [YAML Raytracer wiki](https://github.com/greati/omg/wiki/YAML-Raytracer)) and produces an image. In order to run it,
 execute:
 
 ```bash
