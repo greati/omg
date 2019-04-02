@@ -31,7 +31,7 @@ int main(int argn, char* args[]) {
     try {
         scene = yaml_parser.parse_file(file_path);
     } catch (omg::ParseException & e) {
-        omg::logger.log(Logger::Type::ERROR, "parsing", e.get_info());
+        omg::logger.log(Logger::Type::ERROR, "parsing", e.message());
         return 1;
     }
 

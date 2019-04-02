@@ -68,12 +68,9 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
 
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
-
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
-
     auto scene = std::make_shared<Scene>(background, camera);
-
     return scene;
 }
 
@@ -90,7 +87,7 @@ std::shared_ptr<Scene> YAMLParser::parse_file(const std::string & file_path) {
 
 YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {
     if (!curr_node[node_name]) {
-        throw ParseException("missing node " + node_name);
+        throw ParseException("missing node " + node_name, curr_node.Mark().line, curr_node.Mark().column);
     }
     return curr_node[node_name];
 }

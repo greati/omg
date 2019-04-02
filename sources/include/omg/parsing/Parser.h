@@ -3,7 +3,7 @@
 
 #include <memory>
 #include "omg/scene/Scene.h"
-#include "exceptions.h"
+#include "omg/exceptions.h"
 
 namespace omg {
 /**
