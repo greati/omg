@@ -8,7 +8,7 @@ scene descriptions to produce 3D images.
 library written by the author. Caution: it is not optimized yet,
 but works well.
 
-Learn how to use **omg** by [reading the docs](https://greati.github.io/omg/docs/html/index.html)!
+Learn how to use **omg** by [reading the docs](https://greati.github.io/omg/html/index.html)!
 
 ## Installing
 ### Build
