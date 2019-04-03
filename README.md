@@ -11,6 +11,16 @@ but works well.
 Learn how to use **omg** by [reading the docs](https://greati.github.io/omg/html/index.html)!
 
 ## Installing
+
+### Cloning
+
+This project makes use of *git submodules* feature, so you need
+to clone it using:
+
+```bash
+git clone --recursive https://github.com/greati/omg.git
+```
+
 ### Build
 
 ```
