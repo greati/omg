@@ -1,6 +1,8 @@
 #include "omg/parsing/yaml/YAMLParser.h"
 #include "omg/backgrounds/GradBilinearBackground.h"
 #include "omg/backgrounds/SolidBackground.h"
+#include "omg/cameras/OrthoCamera.h"
+#include "omg/cameras/PerspectiveCamera.h"
 #include <iostream>
 
 using namespace omg;
@@ -54,10 +56,15 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
         int width = hard_require(camera_node, "width").as<int>();
         int height = hard_require(camera_node, "height").as<int>();
     
-        if (camera_node["type"])
-            omg::logger.log(Logger::Type::WARNING, "parsing", "type for camera not supported yet");
+        auto camera_type = hard_require(camera_node, "type").as<std::string>();
 
-        return std::make_shared<Camera>(width, height);
+        if (camera_type == "orthographic") {
+            return std::make_shared<OrthoCamera>(width, height);
+        } else if (camera_type == "perspective") {
+            return std::make_shared<PerspectiveCamera>(width, height);
+        } else {
+            throw omg::ParseException("undefined camera type " + camera_type); 
+        }
     } catch (omg::ParseException & e) {
         throw;
     } catch (YAML::BadConversion & e) {

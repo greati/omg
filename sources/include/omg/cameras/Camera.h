@@ -1,6 +1,8 @@
 #ifndef __CAMERA__
 #define __CAMERA__
 
+#include "omg/raytracer/Ray.h"
+
 namespace omg {
 /**
  * Represents a camera.
@@ -16,9 +18,19 @@ class Camera {
 
     public:
 
+
         Camera(int width, int height)
             : _width {width}, _height {height}
         {/*empty*/}
+
+        /**
+         * Produces a ray given an x and y in [0,1].
+         *
+         * @param x column walking
+         * @param y row walking
+         * @return a ray
+         * */
+        virtual Ray generate_ray(float x, float y) = 0;
 
         /**
          * The scene width
