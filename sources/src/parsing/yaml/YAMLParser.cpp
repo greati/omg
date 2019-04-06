@@ -59,7 +59,13 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
         auto camera_type = hard_require(camera_node, "type").as<std::string>();
 
         if (camera_type == "orthographic") {
-            return std::make_shared<OrthoCamera>(width, height);
+        
+            auto vpdims = hard_require(camera_node, "vpdims").as<std::vector<float>>();
+
+            if (vpdims.size() != 4)
+                throw omg::ParseException("provide valid vpdims for your camera");
+
+            return std::make_shared<OrthoCamera>(width, height, Camera::VpDims{vpdims[0], vpdims[1], vpdims[2], vpdims[3]});
         } else if (camera_type == "perspective") {
             return std::make_shared<PerspectiveCamera>(width, height);
         } else {

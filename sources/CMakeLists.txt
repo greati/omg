@@ -97,10 +97,11 @@ include(GoogleTest)
 
 set(test_sources ${test_sources}
     tests/main.cpp
+    tests/ray_tests.cpp
 )
 
 add_executable(maintest ${test_sources})
-target_link_libraries(maintest PRIVATE gtest)
+target_link_libraries(maintest PRIVATE gtest PRIVATE tao)
 target_include_directories(maintest PRIVATE include)
 
 gtest_discover_tests(maintest)

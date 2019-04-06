@@ -13,13 +13,13 @@ class OrthoCamera : public Camera {
 
     public:
 
-        OrthoCamera(int width, int height)
-            : Camera {width, height}
+        OrthoCamera(int width, int height, const VpDims& vpdims)
+            : Camera {width, height, vpdims}
         {/*empty*/}
 
 
         Ray generate_ray(float x, float y) override {
-        
+
         }
 };
 };
