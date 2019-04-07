@@ -15,8 +15,11 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
 
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
-            //auto [r, g, b] = background->find(x / static_cast<float>(width), y / static_cast<float>(height));
-            auto color = background->find(x / static_cast<float>(width), y / static_cast<float>(height));
+            Ray ray = camera->generate_ray(x / static_cast<float>(width), y / static_cast<float>(height));
+            bool hit = false;
+            auto color = (hit) 
+                ? RGBColor {255.0, 0.0, 0.0} 
+                : background->find(x / static_cast<float>(width), y / static_cast<float>(height));
             auto [r, g, b] = std::tuple {color(0), color(1), color(2)};
             this->_buffer->set({x, y}, {
                     static_cast<unsigned char>(r), 

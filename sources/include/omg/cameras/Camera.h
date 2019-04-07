@@ -62,9 +62,9 @@ class Camera {
         Camera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up)
             : _width {width}, _height {height}, _position{position}, _target{target}, _up{up}
         {
-            _v = _up;
-            _u = tao::cross(_v, _target - _position);
-            _w = tao::cross(_u, _v);
+            _w = -1.0f * (_target - _position).unit().value();
+            _u = tao::cross(_up, _w).unit().value();
+            _v = tao::cross(_w, _u).unit().value();
         }
 
         /**
@@ -103,6 +103,24 @@ class Camera {
          * @param width the scene height
          * */
         void set_height(int height) { this->_height = height; }
+
+        
+        /** 
+         * Compute the (u,v) from (i,j), i, j in [0,1]
+         *
+         * @param i horizontal displacement
+         * @param j vertical displacement
+         * @return the pair (u, v)
+         * */
+        std::pair<float, float> compute_u_v(float i, float j) const {
+            float ii = i * _width;
+            float jj = j * _height;
+            auto vd = this->_vpdims;
+            auto u = vd.l + (vd.r - vd.l) * (ii + 0.5) / _width;
+            auto v = vd.b + (vd.t - vd.b) * (jj + 0.5) / _height;
+            return {u, v};
+        }
+
 };
 };
 #endif
