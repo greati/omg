@@ -4,5 +4,11 @@ raytracer:
         color: [255, 0, 0]
     camera:
         type: orthographic
-        width: 800
+        #type: perspective
+        fdist: 1.0
+        width: 200
         height: 200
+        position: [0.0, 0.0, 0.0]
+        target: [0.0, 0.0, -1.0]
+        up: [0.0, 1.0, 0.0]
+        vpdims: [-2.0, 2.0, 2.0, -2.0]
