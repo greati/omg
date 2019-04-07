@@ -14,7 +14,7 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
     auto background = scene->get_background();
     this->_buffer = std::move(std::make_unique<Buffer<3>>(width, height));
 
-    Sphere sphere {0.1, Point3{0.0, 0.0, -4.0}};
+    Sphere sphere {0.8, Point3{0.0, 0.0, -3.0}};
 
     Object::HitRecord hit_record;
 
@@ -22,8 +22,16 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
         for (int y = 0; y < height; ++y) {
             auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
             Ray ray = camera->generate_ray(px, py);
-            auto color = sphere.intersect(ray, hit_record)
-                ? RGBColor {255.0, 0.0, 0.0} 
+            //----- temporary built in shader
+            bool hit = sphere.intersect(ray, hit_record);
+            float pt = 1.0/hit_record.t;
+            auto color = hit
+                ? RGBColor {
+                    (pt * 255), 
+                    (pt * 255), 
+                    (pt * 255)
+                } 
+            //-------------------------------
                 : background->find(px, py);
             auto [r, g, b] = std::tuple {color(0), color(1), color(2)};
             this->_buffer->set({x, y}, {
