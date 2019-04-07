@@ -8,11 +8,11 @@ raytracer:
             - [255, 0, 51]
     camera:
         type: orthographic
-        width: 200
-        height: 100
+        width: 400
+        height: 400
         position: [0.0, 0.0, 0.0]
-        target: [0.0, 1.0, -1.0]
+        target: [0.0, 0.0, 1.0]
         up: [0.0, 1.0, 0.0]
-        vpdims: [-1.0, 1.0, 1.0, -1.0]
+        vpdims: [-2.0, 2.0, 2.0, -2.0]
 
 

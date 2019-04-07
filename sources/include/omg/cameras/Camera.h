@@ -42,7 +42,7 @@ class Camera {
         VpDims _vpdims;      /** Virtual plane dimensions */
         int _width;          /** Camera width */
         int _height;         /** Camera height */
-        Vec3 _u, _v, _w;     /** Orthogonal basis */
+        Vec3 _u, _v, _w;     /** Orthonormal basis */
 
     public:
 
@@ -57,7 +57,11 @@ class Camera {
         Camera(int width, int height, const VpDims& vpdims, 
                 const Point3& position, const Vec3& target, const Vec3& up)
             : _width {width}, _height {height}, _vpdims{vpdims}, _position{position}, _target{target}, _up{up}
-        {/*empty*/}
+        {
+            _w = -1.0f * (_target - _position).unit().value();
+            _u = tao::cross(_up, _w).unit().value();
+            _v = tao::cross(_w, _u).unit().value();
+        }
 
         Camera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up)
             : _width {width}, _height {height}, _position{position}, _target{target}, _up{up}
@@ -119,6 +123,15 @@ class Camera {
             auto u = vd.l + (vd.r - vd.l) * (ii + 0.5) / _width;
             auto v = vd.b + (vd.t - vd.b) * (jj + 0.5) / _height;
             return {u, v};
+        }
+
+        /**
+         * Get the associated orthonormal basis.
+         *
+         * @return the orthonormal basis
+         * */
+        inline std::array<Vec3, 3> get_ortho_basis() {
+            return {_u, _v, _w};
         }
 
 };

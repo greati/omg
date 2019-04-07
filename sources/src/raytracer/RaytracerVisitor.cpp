@@ -1,5 +1,6 @@
 #include "omg/raytracer/RaytracerVisitor.h"
 #include "omg/scene/Scene.h"
+#include "omg/objects/Sphere.h"
 #include <iostream>
 
 using namespace omg;
@@ -13,13 +14,17 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
     auto background = scene->get_background();
     this->_buffer = std::move(std::make_unique<Buffer<3>>(width, height));
 
+    Sphere sphere {0.1, Point3{0.0, 0.0, -4.0}};
+
+    Object::HitRecord hit_record;
+
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
-            Ray ray = camera->generate_ray(x / static_cast<float>(width), y / static_cast<float>(height));
-            bool hit = false;
-            auto color = (hit) 
+            auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
+            Ray ray = camera->generate_ray(px, py);
+            auto color = sphere.intersect(ray, hit_record)
                 ? RGBColor {255.0, 0.0, 0.0} 
-                : background->find(x / static_cast<float>(width), y / static_cast<float>(height));
+                : background->find(px, py);
             auto [r, g, b] = std::tuple {color(0), color(1), color(2)};
             this->_buffer->set({x, y}, {
                     static_cast<unsigned char>(r), 
