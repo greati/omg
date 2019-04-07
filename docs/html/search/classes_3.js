@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['imagebackground',['ImageBackground',['../classomg_1_1_image_background.html',1,'omg']]]
+  ['hitrecord',['HitRecord',['../structomg_1_1_object_1_1_hit_record.html',1,'omg::Object']]]
 ];

@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['ucvector',['ucvector',['../structucvector.html',1,'']]],
-  ['unit',['unit',['../classtao_1_1_col.html#ae913e98d4ed12cc7ee1975b2aff07c05',1,'tao::Col::unit()'],['../classtao_1_1_row.html#ae4516ba90753201b2941021dd398172a',1,'tao::Row::unit()']]]
+  ['tao',['tao',['../md__home_vitorgreati_git-repos_omg_sources_extern_tao__r_e_a_d_m_e.html',1,'']]],
+  ['t',['t',['../classtao_1_1_mat.html#a2d900f9207772d4adcaaff6c697a9839',1,'tao::Mat']]],
+  ['tao',['tao',['../namespacetao.html',1,'']]],
+  ['type',['Type',['../class_logger.html#acd39cb578d7a6750c959f2fad38d8db6',1,'Logger']]]
 ];

@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['accept',['accept',['../classomg_1_1_scene.html#a460b3582d6dc72fcaeff4c08d44335d9',1,'omg::Scene::accept()'],['../classomg_1_1_scene_node.html#ad8e1595d15c4b92ab505828a0633a4d9',1,'omg::SceneNode::accept()']]]
+  ['_5fheight',['_height',['../classomg_1_1_camera.html#affc19e62361a5c59785288987f584b4a',1,'omg::Camera']]],
+  ['_5ftarget',['_target',['../classomg_1_1_camera.html#abc759794d898df1a778630f8f1b4d3db',1,'omg::Camera']]],
+  ['_5fu',['_u',['../classomg_1_1_camera.html#a9cc9befcbf8720cc2b602d0e70173f4b',1,'omg::Camera']]],
+  ['_5fup',['_up',['../classomg_1_1_camera.html#a62c7405659621d32e337ffa32567e4ce',1,'omg::Camera']]],
+  ['_5fvpdims',['_vpdims',['../classomg_1_1_camera.html#a5dcef17304c333a64a14f7d551e235af',1,'omg::Camera']]],
+  ['_5fwidth',['_width',['../classomg_1_1_camera.html#aa47802b7a9b765adcb9b8d3d83e48426',1,'omg::Camera']]]
 ];

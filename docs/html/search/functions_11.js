@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['visit',['visit',['../classomg_1_1_visitor.html#af697e96f0f5da7c9b882ae316c81e80c',1,'omg::Visitor::visit()'],['../classomg_1_1_raytracer_visitor.html#ac469c21e8ac5e9a01ca6a58108bc860e',1,'omg::RaytracerVisitor::visit()']]]
+  ['unit',['unit',['../classtao_1_1_col.html#ae913e98d4ed12cc7ee1975b2aff07c05',1,'tao::Col::unit()'],['../classtao_1_1_row.html#ae4516ba90753201b2941021dd398172a',1,'tao::Row::unit()']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['ncols',['ncols',['../classtao_1_1_mat.html#ae13a111423bb288f81a3c2ff132955f7',1,'tao::Mat']]],
-  ['norm',['norm',['../classtao_1_1_col.html#a229cd5a26d1fa4424150329127ca31d5',1,'tao::Col::norm()'],['../classtao_1_1_row.html#af88f032fa3e9ce20f1d16865cbc95c4f',1,'tao::Row::norm()']]],
-  ['nrows',['nrows',['../classtao_1_1_mat.html#a6391b9b7e8b36ceeb341e8bd94952d5c',1,'tao::Mat']]]
+  ['mat',['Mat',['../classtao_1_1_mat.html#a92faf4e75c90d8431fd6f60ef5e33b4a',1,'tao::Mat::Mat()'],['../classtao_1_1_mat.html#a22ea16d2a3e3a1da5eb7de57e5bf02c2',1,'tao::Mat::Mat(int dim)'],['../classtao_1_1_mat.html#a8b2f68a1f5539462e6f4186bc5f8a5c7',1,'tao::Mat::Mat(int rows, int cols)'],['../classtao_1_1_mat.html#a83589751aea3dcecc363068fd540a930',1,'tao::Mat::Mat(int rows, int cols, T val)'],['../classtao_1_1_mat.html#a2c26859cc4b8bf40eb26dd4335f2d3c0',1,'tao::Mat::Mat(const std::initializer_list&lt; std::initializer_list&lt; T &gt;&gt; &amp;elements)'],['../classtao_1_1_mat.html#a74c591cbc3893506d9f97cf9f54e7adf',1,'tao::Mat::Mat(const Mat&lt; T &gt; &amp;)']]]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['background',['Background',['../classomg_1_1_background.html',1,'omg']]],
-  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg::Buffer&lt; N, StoredType &gt;'],['../classomg_1_1_buffer.html#aea5eaa6530d6506d47a4efee72485c42',1,'omg::Buffer::Buffer()']]],
-  ['builder',['Builder',['../classomg_1_1_scene_1_1_builder.html',1,'omg::Scene']]]
+  ['accept',['accept',['../classomg_1_1_scene.html#a460b3582d6dc72fcaeff4c08d44335d9',1,'omg::Scene::accept()'],['../classomg_1_1_scene_node.html#ad8e1595d15c4b92ab505828a0633a4d9',1,'omg::SceneNode::accept()']]]
 ];
