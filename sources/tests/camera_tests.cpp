@@ -9,10 +9,10 @@ namespace {
         omg::OrthoCamera camera {
            200,
            100,
-           {-1.0, 1.0, 1.0, -1.0},
            {0.0, 0.0, 0.0},
            {0.0, 0.0, -1.0},
            {0.0, 1.0, 0.0},
+           {-1.0, 1.0, 1.0, -1.0}
         };
 
         auto [u, v, w] = camera.get_ortho_basis();

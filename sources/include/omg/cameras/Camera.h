@@ -17,12 +17,12 @@ class Camera {
         /**
          * View plane dimensions.
          *  
-         *             t
-         *   ---------------------
+         *  
+         *  l---------------------r
          *  |                     |
-         *l |          0          |r  
+         *  |          0          |  
          *  |                     |
-         *   ---------------------
+         *  t---------------------b
          *             b
          * */
         struct VpDims {
@@ -40,32 +40,35 @@ class Camera {
         Vec3 _target;        /** Camera direction */
         Vec3 _up;            /** Camera up direction */
         VpDims _vpdims;      /** Virtual plane dimensions */
+        float _aspect_ratio;  /** Aspect ratio */
         int _width;          /** Camera width */
         int _height;         /** Camera height */
         Vec3 _u, _v, _w;     /** Orthonormal basis */
 
     public:
 
-        Camera(int width, int height)
-            : _width {width}, _height {height}
-        {/*empty*/}
-
-        Camera(int width, int height, const VpDims& vpdims)
-            : _width {width}, _height {height}, _vpdims {vpdims}
-        {/*empty*/}
-
-        Camera(int width, int height, const VpDims& vpdims, 
-                const Point3& position, const Vec3& target, const Vec3& up)
-            : _width {width}, _height {height}, _vpdims{vpdims}, _position{position}, _target{target}, _up{up}
+        Camera(int width, int height,
+               const Point3& position, const Vec3& target, const Vec3& up, 
+               const VpDims& vpdims,
+               const float aspect_ratio)
+            : Camera {width, height, position, target, up, vpdims}
         {
-            _w = -1.0f * (_target - _position).unit().value();
-            _u = tao::cross(_up, _w).unit().value();
-            _v = tao::cross(_w, _u).unit().value();
+            this->_aspect_ratio = aspect_ratio;
+        }
+
+        Camera(int width, int height,
+               const Point3& position, const Vec3& target, const Vec3& up, 
+               const VpDims& vpdims)
+            : Camera {width, height, position, target, up}
+        {
+            this->_vpdims = vpdims;
         }
 
         Camera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up)
-            : _width {width}, _height {height}, _position{position}, _target{target}, _up{up}
+            : _width {width}, _height {height}, _position {position}, _target {target}, _up {up}
         {
+            this->_aspect_ratio = static_cast<float>(_width) / static_cast<float>(_height);
+
             _w = -1.0f * (_target - _position).unit().value();
             _u = tao::cross(_up, _w).unit().value();
             _v = tao::cross(_w, _u).unit().value();

@@ -67,10 +67,10 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
 
         if (camera_type == "orthographic") {
             return std::make_shared<OrthoCamera>(width, height, 
-                    _vpdims, position, target, up);
+                    position, target, up, _vpdims);
         } else if (camera_type == "perspective") {
             float fdistance = hard_require(camera_node, "fdist").as<float>();
-            return std::make_shared<PerspectiveCamera>(width, height, _vpdims, position, target, up, fdistance);
+            return std::make_shared<PerspectiveCamera>(width, height, position, target, up, _vpdims, fdistance);
         } else {
             throw omg::ParseException("undefined camera type " + camera_type); 
         }

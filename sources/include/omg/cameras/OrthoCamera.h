@@ -13,8 +13,8 @@ class OrthoCamera : public Camera {
 
     public:
 
-        OrthoCamera(int width, int height, const VpDims& vpdims, const Point3& position, const Vec3& target, const Vec3& up)
-            : Camera {width, height, vpdims, position, target, up}
+        OrthoCamera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up, const VpDims& vpdims)
+            : Camera {width, height, position, target, up, vpdims}
         {/*empty*/}
 
 
