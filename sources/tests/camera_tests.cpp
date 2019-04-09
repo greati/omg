@@ -41,6 +41,8 @@ namespace {
                 if (out_orthocamera_samp_300.find(p) != out_orthocamera_samp_300.end()) {
                     omg::Ray r = camera.generate_ray(i/40.0, (29-j)/30.0);
                     auto o = r.get_origin(); 
+                    auto d = r.get_direction(); 
+                    ASSERT_TRUE(d.eq(out_orthocamera_samp_300.find(p)->second.get_direction(), 0.01));
                     ASSERT_TRUE(o.eq(out_orthocamera_samp_300.find(p)->second.get_origin(), 0.01));
                 }
             }
@@ -63,7 +65,9 @@ namespace {
                 auto p = std::pair{j, i};
                 if (out_perspcamera_samp_300.find(p) != out_perspcamera_samp_300.end()) {
                     omg::Ray r = camera.generate_ray(i/40.0, (29-j)/30.0);
+                    auto o = r.get_origin(); 
                     auto d = r.get_direction(); 
+                    ASSERT_TRUE(o.eq(out_perspcamera_samp_300.find(p)->second.get_origin(), 0.01));
                     ASSERT_TRUE(d.eq(out_perspcamera_samp_300.find(p)->second.get_direction(), 0.01));
                 }
             }
