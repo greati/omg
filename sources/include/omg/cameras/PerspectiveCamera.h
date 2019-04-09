@@ -23,10 +23,23 @@ class PerspectiveCamera : public Camera {
             : Camera {width, height, position, target, up, vpdims}, _d {d}
         {/*empty*/}
 
-        PerspectiveCamera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up, float d=1.0, float vaov = 90.0)
+
+        PerspectiveCamera(int width, int height, const Point3& position, const Vec3& target, 
+                const Vec3& up, float aspect_ratio, float d, float vaov)
+            : Camera {width, height, position, target, up, aspect_ratio}, _d {d}, _vaov {vaov}
+        {
+            init(); 
+        }
+
+        PerspectiveCamera(int width, int height, const Point3& position, const Vec3& target, 
+                const Vec3& up, float d, float vaov)
             : Camera {width, height, position, target, up}, _d {d}, _vaov {vaov}
         {
-            float hh = std::tan(M_PI/180.0 * (vaov / 2.0));
+            init();
+        }
+
+        void init() {
+            float hh = std::tan(M_PI/180.0 * (this->_vaov / 2.0));
             float hw = this->_aspect_ratio * hh;
             this->_vpdims.l = -hw;
             this->_vpdims.r = hw;

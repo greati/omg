@@ -73,6 +73,12 @@ class Camera {
             _v = tao::cross(_w, _u).unit().value();
         }
 
+        Camera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up, float aspect_ratio)
+            : Camera {width, height, position, target, up}
+        {
+            this->_aspect_ratio = aspect_ratio;
+        }
+
         /**
          * Produces a ray given an x and y in [0,1].
          *
