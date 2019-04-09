@@ -85,7 +85,7 @@ namespace {
             {0.0, 0.0, -10.0},
             {0.0, 1.0, 1.0},
             1.0,
-            90.0
+            45.0
         };
 
         std::map<std::pair<int, int>, omg::Ray> gtruth =
@@ -128,8 +128,7 @@ namespace {
             omg::Ray r = camera.generate_ray(i/40.0, 0.0/30.0);
             auto d = r.get_direction(); 
             auto p = std::pair{29, i};
-            std::cout << d(0) << " " << d(1) << " " << d(2) << std::endl;
-            ASSERT_TRUE(d == (gtruth.find(p)->second.get_direction()));
+            ASSERT_TRUE(d.eq(gtruth.find(p)->second.get_direction(), 0.01));
         }
     }
 

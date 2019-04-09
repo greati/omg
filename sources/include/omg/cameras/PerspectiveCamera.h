@@ -38,7 +38,7 @@ class PerspectiveCamera : public Camera {
             Point3 origin = _position;
             auto [u, v] = this->compute_u_v(x, y);
             Vec3 direction = -_d * _w + (u * _u) + (v * _v);        
-            return Ray {origin, direction};
+            return Ray {origin, direction.unit().value()};
         }
 };
 };
