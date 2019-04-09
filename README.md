@@ -55,4 +55,4 @@ execute:
     - [x] Size
     - [x] Orthographic
     - [x] Perspective
-    - [ ] Oblique versions of orthographic and perspective
+    - [x] Oblique versions of orthographic and perspective
