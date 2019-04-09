@@ -19,11 +19,10 @@ class Camera {
          *  
          *  
          *  l---------------------r
+         *  |                     |t
+         *  |          o          |  
          *  |                     |
-         *  |          0          |  
-         *  |                     |
-         *  t---------------------b
-         *             b
+         *  ----------------------b
          * */
         struct VpDims {
             float l, r, b, t;
@@ -111,6 +110,12 @@ class Camera {
          * */
         void set_height(int height) { this->_height = height; }
 
+        /**
+         * The aspect ratio.
+         *
+         * @return the aspect ratio
+         * */
+        inline float get_aspect_ratio() const { return this->_aspect_ratio; }
         
         /** 
          * Compute the (u,v) from (i,j), i, j in [0,1]

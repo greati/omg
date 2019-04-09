@@ -7,14 +7,14 @@ raytracer:
             - [255, 255, 51]
             - [255, 0, 51]
     camera:
-        type: orthographic
-        #type: perspective
+        #type: orthographic
+        type: perspective
         fdist: 1.0
         width: 200
-        height: 200
+        height: 100
         position: [0.0, 0.0, 0.0]
-        target: [0.0, 0.0, -1.0]
-        up: [0.0, 1.0, 0.0]
-        vpdims: [-2.0, 2.0, 2.0, -2.0]
+        target: [0.0, 0.0, -10.0]
+        up: [0.0, 1.0, 1.0]
+        vpdims: [-3.0, 3.0, -2.25, 2.25]
 
 

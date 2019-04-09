@@ -70,7 +70,8 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
                     position, target, up, _vpdims);
         } else if (camera_type == "perspective") {
             float fdistance = hard_require(camera_node, "fdist").as<float>();
-            return std::make_shared<PerspectiveCamera>(width, height, position, target, up, _vpdims, fdistance);
+            ///return std::make_shared<PerspectiveCamera>(width, height, position, target, up, _vpdims, fdistance);
+            return std::make_shared<PerspectiveCamera>(width, height, position, target, up, fdistance, 20.0);
         } else {
             throw omg::ParseException("undefined camera type " + camera_type); 
         }
