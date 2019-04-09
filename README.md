@@ -53,5 +53,6 @@ execute:
     - [ ] Texture
 - [ ] Camera
     - [x] Size
-    - [ ] Orthographic
-    - [ ] Perspective
+    - [x] Orthographic
+    - [x] Perspective
+    - [ ] Oblique versions of orthographic and perspective
