@@ -1,0 +1,75 @@
+\hypertarget{classomg_1_1_perspective_camera}{}\section{omg\+::Perspective\+Camera Class Reference}
+\label{classomg_1_1_perspective_camera}\index{omg::PerspectiveCamera@{omg::PerspectiveCamera}}
+
+
+Represents a perspective camera.  
+
+
+
+
+{\ttfamily \#include $<$Perspective\+Camera.\+h$>$}
+
+Inheritance diagram for omg\+::Perspective\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_perspective_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_perspective_camera_a47871acb18140e1fab0a0ebd0396a3ae}\label{classomg_1_1_perspective_camera_a47871acb18140e1fab0a0ebd0396a3ae}} 
+\mbox{\hyperlink{classomg_1_1_perspective_camera_a47871acb18140e1fab0a0ebd0396a3ae}{Perspective\+Camera}} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, const \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \&vpdims, float d=1.\+0)
+\begin{DoxyCompactList}\small\item\em Vertical angle of view. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_perspective_camera_a9148417266fda27d5438ace4ee63f9dd}\label{classomg_1_1_perspective_camera_a9148417266fda27d5438ace4ee63f9dd}} 
+{\bfseries Perspective\+Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, float aspect\+\_\+ratio, float d, float vaov)
+\item 
+\mbox{\Hypertarget{classomg_1_1_perspective_camera_a5c466e416ace786d3a15b40b4edfd365}\label{classomg_1_1_perspective_camera_a5c466e416ace786d3a15b40b4edfd365}} 
+{\bfseries Perspective\+Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, float d, float vaov)
+\item 
+\mbox{\Hypertarget{classomg_1_1_perspective_camera_a98f41e4dc92c2c9beabf7c235f5dd4eb}\label{classomg_1_1_perspective_camera_a98f41e4dc92c2c9beabf7c235f5dd4eb}} 
+void {\bfseries init} ()
+\item 
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} \mbox{\hyperlink{classomg_1_1_perspective_camera_a6d849c2b0768f12aed7b50d3ce87afeb}{generate\+\_\+ray}} (float x, float y) override
+\begin{DoxyCompactList}\small\item\em Produces a ray given an x and y in \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a perspective camera. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_perspective_camera_a6d849c2b0768f12aed7b50d3ce87afeb}\label{classomg_1_1_perspective_camera_a6d849c2b0768f12aed7b50d3ce87afeb}} 
+\index{omg::PerspectiveCamera@{omg::PerspectiveCamera}!generate\_ray@{generate\_ray}}
+\index{generate\_ray@{generate\_ray}!omg::PerspectiveCamera@{omg::PerspectiveCamera}}
+\subsubsection{\texorpdfstring{generate\_ray()}{generate\_ray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_ray}{Ray}} omg\+::\+Perspective\+Camera\+::generate\+\_\+ray (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Produces a ray given an x and y in \mbox{[}0,1\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & column walking \\
+\hline
+{\em y} & row walking \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_camera_aca08c044082cb3573d606a8c851f52fe}{omg\+::\+Camera}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/cameras/Perspective\+Camera.\+h\end{DoxyCompactItemize}

@@ -2,6 +2,7 @@ var searchData=
 [
   ['generate_5fray',['generate_ray',['../classomg_1_1_camera.html#aca08c044082cb3573d606a8c851f52fe',1,'omg::Camera::generate_ray()'],['../classomg_1_1_ortho_camera.html#af5dba96ad9cdf91121093d0c9d72e57f',1,'omg::OrthoCamera::generate_ray()'],['../classomg_1_1_perspective_camera.html#a6d849c2b0768f12aed7b50d3ce87afeb',1,'omg::PerspectiveCamera::generate_ray()']]],
   ['get',['get',['../class_configs.html#a6e7f850ce09a2298daf3634bfc0aba35',1,'Configs']]],
+  ['get_5faspect_5fratio',['get_aspect_ratio',['../classomg_1_1_camera.html#ad9049467f7a5e4a3a089c789243b1463',1,'omg::Camera']]],
   ['get_5fbackground',['get_background',['../classomg_1_1_scene.html#a2eef3b62d9d01b19fb32751942f1fa7c',1,'omg::Scene']]],
   ['get_5fbuffer',['get_buffer',['../classomg_1_1_raytracer_visitor.html#a02b6a31ad96feae340a34be792fa698e',1,'omg::RaytracerVisitor']]],
   ['get_5fcamera',['get_camera',['../classomg_1_1_scene.html#a7f9aac9cd9ea4d984ac2df98ae553967',1,'omg::Scene']]],

@@ -6,6 +6,7 @@ var searchData=
   ['set_5fbackground',['set_background',['../classomg_1_1_scene.html#a66a4d47f99b8cf56d0ffeec665400d56',1,'omg::Scene']]],
   ['set_5fcamera',['set_camera',['../classomg_1_1_scene.html#a07875fddcc199bc2f70b1c20fd294af4',1,'omg::Scene']]],
   ['set_5fheight',['set_height',['../classomg_1_1_camera.html#a75d3baca3bae25365e5d3dddc005676e',1,'omg::Camera']]],
+  ['set_5fplane_5fnormal',['set_plane_normal',['../classomg_1_1_camera.html#a5983a689364dd5c9701e157b4620c2cd',1,'omg::Camera']]],
   ['set_5fwidth',['set_width',['../classomg_1_1_camera.html#a3ef1ff0d4ca0deb6b32b5e08d7dcb159',1,'omg::Camera']]],
   ['solidbackground',['SolidBackground',['../classomg_1_1_solid_background.html',1,'omg']]],
   ['sphere',['Sphere',['../classomg_1_1_sphere.html',1,'omg::Sphere'],['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere()']]],

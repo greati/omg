@@ -65,7 +65,9 @@ void \mbox{\hyperlink{classtao_1_1_mat_a503d508f8f80c64a494f323649f20c55}{reset}
 \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_add01ca6b2275ad6d4fbde98056d73276}{operator $\ast$=}} (const T scalar)
 \begin{DoxyCompactList}\small\item\em Multiply by scalar and assignment. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a2c5e0650cbc59030c4491c439bcd5b28}{operator/=}} (const T scalar)
-\begin{DoxyCompactList}\small\item\em Divide by scalar and assignment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Divide by scalar and assignment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}{eq}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs, float precision=0.\+0001) const
+\begin{DoxyCompactList}\small\item\em Equality comparison with precision indication. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -207,6 +209,29 @@ Performs an operation element-\/wise, modifying the current matrix.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 the resulting matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}\label{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}} 
+\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!eq@{eq}}
+\index{eq@{eq}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\subsubsection{\texorpdfstring{eq()}{eq()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::eq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs,  }\item[{float}]{precision = {\ttfamily 0.0001} }\end{DoxyParamCaption}) const}
+
+
+
+Equality comparison with precision indication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m1} & a matrix \\
+\hline
+{\em m2} & another matrix \\
+\hline
+{\em the} & precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if m1 == m2 according to the precision 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtao_1_1_mat_ae13a111423bb288f81a3c2ff132955f7}\label{classtao_1_1_mat_ae13a111423bb288f81a3c2ff132955f7}} 
 \index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!ncols@{ncols}}
@@ -514,6 +539,9 @@ Copy-\/assignment operator.
 {\em other} & the other \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to a copy 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}\label{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}} 
 \index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}

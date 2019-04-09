@@ -1,0 +1,65 @@
+\hypertarget{classomg_1_1_object}{}\section{omg\+::Object Class Reference}
+\label{classomg_1_1_object}\index{omg::Object@{omg::Object}}
+
+
+Represents an object.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+Inheritance diagram for omg\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_object}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Hit\+Record}}
+\begin{DoxyCompactList}\small\item\em Data regarding object hits by some ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}{intersect}} (\mbox{\hyperlink{classomg_1_1_ray}{Ray}} ray, \mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Object\+::\+Hit\+Record}} \&hit\+\_\+record)=0
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an object. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}\label{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}} 
+\index{omg::Object@{omg::Object}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::Object@{omg::Object}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Object\+::intersect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classomg_1_1_ray}{Ray}}}]{ray,  }\item[{\mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Object\+::\+Hit\+Record}} \&}]{hit\+\_\+record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_sphere_af1c6cd10afe11eeb3c9d6c42722ab039}{omg\+::\+Sphere}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Object.\+h\end{DoxyCompactItemize}

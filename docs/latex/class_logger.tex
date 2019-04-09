@@ -1,0 +1,140 @@
+\hypertarget{class_logger}{}\section{Logger Class Reference}
+\label{class_logger}\index{Logger@{Logger}}
+
+
+An interface for loggers.  
+
+
+
+
+{\ttfamily \#include $<$Logger.\+h$>$}
+
+Inheritance diagram for Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_logger}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_logger_acd39cb578d7a6750c959f2fad38d8db6}\label{class_logger_acd39cb578d7a6750c959f2fad38d8db6}} 
+enum \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Type}} \{ {\bfseries I\+N\+FO} = 0, 
+{\bfseries W\+A\+R\+N\+I\+NG} = 1, 
+{\bfseries E\+R\+R\+OR} = 2, 
+{\bfseries S\+U\+C\+C\+E\+SS} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Types of logs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_logger_a5eb8bf6f6a9111e62a7b2fee03ef7541}{Logger}} (const std\+::string \&prefix)
+\begin{DoxyCompactList}\small\item\em the prefix for the logger \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_logger_a124934c1b2661b229aca0493f7ec5f30}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg) const =0
+\begin{DoxyCompactList}\small\item\em Print a standard string log. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_logger_a9bdd18a8fb9cd19134b9ddf37f74b5bd}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg, int line, int col) const =0
+\begin{DoxyCompactList}\small\item\em Print a log with file location info. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_logger_abe4434e4ae0efd8b41cb2a61458a710d}{label\+\_\+msg\+\_\+type}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type) const =0
+\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_logger_a0ae9b0eba99d9b371b921558a1f92942}\label{class_logger_a0ae9b0eba99d9b371b921558a1f92942}} 
+std\+::string {\bfseries \+\_\+prefix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interface for loggers. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_logger_a5eb8bf6f6a9111e62a7b2fee03ef7541}\label{class_logger_a5eb8bf6f6a9111e62a7b2fee03ef7541}} 
+\index{Logger@{Logger}!Logger@{Logger}}
+\index{Logger@{Logger}!Logger@{Logger}}
+\subsubsection{\texorpdfstring{Logger()}{Logger()}}
+{\footnotesize\ttfamily Logger\+::\+Logger (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the prefix for the logger 
+
+Basic constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_logger_abe4434e4ae0efd8b41cb2a61458a710d}\label{class_logger_abe4434e4ae0efd8b41cb2a61458a710d}} 
+\index{Logger@{Logger}!label\_msg\_type@{label\_msg\_type}}
+\index{label\_msg\_type@{label\_msg\_type}!Logger@{Logger}}
+\subsubsection{\texorpdfstring{label\_msg\_type()}{label\_msg\_type()}}
+{\footnotesize\ttfamily virtual std\+::string Logger\+::label\+\_\+msg\+\_\+type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gives a label for a type of message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type \\
+\hline
+{\em the} & label representing the type \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_standard_logger_a5803969715008363869dfd47326790bb}{Standard\+Logger}}.
+
+\mbox{\Hypertarget{class_logger_a124934c1b2661b229aca0493f7ec5f30}\label{class_logger_a124934c1b2661b229aca0493f7ec5f30}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Logger\+::log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type,  }\item[{const std\+::string \&}]{label,  }\item[{const std\+::string \&}]{msg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print a standard string log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type of the log \\
+\hline
+{\em msg} & the message \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_standard_logger_a11c29fca1b05d7ff331b298e9c91cd81}{Standard\+Logger}}.
+
+\mbox{\Hypertarget{class_logger_a9bdd18a8fb9cd19134b9ddf37f74b5bd}\label{class_logger_a9bdd18a8fb9cd19134b9ddf37f74b5bd}} 
+\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\subsubsection{\texorpdfstring{log()}{log()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Logger\+::log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&}]{type,  }\item[{const std\+::string \&}]{label,  }\item[{const std\+::string \&}]{msg,  }\item[{int}]{line,  }\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print a log with file location info. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the type of the log \\
+\hline
+{\em msg} & the log message \\
+\hline
+{\em line} & the line to where the log refers \\
+\hline
+{\em col} & the col to where the log refers \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_standard_logger_a4e63f888143cf77d576056b626f8de00}{Standard\+Logger}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/logger/Logger.\+h\end{DoxyCompactItemize}

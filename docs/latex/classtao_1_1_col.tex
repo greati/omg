@@ -14,12 +14,12 @@ Inheritance diagram for tao\+::Col$<$ T $>$\+:\begin{figure}[H]
 \mbox{\Hypertarget{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}\label{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}} 
 \mbox{\hyperlink{classtao_1_1_col_af10fd1d477800a898d3c7eea90e5089c}{Col}} (const \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \&colmat)
 \begin{DoxyCompactList}\small\item\em Construct a column vector from an Nx1 matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_col_a6015ff83a28c5289050171e762e174fc}{Col}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&other)
-\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 T \mbox{\hyperlink{classtao_1_1_col_a7d08ac2d077bed978eb783b5fe707a7c}{operator()}} (int i) const
 \begin{DoxyCompactList}\small\item\em Vector read-\/only access operator. \end{DoxyCompactList}\item 
 T \& \mbox{\hyperlink{classtao_1_1_col_ad7f3279e2764f5e1b0762e62517e738a}{operator()}} (int i)
 \begin{DoxyCompactList}\small\item\em Vector reference access operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col_a5c470640270acffdd3a33c9c99fd99ac}{operator-\/}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector difference. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_col_a661dd9512fad58cfbedfdf52ca6806fb}{operator $\ast$}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
 \begin{DoxyCompactList}\small\item\em Vector element-\/wise multiplication. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_col_a9274e5a0efd840c97741d05dca7bd5a2}{operator $\ast$=}} (const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&c2)
@@ -45,7 +45,7 @@ T \mbox{\hyperlink{classtao_1_1_col_a605b320d536f27395162eff375af8514}{dot}} (co
 \mbox{\Hypertarget{classtao_1_1_col_a9133bec2b352e2e139e51e1f9107473d}\label{classtao_1_1_col_a9133bec2b352e2e139e51e1f9107473d}} 
 \index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!Col@{Col}}
 \index{Col@{Col}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
-\subsubsection{\texorpdfstring{Col()}{Col()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Col()}{Col()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_col}{Col}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{components }\end{DoxyParamCaption})}
 
@@ -56,22 +56,6 @@ Construct a column vector from its components.
 
 \begin{DoxyParams}{Parameters}
 {\em components} & the components \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_col_a6015ff83a28c5289050171e762e174fc}\label{classtao_1_1_col_a6015ff83a28c5289050171e762e174fc}} 
-\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!Col@{Col}}
-\index{Col@{Col}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
-\subsubsection{\texorpdfstring{Col()}{Col()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_col}{Col}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
-
-
-
-Copy constructor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em col} & the other \\
 \hline
 \end{DoxyParams}
 
@@ -217,6 +201,25 @@ Vector reference access operator.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 component value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1_col_a5c470640270acffdd3a33c9c99fd99ac}\label{classtao_1_1_col_a5c470640270acffdd3a33c9c99fd99ac}} 
+\index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!tao::Col$<$ T $>$@{tao::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classtao_1_1_col}{Col}}$<$T$>$ \mbox{\hyperlink{classtao_1_1_col}{tao\+::\+Col}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector difference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the difference 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtao_1_1_col_ab51f1d091fdb1b5a6a4199f4253ecfaa}\label{classtao_1_1_col_ab51f1d091fdb1b5a6a4199f4253ecfaa}} 
 \index{tao::Col$<$ T $>$@{tao::Col$<$ T $>$}!operator/=@{operator/=}}

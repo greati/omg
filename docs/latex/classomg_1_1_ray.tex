@@ -1,0 +1,95 @@
+\hypertarget{classomg_1_1_ray}{}\section{omg\+::Ray Class Reference}
+\label{classomg_1_1_ray}\index{omg::Ray@{omg::Ray}}
+
+
+Represents a ray in the raytracer technique.  
+
+
+
+
+{\ttfamily \#include $<$Ray.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classomg_1_1_ray_a7418b3be2225de5510c63781ee5ad3f1}{Ray}} (const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&o, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&d)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \mbox{\hyperlink{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}{operator()}} (float t)
+\begin{DoxyCompactList}\small\item\em Gives the point p of the ray for parameter t, where p = o + d$\ast$t. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}{get\+\_\+origin}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} origin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}{get\+\_\+direction}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a ray in the raytracer technique. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classomg_1_1_ray_a7418b3be2225de5510c63781ee5ad3f1}\label{classomg_1_1_ray_a7418b3be2225de5510c63781ee5ad3f1}} 
+\index{omg::Ray@{omg::Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!omg::Ray@{omg::Ray}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}}
+{\footnotesize\ttfamily omg\+::\+Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&}]{o,  }\item[{const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. 
+
+Basic constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}\label{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}} 
+\index{omg::Ray@{omg::Ray}!get\_direction@{get\_direction}}
+\index{get\_direction@{get\_direction}!omg::Ray@{omg::Ray}}
+\subsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} omg\+::\+Ray\+::get\+\_\+direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. 
+
+\begin{DoxyReturn}{Returns}
+direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}\label{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}} 
+\index{omg::Ray@{omg::Ray}!get\_origin@{get\_origin}}
+\index{get\_origin@{get\_origin}!omg::Ray@{omg::Ray}}
+\subsubsection{\texorpdfstring{get\_origin()}{get\_origin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} omg\+::\+Ray\+::get\+\_\+origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} origin. 
+
+\begin{DoxyReturn}{Returns}
+origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}\label{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}} 
+\index{omg::Ray@{omg::Ray}!operator()@{operator()}}
+\index{operator()@{operator()}!omg::Ray@{omg::Ray}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} omg\+::\+Ray\+::operator() (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gives the point p of the ray for parameter t, where p = o + d$\ast$t. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & real parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the point at o+d$\ast$t 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/raytracer/Ray.\+h\end{DoxyCompactItemize}

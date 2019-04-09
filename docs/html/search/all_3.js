@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['camera',['Camera',['../classomg_1_1_camera.html',1,'omg::Camera'],['../classomg_1_1_camera.html#a6d9365a4e09140f3f9481045796c0fd9',1,'omg::Camera::Camera()']]],
+  ['camera',['Camera',['../classomg_1_1_camera.html',1,'omg::Camera'],['../classomg_1_1_camera.html#a9c62e23a47414cc9838222f69b37ca8f',1,'omg::Camera::Camera()']]],
   ['channels',['channels',['../classomg_1_1_buffer.html#ab52287f39a698ecd026af1ca3e926f8c',1,'omg::Buffer']]],
   ['clear',['clear',['../classomg_1_1_buffer.html#a817affcd52f40b49c3f8e3417747de3d',1,'omg::Buffer']]],
   ['col',['Col',['../classtao_1_1_col.html',1,'tao::Col&lt; T &gt;'],['../classtao_1_1_col.html#a9133bec2b352e2e139e51e1f9107473d',1,'tao::Col::Col(const std::initializer_list&lt; T &gt; &amp;components)'],['../classtao_1_1_col.html#af10fd1d477800a898d3c7eea90e5089c',1,'tao::Col::Col(const tao::Mat&lt; T &gt; &amp;colmat)']]],
