@@ -19,7 +19,7 @@ class OrthoCamera : public Camera {
 
 
         Ray generate_ray(float x, float y) override {
-            Vec3 direction = -1.0f * this->_w;
+            Vec3 direction = this->_plane_normal;
             auto [u, v] = this->compute_u_v(x, y);
             Point3 origin = _position + (u * _u) + (v * _v);
             return Ray {origin, direction};

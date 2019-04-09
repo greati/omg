@@ -71,27 +71,42 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
         auto position = hard_require(camera_node, "position").as<RGBColor>();
         auto up = hard_require(camera_node, "up").as<RGBColor>();
 
+        std::optional<Vec3> view_normal = std::nullopt;
+        if (camera_node["view_normal"]) {
+            view_normal = camera_node["view_normal"].as<RGBColor>(); 
+        }
+
         auto vpdims = parse<Camera::VpDims>(camera_node);
+
+        std::shared_ptr<Camera> camera = nullptr;
 
         if (camera_type == "orthographic") {
             if (vpdims == nullptr)
                 throw omg::ParseException("provide vpdims for ortho camera");
-            return std::make_shared<OrthoCamera>(width, height, 
+            camera = std::make_shared<OrthoCamera>(width, height, 
                     position, target, up, *vpdims);
         } else if (camera_type == "perspective") {
             float fdistance = hard_require(camera_node, "fdist").as<float>();
-            if (vpdims != nullptr)
-                return std::make_shared<PerspectiveCamera>(width, height, position, target, up, *vpdims, fdistance);
-            float vaov = hard_require(camera_node, "v_angle").as<float>();
-            
-            if (camera_node["aspect_ratio"]) {
-                auto aspect_ratio = camera_node["aspect_ratio"].as<float>();
-                return std::make_shared<PerspectiveCamera>(width, height, position, target, up, aspect_ratio, fdistance, vaov);
+            if (vpdims != nullptr) {
+                camera = std::make_shared<PerspectiveCamera>(width, height, position, target, up, *vpdims, fdistance);
+            } else {
+                float vaov = hard_require(camera_node, "v_angle").as<float>();
+                if (camera_node["aspect_ratio"]) {
+                    auto aspect_ratio = camera_node["aspect_ratio"].as<float>();
+                    camera = std::make_shared<PerspectiveCamera>(width, height, position, target, up, aspect_ratio, fdistance, vaov);
+                } else {
+                    camera = std::make_shared<PerspectiveCamera>(width, height, position, target, up, fdistance, vaov);
+                }
             }
-            return std::make_shared<PerspectiveCamera>(width, height, position, target, up, fdistance, vaov);
         } else {
             throw omg::ParseException("undefined camera type " + camera_type); 
         }
+
+        if (view_normal != std::nullopt) {
+            camera->set_plane_normal(view_normal.value());
+        }
+
+        return camera;
     } catch (omg::ParseException & e) {
         throw;
     } catch (YAML::BadConversion & e) {

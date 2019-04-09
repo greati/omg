@@ -43,6 +43,7 @@ class Camera {
         int _width;          /** Camera width */
         int _height;         /** Camera height */
         Vec3 _u, _v, _w;     /** Orthonormal basis */
+        Vec3 _plane_normal;  /** Image plane normal */
 
     public:
 
@@ -71,6 +72,8 @@ class Camera {
             _w = -1.0f * (_target - _position).unit().value();
             _u = tao::cross(_up, _w).unit().value();
             _v = tao::cross(_w, _u).unit().value();
+
+            this->_plane_normal = -1.0f * _w;
         }
 
         Camera(int width, int height, const Point3& position, const Vec3& target, const Vec3& up, float aspect_ratio)
@@ -147,6 +150,13 @@ class Camera {
         inline std::array<Vec3, 3> get_ortho_basis() {
             return {_u, _v, _w};
         }
+
+        /**
+         * Set the image plane normal.
+         *
+         * @param normal the image plane normal
+         * */
+        inline void set_plane_normal(const Vec3& normal) { this->_plane_normal = normal; }
 
 };
 };

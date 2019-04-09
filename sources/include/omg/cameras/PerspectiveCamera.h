@@ -50,7 +50,7 @@ class PerspectiveCamera : public Camera {
         Ray generate_ray(float x, float y) override {
             Point3 origin = _position;
             auto [u, v] = this->compute_u_v(x, y);
-            Vec3 direction = -_d * _w + (u * _u) + (v * _v);        
+            Vec3 direction = _d * this->_plane_normal + (u * _u) + (v * _v);        
             return Ray {origin, direction.unit().value()};
         }
 };
