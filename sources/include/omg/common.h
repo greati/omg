@@ -17,6 +17,9 @@ namespace omg {
     /** Represents a point in 3 dimentions */
     using Point3 = tao::VecF;
 
+    /** Represents a point in 2 dimentions */
+    using Point2 = tao::VecF;
+
     template<int NChannels>
     using PixelValue = std::array<unsigned char, NChannels>;
 

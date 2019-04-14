@@ -1,6 +1,7 @@
 #include "omg/raytracer/RaytracerVisitor.h"
 #include "omg/scene/Scene.h"
 #include "omg/objects/Sphere.h"
+#include "omg/raytracer/SurfaceInteraction.h"
 #include <iostream>
 
 using namespace omg;
@@ -16,7 +17,7 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
 
     Sphere sphere {0.8, Point3{0.0, 0.0, -3.0}};
 
-    Object::HitRecord hit_record;
+    SurfaceInteraction hit_record;
 
     for (int x = 0; x < width; ++x) {
         for (int y = 0; y < height; ++y) {
@@ -24,7 +25,7 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
             Ray ray = camera->generate_ray(px, py);
             //----- temporary built in shader
             bool hit = sphere.intersect(ray, hit_record);
-            float pt = 1.0/hit_record.t;
+            float pt = 1.0/hit_record._t;
             auto color = hit
                 ? RGBColor {
                     (pt * 255), 

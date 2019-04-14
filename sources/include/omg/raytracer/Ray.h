@@ -39,14 +39,14 @@ class Ray {
          *
          * @return origin
          * */
-        inline Vec3 get_origin() { return _o; }
+        inline Vec3 get_origin() const { return _o; }
 
         /**
          * Ray direction
          *
          * @return direction
          * */
-        inline Vec3 get_direction() { return _d; }
+        inline Vec3 get_direction() const { return _d; }
 
 };
 };

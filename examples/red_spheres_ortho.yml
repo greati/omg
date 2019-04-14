@@ -1,0 +1,30 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [18, 10, 143]
+            - [18, 10, 143]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: orthographic
+        position: [0, 0, 0]
+        target: [0, 0, -10.0]
+        up: [0, 1, 1]
+        vpdims: [-3.0, 3.0, -2.25, 2.25]
+        width: 80
+        height: 60
+    scene:
+        objects:
+            - type: sphere
+              label: mysphere1
+              radius: 0.4
+              center: [-1.0, 0.5, -5.0]
+            - type: sphere
+              label: mysphere2
+              radius: 0.4
+              center: [1.0, -0.5, -8.0]
+            - type: sphere
+              label: mysphere3
+              radius: 0.4
+              center: [-1.0, -1.5, -3.5]
