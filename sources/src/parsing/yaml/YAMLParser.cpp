@@ -3,6 +3,8 @@
 #include "omg/backgrounds/SolidBackground.h"
 #include "omg/cameras/OrthoCamera.h"
 #include "omg/cameras/PerspectiveCamera.h"
+#include "omg/objects/Sphere.h"
+#include "omg/objects/Object.h"
 #include <iostream>
 
 using namespace omg;
@@ -23,6 +25,26 @@ struct YAML::convert<RGBColor> {
         return true;
     }
 };
+
+template<>
+std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
+    auto radius = hard_require(node, "radius").as<float>();
+    auto center = hard_require(node, "center").as<RGBColor>();
+    return std::make_shared<Sphere>(radius, center);
+}
+
+template<>
+std::vector<std::shared_ptr<Object>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<Object>> objs;
+
+    for (auto & n : node) {
+        auto type = hard_require(n, "type").as<std::string>();
+        if (type == "sphere")
+            objs.push_back(parse<Sphere>(n));
+    }
+
+    return objs;
+}
 
 template<>
 std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
@@ -118,9 +140,18 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
 
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
+    // context
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
-    auto scene = std::make_shared<Scene>(background, camera);
+    std::vector<std::shared_ptr<Object>> objects;
+    // scene
+    if (node["scene"]) {
+        auto scene_node = node["scene"];
+        if (scene_node["objects"]) {
+            objects = this->parse_list<Object>(scene_node["objects"]);
+        }
+    }
+    auto scene = std::make_shared<Scene>(background, camera, objects);
     return scene;
 }
 

@@ -20,8 +20,17 @@ class YAMLParser : public Parser {
 
     private:
 
+        /**
+         * Parse some node of a specific type.
+         * */
         template<typename NodeType>
         std::shared_ptr<NodeType> parse(const YAML::Node& node); 
+
+        /**
+         * Parse a list of nodes.
+         * */
+        template<typename NodeType>
+        std::vector<std::shared_ptr<NodeType>> parse_list(const YAML::Node& node);
 
         /**
          * Check if a node exists in the current one. If not, throws

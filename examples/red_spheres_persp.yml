@@ -14,8 +14,8 @@ raytracer:
         fdist: 1.0
         v_angle: 65.0
         aspect_ratio: 1.33
-        width: 80
-        height: 60
+        width: 800
+        height: 600
     scene:
         objects:
             - type: sphere

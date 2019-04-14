@@ -4,6 +4,7 @@
 #include "SceneNode.h"
 #include "omg/cameras/Camera.h"
 #include "omg/backgrounds/Background.h"
+#include "omg/objects/Object.h"
 
 namespace omg {
 /**
@@ -17,6 +18,7 @@ class Scene : public SceneNode {
 
         std::shared_ptr<Background> _background;        /** Background reference */
         std::shared_ptr<Camera> _camera;                /** Camera reference */
+        std::vector<std::shared_ptr<Object>> _objects;  /** Scene objects */
 
     public:
 
@@ -29,9 +31,11 @@ class Scene : public SceneNode {
          * Complete scene constructor.
          * */
         Scene(std::shared_ptr<Background> background,
-              std::shared_ptr<Camera> camera)
+              std::shared_ptr<Camera> camera,
+              const decltype(_objects)& objects)
             : _background {background},
-              _camera {camera}
+              _camera {camera},
+              _objects {objects}
         { /* empty */ }
 
         /**
@@ -89,6 +93,8 @@ class Scene : public SceneNode {
          * @param camera the camera
          * */
         inline void set_camera(std::shared_ptr<Camera> camera) { this->_camera = camera; }
+
+        inline const std::vector<std::shared_ptr<Object>>& get_objects() const { return _objects; }
 
         void accept(Visitor& visitor) override {
             visitor.visit(std::shared_ptr<Scene>(this));
