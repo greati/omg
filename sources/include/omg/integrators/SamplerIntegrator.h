@@ -35,23 +35,11 @@ class SamplerIntegrator : public Integrator {
 
             camera->set_film(std::make_unique<Film>(Point2i{width, height}));
 
-            auto objects = scene.get_objects();
-
             for (int x = 0; x < width; ++x) {
                 for (int y = 0; y < height; ++y) {
                     auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
                     Ray ray = camera->generate_ray(px, py);
-                    //----- temporary built in shader
-                    RGBColor color;
-                    for (auto & obj : objects) {
-                        SurfaceInteraction hit_record;
-                        bool hit = obj->intersect(ray, hit_record);
-                        color = hit
-                            ? RGBColor {255, 0, 0}
-                        //-------------------------------
-                        : background->find(px, py);
-                        if (hit) break;
-                    }
+                    RGBColor color = this->li(ray, scene, px, py); // TODO: sampler will make px and py
                     auto [r, g, b] = std::tuple {color(0), color(1), color(2)};
                     camera->get_film()->get_buffer()->set({x, y}, {
                             static_cast<unsigned char>(r), 
@@ -69,10 +57,15 @@ class SamplerIntegrator : public Integrator {
          * @param scene the scene
          * @param sampler pointer to a sampler
          * */
-        void li(const Ray& ray,
+        RGBColor li(const Ray& ray,
                 const Scene& scene,
+                float px = 0.0,
+                float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-        
+            bool hit = scene.intersect(ray);
+            return hit
+                ? RGBColor {255, 0, 0}
+            : scene.get_background()->find(px, py);
         }
 
         /**

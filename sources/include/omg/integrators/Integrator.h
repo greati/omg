@@ -28,9 +28,11 @@ class Integrator {
          * @param scene the scene
          * @param sampler pointer to a sampler
          * */
-        virtual void li(
+        virtual RGBColor li(
                 const Ray& ray,
                 const Scene& scene,
+                float px = 0.0,
+                float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) = 0;
 
         /**

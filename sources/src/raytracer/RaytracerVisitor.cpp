@@ -24,8 +24,8 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
             //----- temporary built in shader
             RGBColor color;
             for (auto & obj : objects) {
-                SurfaceInteraction hit_record;
-                bool hit = obj->intersect(ray, hit_record);
+                //SurfaceInteraction hit_record;
+                bool hit = false;//obj->intersect(ray, hit_record);
                 color = hit
                     ? RGBColor {255, 0, 0}
                 //-------------------------------

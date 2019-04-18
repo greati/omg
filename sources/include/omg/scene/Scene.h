@@ -5,6 +5,7 @@
 #include "omg/cameras/Camera.h"
 #include "omg/backgrounds/Background.h"
 #include "omg/objects/Object.h"
+#include "omg/raytracer/SurfaceInteraction.h"
 
 namespace omg {
 /**
@@ -99,6 +100,29 @@ class Scene : public SceneNode {
         void accept(Visitor& visitor) override {
             visitor.visit(std::shared_ptr<Scene>(this));
         };
+
+        bool intersect(const Ray& ray, SurfaceInteraction*& si) const {
+            //TODO this will change to _objects->intersect(ray, si) when _objetcs become a tree
+            float min_t = -1.0f;
+            auto new_si = std::make_unique<SurfaceInteraction>();
+            for (auto & o : _objects) {
+               if (o->intersect(ray, new_si.get())) {
+                    if (min_t == -1.0f || min_t > new_si->_t) {
+                        min_t = new_si->_t;
+                        si = new_si.get();
+                    }
+               }
+            }
+            return (min_t > -1.0f);
+        }
+
+        bool intersect(const Ray& ray) const {
+            for (auto & o : _objects) 
+                if (o->intersect(ray))
+                    return true;
+            return false;
+        }
+        
 
 };
 };

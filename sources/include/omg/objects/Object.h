@@ -34,7 +34,7 @@ class Object {
          * @param interaction collect information
          * @return if the object intersects with the ray
          * */
-        virtual bool intersect(const Ray& ray, SurfaceInteraction& interaction) = 0;
+        virtual bool intersect(const Ray& ray, SurfaceInteraction* interaction) = 0;
 
         /**
          * Only check if intersection occurred.

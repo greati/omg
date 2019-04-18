@@ -31,7 +31,7 @@ class Sphere : public Object {
          * with a ray.
          *
          * */
-        bool intersect(const Ray& ray, SurfaceInteraction& hit_record) override {
+        bool intersect(const Ray& ray, SurfaceInteraction* hit_record) override {
             auto origin = ray.get_origin();
             auto direction = ray.get_direction();        
 
@@ -46,7 +46,7 @@ class Sphere : public Object {
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
-            hit_record._t = std::min(t1, t2);
+            hit_record->_t = std::min(t1, t2);
 
             return true;
         }
