@@ -16,6 +16,8 @@ class SamplerIntegrator : public Integrator {
 
         std::shared_ptr<Camera> _camera;
 
+        std::shared_ptr<Sampler> _sampler;
+
     public:
 
         /**
@@ -35,6 +37,8 @@ class SamplerIntegrator : public Integrator {
 
             camera->set_film(std::make_unique<Film>(Point2i{width, height}));
 
+            this->preprocess(scene, _sampler.get());
+
             for (int x = 0; x < width; ++x) {
                 for (int y = 0; y < height; ++y) {
                     auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
@@ -47,36 +51,6 @@ class SamplerIntegrator : public Integrator {
                             static_cast<unsigned char>(b)});
                 }
             }
-        }
-
-        /**
-         * Incidence radiance computation for a given ray
-         * acting on a scene.
-         *
-         * @param ray the ray
-         * @param scene the scene
-         * @param sampler pointer to a sampler
-         * */
-        RGBColor li(const Ray& ray,
-                const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) override {
-            bool hit = scene.intersect(ray);
-            return hit
-                ? RGBColor {255, 0, 0}
-            : scene.get_background()->find(px, py);
-        }
-
-        /**
-         * Execute after parsing the scene, to do specific
-         * implementations.
-         *
-         * @param scene the scene
-         * @param sampler a sampler
-         * */
-        void preprocess(const Scene& scene, Sampler& sampler) override { 
-        
         }
 
         inline Camera* get_camera() const { return _camera.get(); }

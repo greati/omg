@@ -42,7 +42,7 @@ class Integrator {
          * @param scene the scene
          * @param sampler a sampler
          * */
-        virtual void preprocess(const Scene& scene, Sampler& sampler) { }
+        virtual void preprocess(const Scene& scene, Sampler* sampler) { }
 
 };
 };

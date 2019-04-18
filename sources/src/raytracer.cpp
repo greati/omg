@@ -3,6 +3,8 @@
 #include "omg/parsing/yaml/YAMLParser.h"
 #include "omg/raytracer/RaytracerVisitor.h"
 #include "omg/integrators/SamplerIntegrator.h"
+#include "omg/integrators/FlatIntegrator.h"
+#include "omg/integrators/DepthIntegrator.h"
 
 int main(int argn, char* args[]) {
 
@@ -40,15 +42,16 @@ int main(int argn, char* args[]) {
 
     omg::logger.log(Logger::Type::INFO, "raytracer", "starting raytracer...");
 
-    omg::SamplerIntegrator integrator;
+    ///std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::FlatIntegrator>();
+    std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::DepthIntegrator>();
 
-    integrator.render(*scene);
+    integrator->render(*scene);
 
     omg::logger.log(Logger::Type::SUCCESS, "raytracer", "scene was raytraced successfully!");
 
     omg::logger.log(Logger::Type::INFO, "saving", "saving the image...");
 
-    auto [w, h] = integrator.get_camera()->get_film()->get_full_resolution();
+    auto [w, h] = integrator->get_camera()->get_film()->get_full_resolution();
 
     Configs<std::string> configs {{
         {netpbm::Options::IMAGE_WIDTH, w},
@@ -61,9 +64,9 @@ int main(int argn, char* args[]) {
 
     auto ppm_printer = std::make_shared<netpbm::NetpbmPrinter<unsigned char>>(configs);
 
-    integrator.get_camera()->get_film()->get_printers().push_back(ppm_printer);
+    integrator->get_camera()->get_film()->get_printers().push_back(ppm_printer);
 
-    integrator.get_camera()->get_film()->write(destination);
+    integrator->get_camera()->get_film()->write(destination);
 
     omg::logger.log(Logger::Type::SUCCESS, "saving", "image saved successfully in " + destination);
 
