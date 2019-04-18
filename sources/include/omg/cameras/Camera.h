@@ -3,6 +3,7 @@
 
 #include "omg/raytracer/Ray.h"
 #include "linalg/VecOperations.h"
+#include "omg/cameras/Film.h"
 
 namespace omg {
 /**
@@ -44,6 +45,7 @@ class Camera {
         int _height;         /** Camera height */
         Vec3 _u, _v, _w;     /** Orthonormal basis */
         Vec3 _plane_normal;  /** Image plane normal */
+        std::unique_ptr<Film> _film;    /** Film to display the image */
 
     public:
 
@@ -157,6 +159,21 @@ class Camera {
          * @param normal the image plane normal
          * */
         inline void set_plane_normal(const Vec3& normal) { this->_plane_normal = normal; }
+
+        /**
+         * Set the film.
+         *
+         * @param film a pointer to a film
+         * */
+        inline void set_film(std::unique_ptr<Film> film) 
+        { this->_film = std::move(film); }
+
+        /**
+         * Get the film.
+         *
+         * @return the film
+         * */
+        inline Film* get_film() { return _film.get(); }
 
 };
 };

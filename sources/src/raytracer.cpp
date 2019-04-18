@@ -2,6 +2,7 @@
 #include "printer/NetpbmPrinter.h"
 #include "omg/parsing/yaml/YAMLParser.h"
 #include "omg/raytracer/RaytracerVisitor.h"
+#include "omg/integrators/SamplerIntegrator.h"
 
 int main(int argn, char* args[]) {
 
@@ -39,28 +40,30 @@ int main(int argn, char* args[]) {
 
     omg::logger.log(Logger::Type::INFO, "raytracer", "starting raytracer...");
 
-    omg::RaytracerVisitor raytracer;
+    omg::SamplerIntegrator integrator;
 
-    raytracer.visit(scene);
+    integrator.render(*scene);
 
     omg::logger.log(Logger::Type::SUCCESS, "raytracer", "scene was raytraced successfully!");
 
     omg::logger.log(Logger::Type::INFO, "saving", "saving the image...");
 
-    auto buffer = raytracer.get_buffer();
+    auto [w, h] = integrator.get_camera()->get_film()->get_full_resolution();
 
-    NetpbmPrinter<unsigned char> printer;
-
-    Configs<NetpbmParams> configs {{
-        {NetpbmParams::IMAGE_WIDTH, buffer->width()},
-        {NetpbmParams::IMAGE_HEIGHT, buffer->height()},
-        {NetpbmParams::IMAGE_CHANNELS, buffer->channels()},
-        {NetpbmParams::PBM_TYPE, (int) NetpbmType::PIX_MAP},
-        {NetpbmParams::PBM_ENCODING, (int) NetpbmEncoding::ASCII},
-        {NetpbmParams::MAX_INTENSITY, 255}
+    Configs<std::string> configs {{
+        {netpbm::Options::IMAGE_WIDTH, w},
+        {netpbm::Options::IMAGE_HEIGHT, h},
+        {netpbm::Options::IMAGE_CHANNELS, 3},
+        {netpbm::Options::PBM_TYPE, (int) netpbm::NetpbmType::PIX_MAP},
+        {netpbm::Options::PBM_ENCODING, (int) netpbm::NetpbmEncoding::ASCII},
+        {netpbm::Options::MAX_INTENSITY, 255}
     }};
 
-    printer.print(buffer->data(), configs, destination);
+    auto ppm_printer = std::make_shared<netpbm::NetpbmPrinter<unsigned char>>(configs);
+
+    integrator.get_camera()->get_film()->get_printers().push_back(ppm_printer);
+
+    integrator.get_camera()->get_film()->write(destination);
 
     omg::logger.log(Logger::Type::SUCCESS, "saving", "image saved successfully in " + destination);
 

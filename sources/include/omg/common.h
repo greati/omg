@@ -20,6 +20,8 @@ namespace omg {
     /** Represents a point in 2 dimentions */
     using Point2 = tao::VecF;
 
+    using Point2i = std::pair<int, int>;
+
     template<int NChannels>
     using PixelValue = std::array<unsigned char, NChannels>;
 

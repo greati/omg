@@ -13,18 +13,27 @@
  *
  * @author Vitor Greati
  * */
-template<typename T, typename ConfigKeyType = std::string>
+template<typename T>
 class Printer {
 
+    protected:
+
+        Configs<std::string> _configs;
+
     public:
+
+
+        Printer() {}
+
+        Printer(const decltype(_configs) & configs) : _configs {configs} { /** empty */}
 
         /**
          * Print the formatted data into the std output.
          *
          * @param data the data
          * */
-        inline void print(const T* data, const Configs<ConfigKeyType> & configs) { 
-            std::cout << convert(data, configs); 
+        inline void print(const T* data) { 
+            std::cout << convert(data, _configs); 
         }
 
         /**
@@ -35,12 +44,11 @@ class Printer {
          * */
         inline void print(
                 const T* data,
-                const Configs<ConfigKeyType> & configs,
                 const std::string & dest) {
             std::ofstream os;
             os.open(dest);
             if (os.is_open()) {
-                os << convert(data, configs);
+                os << convert(data);
                 os.close();
             } else {
                 throw std::logic_error("failed to open the file " + dest);
@@ -48,7 +56,6 @@ class Printer {
         }
 
     protected:
-
 
         /**
          * Convert the data array into a string representation.
@@ -59,8 +66,9 @@ class Printer {
          * @return string representation of that data
          * */
         virtual std::string convert(
-                const T* data,
-                const Configs<ConfigKeyType> & configs) const = 0;
+                const T* data) const = 0;
+
+        virtual void validate(const Configs<std::string>& configs) const {}
 
 };
 
