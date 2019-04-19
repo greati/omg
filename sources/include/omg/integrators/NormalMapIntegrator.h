@@ -30,13 +30,13 @@ class NormalMapIntegrator : public SamplerIntegrator {
                 float px = 0.0,
                 float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-            SurfaceInteraction* si = new SurfaceInteraction();
-            if (scene.intersect(ray, si)) {
+            auto si = std::make_unique<SurfaceInteraction>();
+            if (scene.intersect(ray, si.get())) {
                 Vec3 normal = (si->_n).unit().value();
-                auto r = (normal(0) + 1.0) / 2.0;
-                auto g = (normal(1) + 1.0) / 2.0;
-                auto b = (normal(2) + 1.0) / 2.0;
-                return RGBColor {r * 255, g * 255, b * 255};
+                auto r = (normal(0) + 1.0f) / 2.0f;
+                auto g = (normal(1) + 1.0f) / 2.0f;
+                auto b = (normal(2) + 1.0f) / 2.0f;
+                return RGBColor {r * 255.0f, g * 255.0f, b * 255.0f};
             } else {
                 return scene.get_background()->find(px, py);
             }
