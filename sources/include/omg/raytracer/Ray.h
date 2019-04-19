@@ -32,7 +32,7 @@ class Ray {
          * @param t real parameter
          * @return the point at o+d*t
          * */
-        inline Point3 operator()(float t) { return _o + _d * t; }
+        inline Point3 operator()(float t) const { return _o + _d * t; }
 
         /**
          * Ray origin

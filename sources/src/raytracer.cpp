@@ -5,6 +5,7 @@
 #include "omg/integrators/SamplerIntegrator.h"
 #include "omg/integrators/FlatIntegrator.h"
 #include "omg/integrators/DepthIntegrator.h"
+#include "omg/integrators/NormalMapIntegrator.h"
 
 int main(int argn, char* args[]) {
 
@@ -43,7 +44,8 @@ int main(int argn, char* args[]) {
     omg::logger.log(Logger::Type::INFO, "raytracer", "starting raytracer...");
 
     ///std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::FlatIntegrator>();
-    std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::DepthIntegrator>();
+    //std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::DepthIntegrator>();
+    std::shared_ptr<omg::SamplerIntegrator> integrator = std::make_shared<omg::NormalMapIntegrator>();
 
     integrator->render(*scene);
 

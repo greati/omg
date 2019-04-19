@@ -101,18 +101,20 @@ class Scene : public SceneNode {
             visitor.visit(std::shared_ptr<Scene>(this));
         };
 
-        bool intersect(const Ray& ray, SurfaceInteraction*& si) const {
+        bool intersect(const Ray& ray, SurfaceInteraction* si) const {
             //TODO this will change to _objects->intersect(ray, si) when _objetcs become a tree
             float min_t = -1.0f;
-            auto new_si = std::make_unique<SurfaceInteraction>();
+            Object * obj = nullptr;
             for (auto & o : _objects) {
-               if (o->intersect(ray, new_si.get())) {
-                    if (min_t == -1.0f || min_t > new_si->_t) {
-                        min_t = new_si->_t;
-                        si = new_si.get();
+               if (o->intersect(ray, si)) {
+                    if (min_t == -1.0f || min_t > si->_t) {
+                        min_t = si->_t;
+                        obj = o.get();
                     }
                }
             }
+            if (obj != nullptr)
+                obj->intersect(ray, si);
             return (min_t > -1.0f);
         }
 

@@ -41,7 +41,8 @@ class DepthIntegrator : public SamplerIntegrator {
                 float chann_t = 255 - t_norm * 255.0;
                 return RGBColor {chann_t, chann_t, chann_t};
             } else {
-                return scene.get_background()->find(px, py);
+                return RGBColor {0, 0, 0};
+                //return scene.get_background()->find(px, py);
             }
         }
 
