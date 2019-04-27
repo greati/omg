@@ -2,7 +2,7 @@
 #define __CAMERA__
 
 #include "omg/raytracer/Ray.h"
-#include "linalg/VecOperations.h"
+#include "tao/core.h"
 #include "omg/cameras/Film.h"
 
 namespace omg {
@@ -71,9 +71,9 @@ class Camera {
         {
             this->_aspect_ratio = static_cast<float>(_width) / static_cast<float>(_height);
 
-            _w = -1.0f * (_target - _position).unit().value();
-            _u = tao::cross(_up, _w).unit().value();
-            _v = tao::cross(_w, _u).unit().value();
+            _w = -1.0f * tao::unitize(_target - _position);
+            _u = tao::unitize(tao::cross(_up, _w));
+            _v = tao::unitize(tao::cross(_w, _u));
 
             this->_plane_normal = -1.0f * _w;
         }

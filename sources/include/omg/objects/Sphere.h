@@ -35,9 +35,9 @@ class Sphere : public Object {
             auto origin = ray.get_origin();
             auto direction = ray.get_direction();        
 
-            auto A = direction.dot(direction);
-            auto B = 2.0f * (origin - _center).dot(direction);
-            auto C = (origin - _center).dot(origin - _center) - (_radius * _radius);
+            auto A = tao::dot(direction, direction);
+            auto B = 2.0f * tao::dot(origin - _center, direction);
+            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 
@@ -59,9 +59,9 @@ class Sphere : public Object {
             auto origin = ray.get_origin();
             auto direction = ray.get_direction();        
 
-            auto A = direction.dot(direction);
-            auto B = 2.0f * (origin - _center).dot(direction);
-            auto C = (origin - _center).dot(origin - _center) - (_radius * _radius);
+            auto A = tao::dot(direction, direction);
+            auto B = 2.0f * tao::dot(origin - _center, direction);
+            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 
