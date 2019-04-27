@@ -7,8 +7,7 @@
 
 namespace omg {
 /**
- * An integrator that only returns a solid color
- * for a object.
+ * An integrator based on depth.
  *
  * @author Vitor Greati
  * */
@@ -16,10 +15,20 @@ class DepthIntegrator : public SamplerIntegrator {
 
     private:
 
-        float tMax = std::numeric_limits<float>::min();
-        float tMin = 1.0;
+        float _tMax = std::numeric_limits<float>::min();
+        float _tMin = 1.0;
+
+        bool _fixed_t = false;
 
     public:
+
+        DepthIntegrator(int spp = 1) : SamplerIntegrator {spp} {
+            this->_suffix = "_depth";
+        }
+
+        DepthIntegrator(float tMin, float tMax, int spp = 1) : SamplerIntegrator {spp}, _tMin {tMin}, _tMax {tMax}, _fixed_t {true} {
+            this->_suffix = "_depth";
+        }
 
         /**
          * Incidence radiance computation for a given ray
@@ -34,22 +43,23 @@ class DepthIntegrator : public SamplerIntegrator {
                 float px = 0.0,
                 float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-            SurfaceInteraction* si;
-            if (scene.intersect(ray, si)) {
-                auto t = si->_t;
-                float t_norm = (t - tMin)/(tMax - tMin); 
-                float chann_t = 255 - t_norm * 255.0;
+            std::shared_ptr<SurfaceInteraction> si = std::make_shared<SurfaceInteraction>();
+            if (scene.intersect(ray, si.get())) {
+                //auto t = si->_t;
+                //float t_norm = (t - _tMin)/(_tMax - _tMin); 
+                //float chann_t = 255 - t_norm * 255.0;
+                float chann_t = 255;
                 return RGBColor {chann_t, chann_t, chann_t};
             } else {
-                return RGBColor {0, 0, 0};
-                //return scene.get_background()->find(px, py);
+                return scene.get_background()->find(px, py);
             }
         }
 
         void preprocess(const Scene& scene, Sampler* sampler) override {
-            auto camera = scene.get_camera();
 
-            this->_camera = camera;
+            if (_fixed_t) return;
+
+            auto camera = scene.get_camera();
 
             auto width = camera->get_width();
             auto height = camera->get_height();
@@ -59,7 +69,7 @@ class DepthIntegrator : public SamplerIntegrator {
                     Ray ray = camera->generate_ray(px, py);
                     SurfaceInteraction* si;
                     if (scene.intersect(ray, si)) {
-                        tMax = std::max(tMax, si->_t); 
+                        _tMax = std::max(_tMax, si->_t); 
                     }
                 }
             }

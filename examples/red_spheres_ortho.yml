@@ -28,3 +28,8 @@ raytracer:
               label: mysphere3
               radius: 0.4
               center: [-1.0, -1.5, -3.5]
+    running:
+        integrators:
+            - type: flat
+            - type: depth
+            - type: normalmap

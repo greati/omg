@@ -35,7 +35,9 @@ class NetpbmPrinter : public Printer<T> {
 
     public:
 
-        NetpbmPrinter(const Configs<std::string>& configs) : Printer<T>(configs) {}
+        NetpbmPrinter(const Configs<std::string>& configs) : Printer<T>(configs) {
+            this->_ext = ".ppm";
+        }
 
         std::map<std::pair<NetpbmType, NetpbmEncoding>, std::string> magic_number_table = {
             {{BIT_MAP, ASCII}, "P1"},

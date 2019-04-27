@@ -17,6 +17,10 @@ class NormalMapIntegrator : public SamplerIntegrator {
 
     public:
 
+        NormalMapIntegrator(int spp = 1) : SamplerIntegrator(spp) {
+            this->_suffix = "_normalmap";
+        }
+
         /**
          * Incidence radiance computation for a given ray
          * acting on a scene.

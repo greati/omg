@@ -11,6 +11,11 @@ namespace omg {
  * */
 class Integrator {
 
+    protected:
+
+        std::shared_ptr<Camera> _camera;
+        std::string _suffix = "";
+
     public:
 
         /**
@@ -43,6 +48,12 @@ class Integrator {
          * @param sampler a sampler
          * */
         virtual void preprocess(const Scene& scene, Sampler* sampler) { }
+
+        inline Camera* get_camera() const { return _camera.get(); }
+
+        inline void set_suffix(const std::string & suff) { this->_suffix = suff; }
+
+        inline std::string get_suffix() { return this->_suffix; }
 
 };
 };

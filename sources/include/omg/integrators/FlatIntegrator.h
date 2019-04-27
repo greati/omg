@@ -15,6 +15,10 @@ class FlatIntegrator : public SamplerIntegrator {
 
     public:
 
+        FlatIntegrator(int spp) : SamplerIntegrator(spp) {
+            this->_suffix = "_flat";
+        }
+
         /**
          * Incidence radiance computation for a given ray
          * acting on a scene.

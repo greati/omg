@@ -14,11 +14,17 @@ class YAMLParser : public Parser {
 
     public:
 
-        std::shared_ptr<Scene> parse_text(const std::string & text) override;
+        void init_from_text(const std::string & text) override;
 
-        std::shared_ptr<Scene> parse_file(const std::string & file_path) override; 
+        void init_from_file(const std::string & file_path) override; 
+
+        std::shared_ptr<Scene> parse_scene() override;
+
+        std::shared_ptr<RaytracerRunningSettings> parse_running_settings() override;
 
     private:
+
+        YAML::Node root;
 
         /**
          * Parse some node of a specific type.

@@ -46,10 +46,12 @@ class Sphere : public Object {
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
-            hit_record->_t = std::min(t1, t2);
-            hit_record->_p = ray(hit_record->_t);
-            hit_record->_n = 2.0f * (hit_record->_p - _center);
-            hit_record->_wo = -1.0f * (direction - origin);
+            if (hit_record != nullptr) {
+                hit_record->_t = std::min(t1, t2);
+                //hit_record->_p = ray(hit_record->_t);
+                //hit_record->_n = 2.0f * (hit_record->_p - _center);
+                //hit_record->_wo = -1.0f * (direction - origin);
+            }
             //hit_record->_object = std::shared_ptr<Sphere>(this);
 
             return true;

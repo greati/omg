@@ -30,3 +30,6 @@ raytracer:
               label: mysphere3
               radius: 0.4
               center: [-1.0, -1.5, -3.5]
+    settings:
+        integrators:
+            - type: depth

@@ -20,6 +20,8 @@ class Printer {
 
         Configs<std::string> _configs;
 
+        std::string _ext;
+
     public:
 
 
@@ -46,7 +48,7 @@ class Printer {
                 const T* data,
                 const std::string & dest) {
             std::ofstream os;
-            os.open(dest);
+            os.open(dest+_ext);
             if (os.is_open()) {
                 os << convert(data);
                 os.close();

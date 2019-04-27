@@ -14,11 +14,13 @@ class SamplerIntegrator : public Integrator {
 
     protected:
 
-        std::shared_ptr<Camera> _camera;
+        int _spp;                            /** samples per pixel */
 
         std::shared_ptr<Sampler> _sampler;
 
     public:
+
+        SamplerIntegrator(int spp = 1) : _spp {spp} {}
 
         /**
          * Render a given scene.
@@ -53,7 +55,6 @@ class SamplerIntegrator : public Integrator {
             }
         }
 
-        inline Camera* get_camera() const { return _camera.get(); }
 
 };
 };

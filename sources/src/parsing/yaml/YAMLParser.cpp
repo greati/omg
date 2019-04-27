@@ -5,17 +5,21 @@
 #include "omg/cameras/PerspectiveCamera.h"
 #include "omg/objects/Sphere.h"
 #include "omg/objects/Object.h"
+#include "omg/integrators/Integrator.h"
+#include "omg/integrators/FlatIntegrator.h"
+#include "omg/integrators/NormalMapIntegrator.h"
+#include "omg/integrators/DepthIntegrator.h"
 #include <iostream>
 
 using namespace omg;
 
 template<>
-struct YAML::convert<RGBColor> {
-    static YAML::Node encode(const RGBColor& rhs) {
+struct YAML::convert<Vec3> {
+    static YAML::Node encode(const Vec3& rhs) {
         YAML::Node node;
         return node;
     }
-    static bool decode(const YAML::Node& node, RGBColor & rgbColor) {
+    static bool decode(const YAML::Node& node, Vec3 & rgbColor) {
         if (!node.IsSequence() || node.size() != 3)
             return false;
 
@@ -29,8 +33,18 @@ struct YAML::convert<RGBColor> {
 template<>
 std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
     auto radius = hard_require(node, "radius").as<float>();
-    auto center = hard_require(node, "center").as<RGBColor>();
+    auto center = hard_require(node, "center").as<Vec3>();
     return std::make_shared<Sphere>(radius, center);
+}
+
+
+template<typename NodeType>
+std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<NodeType>> objs;
+    for (auto & n : node) {
+        objs.push_back(parse<NodeType>(n)); 
+    }
+    return objs;
 }
 
 template<>
@@ -47,6 +61,17 @@ std::vector<std::shared_ptr<Object>> YAMLParser::parse_list(const YAML::Node& no
 }
 
 template<>
+std::shared_ptr<RaytracerRunningSettings> YAMLParser::parse(const YAML::Node& node) {
+    auto rt_settings = std::make_shared<RaytracerRunningSettings>();
+    rt_settings->integrators = parse_list<Integrator>(hard_require(node, "integrators"));
+    return rt_settings;
+}
+
+std::shared_ptr<RaytracerRunningSettings> YAMLParser::parse_running_settings() {
+    return parse<RaytracerRunningSettings>(hard_require(root, "settings"));
+}
+
+template<>
 std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
     try {
         auto background_node = hard_require(node, "background");
@@ -54,12 +79,12 @@ std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
         auto background_type = hard_require(background_node, "type").as<std::string>();
 
         if (background_type == "gradient") {
-            auto colors = hard_require(background_node, "colors").as<std::vector<RGBColor>>();
+            auto colors = hard_require(background_node, "colors").as<std::vector<Vec3>>();
             if (colors.size() > 4)
                 omg::logger.log(Logger::Type::WARNING, "parsing", "only first four gradient colors were considered");
             return std::make_shared<GradBilinearBackground>(colors);
         } else if (background_type == "solid") {
-            auto color = hard_require(background_node, "color").as<RGBColor>(); 
+            auto color = hard_require(background_node, "color").as<Vec3>(); 
             return std::make_shared<SolidBackground>(color); 
         } else {
             return nullptr;
@@ -89,13 +114,13 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
         auto camera_type = hard_require(camera_node, "type").as<std::string>();
         int width = hard_require(camera_node, "width").as<int>();
         int height = hard_require(camera_node, "height").as<int>();
-        auto target = hard_require(camera_node, "target").as<RGBColor>();
-        auto position = hard_require(camera_node, "position").as<RGBColor>();
-        auto up = hard_require(camera_node, "up").as<RGBColor>();
+        auto target = hard_require(camera_node, "target").as<Vec3>();
+        auto position = hard_require(camera_node, "position").as<Vec3>();
+        auto up = hard_require(camera_node, "up").as<Vec3>();
 
         std::optional<Vec3> view_normal = std::nullopt;
         if (camera_node["view_normal"]) {
-            view_normal = camera_node["view_normal"].as<RGBColor>(); 
+            view_normal = camera_node["view_normal"].as<Vec3>(); 
         }
 
         auto vpdims = parse<Camera::VpDims>(camera_node);
@@ -137,6 +162,38 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
     return nullptr;
 }
 
+template<>
+std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node) {
+
+    try {
+        auto integrator_type = hard_require(integrator_node, "type").as<std::string>();
+
+        auto spp = integrator_node["spp"] ? integrator_node["spp"].as<int>() : 1;
+    
+        std::shared_ptr<Integrator> integrator = nullptr;
+
+        if (integrator_type == "flat") {
+            integrator = std::make_shared<FlatIntegrator>(spp); 
+        } else if (integrator_type == "depth") {
+            if (integrator_node["near"] && integrator_node["far"]) {
+                auto near = integrator_node["near"].as<float>();
+                auto far = integrator_node["far"].as<float>();
+                integrator = std::make_shared<DepthIntegrator>(near, far, spp); 
+            } else {
+                integrator = std::make_shared<DepthIntegrator>(spp); 
+            }
+        } else if (integrator_type == "normal_map") {
+            integrator = std::make_shared<NormalMapIntegrator>(spp);
+        }
+
+        return integrator;
+
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
+    }
+}
 
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
@@ -155,15 +212,18 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     return scene;
 }
 
-std::shared_ptr<Scene> YAMLParser::parse_text(const std::string & text) {
+void YAMLParser::init_from_text(const std::string & text) {
     YAML::Node root = YAML::Load(text);
-    return this->parse<Scene>(root);
+    this->root = hard_require(root, "raytracer");
 }
 
-std::shared_ptr<Scene> YAMLParser::parse_file(const std::string & file_path) {
+void YAMLParser::init_from_file(const std::string & file_path) {
     YAML::Node root = YAML::LoadFile(file_path);
-    hard_require(root, "raytracer");
-    return this->parse<Scene>(root["raytracer"]);
+    this->root = hard_require(root, "raytracer");
+}
+
+std::shared_ptr<Scene> YAMLParser::parse_scene() {
+    return this->parse<Scene>(root);
 }
 
 YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {

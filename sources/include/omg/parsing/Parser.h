@@ -4,6 +4,7 @@
 #include <memory>
 #include "omg/scene/Scene.h"
 #include "omg/exceptions.h"
+#include "omg/raytracer/RaytracerRunningSettings.h"
 
 namespace omg {
 /**
@@ -20,14 +21,24 @@ class Parser {
          *
          * @param text the text to be parsed
          * */
-        virtual std::shared_ptr<Scene> parse_text(const std::string & text) = 0;
+        virtual void init_from_text(const std::string & text) = 0;
 
         /**
          * Parse a text from a file.
          *
          * @param file_path the file path
          * */
-        virtual std::shared_ptr<Scene> parse_file(const std::string & file_path) = 0; 
+        virtual void init_from_file(const std::string & file_path) = 0; 
+
+        /**
+         * Parse a scene.
+         * */
+        virtual std::shared_ptr<Scene> parse_scene() = 0;
+
+        /**
+         * Parse the running settings.
+         * */
+        virtual std::shared_ptr<RaytracerRunningSettings> parse_running_settings() = 0;
 
 };
 };
