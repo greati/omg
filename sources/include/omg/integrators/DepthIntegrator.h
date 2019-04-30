@@ -43,12 +43,12 @@ class DepthIntegrator : public SamplerIntegrator {
                 float px = 0.0,
                 float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-            std::shared_ptr<SurfaceInteraction> si = std::make_shared<SurfaceInteraction>();
-            if (scene.intersect(ray, si.get())) {
-                //auto t = si->_t;
-                //float t_norm = (t - _tMin)/(_tMax - _tMin); 
-                //float chann_t = 255 - t_norm * 255.0;
-                float chann_t = 255;
+            //std::shared_ptr<SurfaceInteraction> si = std::make_shared<SurfaceInteraction>();
+	    SurfaceInteraction si;
+            if (scene.intersect(ray, &si)) {
+                auto t = si._t;
+                float t_norm = (t - _tMin)/(_tMax - _tMin); 
+                float chann_t = 255 - t_norm * 255.0;
                 return RGBColor {chann_t, chann_t, chann_t};
             } else {
                 return scene.get_background()->find(px, py);
