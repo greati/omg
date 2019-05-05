@@ -7,7 +7,7 @@
 using namespace omg;
 
 void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
-
+/*
     auto camera = scene->get_camera();
     auto width = camera->get_width();
     auto height = camera->get_height();
@@ -24,8 +24,8 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
             //----- temporary built in shader
             RGBColor color;
             for (auto & obj : objects) {
-                SurfaceInteraction hit_record;
-                bool hit = obj->intersect(ray, hit_record);
+                //SurfaceInteraction hit_record;
+                bool hit = false;//obj->intersect(ray, hit_record);
                 color = hit
                     ? RGBColor {255, 0, 0}
                 //-------------------------------
@@ -38,5 +38,5 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
                     static_cast<unsigned char>(g), 
                     static_cast<unsigned char>(b)});
         }
-    }
+    }*/
 }

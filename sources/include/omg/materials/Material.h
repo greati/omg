@@ -1,6 +1,7 @@
 #ifndef _MATERIAL_
 #define _MATERIAL_
 
+namespace omg {
 /**
  * Define an object material.
  *
@@ -8,7 +9,9 @@
  * */
 class Material {
 
+    public:
+        virtual ~Material() {}
 
 };
-
+};
 #endif

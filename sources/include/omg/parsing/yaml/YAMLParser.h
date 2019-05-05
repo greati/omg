@@ -3,6 +3,7 @@
 
 #include "omg/parsing/Parser.h"
 #include "yaml-cpp/yaml.h"
+#include "omg/materials/Material.h"
 
 namespace omg {
 /**
@@ -14,11 +15,19 @@ class YAMLParser : public Parser {
 
     public:
 
-        std::shared_ptr<Scene> parse_text(const std::string & text) override;
+        void init_from_text(const std::string & text) override;
 
-        std::shared_ptr<Scene> parse_file(const std::string & file_path) override; 
+        void init_from_file(const std::string & file_path) override; 
+
+        std::shared_ptr<Scene> parse_scene() override;
+
+        std::shared_ptr<RaytracerRunningSettings> parse_running_settings() override;
 
     private:
+
+        std::map<std::string, std::shared_ptr<Material>> _materials;
+
+        YAML::Node root;
 
         /**
          * Parse some node of a specific type.
@@ -31,6 +40,11 @@ class YAMLParser : public Parser {
          * */
         template<typename NodeType>
         std::vector<std::shared_ptr<NodeType>> parse_list(const YAML::Node& node);
+
+        /**
+         * Parse and store objects.
+         * */
+        void parse_materials(const YAML::Node& node);
 
         /**
          * Check if a node exists in the current one. If not, throws
@@ -50,6 +64,18 @@ class YAMLParser : public Parser {
          * @return if the node exists in the current one
          * */
         bool soft_require(const YAML::Node & curr_node, const std::string& node_name) const;
+
+        template<typename DefType>
+        DefType defaulted_require(const YAML::Node & curr_node, const std::string& node_name, const DefType& def) const;
+
+        /**
+         * Searches a parsed material stored in the materials dictionary.
+         *
+         * @param label the name of the material
+         * @param node in case lookup fail, try to parse a material using this node
+         * @param a pointer to a material
+         * */
+        std::shared_ptr<Material> get_material(const std::string& label);
 
 };
 };

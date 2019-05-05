@@ -23,7 +23,7 @@ class Sphere : public Object {
          * Basic constructor.
          * */
         Sphere(float radius, const Point3& center)
-            : _radius {radius}, _center {center}
+            : Object{}, _radius {radius}, _center {center}
         {/* empty */}
 
         /**
@@ -31,13 +31,13 @@ class Sphere : public Object {
          * with a ray.
          *
          * */
-        bool intersect(const Ray& ray, SurfaceInteraction& hit_record) override {
+        bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
             auto origin = ray.get_origin();
             auto direction = ray.get_direction();        
 
-            auto A = direction.dot(direction);
-            auto B = 2.0f * (origin - _center).dot(direction);
-            auto C = (origin - _center).dot(origin - _center) - (_radius * _radius);
+            auto A = tao::dot(direction, direction);
+            auto B = 2.0f * tao::dot(origin - _center, direction);
+            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 
@@ -46,7 +46,19 @@ class Sphere : public Object {
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
-            hit_record._t = std::min(t1, t2);
+            float tShapeHit = std::min(t1, t2);
+
+            if (tShapeHit > ray.tMax || tShapeHit < 0)
+               return false; 
+
+            *tHit = tShapeHit;
+
+            if (hit_record != nullptr) {
+                hit_record->_t = tShapeHit;
+                hit_record->_p = ray(hit_record->_t);
+                hit_record->_n = 2.0f * (hit_record->_p - _center);
+                hit_record->_wo = -1.0f * (direction - origin);
+            }
 
             return true;
         }
@@ -55,9 +67,9 @@ class Sphere : public Object {
             auto origin = ray.get_origin();
             auto direction = ray.get_direction();        
 
-            auto A = direction.dot(direction);
-            auto B = 2.0f * (origin - _center).dot(direction);
-            auto C = (origin - _center).dot(origin - _center) - (_radius * _radius);
+            auto A = tao::dot(direction, direction);
+            auto B = 2.0f * tao::dot(origin - _center, direction);
+            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 

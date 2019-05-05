@@ -2,7 +2,8 @@
 #define __CAMERA__
 
 #include "omg/raytracer/Ray.h"
-#include "linalg/VecOperations.h"
+#include "tao/core.h"
+#include "omg/cameras/Film.h"
 
 namespace omg {
 /**
@@ -44,6 +45,7 @@ class Camera {
         int _height;         /** Camera height */
         Vec3 _u, _v, _w;     /** Orthonormal basis */
         Vec3 _plane_normal;  /** Image plane normal */
+        std::unique_ptr<Film> _film;    /** Film to display the image */
 
     public:
 
@@ -69,9 +71,9 @@ class Camera {
         {
             this->_aspect_ratio = static_cast<float>(_width) / static_cast<float>(_height);
 
-            _w = -1.0f * (_target - _position).unit().value();
-            _u = tao::cross(_up, _w).unit().value();
-            _v = tao::cross(_w, _u).unit().value();
+            _w = -1.0f * tao::unitize(_target - _position);
+            _u = tao::unitize(tao::cross(_up, _w));
+            _v = tao::unitize(tao::cross(_w, _u));
 
             this->_plane_normal = -1.0f * _w;
         }
@@ -157,6 +159,21 @@ class Camera {
          * @param normal the image plane normal
          * */
         inline void set_plane_normal(const Vec3& normal) { this->_plane_normal = normal; }
+
+        /**
+         * Set the film.
+         *
+         * @param film a pointer to a film
+         * */
+        inline void set_film(std::unique_ptr<Film> film) 
+        { this->_film = std::move(film); }
+
+        /**
+         * Get the film.
+         *
+         * @return the film
+         * */
+        inline Film* get_film() { return _film.get(); }
 
 };
 };

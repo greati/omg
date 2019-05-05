@@ -8,37 +8,47 @@ raytracer:
             - [153, 204, 255]
     camera:
         type: perspective
-        position: [0, 0, 0]
+        position: [0, 0, 2]
         target: [0, 0, -10.0]
         up: [0, 1, 1]
         fdist: 1.0
         v_angle: 65.0
-        aspect_ratio: 1.33
         width: 800
         height: 600
     scene:
         objects:
             - type: sphere
-              label: mysphere1
+              label: sphere1
               radius: 0.4
               center: [-1.0, 0.5, -5.0]
-              material: redish
+              material: green
             - type: sphere
-              label: mysphere2
+              label: sphere2
               radius: 0.4
               center: [1.0, -0.5, -8.0]
-              material: redish
+              material: green
             - type: sphere
-              label: mysphere3
+              label: sphere3
               radius: 0.4
               center: [-1.0, -1.5, -3.5]
-              material: redish
+              material: gold
+            - type: sphere
+              label: sphere4
+              radius: 1.0
+              center: [7.0, 1.5, -10.0]
+              material: pink
         materials:
             - type: flat
-              label: redish
-              color: [255, 0, 100]
+              label: gold
+              color: [236, 124, 17]
+            - type: flat
+              label: green
+              color: [42, 201, 51]
+            - type: flat
+              label: pink
+              color: [253, 153, 253]
     settings:
         integrators:
             - type: depth
-            - type: normal_map
-            - type: flat
+              near_color: [0, 0, 0]
+              far_color: [255, 255, 255]

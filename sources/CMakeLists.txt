@@ -55,7 +55,7 @@ add_executable(raytracer
     src/parsing/yaml/YAMLParser.cpp 
     src/raytracer/RaytracerVisitor.cpp)
 target_link_libraries(raytracer PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
-target_include_directories(raytracer PUBLIC include PUBLIC extern/tao/sources/include)
+target_include_directories(raytracer PUBLIC include PUBLIC extern/tao/sources/include PUBLIC ${yamlcpp_SOURCE_DIR}/include)
 
 # submodules
 # ----------------------------------------#

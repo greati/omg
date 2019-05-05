@@ -51,7 +51,7 @@ class PerspectiveCamera : public Camera {
             Point3 origin = _position;
             auto [u, v] = this->compute_u_v(x, y);
             Vec3 direction = _d * this->_plane_normal + (u * _u) + (v * _v);        
-            return Ray {origin, direction.unit().value()};
+            return Ray {origin, tao::unitize(direction)};
         }
 };
 };

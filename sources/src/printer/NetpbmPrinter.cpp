@@ -1,19 +1,18 @@
 #include "printer/NetpbmPrinter.h"
 #include <iomanip>
 
-template<typename T, typename ConfigKeyType>
-std::string NetpbmPrinter<T, ConfigKeyType>::convert(
-        const T* data, 
-        const Configs<ConfigKeyType> & configs) const {
+using namespace netpbm;
 
-    validate(configs);
+template<typename T>
+std::string NetpbmPrinter<T>::convert(
+        const T* data) const {
 
-    NetpbmType type = (NetpbmType) configs.template get<int>(NetpbmParams::PBM_TYPE);
-    NetpbmEncoding encoding = (NetpbmEncoding) configs.template get<int>(NetpbmParams::PBM_ENCODING);
-    auto width = configs.template get<int>(NetpbmParams::IMAGE_WIDTH);
-    auto height = configs.template get<int>(NetpbmParams::IMAGE_HEIGHT);
-    auto channels = configs.template get<int>(NetpbmParams::IMAGE_CHANNELS);
-    auto max_intensity = configs.template get<int>(NetpbmParams::MAX_INTENSITY);
+    NetpbmType type = (NetpbmType) this->_configs.template get<int>(Options::PBM_TYPE);
+    NetpbmEncoding encoding = (NetpbmEncoding) this->_configs.template get<int>(Options::PBM_ENCODING);
+    auto width = this->_configs.template get<int>(Options::IMAGE_WIDTH);
+    auto height = this->_configs.template get<int>(Options::IMAGE_HEIGHT);
+    auto channels = this->_configs.template get<int>(Options::IMAGE_CHANNELS);
+    auto max_intensity = this->_configs.template get<int>(Options::MAX_INTENSITY);
 
     auto magic_number = magic_number_table.at({type, encoding});
 
@@ -31,9 +30,9 @@ std::string NetpbmPrinter<T, ConfigKeyType>::convert(
     return ss.str();
 }
 
-template<typename T, typename ConfigKeyType>
-void NetpbmPrinter<T, ConfigKeyType>::validate(const Configs<ConfigKeyType> & configs) const {
+template<typename T>
+void NetpbmPrinter<T>::validate(const Configs<>& configs) const {
     
 }
 
-template class NetpbmPrinter<unsigned char, NetpbmParams>;
+template class NetpbmPrinter<unsigned char>;

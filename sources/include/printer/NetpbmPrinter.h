@@ -3,14 +3,7 @@
 
 #include "Printer.h"
 
-enum class NetpbmParams {
-    IMAGE_WIDTH = 0,
-    IMAGE_HEIGHT = 1,
-    IMAGE_CHANNELS = 2,
-    PBM_TYPE = 3,
-    PBM_ENCODING = 4,
-    MAX_INTENSITY = 5
-};
+namespace netpbm {
 
 enum NetpbmType {
     BIT_MAP = 0,
@@ -23,15 +16,28 @@ enum NetpbmEncoding {
     BINARY = 1
 };
 
+struct Options {
+   inline static const std::string IMAGE_WIDTH = "width";
+   inline static const std::string IMAGE_HEIGHT = "height";
+   inline static const std::string IMAGE_CHANNELS = "channels";
+   inline static const std::string PBM_TYPE = "pbm_type";
+   inline static const std::string PBM_ENCODING = "pbm_encoding";
+   inline static const std::string MAX_INTENSITY = "max_intensity";
+};
+
 /**
  * A printer for the netpbm format.
  * 
  * @author Vitor Greati
  * */
-template<typename T, typename ConfigKeyType = NetpbmParams>
-class NetpbmPrinter : public Printer<T, ConfigKeyType> {
+template<typename T>
+class NetpbmPrinter : public Printer<T> {
 
     public:
+
+        NetpbmPrinter(const Configs<std::string>& configs) : Printer<T>(configs) {
+            this->_ext = ".ppm";
+        }
 
         std::map<std::pair<NetpbmType, NetpbmEncoding>, std::string> magic_number_table = {
             {{BIT_MAP, ASCII}, "P1"},
@@ -50,19 +56,10 @@ class NetpbmPrinter : public Printer<T, ConfigKeyType> {
          * @param data data array
          * @return string representation of that data
          * */
-        std::string convert(const T* data, const Configs<ConfigKeyType> & configs) const override;
+        std::string convert(const T* data) const override;
 
-    private:
-
-        /**
-         * Validate configuration options.
-         *
-         * @param config the configuration
-         * */
-        void validate(const Configs<ConfigKeyType> & params) const;
+        void validate(const Configs<>& configs) const override;
 
 };
-
-template class Configs<NetpbmParams>;
-
+};
 #endif

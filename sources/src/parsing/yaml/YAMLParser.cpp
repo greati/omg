@@ -5,17 +5,24 @@
 #include "omg/cameras/PerspectiveCamera.h"
 #include "omg/objects/Sphere.h"
 #include "omg/objects/Object.h"
+#include "omg/integrators/Integrator.h"
+#include "omg/integrators/FlatIntegrator.h"
+#include "omg/integrators/NormalMapIntegrator.h"
+#include "omg/integrators/DepthIntegrator.h"
+#include "omg/materials/Material.h"
+#include "omg/materials/FlatMaterial.h"
+#include "omg/objects/GeometricPrimitive.h"
 #include <iostream>
 
 using namespace omg;
 
 template<>
-struct YAML::convert<RGBColor> {
-    static YAML::Node encode(const RGBColor& rhs) {
+struct YAML::convert<Vec3> {
+    static YAML::Node encode(const Vec3& rhs) {
         YAML::Node node;
         return node;
     }
-    static bool decode(const YAML::Node& node, RGBColor & rgbColor) {
+    static bool decode(const YAML::Node& node, Vec3 & rgbColor) {
         if (!node.IsSequence() || node.size() != 3)
             return false;
 
@@ -27,23 +34,83 @@ struct YAML::convert<RGBColor> {
 };
 
 template<>
+Vec3 YAMLParser::defaulted_require(const YAML::Node & curr_node, 
+        const std::string& node_name, const Vec3& def) const {
+    if (curr_node[node_name])
+        return curr_node[node_name].as<Vec3>();
+    return def;
+}
+
+template<>
 std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
     auto radius = hard_require(node, "radius").as<float>();
-    auto center = hard_require(node, "center").as<RGBColor>();
+    auto center = hard_require(node, "center").as<Vec3>();
     return std::make_shared<Sphere>(radius, center);
 }
 
 template<>
-std::vector<std::shared_ptr<Object>> YAMLParser::parse_list(const YAML::Node& node) {
-    std::vector<std::shared_ptr<Object>> objs;
+std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
+    auto type = hard_require(node, "type").as<std::string>();
+
+    if (type == "sphere") {
+        auto sphereprim = parse<Sphere>(node);
+        auto material = get_material(hard_require(node, "material").as<std::string>());
+        return std::make_shared<GeometricPrimitive>(sphereprim, material);
+    } 
+
+    throw omg::ParseException("unknown object type " + type);
+}
+
+template<typename NodeType>
+std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<NodeType>> objs;
+    for (auto & n : node) {
+        objs.push_back(parse<NodeType>(n)); 
+    }
+    return objs;
+}
+
+template<>
+std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<Primitive>> objs;
 
     for (auto & n : node) {
-        auto type = hard_require(n, "type").as<std::string>();
-        if (type == "sphere")
-            objs.push_back(parse<Sphere>(n));
+        objs.push_back(parse<Primitive>(n));
     }
 
     return objs;
+}
+
+template<>
+std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
+    auto type = hard_require(node, "type").as<std::string>();
+    if (type == "flat") {
+        RGBColor color = hard_require(node, "color").as<Vec3>();
+        return std::make_shared<FlatMaterial>(color);
+    } 
+    
+    throw omg::ParseException("unknown material type " + type);
+}
+
+std::shared_ptr<Material> YAMLParser::get_material(const std::string& label) {
+    auto it = _materials.find(label);
+    if (it != _materials.end()) {
+        return it->second;
+    } else {
+        throw omg::ParseException("missing material with label " + label);
+    }
+}
+
+
+template<>
+std::shared_ptr<RaytracerRunningSettings> YAMLParser::parse(const YAML::Node& node) {
+    auto rt_settings = std::make_shared<RaytracerRunningSettings>();
+    rt_settings->integrators = parse_list<Integrator>(hard_require(node, "integrators"));
+    return rt_settings;
+}
+
+std::shared_ptr<RaytracerRunningSettings> YAMLParser::parse_running_settings() {
+    return parse<RaytracerRunningSettings>(hard_require(root, "settings"));
 }
 
 template<>
@@ -54,12 +121,12 @@ std::shared_ptr<Background> YAMLParser::parse(const YAML::Node& node) {
         auto background_type = hard_require(background_node, "type").as<std::string>();
 
         if (background_type == "gradient") {
-            auto colors = hard_require(background_node, "colors").as<std::vector<RGBColor>>();
+            auto colors = hard_require(background_node, "colors").as<std::vector<Vec3>>();
             if (colors.size() > 4)
                 omg::logger.log(Logger::Type::WARNING, "parsing", "only first four gradient colors were considered");
             return std::make_shared<GradBilinearBackground>(colors);
         } else if (background_type == "solid") {
-            auto color = hard_require(background_node, "color").as<RGBColor>(); 
+            auto color = hard_require(background_node, "color").as<Vec3>(); 
             return std::make_shared<SolidBackground>(color); 
         } else {
             return nullptr;
@@ -89,13 +156,13 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
         auto camera_type = hard_require(camera_node, "type").as<std::string>();
         int width = hard_require(camera_node, "width").as<int>();
         int height = hard_require(camera_node, "height").as<int>();
-        auto target = hard_require(camera_node, "target").as<RGBColor>();
-        auto position = hard_require(camera_node, "position").as<RGBColor>();
-        auto up = hard_require(camera_node, "up").as<RGBColor>();
+        auto target = hard_require(camera_node, "target").as<Vec3>();
+        auto position = hard_require(camera_node, "position").as<Vec3>();
+        auto up = hard_require(camera_node, "up").as<Vec3>();
 
         std::optional<Vec3> view_normal = std::nullopt;
         if (camera_node["view_normal"]) {
-            view_normal = camera_node["view_normal"].as<RGBColor>(); 
+            view_normal = camera_node["view_normal"].as<Vec3>(); 
         }
 
         auto vpdims = parse<Camera::VpDims>(camera_node);
@@ -137,33 +204,84 @@ std::shared_ptr<Camera> YAMLParser::parse(const YAML::Node& node) {
     return nullptr;
 }
 
+template<>
+std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node) {
+
+    try {
+        auto integrator_type = hard_require(integrator_node, "type").as<std::string>();
+
+        auto spp = integrator_node["spp"] ? integrator_node["spp"].as<int>() : 1;
+    
+        std::shared_ptr<Integrator> integrator = nullptr;
+
+        if (integrator_type == "flat") {
+            integrator = std::make_shared<FlatIntegrator>(spp); 
+        } else if (integrator_type == "depth") {
+            auto near_color = defaulted_require(integrator_node, "near_color", RGBColor {255, 255, 255});
+            auto far_color = defaulted_require(integrator_node, "far_color", RGBColor {0, 0, 0});
+            if (integrator_node["near"] && integrator_node["far"]) {
+                auto near = integrator_node["near"].as<float>();
+                auto far = integrator_node["far"].as<float>();
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, near, far, spp); 
+            } else {
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, spp); 
+            }
+        } else if (integrator_type == "normal_map") {
+            integrator = std::make_shared<NormalMapIntegrator>(spp);
+        } else {
+            throw omg::ParseException("unknown integrator type " + integrator_type);
+        }
+
+        return integrator;
+
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
+    }
+}
+
+void YAMLParser::parse_materials(const YAML::Node& node) {
+   for (auto& n : node) {
+        auto label = hard_require(n, "label").as<std::string>();
+        _materials[label] = parse<Material>(n);
+   } 
+}
 
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     // context
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
-    std::vector<std::shared_ptr<Object>> objects;
+    std::vector<std::shared_ptr<Primitive>> objects;
     // scene
     if (node["scene"]) {
         auto scene_node = node["scene"];
+
+        if (scene_node["materials"]) {
+            parse_materials(scene_node["materials"]);
+        }
+
         if (scene_node["objects"]) {
-            objects = this->parse_list<Object>(scene_node["objects"]);
+            objects = this->parse_list<Primitive>(scene_node["objects"]);
         }
     }
     auto scene = std::make_shared<Scene>(background, camera, objects);
     return scene;
 }
 
-std::shared_ptr<Scene> YAMLParser::parse_text(const std::string & text) {
+void YAMLParser::init_from_text(const std::string & text) {
     YAML::Node root = YAML::Load(text);
-    return this->parse<Scene>(root);
+    this->root = hard_require(root, "raytracer");
 }
 
-std::shared_ptr<Scene> YAMLParser::parse_file(const std::string & file_path) {
+void YAMLParser::init_from_file(const std::string & file_path) {
     YAML::Node root = YAML::LoadFile(file_path);
-    hard_require(root, "raytracer");
-    return this->parse<Scene>(root["raytracer"]);
+    this->root = hard_require(root, "raytracer");
+}
+
+std::shared_ptr<Scene> YAMLParser::parse_scene() {
+    return this->parse<Scene>(root);
 }
 
 YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::string& node_name) const {
@@ -176,3 +294,4 @@ YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::str
 bool YAMLParser::soft_require(const YAML::Node & curr_node, const std::string& node_name) const {
     return curr_node[node_name];
 }
+
