@@ -7,7 +7,7 @@
 using namespace omg;
 
 void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
-
+/*
     auto camera = scene->get_camera();
     auto width = camera->get_width();
     auto height = camera->get_height();
@@ -38,5 +38,5 @@ void RaytracerVisitor::visit(const std::shared_ptr<Scene>& scene) {
                     static_cast<unsigned char>(g), 
                     static_cast<unsigned char>(b)});
         }
-    }
+    }*/
 }

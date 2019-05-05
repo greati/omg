@@ -9,6 +9,9 @@
 #include "omg/integrators/FlatIntegrator.h"
 #include "omg/integrators/NormalMapIntegrator.h"
 #include "omg/integrators/DepthIntegrator.h"
+#include "omg/materials/Material.h"
+#include "omg/materials/FlatMaterial.h"
+#include "omg/objects/GeometricPrimitive.h"
 #include <iostream>
 
 using namespace omg;
@@ -31,12 +34,32 @@ struct YAML::convert<Vec3> {
 };
 
 template<>
+Vec3 YAMLParser::defaulted_require(const YAML::Node & curr_node, 
+        const std::string& node_name, const Vec3& def) const {
+    if (curr_node[node_name])
+        return curr_node[node_name].as<Vec3>();
+    return def;
+}
+
+template<>
 std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
     auto radius = hard_require(node, "radius").as<float>();
     auto center = hard_require(node, "center").as<Vec3>();
     return std::make_shared<Sphere>(radius, center);
 }
 
+template<>
+std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
+    auto type = hard_require(node, "type").as<std::string>();
+
+    if (type == "sphere") {
+        auto sphereprim = parse<Sphere>(node);
+        auto material = get_material(hard_require(node, "material").as<std::string>());
+        return std::make_shared<GeometricPrimitive>(sphereprim, material);
+    } 
+
+    throw omg::ParseException("unknown object type " + type);
+}
 
 template<typename NodeType>
 std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& node) {
@@ -48,17 +71,36 @@ std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& 
 }
 
 template<>
-std::vector<std::shared_ptr<Object>> YAMLParser::parse_list(const YAML::Node& node) {
-    std::vector<std::shared_ptr<Object>> objs;
+std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<Primitive>> objs;
 
     for (auto & n : node) {
-        auto type = hard_require(n, "type").as<std::string>();
-        if (type == "sphere")
-            objs.push_back(parse<Sphere>(n));
+        objs.push_back(parse<Primitive>(n));
     }
 
     return objs;
 }
+
+template<>
+std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
+    auto type = hard_require(node, "type").as<std::string>();
+    if (type == "flat") {
+        RGBColor color = hard_require(node, "color").as<Vec3>();
+        return std::make_shared<FlatMaterial>(color);
+    } 
+    
+    throw omg::ParseException("unknown material type " + type);
+}
+
+std::shared_ptr<Material> YAMLParser::get_material(const std::string& label) {
+    auto it = _materials.find(label);
+    if (it != _materials.end()) {
+        return it->second;
+    } else {
+        throw omg::ParseException("missing material with label " + label);
+    }
+}
+
 
 template<>
 std::shared_ptr<RaytracerRunningSettings> YAMLParser::parse(const YAML::Node& node) {
@@ -175,12 +217,14 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
         if (integrator_type == "flat") {
             integrator = std::make_shared<FlatIntegrator>(spp); 
         } else if (integrator_type == "depth") {
+            auto near_color = defaulted_require(integrator_node, "near_color", RGBColor {255, 255, 255});
+            auto far_color = defaulted_require(integrator_node, "far_color", RGBColor {0, 0, 0});
             if (integrator_node["near"] && integrator_node["far"]) {
                 auto near = integrator_node["near"].as<float>();
                 auto far = integrator_node["far"].as<float>();
-                integrator = std::make_shared<DepthIntegrator>(near, far, spp); 
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, near, far, spp); 
             } else {
-                integrator = std::make_shared<DepthIntegrator>(spp); 
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, spp); 
             }
         } else if (integrator_type == "normal_map") {
             integrator = std::make_shared<NormalMapIntegrator>(spp);
@@ -195,17 +239,29 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
     }
 }
 
+void YAMLParser::parse_materials(const YAML::Node& node) {
+   for (auto& n : node) {
+        auto label = hard_require(n, "label").as<std::string>();
+        _materials[label] = parse<Material>(n);
+   } 
+}
+
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     // context
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
-    std::vector<std::shared_ptr<Object>> objects;
+    std::vector<std::shared_ptr<Primitive>> objects;
     // scene
     if (node["scene"]) {
         auto scene_node = node["scene"];
+
+        if (scene_node["materials"]) {
+            parse_materials(scene_node["materials"]);
+        }
+
         if (scene_node["objects"]) {
-            objects = this->parse_list<Object>(scene_node["objects"]);
+            objects = this->parse_list<Primitive>(scene_node["objects"]);
         }
     }
     auto scene = std::make_shared<Scene>(background, camera, objects);
@@ -236,3 +292,4 @@ YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::str
 bool YAMLParser::soft_require(const YAML::Node & curr_node, const std::string& node_name) const {
     return curr_node[node_name];
 }
+

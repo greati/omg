@@ -2,6 +2,7 @@
 #define __RAY__
 
 #include "omg/common.h"
+#include <limits>
 
 namespace omg {
 /**
@@ -14,10 +15,12 @@ class Ray {
 
     private:
 
-        Point3 _o;       /** Ray origin */
-        Vec3 _d;         /** Ray direction */
+        Point3 _o;                                          /** Ray origin */
+        Vec3 _d;                                            /** Ray direction */
 
     public:
+
+        mutable float tMax {std::numeric_limits<float>::max()};     /** Max distance that the ray achieved */
 
         /**
          * Basic constructor.
