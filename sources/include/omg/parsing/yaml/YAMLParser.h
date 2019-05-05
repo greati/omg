@@ -65,6 +65,9 @@ class YAMLParser : public Parser {
          * */
         bool soft_require(const YAML::Node & curr_node, const std::string& node_name) const;
 
+        template<typename DefType>
+        DefType defaulted_require(const YAML::Node & curr_node, const std::string& node_name, const DefType& def) const;
+
         /**
          * Searches a parsed material stored in the materials dictionary.
          *

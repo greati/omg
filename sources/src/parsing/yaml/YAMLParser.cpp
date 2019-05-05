@@ -33,6 +33,13 @@ struct YAML::convert<Vec3> {
     }
 };
 
+template<>
+Vec3 YAMLParser::defaulted_require(const YAML::Node & curr_node, 
+        const std::string& node_name, const Vec3& def) const {
+    if (curr_node[node_name])
+        return curr_node[node_name].as<Vec3>();
+    return def;
+}
 
 template<>
 std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
@@ -210,12 +217,14 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
         if (integrator_type == "flat") {
             integrator = std::make_shared<FlatIntegrator>(spp); 
         } else if (integrator_type == "depth") {
+            auto near_color = defaulted_require(integrator_node, "near_color", RGBColor {255, 255, 255});
+            auto far_color = defaulted_require(integrator_node, "far_color", RGBColor {0, 0, 0});
             if (integrator_node["near"] && integrator_node["far"]) {
                 auto near = integrator_node["near"].as<float>();
                 auto far = integrator_node["far"].as<float>();
-                integrator = std::make_shared<DepthIntegrator>(near, far, spp); 
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, near, far, spp); 
             } else {
-                integrator = std::make_shared<DepthIntegrator>(spp); 
+                integrator = std::make_shared<DepthIntegrator>(near_color, far_color, spp); 
             }
         } else if (integrator_type == "normal_map") {
             integrator = std::make_shared<NormalMapIntegrator>(spp);
@@ -283,3 +292,4 @@ YAML::Node YAMLParser::hard_require(const YAML::Node & curr_node, const std::str
 bool YAMLParser::soft_require(const YAML::Node & curr_node, const std::string& node_name) const {
     return curr_node[node_name];
 }
+

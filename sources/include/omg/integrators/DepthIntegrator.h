@@ -15,19 +15,26 @@ class DepthIntegrator : public SamplerIntegrator {
 
     private:
 
+        RGBColor _near_color;
+        RGBColor _far_color;
+
         float _tMax = std::numeric_limits<float>::min();
-        float _tMin = 1.0;
+        float _tMin = std::numeric_limits<float>::max();
 
         bool _fixed_t = false;
 
     public:
 
-        DepthIntegrator(int spp = 1) : SamplerIntegrator {spp} {
+        DepthIntegrator(const RGBColor& near,
+                const RGBColor& far, int spp = 1) 
+            : SamplerIntegrator {spp}, _near_color{near}, _far_color{far} {
             this->_suffix = "_depth";
         }
 
-        DepthIntegrator(float tMin, float tMax, int spp = 1) 
-            : SamplerIntegrator {spp}, _tMin {tMin}, _tMax {tMax}, _fixed_t {true} {
+        DepthIntegrator(const RGBColor& near,
+                const RGBColor& far, float tMin, float tMax, int spp = 1) 
+            : SamplerIntegrator {spp}, _near_color{near}, _far_color{far}, 
+            _tMin {tMin}, _tMax {tMax}, _fixed_t {true} {
             this->_suffix = "_depth";
         }
 
@@ -47,12 +54,18 @@ class DepthIntegrator : public SamplerIntegrator {
             SurfaceInteraction si;
             if (scene.intersect(ray, &si)) {
                 auto t = si._t;
-                float t_norm = (t - _tMin)/(_tMax - _tMin); 
-                float chann_t = 255 - t_norm * 255.0;
-                return RGBColor {chann_t, chann_t, chann_t};
+                float t_norm = t;
+                float r = lerp(t_norm, _tMin, _near_color(0), _tMax, _far_color(0));
+                float g = lerp(t_norm, _tMin, _near_color(1), _tMax, _far_color(1));
+                float b = lerp(t_norm, _tMin, _near_color(2), _tMax, _far_color(2));
+                return RGBColor{r, g, b};
             } else {
-                return scene.get_background()->find(px, py);
+                return _far_color;//scene.get_background()->find(px, py);
             }
+        }
+
+        float lerp(float x, float x0, float y0, float x1, float y1) const {
+            return y0 + (y1-y0)/(x1-x0) * (x - x0);
         }
 
         void preprocess(const Scene& scene, Sampler* sampler) override {
@@ -70,6 +83,7 @@ class DepthIntegrator : public SamplerIntegrator {
                     SurfaceInteraction si;
                     if (scene.intersect(ray, &si)) {
                         _tMax = std::max(_tMax, si._t); 
+                        _tMin = std::min(_tMin, si._t);
                     }
                 }
             }

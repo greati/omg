@@ -1,0 +1,47 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [18, 10, 143]
+            - [18, 10, 143]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: orthographic
+        position: [0, 0, 2]
+        target: [0, 0, -10.0]
+        up: [0, 1, 1]
+        vpdims: [-8.0, 8.0, -6.0, 6.0]
+        width: 800
+        height: 600
+    scene:
+        objects:
+            - type: sphere
+              label: mysphere1
+              radius: 0.4
+              center: [-1.0, 0.5, -5.0]
+              material: redish
+            - type: sphere
+              label: mysphere2
+              radius: 0.4
+              center: [1.0, -0.5, -8.0]
+              material: redish
+            - type: sphere
+              label: mysphere3
+              radius: 0.4
+              center: [-1.0, -1.5, -3.5]
+              material: redish
+            - type: sphere
+              label: mysphere4
+              radius: 1.0
+              center: [7.0, 1.5, -10.0]
+              material: redish
+        materials:
+            - type: flat
+              label: redish
+              color: [0, 0, 0]    
+    settings:
+        integrators:
+            - type: depth
+              near_color: [0, 0, 0]
+              far_color: [255, 255, 255]
