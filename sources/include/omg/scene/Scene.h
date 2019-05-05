@@ -4,7 +4,7 @@
 #include "SceneNode.h"
 #include "omg/cameras/Camera.h"
 #include "omg/backgrounds/Background.h"
-#include "omg/objects/Object.h"
+#include "omg/objects/Primitive.h"
 #include "omg/raytracer/SurfaceInteraction.h"
 
 namespace omg {
@@ -19,7 +19,7 @@ class Scene : public SceneNode {
 
         std::shared_ptr<Background> _background;        /** Background reference */
         std::shared_ptr<Camera> _camera;                /** Camera reference */
-        std::vector<std::shared_ptr<Object>> _objects;  /** Scene objects */
+        std::vector<std::shared_ptr<Primitive>> _primitives;  /** Scene objects */
 
     public:
 
@@ -33,10 +33,10 @@ class Scene : public SceneNode {
          * */
         Scene(std::shared_ptr<Background> background,
               std::shared_ptr<Camera> camera,
-              const decltype(_objects)& objects)
+              const decltype(_primitives)& primitives)
             : _background {background},
               _camera {camera},
-              _objects {objects}
+              _primitives {primitives}
         { /* empty */ }
 
         /**
@@ -95,7 +95,7 @@ class Scene : public SceneNode {
          * */
         inline void set_camera(std::shared_ptr<Camera> camera) { this->_camera = camera; }
 
-        inline const std::vector<std::shared_ptr<Object>>& get_objects() const { return _objects; }
+        inline const std::vector<std::shared_ptr<Primitive>>& get_primitives() const { return _primitives; }
 
         void accept(Visitor& visitor) override {
             visitor.visit(std::shared_ptr<Scene>(this));
@@ -104,8 +104,8 @@ class Scene : public SceneNode {
         bool intersect(const Ray& ray, SurfaceInteraction* si) const {
             //TODO this will change to _objects->intersect(ray, si) when _objetcs become a tree
             float min_t = -1.0f;
-            Object * obj = nullptr;
-            for (auto & o : _objects) {
+            Primitive * obj = nullptr;
+            for (auto & o : _primitives) {
                if (o->intersect(ray, si)) {
                     if (min_t == -1.0f || min_t > si->_t) {
                         min_t = si->_t;
@@ -119,7 +119,7 @@ class Scene : public SceneNode {
         }
 
         bool intersect(const Ray& ray) const {
-            for (auto & o : _objects) 
+            for (auto & o : _primitives) 
                 if (o->intersect(ray))
                     return true;
             return false;

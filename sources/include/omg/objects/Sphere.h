@@ -23,7 +23,7 @@ class Sphere : public Object {
          * Basic constructor.
          * */
         Sphere(float radius, const Point3& center)
-            : _radius {radius}, _center {center}
+            : Object{}, _radius {radius}, _center {center}
         {/* empty */}
 
         /**
@@ -48,9 +48,10 @@ class Sphere : public Object {
 
             if (hit_record != nullptr) {
                 hit_record->_t = std::min(t1, t2);
-                //hit_record->_p = ray(hit_record->_t);
-                //hit_record->_n = 2.0f * (hit_record->_p - _center);
-                //hit_record->_wo = -1.0f * (direction - origin);
+                hit_record->_p = ray(hit_record->_t);
+                hit_record->_n = 2.0f * (hit_record->_p - _center);
+                hit_record->_wo = -1.0f * (direction - origin);
+                //hit_record->_primitive = this;
             }
             //hit_record->_object = std::shared_ptr<Sphere>(this);
 

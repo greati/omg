@@ -22,14 +22,22 @@ raytracer:
               label: mysphere1
               radius: 0.4
               center: [-1.0, 0.5, -5.0]
+              material: redish
             - type: sphere
               label: mysphere2
               radius: 0.4
               center: [1.0, -0.5, -8.0]
+              material: redish
             - type: sphere
               label: mysphere3
               radius: 0.4
               center: [-1.0, -1.5, -3.5]
+              material: redish
+        materials:
+            - type: flat
+              label: redish
+              color: [255, 0, 100]
     settings:
         integrators:
-            - type: depth
+            - type: flat
+            - type: normal_map
