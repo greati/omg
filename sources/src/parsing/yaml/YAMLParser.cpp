@@ -228,6 +228,8 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
             }
         } else if (integrator_type == "normal_map") {
             integrator = std::make_shared<NormalMapIntegrator>(spp);
+        } else {
+            throw omg::ParseException("unknown integrator type " + integrator_type);
         }
 
         return integrator;
