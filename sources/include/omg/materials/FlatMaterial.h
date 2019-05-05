@@ -18,7 +18,9 @@ class FlatMaterial : public Material {
 
     public:
 
-        FlatMaterial(const RGBColor& color) : _color {color} {}
+        FlatMaterial(const RGBColor& color) : Material{}, _color {color} {}
+
+        ~FlatMaterial() {}
 
         inline RGBColor kd() const { return _color; }
 

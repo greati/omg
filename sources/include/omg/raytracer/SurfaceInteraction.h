@@ -24,7 +24,7 @@ class SurfaceInteraction {
         float _time;                                        /** Time of contact */
         Point2 _uv;                                         /** Parametric coordinate of hit surface */
         float _t;                                           /** Ray t parameter for which intersection occurred */
-        Primitive *_primitive = nullptr;    /** Pointer to the object */
+        const Primitive *_primitive = nullptr;    /** Pointer to the object */
 
     public:
 

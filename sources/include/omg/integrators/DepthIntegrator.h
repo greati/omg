@@ -26,7 +26,8 @@ class DepthIntegrator : public SamplerIntegrator {
             this->_suffix = "_depth";
         }
 
-        DepthIntegrator(float tMin, float tMax, int spp = 1) : SamplerIntegrator {spp}, _tMin {tMin}, _tMax {tMax}, _fixed_t {true} {
+        DepthIntegrator(float tMin, float tMax, int spp = 1) 
+            : SamplerIntegrator {spp}, _tMin {tMin}, _tMax {tMax}, _fixed_t {true} {
             this->_suffix = "_depth";
         }
 
@@ -43,8 +44,7 @@ class DepthIntegrator : public SamplerIntegrator {
                 float px = 0.0,
                 float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-            //std::shared_ptr<SurfaceInteraction> si = std::make_shared<SurfaceInteraction>();
-	    SurfaceInteraction si;
+            SurfaceInteraction si;
             if (scene.intersect(ray, &si)) {
                 auto t = si._t;
                 float t_norm = (t - _tMin)/(_tMax - _tMin); 
@@ -67,9 +67,9 @@ class DepthIntegrator : public SamplerIntegrator {
                 for (int y = 0; y < height; ++y) {
                     auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
                     Ray ray = camera->generate_ray(px, py);
-                    SurfaceInteraction* si;
-                    if (scene.intersect(ray, si)) {
-                        _tMax = std::max(_tMax, si->_t); 
+                    SurfaceInteraction si;
+                    if (scene.intersect(ray, &si)) {
+                        _tMax = std::max(_tMax, si._t); 
                     }
                 }
             }

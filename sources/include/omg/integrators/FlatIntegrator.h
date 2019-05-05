@@ -2,6 +2,7 @@
 #define _FLAT_INT_
 
 #include "omg/integrators/SamplerIntegrator.h"
+#include "omg/materials/FlatMaterial.h"
 #include "omg/common.h"
 
 namespace omg {
@@ -34,9 +35,12 @@ class FlatIntegrator : public SamplerIntegrator {
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
             SurfaceInteraction si;
             bool hit = scene.intersect(ray, &si);
-            return hit
-                ? RGBColor {255, 0, 0}
-            : scene.get_background()->find(px, py);
+            if (hit) {
+                const FlatMaterial* flat_mat = dynamic_cast<const FlatMaterial*>(si._primitive->get_material());
+                return flat_mat->kd();
+            } else {
+                return scene.get_background()->find(px, py);
+            }
         }
 
 };

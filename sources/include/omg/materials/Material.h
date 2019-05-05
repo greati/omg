@@ -7,6 +7,11 @@ namespace omg {
  *
  * @author Vitor Greati
  * */
-class Material {};
+class Material {
+
+    public:
+        virtual ~Material() {}
+
+};
 };
 #endif

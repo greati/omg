@@ -17,7 +17,7 @@ class Object {
 
         Object() {}
 
-        virtual bool intersect(const Ray& ray, SurfaceInteraction* hit_record) = 0;
+        virtual bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) = 0;
 
         virtual bool intersect(const Ray& ray) = 0;
 };

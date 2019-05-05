@@ -103,19 +103,9 @@ class Scene : public SceneNode {
 
         bool intersect(const Ray& ray, SurfaceInteraction* si) const {
             //TODO this will change to _objects->intersect(ray, si) when _objetcs become a tree
-            float min_t = -1.0f;
-            Primitive * obj = nullptr;
-            for (auto & o : _primitives) {
-               if (o->intersect(ray, si)) {
-                    if (min_t == -1.0f || min_t > si->_t) {
-                        min_t = si->_t;
-                        obj = o.get();
-                    }
-               }
-            }
-            if (obj != nullptr)
-                obj->intersect(ray, si);
-            return (min_t > -1.0f);
+            for (auto & o : _primitives) 
+                o->intersect(ray, si);
+            return (si->_primitive != nullptr);
         }
 
         bool intersect(const Ray& ray) const {

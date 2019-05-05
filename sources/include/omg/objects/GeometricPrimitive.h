@@ -28,7 +28,7 @@ class GeometricPrimitive : public Primitive {
 
         inline Object* get_object() const { return _object.get(); }
 
-        inline Material* get_material() const { return _material.get(); }
+        const Material* get_material() const override { return _material.get(); }
 
         /**
          * Determines if the object intersects
@@ -38,8 +38,15 @@ class GeometricPrimitive : public Primitive {
          * @param interaction collect information
          * @return if the object intersects with the ray
          * */
-        bool intersect(const Ray& ray, SurfaceInteraction* interaction) {
-            return _object->intersect(ray, interaction);
+        bool intersect(const Ray& ray, SurfaceInteraction* interaction) const override {
+            float tHit;
+            
+            if (!_object->intersect(ray, &tHit, interaction))
+                return false;
+
+            ray.tMax = tHit;
+            interaction->_primitive = this;
+            return true;
         }
 
         /**
@@ -48,7 +55,7 @@ class GeometricPrimitive : public Primitive {
          * @param ray the ray
          * @return if intersection occurred
          * */
-        bool intersect(const Ray& ray) {
+        bool intersect(const Ray& ray) const override {
             return _object->intersect(ray); 
         }
 

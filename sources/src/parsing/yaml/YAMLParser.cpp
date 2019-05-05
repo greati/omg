@@ -49,7 +49,9 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         auto sphereprim = parse<Sphere>(node);
         auto material = get_material(hard_require(node, "material").as<std::string>());
         return std::make_shared<GeometricPrimitive>(sphereprim, material);
-    }
+    } 
+
+    throw omg::ParseException("unknown object type " + type);
 }
 
 template<typename NodeType>
@@ -78,7 +80,9 @@ std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
     if (type == "flat") {
         RGBColor color = hard_require(node, "color").as<Vec3>();
         return std::make_shared<FlatMaterial>(color);
-    }    
+    } 
+    
+    throw omg::ParseException("unknown material type " + type);
 }
 
 std::shared_ptr<Material> YAMLParser::get_material(const std::string& label) {

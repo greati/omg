@@ -39,5 +39,6 @@ raytracer:
               color: [255, 0, 100]
     settings:
         integrators:
-            - type: flat
+            - type: depth
             - type: normal_map
+            - type: flat
