@@ -14,6 +14,8 @@
 #include "omg/materials/FlatMaterial.h"
 #include "omg/materials/BlinnMaterial.h"
 #include "omg/objects/GeometricPrimitive.h"
+#include "omg/lights/Light.h"
+#include "omg/lights/PointLight.h"
 #include <iostream>
 
 using namespace omg;
@@ -259,6 +261,32 @@ void YAMLParser::parse_materials(const YAML::Node& node) {
 }
 
 template<>
+std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
+    try {
+        std::string type = hard_require(light_node, "type").as<std::string>();
+
+        std::shared_ptr<Light> light = nullptr;
+
+        if (type == "point") {
+            light = std::make_shared<PointLight>();             
+        } else if (type == "directional") {
+            //TODO 
+        } else if (type == "ambient") {
+            //TODO 
+        } else if (type == "spot") {
+            //TODO 
+        } else {
+            throw omg::ParseException("unknown light type " + type);
+        }
+        return light;
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
+    }
+}
+
+template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     // context
     auto camera = this->parse<Camera>(node);
@@ -270,6 +298,10 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
 
         if (scene_node["materials"]) {
             parse_materials(scene_node["materials"]);
+        }
+
+        if (scene_node["lights"]) {
+            //parse_lights(scene_node["lights"]);
         }
 
         if (scene_node["objects"]) {
