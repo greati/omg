@@ -9,8 +9,10 @@
 #include "omg/integrators/FlatIntegrator.h"
 #include "omg/integrators/NormalMapIntegrator.h"
 #include "omg/integrators/DepthIntegrator.h"
+#include "omg/integrators/BlinnPhongIntegrator.h"
 #include "omg/materials/Material.h"
 #include "omg/materials/FlatMaterial.h"
+#include "omg/materials/BlinnMaterial.h"
 #include "omg/objects/GeometricPrimitive.h"
 #include <iostream>
 
@@ -87,7 +89,13 @@ std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
     if (type == "flat") {
         RGBColor color = hard_require(node, "color").as<Vec3>();
         return std::make_shared<FlatMaterial>(color);
-    } 
+    } else if (type == "blinn") {
+        Vec3 ka = hard_require(node, "ka").as<Vec3>();
+        Vec3 kd = hard_require(node, "kd").as<Vec3>();
+        Vec3 ks = hard_require(node, "ks").as<Vec3>();
+        RealValue glossiness = hard_require(node, "glossiness").as<RealValue>();
+        return std::make_shared<BlinnMaterial>(ka, kd, ks, glossiness);
+    }
     
     throw omg::ParseException("unknown material type " + type);
 }
@@ -228,6 +236,8 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
             }
         } else if (integrator_type == "normal_map") {
             integrator = std::make_shared<NormalMapIntegrator>(spp);
+        } else if (integrator_type == "blinn") {
+            integrator = std::make_shared<BlinnPhongIntegrator>(spp);
         } else {
             throw omg::ParseException("unknown integrator type " + integrator_type);
         }
