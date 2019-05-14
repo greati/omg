@@ -292,6 +292,7 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
     std::vector<std::shared_ptr<Primitive>> objects;
+    std::vector<std::shared_ptr<Light>> lights;
     // scene
     if (node["scene"]) {
         auto scene_node = node["scene"];
@@ -301,14 +302,14 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
         }
 
         if (scene_node["lights"]) {
-            //parse_lights(scene_node["lights"]);
+            lights = this->parse_list<Light>(scene_node["lights"]);
         }
 
         if (scene_node["objects"]) {
             objects = this->parse_list<Primitive>(scene_node["objects"]);
         }
     }
-    auto scene = std::make_shared<Scene>(background, camera, objects);
+    auto scene = std::make_shared<Scene>(background, camera, objects, lights);
     return scene;
 }
 

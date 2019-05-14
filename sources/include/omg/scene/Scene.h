@@ -6,6 +6,7 @@
 #include "omg/backgrounds/Background.h"
 #include "omg/objects/Primitive.h"
 #include "omg/raytracer/SurfaceInteraction.h"
+#include "omg/lights/Light.h"
 
 namespace omg {
 /**
@@ -20,6 +21,7 @@ class Scene : public SceneNode {
         std::shared_ptr<Background> _background;        /** Background reference */
         std::shared_ptr<Camera> _camera;                /** Camera reference */
         std::vector<std::shared_ptr<Primitive>> _primitives;  /** Scene objects */
+        std::vector<std::shared_ptr<Light>> _lights;
 
     public:
 
@@ -33,10 +35,12 @@ class Scene : public SceneNode {
          * */
         Scene(std::shared_ptr<Background> background,
               std::shared_ptr<Camera> camera,
-              const decltype(_primitives)& primitives)
+              const decltype(_primitives)& primitives,
+              const decltype(_lights)& lights)
             : _background {background},
               _camera {camera},
-              _primitives {primitives}
+              _primitives {primitives},
+              _lights {lights}
         { /* empty */ }
 
         /**

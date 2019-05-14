@@ -11,6 +11,9 @@ namespace omg {
  * */
 class Light {
 
+    private:
+
+        Vec3 _intensity;
 };
 
 };
