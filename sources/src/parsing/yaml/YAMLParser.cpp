@@ -267,8 +267,11 @@ std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
 
         std::shared_ptr<Light> light = nullptr;
 
+        auto intensity = hard_require(light_node, "intensity").as<Vec3>();
+
         if (type == "point") {
-            light = std::make_shared<PointLight>();             
+            auto position = hard_require(light_node, "position").as<Vec3>();
+            light = std::make_shared<PointLight>(intensity, position);             
         } else if (type == "directional") {
             //TODO 
         } else if (type == "ambient") {
