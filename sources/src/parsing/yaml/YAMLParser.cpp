@@ -16,6 +16,9 @@
 #include "omg/objects/GeometricPrimitive.h"
 #include "omg/lights/Light.h"
 #include "omg/lights/PointLight.h"
+#include "omg/lights/DirectionalLight.h"
+#include "omg/lights/AmbientLight.h"
+#include "omg/lights/SpotLight.h"
 #include <iostream>
 
 using namespace omg;

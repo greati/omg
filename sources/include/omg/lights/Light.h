@@ -11,7 +11,7 @@ namespace omg {
  * */
 class Light {
 
-    private:
+    protected:
 
         Vec3 _intensity;
 
@@ -19,6 +19,13 @@ class Light {
 
         Light(const Vec3& intensity)
             : _intensity {intensity} { /* empty */ }
+
+        /**
+         * Sample a point on the light source's surface.
+         *
+         * */
+        virtual Vec3 sample_li(const SurfaceInteraction& interaction,
+                Vec3 *wi) const = 0;
 
         /**
          * Returns the direction of the light, when it doesn't
@@ -40,6 +47,8 @@ class Light {
         virtual std::optional<Vec3> get_direction(const Vec3& surface_point) const {
             return std::nullopt;
         }
+
+        virtual bool is_ambient() const { return false; }
 };
 
 };

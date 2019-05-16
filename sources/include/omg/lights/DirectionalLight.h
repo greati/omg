@@ -21,6 +21,19 @@ class DirectionalLight : public Light {
         DirectionalLight(const Vec3& intensity, const Vec3& direction)
             : Light {intensity}, _direction {direction} { /* empty */ }
 
+
+        /**
+         * Sample a point on the light source's surface.
+         *
+         * */
+        virtual Vec3 sample_li(const SurfaceInteraction& interaction,
+                Vec3 *wi) const {
+            *wi = tao::unitize(-_direction);
+            auto diff_norm = tao::norm(-_direction);
+            auto diff_norm_squared = diff_norm * diff_norm;
+            return _intensity / diff_norm_squared;
+        }
+
         /**
          * Returns the direction of the light, when it possibly depends
          * on the intersection position over the surface.
