@@ -49,6 +49,8 @@ class Light {
         }
 
         virtual bool is_ambient() const { return false; }
+
+        const Vec3& get_intensity() const { return _intensity; }
 };
 
 };

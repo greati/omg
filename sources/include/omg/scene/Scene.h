@@ -101,6 +101,8 @@ class Scene : public SceneNode {
 
         inline const std::vector<std::shared_ptr<Primitive>>& get_primitives() const { return _primitives; }
 
+        inline const std::vector<std::shared_ptr<Light>>& get_lights() const { return _lights; }
+
         void accept(Visitor& visitor) override {
             visitor.visit(std::shared_ptr<Scene>(this));
         };

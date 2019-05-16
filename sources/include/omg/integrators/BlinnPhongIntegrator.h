@@ -32,7 +32,41 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                 float px = 0.0,
                 float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr) override {
-            return RGBColor{0, 0, 0};
+
+            //> Resulting irradiance
+            RGBColor L {0.0, 0.0, 0.0};
+
+            //> Ambient intensity
+            Vec3 ambient_intensity {0.0, 0.0, 0.0};
+
+            //> ka
+            Vec3 ka = 1.0f;
+
+            SurfaceInteraction si;
+            bool hit = scene.intersect(ray, &si);
+
+            const BlinnMaterial* material = nullptr;
+
+            if (hit) {
+                if (material = dynamic_cast<const BlinnMaterial*>(si._primitive->get_material())) {
+                   ka = material->ka();
+                }
+            }
+
+            for (auto& light : scene.get_lights()) {
+                if (light->is_ambient()) {
+                    ambient_intensity = light->get_intensity();
+                    if (material != nullptr) continue; else break;
+                }
+
+                if (material != nullptr) {
+                    Vec3 wi;
+                    light->sample_li(si, &wi);
+                }
+            }
+
+            L += ka.element_wise(ambient_intensity, [](auto x, auto y) { return x * y;});
+            return L;
         }
 
 };
