@@ -46,11 +46,10 @@ class SamplerIntegrator : public Integrator {
                     auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
                     Ray ray = camera->generate_ray(px, py);
                     RGBColor color = this->li(ray, scene, px, py); // TODO: sampler will make px and py
-                    auto [r, g, b] = std::tuple {color(0), color(1), color(2)};
                     camera->get_film()->get_buffer()->set({x, y}, {
-                            static_cast<unsigned char>(r), 
-                            static_cast<unsigned char>(g), 
-                            static_cast<unsigned char>(b)});
+                            static_cast<unsigned char>(color(0)), 
+                            static_cast<unsigned char>(color(1)), 
+                            static_cast<unsigned char>(color(2))});
                 }
             }
         }

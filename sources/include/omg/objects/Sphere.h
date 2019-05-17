@@ -32,12 +32,14 @@ class Sphere : public Object {
          *
          * */
         bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
-            auto origin = ray.get_origin();
-            auto direction = ray.get_direction();        
+            const auto& origin = ray.get_origin();
+            const auto& direction = ray.get_direction();        
+
+            const auto& v = origin - _center;
 
             auto A = tao::dot(direction, direction);
-            auto B = 2.0f * tao::dot(origin - _center, direction);
-            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
+            auto B = 2.0f * tao::dot(v, direction);
+            auto C = tao::dot(v, v) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 
