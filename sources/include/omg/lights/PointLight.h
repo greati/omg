@@ -28,9 +28,7 @@ class PointLight : public Light {
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
                 Vec3 *wi) const {
             *wi = tao::unitize(_position - interaction._p);
-            auto diff_norm = tao::norm(_position - interaction._p);
-            auto diff_norm_squared = diff_norm * diff_norm;
-            return _intensity;// / diff_norm_squared;
+            return _intensity;
         }
 
         /**

@@ -19,7 +19,6 @@ class AmbientLight : public Light {
 
         virtual bool is_ambient() const { return true; }
 
-
         /**
          * Sample a point on the light source's surface.
          *

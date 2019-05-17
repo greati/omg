@@ -5,7 +5,7 @@
 
 namespace omg {
 /**
- * Represents a light.
+ * Interface for lights.
  *
  * @author Vitor Greati
  * */
@@ -23,33 +23,24 @@ class Light {
         /**
          * Sample a point on the light source's surface.
          *
+         * @param interaction surface interaction
+         * @param wi the vector towards the light
          * */
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
                 Vec3 *wi) const = 0;
 
         /**
-         * Returns the direction of the light, when it doesn't
-         * depend on any other parameter.
+         * Inform if this is an ambient light.
          *
-         * @return light direction if suitable
+         * @return is ambient light
          * */
-        virtual std::optional<Vec3> get_direction() const {
-            return std::nullopt;
-        }
-
-        /**
-         * Returns the direction of the light, when it depends
-         * on the intersection position over the surface.
-         *
-         * @param position the intersection position
-         * @return light direction if suitable
-         * */
-        virtual std::optional<Vec3> get_direction(const Vec3& surface_point) const {
-            return std::nullopt;
-        }
-
         virtual bool is_ambient() const { return false; }
 
+        /**
+         * The light intensity (color).
+         *
+         * @return the light intensity
+         * */
         const Vec3& get_intensity() const { return _intensity; }
 };
 
