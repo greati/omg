@@ -67,7 +67,7 @@ raytracer:
               intensity: [25.5, 25.5, 25.5]
             - type: spot
               intensity: [229.5, 229.5, 229.5]
-              position: [-1.0, 0.6, 2.5]
+              position: [-1.0, 3.0, 2.5]
               point_at: [0.0, 0.0, -0.5]
               cutoff: 35.0
               falloff: 10.0

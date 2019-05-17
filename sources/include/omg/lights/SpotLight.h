@@ -40,7 +40,7 @@ class SpotLight : public Light {
             *wi = tao::unitize(_position - interaction._p);
             auto diff_norm = tao::norm(_position - interaction._p);
             auto diff_norm_squared = diff_norm * diff_norm;
-            return _intensity * falloff(-*wi) / diff_norm_squared;
+            return _intensity * falloff(-*wi);// / diff_norm_squared;
         }
 
         float falloff(const Vec3 & w) const {

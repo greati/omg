@@ -285,6 +285,8 @@ std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
             auto point_at = hard_require(light_node, "point_at").as<Vec3>();
             auto falloff = hard_require(light_node, "falloff").as<float>();
             auto cutoff = hard_require(light_node, "cutoff").as<float>();
+            cutoff = (cutoff * M_PI) / 180;
+            falloff = (falloff * M_PI) / 180;
             light = std::make_shared<SpotLight>(intensity, position, point_at, falloff, cutoff);
         } else {
             throw omg::ParseException("unknown light type " + type);
