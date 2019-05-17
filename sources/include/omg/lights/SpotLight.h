@@ -44,8 +44,8 @@ class SpotLight : public Light {
         }
 
         float falloff(const Vec3 & w) const {
-            Vec3 wl = tao::unitize(w);
-            float cosTheta = wl(2); // z coord
+            Vec3 veclight = _point_at - _position;
+            float cosTheta = tao::dot(veclight, w) / ((tao::norm(veclight) * tao::norm(w))); // z coord
             if (cosTheta < _cosCutoff) return 0;
             if (cosTheta > _cosFalloff) return 1;
             float delta = (cosTheta - _cosCutoff) / (_cosFalloff - _cosCutoff);

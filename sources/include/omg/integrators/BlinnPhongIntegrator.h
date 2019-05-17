@@ -39,8 +39,11 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             //> Ambient intensity
             Vec3 ambient_intensity {0.0, 0.0, 0.0};
 
-            //> ka
-            Vec3 ka = 1.0f;
+            //> Blinn parameters
+            Vec3 ka;
+            Vec3 kd;
+            Vec3 ks;
+            RealValue gloss;
 
             SurfaceInteraction si;
             bool hit = scene.intersect(ray, &si);
@@ -50,7 +53,12 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             if (hit) {
                 if (material = dynamic_cast<const BlinnMaterial*>(si._primitive->get_material())) {
                    ka = material->ka();
+                   kd = material->kd();
+                   ks = material->ks();
+                   gloss = material->glossiness();
                 }
+            } else {
+                return scene.get_background()->find(px, py);
             }
 
             for (auto& light : scene.get_lights()) {
@@ -61,12 +69,24 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
 
                 if (material != nullptr) {
                     Vec3 wi;
-                    light->sample_li(si, &wi);
+                    auto I = light->sample_li(si, &wi);
+
+                    auto normal = tao::unitize(si._n);
+
+                    L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
+                            [](auto x, auto y) {return x*y;});
+
+                    auto wo = tao::unitize(si._wo);
+                    auto h = (wo + wi) / tao::norm(wo + wi);
+
+                    L += std::pow(std::max(0.0f, tao::dot(normal, h)), gloss) 
+                        * ks.element_wise(I, 
+                            [](auto x, auto y) {return x*y;});
                 }
             }
 
             L += ka.element_wise(ambient_intensity, [](auto x, auto y) { return x * y;});
-            return L;
+            return {std::min(255.0f, L(0)), std::min(255.0f, L(1)), std::min(255.0f, L(2))};
         }
 
 };

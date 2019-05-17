@@ -30,7 +30,7 @@ class PointLight : public Light {
             *wi = tao::unitize(_position - interaction._p);
             auto diff_norm = tao::norm(_position - interaction._p);
             auto diff_norm_squared = diff_norm * diff_norm;
-            return _intensity / diff_norm_squared;
+            return _intensity;// / diff_norm_squared;
         }
 
         /**

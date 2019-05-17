@@ -95,9 +95,9 @@ std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
         RGBColor color = hard_require(node, "color").as<Vec3>();
         return std::make_shared<FlatMaterial>(color);
     } else if (type == "blinn") {
-        Vec3 ka = hard_require(node, "ka").as<Vec3>();
-        Vec3 kd = hard_require(node, "kd").as<Vec3>();
-        Vec3 ks = hard_require(node, "ks").as<Vec3>();
+        Vec3 ka = hard_require(node, "ambient").as<Vec3>();
+        Vec3 kd = hard_require(node, "diffuse").as<Vec3>();
+        Vec3 ks = hard_require(node, "specular").as<Vec3>();
         RealValue glossiness = hard_require(node, "glossiness").as<RealValue>();
         return std::make_shared<BlinnMaterial>(ka, kd, ks, glossiness);
     }
