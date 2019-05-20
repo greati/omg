@@ -4,6 +4,7 @@
 #include "omg/integrators/SamplerIntegrator.h"
 #include "omg/materials/BlinnMaterial.h"
 #include "omg/common.h"
+#include "omg/lights/VisibilityTester.h"
 
 namespace omg {
 /**
@@ -69,7 +70,8 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
 
                 if (material != nullptr) {
                     Vec3 wi;
-                    auto I = light->sample_li(si, &wi);
+                    VisibilityTester vt;
+                    auto I = light->sample_li(si, &wi, &vt);
 
                     auto normal = tao::unitize(si._n);
 

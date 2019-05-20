@@ -4,6 +4,9 @@
 #include "omg/common.h"
 
 namespace omg {
+
+class VisibilityTester;
+
 /**
  * Interface for lights.
  *
@@ -27,7 +30,7 @@ class Light {
          * @param wi the vector towards the light
          * */
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
-                Vec3 *wi) const = 0;
+                Vec3 *wi, VisibilityTester* vt) const = 0;
 
         /**
          * Inform if this is an ambient light.
