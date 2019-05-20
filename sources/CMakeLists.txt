@@ -36,6 +36,9 @@ endif()
 
 set(CMAKE_TEST_POSTFIX _tests)
 
+set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
 # use c++17
 # --------------------------------------- #
 set(CMAKE_CXX_STANDARD 17)
