@@ -38,6 +38,7 @@ class SpotLight : public Light {
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
                 Vec3 *wi, VisibilityTester* vt) const {
             *wi = tao::unitize(_position - interaction._p);
+	    *vt = VisibilityTester{interaction, SurfaceInteraction {_position}};
             return _intensity * falloff(-*wi);
         }
 
