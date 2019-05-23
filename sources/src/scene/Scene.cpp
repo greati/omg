@@ -11,7 +11,8 @@ bool Scene::intersect(const Ray& ray, SurfaceInteraction* si) const {
 
 bool Scene::intersect(const Ray& ray) const {
     for (auto & o : _primitives) 
-        if (o->intersect(ray))
+        if (o->intersect(ray)) {
             return true;
+        }
     return false;
 }

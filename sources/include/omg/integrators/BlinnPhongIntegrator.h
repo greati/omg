@@ -75,17 +75,17 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
 
                     auto normal = tao::unitize(si._n);
 
-		    if (vt.unoccluded(scene)) {
-			    L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
-				    [](auto x, auto y) {return x*y;});
-		    }
+                    if (vt.unoccluded(scene)) {
+                        L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
+                            [](auto x, auto y) {return x*y;});
+                    }
 
                     auto wo = tao::unitize(si._wo);
                     auto h = (wo + wi) / tao::norm(wo + wi);
 
-		        L += std::pow(std::max(0.0f, tao::dot(normal, h)), gloss) 
-			     * ks.element_wise(I, 
-		                [](auto x, auto y) {return x*y;});
+                    L += std::pow(std::max(0.0f, tao::dot(normal, h)), gloss) 
+                     * ks.element_wise(I, 
+                            [](auto x, auto y) {return x*y;});
                 }
             }
 
