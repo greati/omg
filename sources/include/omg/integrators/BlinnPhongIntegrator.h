@@ -14,6 +14,11 @@ namespace omg {
  * */
 class BlinnPhongIntegrator : public SamplerIntegrator {
 
+
+    private:
+
+        int depth = 1;
+
     public:
 
         BlinnPhongIntegrator(int spp) : SamplerIntegrator(spp) {
@@ -44,6 +49,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             Vec3 ka;
             Vec3 kd;
             Vec3 ks;
+            Vec3 km;
             RealValue gloss;
 
             SurfaceInteraction si;
@@ -56,6 +62,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                    ka = material->ka();
                    kd = material->kd();
                    ks = material->ks();
+                   km = material->km();
                    gloss = material->glossiness();
                 }
             } else {
@@ -77,19 +84,33 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
 
                     if (vt.unoccluded(scene)) {
                         L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
-                            [](auto x, auto y) {return x*y;});
+                                [](auto x, auto y) {return x*y;});
+
+                        auto wo = tao::unitize(si._wo);
+                        auto h = (wo + wi) / tao::norm(wo + wi);
+
+                        L += std::pow(std::max(0.0f, tao::dot(normal, h)), gloss) 
+                         * ks.element_wise(I, 
+                                [](auto x, auto y) {return x*y;});
+
+                        if (material->km() == Vec3{0.0, 0.0, 0.0})
+                            continue;
+                        if (depth == 1) {
+                            auto ray_direction = ray.get_direction();
+                            auto reflected = ray_direction - 2.0f * (tao::dot(ray_direction, normal)) * normal;
+                            depth -= 1;
+                            L += km.element_wise(this->li(Ray {ray.get_origin(), reflected}, scene),
+                                        [](auto x, auto y) {return x*y;});
+                        }
                     }
-
-                    auto wo = tao::unitize(si._wo);
-                    auto h = (wo + wi) / tao::norm(wo + wi);
-
-                    L += std::pow(std::max(0.0f, tao::dot(normal, h)), gloss) 
-                     * ks.element_wise(I, 
-                            [](auto x, auto y) {return x*y;});
                 }
             }
 
             L += ka.element_wise(ambient_intensity, [](auto x, auto y) { return x * y;});
+
+            if (depth == 0) 
+                depth = 1;
+
             return {std::min(255.0f, L(0)), std::min(255.0f, L(1)), std::min(255.0f, L(2))};
         }
 
