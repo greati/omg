@@ -4,6 +4,7 @@
 #include "omg/raytracer/Ray.h"
 #include "omg/raytracer/SurfaceInteraction.h"
 #include "omg/materials/Material.h"
+#include "Bounds3.h"
 
 namespace omg {
 /**
