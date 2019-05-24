@@ -17,7 +17,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
 
     private:
 
-        int depth = 1;
+        int depth_max = 1;
 
     public:
 
@@ -37,7 +37,8 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                 const Scene& scene,
                 float px = 0.0,
                 float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) override {
+                const std::shared_ptr<Sampler> sampler = nullptr,
+                int depth=0) override {
 
             //> Resulting irradiance
             RGBColor L {0.0, 0.0, 0.0};
@@ -51,6 +52,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             Vec3 ks;
             Vec3 km;
             RealValue gloss;
+            Vec3 normal;
 
             SurfaceInteraction si;
             bool hit = scene.intersect(ray, &si);
@@ -64,9 +66,13 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                    ks = material->ks();
                    km = material->km();
                    gloss = material->glossiness();
+                   normal = tao::unitize(si._n);
                 }
             } else {
-                return scene.get_background()->find(px, py);
+                if (depth == 0)
+                    return scene.get_background()->find(px, py);
+                else
+                    return RGBColor {0.0, 0.0, 0.0};
             }
 
             for (auto& light : scene.get_lights()) {
@@ -80,7 +86,6 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                     VisibilityTester vt;
                     auto I = light->sample_li(si, &wi, &vt);
 
-                    auto normal = tao::unitize(si._n);
 
                     if (vt.unoccluded(scene)) {
                         L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
@@ -93,23 +98,18 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                          * ks.element_wise(I, 
                                 [](auto x, auto y) {return x*y;});
 
-                        if (material->km() == Vec3{0.0, 0.0, 0.0})
-                            continue;
-                        if (depth == 1) {
-                            auto ray_direction = ray.get_direction();
-                            auto reflected = ray_direction - 2.0f * (tao::dot(ray_direction, normal)) * normal;
-                            depth -= 1;
-                            L += km.element_wise(this->li(Ray {ray.get_origin(), reflected}, scene),
-                                        [](auto x, auto y) {return x*y;});
-                        }
                     }
                 }
             }
 
             L += ka.element_wise(ambient_intensity, [](auto x, auto y) { return x * y;});
 
-            if (depth == 0) 
-                depth = 1;
+            if (!(material->km() == Vec3{0.0, 0.0, 0.0}) && depth < depth_max) {
+                auto ray_direction = tao::unitize(ray.get_direction());
+                auto reflected = ray_direction - 2.0f * (tao::dot(ray_direction, normal)) * normal;
+                L += km.element_wise(this->li(Ray {si._p, tao::unitize(reflected)}, scene, px, py, nullptr, depth + 1),
+                            [](auto x, auto y) {return x*y;});
+            }
 
             return {std::min(255.0f, L(0)), std::min(255.0f, L(1)), std::min(255.0f, L(2))};
         }

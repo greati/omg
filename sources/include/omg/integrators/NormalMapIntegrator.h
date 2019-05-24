@@ -33,7 +33,8 @@ class NormalMapIntegrator : public SamplerIntegrator {
                 const Scene& scene,
                 float px = 0.0,
                 float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) override {
+                const std::shared_ptr<Sampler> sampler = nullptr,
+                int depth=0) override {
             auto si = std::make_unique<SurfaceInteraction>();
             if (scene.intersect(ray, si.get())) {
                 Vec3 normal = tao::unitize(si->_n);

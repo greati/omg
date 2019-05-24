@@ -2,10 +2,10 @@ raytracer:
     background:
         type: gradient
         colors:
-            - [0, 0, 0]
-            - [0, 0, 0]
-            - [0, 0, 0]
-            - [0, 0, 0]
+            - [10, 10, 10]
+            - [10, 10, 10]
+            - [153, 204, 255]
+            - [153, 204, 255]
     camera:
         type: perspective
         position: [7.0, 2.0, 5.0]
@@ -37,6 +37,11 @@ raytracer:
               radius: 5000.0
               center: [0.0, -5000.5, -1.0]
               material: grey
+              #- type: sphere
+              #label: sphere5
+              #radius: 0.2
+              #center: [0.0, 1.1, -1.0]
+              #material: redish
         materials:
             - type: blinn
               label: redish
@@ -59,7 +64,7 @@ raytracer:
             - type: blinn
               label: grey
               ambient: [0.1, 0.1, 0.1]
-              diffuse: [0.2, 0.2, 0.2]
+              diffuse: [0.8, 0.8, 0.8]
               specular: [0.0, 0.0, 0.0]
               mirror: [0.9, 0.9, 0.9]
               glossiness: 8
@@ -69,9 +74,9 @@ raytracer:
               #- type: point
               #intensity: [229.5, 76.5, 76.5]
               #position: [-2.0, 1.1, -1.0]
-            - type: directional
+            - type: point
               intensity: [179.0, 179.0, 179.0]
-              direction: [-2.0, 4.0, -.1]
+              position: [0.0, 1.1, -1.0]
     settings:
         integrators:
             - type: blinn

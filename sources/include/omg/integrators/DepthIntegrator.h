@@ -50,7 +50,8 @@ class DepthIntegrator : public SamplerIntegrator {
                 const Scene& scene,
                 float px = 0.0,
                 float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) override {
+                const std::shared_ptr<Sampler> sampler = nullptr,
+                int depth=0) override {
             SurfaceInteraction si;
             if (scene.intersect(ray, &si)) {
                 auto t = si._t;
