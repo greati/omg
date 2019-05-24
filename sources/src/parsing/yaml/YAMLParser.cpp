@@ -98,8 +98,9 @@ std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
         Vec3 ka = hard_require(node, "ambient").as<Vec3>();
         Vec3 kd = hard_require(node, "diffuse").as<Vec3>();
         Vec3 ks = hard_require(node, "specular").as<Vec3>();
+        Vec3 km = defaulted_require(node, "mirror", Vec3 {0.0, 0.0, 0.0});
         RealValue glossiness = hard_require(node, "glossiness").as<RealValue>();
-        return std::make_shared<BlinnMaterial>(ka, kd, ks, glossiness);
+        return std::make_shared<BlinnMaterial>(ka, kd, ks, km, glossiness);
     }
     
     throw omg::ParseException("unknown material type " + type);

@@ -14,9 +14,10 @@ class BlinnMaterial : public Material {
 
     private:
 
-        Vec3 _ka;
-        Vec3 _kd;
-        Vec3 _ks;
+        Vec3 _ka;       /** Ambient constants */
+        Vec3 _kd;       /** Diffuse constants */
+        Vec3 _ks;       /** Specular constants */
+        Vec3 _km;       /** Mirror constants */
         RealValue _glossiness;
 
     public:
@@ -25,14 +26,16 @@ class BlinnMaterial : public Material {
                 const decltype(_ka)& _ka,
                 const decltype(_kd)& _kd,
                 const decltype(_ks)& _ks,
+                const decltype(_km)& _km,
                 const decltype(_glossiness)& _glossiness
-                ) : Material{}, _ka {_ka}, _kd {_kd}, _ks {_ks}, _glossiness {_glossiness} {}
+                ) : Material{}, _ka {_ka}, _kd {_kd}, _ks {_ks}, _km {_km}, _glossiness {_glossiness} {}
 
         ~BlinnMaterial() {}
 
-        inline decltype(_ka) ka() const { return _ka; }
-        inline decltype(_kd) kd() const { return _kd; }
-        inline decltype(_ks) ks() const { return _ks; }
+        inline const decltype(_ka)& ka() const { return _ka; }
+        inline const decltype(_kd)& kd() const { return _kd; }
+        inline const decltype(_ks)& ks() const { return _ks; }
+        inline const decltype(_ks)& km() const { return _km; }
         inline decltype(_glossiness) glossiness() const { return _glossiness; }
 };
 };
