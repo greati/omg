@@ -59,6 +59,11 @@ class GeometricPrimitive : public Primitive {
             return _object->intersect(ray); 
         }
 
+
+        Bounds3 world_bound() const {
+            return _object->world_bound();        
+        }
+
 };
 };
 #endif

@@ -66,16 +66,35 @@ class Sphere : public Object {
         }
 
         bool intersect(const Ray& ray) override {
-            auto origin = ray.get_origin();
-            auto direction = ray.get_direction();        
+            const auto& origin = ray.get_origin();
+            const auto& direction = ray.get_direction();        
+
+            const auto& v = origin - _center;
 
             auto A = tao::dot(direction, direction);
-            auto B = 2.0f * tao::dot(origin - _center, direction);
-            auto C = tao::dot(origin - _center, origin - _center) - (_radius * _radius);
+            auto B = 2.0f * tao::dot(v, direction);
+            auto C = tao::dot(v, v) - (_radius * _radius);
 
             auto delta = B * B - 4.0 * A * C;
 
-            return (delta >= 0.0);
+            if (delta < 0.0) return false;
+
+            float t1 = (-B + std::sqrt(delta)) / (2 * A);
+            float t2 = (-B - std::sqrt(delta)) / (2 * A);
+
+            float tShapeHit = std::min(t1, t2);
+
+            if (tShapeHit > ray.tMax || tShapeHit < 0)
+               return false; 
+
+            return true;
+        }
+
+        Bounds3 world_bound() const {
+            Vec3 radiuses {_radius, _radius, _radius};
+            auto upper_corner = _center + radiuses;
+            auto lower_corner = _center - radiuses;
+            return Bounds3 {lower_corner, upper_corner};
         }
 };
 };

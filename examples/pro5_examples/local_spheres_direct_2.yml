@@ -66,12 +66,9 @@ raytracer:
         lights:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
-            - type: spot
+            - type: directional
               intensity: [229.5, 229.5, 229.5]
-              position: [-1.0, 3.0, 2.5]
-              point_at: [0.0, 0.0, -0.5]
-              cutoff: 35.0
-              falloff: 10.0
+              direction: [0.0, -1.0, 1.0]
     settings:
         integrators:
             - type: blinn

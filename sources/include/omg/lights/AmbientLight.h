@@ -24,7 +24,7 @@ class AmbientLight : public Light {
          *
          * */
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
-                Vec3 *wi) const {
+                Vec3 *wi, VisibilityTester* vt) const {
             return _intensity;
         }
 };

@@ -8,10 +8,10 @@ raytracer:
             - [153, 204, 255]
     camera:
         type: perspective
-        position: [7.0, 2.5, 5.0]
+        position: [9.0, 3.5, 15.0]
         target: [0.0, 0.0, -1.0]
         up: [0.0, 1.0, 0.0]
-        v_angle: 30.0
+        v_angle: 25.0
         fdist: 1.0
         width: 1200
         height: 600
@@ -20,17 +20,17 @@ raytracer:
             - type: sphere
               label: sphere1
               radius: 0.5
-              center: [0.0, 0.0, 0.0]
+              center: [0.0, 0.0, -2.0]
               material: greenish
             - type: sphere
               label: sphere2
               radius: 0.5
-              center: [-0.86, 0.0, -1.5]
+              center: [-4.0, 0.0, -2.0]
               material: redish
             - type: sphere
               label: sphere3
               radius: 0.5
-              center: [0.86, 0.0, -1.5]
+              center: [4.0, 0.0, -2.0]
               material: blueish
             - type: sphere
               label: sphere4
@@ -43,7 +43,7 @@ raytracer:
               ambient: [0.1, 0.1, 0.1]
               diffuse: [0.9, 0.2, 0.1]
               specular: [0.8, 0.8, 0.8]
-              glossiness: 64
+              glossiness: 256
             - type: blinn
               label: greenish
               ambient: [0.1, 0.1, 0.1]
@@ -55,23 +55,34 @@ raytracer:
               ambient: [0.1, 0.1, 0.1]
               diffuse: [0.1, 0.2, 0.9]
               specular: [0.8, 0.8, 0.8]
-              glossiness: 20
+              glossiness: 256
             - type: blinn
               label: grey
               ambient: [0.1, 0.1, 0.1]
               diffuse: [0.8, 0.8, 0.8]
               specular: [0.0, 0.0, 0.0]
-              mirror: [0.9, 0.9, 0.9]
               glossiness: 8
         lights:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
             - type: spot
-              intensity: [229.5, 229.5, 229.5]
-              position: [-1.0, 3.0, 2.5]
-              point_at: [0.0, 0.0, -0.5]
+              intensity: [76.8, 179.2, 76.8]
+              position: [0.0, 1.0, 2.0]
+              point_at: [0.0, 0.0, -2.0]
+              cutoff: 35.0
+              falloff: 14.0
+            - type: spot
+              intensity: [179.2, 51.2, 51.2]
+              position: [0.0, 4.0, -2.0]
+              point_at: [-4.0, 0.0, -2.0]
               cutoff: 35.0
               falloff: 10.0
+            - type: spot
+              intensity: [51.2, 51.2, 179.2]
+              position: [0.0, 4.0, -2.0]
+              point_at: [4.0, 0.0, -2.0]
+              cutoff: 35.0
+              falloff: 14.0
     settings:
         integrators:
             - type: blinn

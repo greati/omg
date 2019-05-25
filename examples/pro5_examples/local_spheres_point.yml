@@ -66,11 +66,11 @@ raytracer:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
             - type: point
-              intensity: [179.0, 179.0, 179.0]
-              position: [0.0, 1.1, -1.0]
-            - type: point
               intensity: [229.5, 76.5, 76.5]
               position: [-2.0, 1.1, -1.0]
+            - type: point
+              intensity: [179.0, 179.0, 179.0]
+              position: [0.0, 1.1, -1.0]
     settings:
         integrators:
             - type: blinn
