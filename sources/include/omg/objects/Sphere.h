@@ -89,6 +89,13 @@ class Sphere : public Object {
 
             return true;
         }
+
+        Bounds3 world_bound() const {
+            Vec3 radiuses {_radius, _radius, _radius};
+            auto upper_corner = _center + radiuses;
+            auto lower_corner = _center - radiuses;
+            return Bounds3 {lower_corner, upper_corner};
+        }
 };
 };
 

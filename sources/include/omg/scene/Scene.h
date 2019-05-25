@@ -8,6 +8,8 @@
 #include "omg/lights/Light.h"
 
 namespace omg {
+
+class Bounds3;
 /**
  * Represents a  3D scene.
  *
@@ -21,6 +23,8 @@ class Scene {
         std::shared_ptr<Camera> _camera;                /** Camera reference */
         std::vector<std::shared_ptr<Primitive>> _primitives;  /** Scene objects */
         std::vector<std::shared_ptr<Light>> _lights;
+
+        Bounds3 _world_bound;
 
     public:
 
@@ -40,7 +44,17 @@ class Scene {
               _camera {camera},
               _primitives {primitives},
               _lights {lights}
-        { /* empty */ }
+        {
+
+            //> Compute world bound //TODO change whe using aggregates
+            for (auto& p : _primitives) {
+                _world_bound = _world_bound.get_union(_world_bound, p->world_bound());
+            }
+
+            //> Call scene preprocessing
+            for (auto& l : _lights)
+                l->preprocess(*this);
+        }
 
         /**
          * The scene background.
@@ -74,13 +88,11 @@ class Scene {
 
         inline const std::vector<std::shared_ptr<Light>>& get_lights() const { return _lights; }
 
-        //void accept(Visitor& visitor) override {
-        //    visitor.visit(std::shared_ptr<Scene>(this));
-        //};
-
         bool intersect(const Ray& ray, SurfaceInteraction* si) const;
 
         bool intersect(const Ray& ray) const;
+
+        inline const Bounds3& world_bound() const { return _world_bound; }
         
 
 };

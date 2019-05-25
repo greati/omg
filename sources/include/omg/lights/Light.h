@@ -6,6 +6,7 @@
 namespace omg {
 
 class VisibilityTester;
+class Scene;
 
 /**
  * Interface for lights.
@@ -45,6 +46,13 @@ class Light {
          * @return the light intensity
          * */
         const Vec3& get_intensity() const { return _intensity; }
+
+        /**
+         * Performs some preprocessing before the rendering stage.
+         *
+         * @param scene the scene
+         * */
+        virtual void preprocess(const Scene& scene) { /* empty */ }
 };
 
 };

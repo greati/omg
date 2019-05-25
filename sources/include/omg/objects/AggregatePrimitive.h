@@ -38,6 +38,8 @@ class AggregatePrimitive : public Primitive {
             return false; 
         }
 
+        Bounds3 world_bound() const {}
+
 };
 };
 #endif
