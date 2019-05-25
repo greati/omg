@@ -51,8 +51,13 @@ execute:
     - [x] Solid
     - [x] Bilinear gradient
     - [ ] Texture
-- [ ] Camera
+- [x] Camera
     - [x] Size
     - [x] Orthographic
     - [x] Perspective
     - [x] Oblique versions of orthographic and perspective
+- [x] Integrators
+    - [x] Flat
+    - [x] Depth map
+    - [x] Normal map
+    - [x] Blinn Phong (with reflection and hard shadow)
