@@ -61,6 +61,7 @@ raytracer:
               ambient: [0.1, 0.1, 0.1]
               diffuse: [0.8, 0.8, 0.8]
               specular: [0.0, 0.0, 0.0]
+              mirror: [0.9, 0.9, 0.9]
               glossiness: 8
         lights:
             - type: ambient
