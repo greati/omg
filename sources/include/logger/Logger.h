@@ -57,6 +57,21 @@ class Logger {
          * */
         virtual std::string label_msg_type(const Logger::Type& type) const = 0;
 
+        /**
+         * Build a new named progress bar.
+         * */
+        virtual void make_progress_bar(const std::string& name, int limit = 0, int current = 0) = 0;
+
+        /**
+         * Update an existing progress bar.
+         * */
+        virtual void update_progress_bar(const std::string& name, int delta=1) = 0;
+
+        /**
+         * Finish an existing progress bar.
+         * */
+        virtual void finish_progress_bar(const std::string& name) = 0;
+
 };
 
 #endif

@@ -1,9 +1,12 @@
 #ifndef __STD_LOGGER__
 #define __STD_LOGGER__
 
+
 #include "Logger.h"
+#include "ProgressBar.hpp"
 #include <iostream>
 #include <iomanip>
+#include <map>
 
 /**
  * An interface for loggers, using the 
@@ -13,6 +16,11 @@
  * */
 class StandardLogger : Logger {
     
+    private:
+
+        std::map<std::string, ProgressBar> progress_bars;
+        std::shared_ptr<ProgressBar> progress_bar;
+
     public:
 
         /**
@@ -87,6 +95,18 @@ class StandardLogger : Logger {
             return "\033[1;35mUNKNOWN\033[0m";
         }
 
+        void make_progress_bar(const std::string& name, int limit = 0, int width = 0) override {
+            progress_bar = std::make_shared<ProgressBar>(limit, width);
+        }
+
+        void update_progress_bar(const std::string& name, int delta=1) override {
+            ++(*progress_bar);
+            progress_bar->display();
+        }
+
+        virtual void finish_progress_bar(const std::string& name) {
+            progress_bar->done();
+        }
 };
 
 #endif

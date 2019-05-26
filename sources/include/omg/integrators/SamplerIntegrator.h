@@ -3,6 +3,7 @@
 
 #include "omg/samplers/Sampler.h"
 #include "omg/integrators/Integrator.h"
+#include "logger/ProgressBar.hpp"
 
 namespace omg {
 /**
@@ -41,8 +42,12 @@ class SamplerIntegrator : public Integrator {
 
             this->preprocess(scene, _sampler.get());
 
+            omg::logger.make_progress_bar(this->get_suffix(), width*height / 100, 40);
+
             for (int x = 0; x < width; ++x) {
                 for (int y = 0; y < height; ++y) {
+                    if ((y * width + x) % 100 == 0)
+                        omg::logger.update_progress_bar(this->get_suffix(), 1);
                     //TODO include sampler
                     auto [px, py] = std::pair{x / static_cast<float>(width), y / static_cast<float>(height)};
                     Ray ray = camera->generate_ray(px, py);
@@ -53,6 +58,7 @@ class SamplerIntegrator : public Integrator {
                             static_cast<unsigned char>(color(2))});
                 }
             }
+            omg::logger.finish_progress_bar(this->get_suffix());
         }
 
 
