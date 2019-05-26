@@ -45,13 +45,25 @@ class Sphere : public Object {
 
             if (delta < 0.0) return false;
 
+
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
-            float tShapeHit = std::min(t1, t2);
+            if (t1 > t2) std::swap(t1, t2);
 
-            if (tShapeHit > ray.tMax || tShapeHit < 0)
-               return false; 
+            if (t1 > ray.tMax || t2 <= 0)
+                return false;
+
+            //float tShapeHit = std::min(t1, t2);
+            float tShapeHit = t1;
+
+            //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
+            //   return false; 
+            if (tShapeHit <= 0) {
+                tShapeHit = t2;
+                if (tShapeHit > ray.tMax)
+                    return false;
+            }
 
             *tHit = tShapeHit;
 
@@ -82,10 +94,20 @@ class Sphere : public Object {
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
-            float tShapeHit = std::min(t1, t2);
+            if (t1 > t2) std::swap(t1, t2);
 
-            if (tShapeHit > ray.tMax || tShapeHit < 0)
-               return false; 
+            if (t1 > ray.tMax || t2 <= 0)
+                return false;
+
+            float tShapeHit = t1;
+
+            //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
+            //   return false; 
+            if (tShapeHit <= 0) {
+                tShapeHit = t2;
+                if (tShapeHit > ray.tMax)
+                    return false;
+            }
 
             return true;
         }

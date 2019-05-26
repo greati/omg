@@ -106,8 +106,8 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             if (!(material->km() == Vec3{0.0, 0.0, 0.0}) && depth < depth_max) {
                 auto ray_direction = tao::unitize(ray.get_direction());
                 auto reflected = ray_direction - 2.0f * (tao::dot(ray_direction, normal)) * normal;
-                L += km.element_wise(this->li(Ray {si._p, tao::unitize(reflected)}, scene, nullptr, depth + 1),
-                            [](auto x, auto y) {return x*y;});
+                L += km.element_wise(this->li(Ray {si._p + tao::unitize(si._n)*0.001f, tao::unitize(reflected)}, 
+                            scene, nullptr, depth + 1), [](auto x, auto y) {return x*y;});
             }
 
             return {std::min(255.0f, L(0)), std::min(255.0f, L(1)), std::min(255.0f, L(2))};

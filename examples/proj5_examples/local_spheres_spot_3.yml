@@ -1,0 +1,249 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [10, 10, 80]
+            - [10, 10, 80]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: perspective
+        position: [4.0, 5.5, 15.0]
+        target: [0.0, 0.0, 2.3]
+        up: [0.0, 1.0, 0.0]
+        v_angle: 24.0
+        fdist: 1.0
+        width: 1400
+        height: 900
+    scene:
+        objects:
+            # red
+            - type: sphere
+              label: sphere1a
+              radius: 0.5
+              center: [-3.0, 0.0, 2.0]
+              material: red_2
+            - type: sphere
+              label: sphere1b
+              radius: 0.5
+              center: [-2.5, 0.0, 2.86]
+              material: red_1
+            - type: sphere
+              label: sphere1c
+              radius: 0.5
+              center: [-2.0, 0.0, 2.0]
+              material: red_3
+            - type: sphere
+              label: sphere1d
+              radius: 0.5
+              center: [-2.5, 0.79, 2.29]
+              material: red
+            # blue
+            - type: sphere
+              label: sphere2a
+              radius: 0.5
+              center: [3.0, 0.0, 2.0]
+              material: blue_2
+            - type: sphere
+              label: sphere2b
+              radius: 0.5
+              center: [2.5, 0.0, 2.86]
+              material: blue_1
+            - type: sphere
+              label: sphere3b
+              radius: 0.5
+              center: [2.0, 0, 2.0]
+              material: blue_3
+            - type: sphere
+              label: sphere4b
+              radius: 0.5
+              center: [2.5, 0.79, 2.29]
+              material: blue
+            # green
+            - type: sphere
+              label: sphere3a
+              radius: 0.5
+              center: [-0.5, 0.0, -2.0]
+              material: green_2
+            - type: sphere
+              label: sphere3b
+              radius: 0.5
+              center: [0.5, 0.0, -2.0]
+              material: green_1
+            - type: sphere
+              label: sphere3c
+              radius: 0.5
+              center: [0.0, 0.0, -2.86]
+              material: green_3
+            - type: sphere
+              label: sphere3d
+              radius: 0.5
+              center: [0.0, 0.79, -2.29]
+              material: green
+            # yellow
+            - type: sphere
+              label: sphere4a
+              radius: 0.5
+              center: [-0.5, 0.0, 6.0]
+              material: yellow_2
+            - type: sphere
+              label: sphere4b
+              radius: 0.5
+              center: [0.5, 0.0, 6.0]
+              material: yellow_1
+            - type: sphere
+              label: sphere4c
+              radius: 0.5
+              center: [0.0, 0.0, 6.86]
+              material: yellow
+            - type: sphere
+              label: sphere4d
+              radius: 0.5
+              center: [0.0, 0.79, 6.29]
+              material: gold
+            # ground
+            - type: sphere
+              label: ground
+              radius: 5000.0
+              center: [0.0, -5000.5, -1.0]
+              material: grey
+        materials:
+            # reds
+            - type: blinn
+              label: red
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [1.0, 0.0, 0.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            - type: blinn
+              label: red_1
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [1.0, 0.2, 0.2]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            - type: blinn
+              label: red_2
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [1.0, 0.4, 0.4]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            - type: blinn
+              label: red_3
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [1.0, 0.6, 0.6]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            # blues
+            - type: blinn
+              label: blue
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.0, 0.0, 1.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: blue_1
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.2, 0.2, 1.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: blue_2
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.4, 0.4, 1.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: blue_3
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.6, 0.6, 1.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            # greens
+            - type: blinn
+              label: green
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.0, 1.0, 0.0]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: green_1
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.2, 1.0, 0.2]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: green_2
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.4, 1.0, 0.4]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            - type: blinn
+              label: green_3
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [0.6, 1.0, 0.6]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+            # yellows
+            - type: blinn
+              label: gold
+              ambient: [0.6, 0.6, 0.6]
+              diffuse: [1.0, 0.65, 0.0]
+              specular: [0.8, 0.6, 0.2]
+              glossiness: 512
+            - type: blinn
+              label: yellow
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [1.0, 1.0, 0.0]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: yellow_1
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [1.0, 1.0, 0.2]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: yellow_2
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [1.0, 1.0, 0.4]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            # grey
+            - type: blinn
+              label: grey
+              ambient: [0.4, 0.4, 0.4]
+              diffuse: [1.0, 1.0, 1.0]
+              specular: [0.0, 0.0, 0.0]
+              #mirror: [0.9, 0.9, 0.9]
+              mirror: [0.2, 0.2, 0.2]
+              glossiness: 0
+        lights:
+            - type: ambient
+              intensity: [25.5, 25.5, 25.5]
+            - type: spot
+              intensity: [178.5, 178.5, 229.5]
+              position: [0.0, 5.0, 0.0]
+              point_at: [0.0, 0.0, -2.0]
+              cutoff: 35
+              falloff: 14
+            - type: spot
+              intensity: [178.5, 178.5, 229.5]
+              position: [0.0, 5.0, 2.0]
+              point_at: [2.5, 1.29, 2.29]
+              cutoff: 35
+              falloff: 14
+            - type: spot
+              intensity: [178.5, 178.5, 229.5]
+              position: [0.0, 5.0, 2.0]
+              point_at: [-2.5, 1.29, 2.29]
+              cutoff: 35
+              falloff: 14
+            - type: spot
+              intensity: [229.5, 229.5, 229.5]
+              position: [0.0, 5.0, 7.0]
+              point_at: [0.0, 1.29, 6.29]
+              cutoff: 35
+              falloff: 14
+    settings:
+        integrators:
+            - type: blinn

@@ -53,8 +53,10 @@ class Ray {
         inline Vec3 get_direction() const { return _d; }
 
         inline std::pair<float, float> get_spherical_angles() const {
-            auto phi = tao::spherical_phi(_d);
-            auto theta = tao::spherical_theta(_d);
+            auto d = _d;
+            std::swap(d(1), d(2));
+            auto phi = tao::spherical_phi(d);
+            auto theta = tao::spherical_theta(d);
             return {phi, theta};
         }
 };
