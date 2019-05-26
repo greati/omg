@@ -30,8 +30,6 @@ class FlatIntegrator : public SamplerIntegrator {
          * */
         RGBColor li(const Ray& ray,
                 const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr,
                 int depth=0) override {
             SurfaceInteraction si;
@@ -40,6 +38,9 @@ class FlatIntegrator : public SamplerIntegrator {
                 const FlatMaterial* flat_mat = dynamic_cast<const FlatMaterial*>(si._primitive->get_material());
                 return flat_mat->kd();
             } else {
+                auto [phi, theta] = ray.get_spherical_angles();
+                auto px = phi * INV_2PI;
+                auto py = theta * INV_PI;
                 return scene.get_background()->find(px, py);
             }
         }

@@ -31,8 +31,8 @@ class DirectionalLight : public Light {
          * */
         virtual Vec3 sample_li(const SurfaceInteraction& interaction,
                 Vec3 *wi, VisibilityTester* vt) const {
-            *wi = tao::unitize(-_direction);
-            auto pOutside = -(interaction._p + _direction * (2 * _world_radius));
+            *wi = tao::unitize(_direction);
+            auto pOutside = (interaction._p + _direction * (2 * _world_radius));
             *vt = VisibilityTester {interaction, SurfaceInteraction {pOutside}};
             return _intensity;
         }

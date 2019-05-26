@@ -4,6 +4,7 @@
 #include "omg/common.h"
 #include <limits>
 
+
 namespace omg {
 /**
  * Represents a ray in the raytracer 
@@ -51,6 +52,11 @@ class Ray {
          * */
         inline Vec3 get_direction() const { return _d; }
 
+        inline std::pair<float, float> get_spherical_angles() const {
+            auto phi = tao::spherical_phi(_d);
+            auto theta = tao::spherical_theta(_d);
+            return {phi, theta};
+        }
 };
 };
 #endif

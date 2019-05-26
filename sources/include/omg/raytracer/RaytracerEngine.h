@@ -35,14 +35,25 @@ class RaytracerEngine {
         }
 
         void init(const std::string & file_path, SourceType source) {
-            if (source == SourceType::FROM_FILE)
-                _parser->init_from_file(file_path);
-            else if (source == SourceType::FROM_TEXT)
-                _parser->init_from_file(file_path);
-            else 
-                _parser->init_from_file(file_path);
-            _scene = _parser->parse_scene();
-            _running_settings = _parser->parse_running_settings();
+            try {
+                //> Init parser
+                if (source == SourceType::FROM_FILE)
+                    _parser->init_from_file(file_path);
+                else if (source == SourceType::FROM_TEXT)
+                    _parser->init_from_file(file_path);
+                else 
+                    _parser->init_from_file(file_path);
+                //> Parse scene
+                omg::logger.log(Logger::Type::INFO, "parsing", "parsing scene in " + file_path + "...");
+                _scene = _parser->parse_scene();
+                omg::logger.log(Logger::Type::SUCCESS, "parsing", "scene parsed");
+                //> Parse running settings
+                omg::logger.log(Logger::Type::INFO, "parsing", "parsing settings...");
+                _running_settings = _parser->parse_running_settings();
+                omg::logger.log(Logger::Type::SUCCESS, "parsing", "settings parsed");
+            } catch (const std::exception& e) {
+                throw e;
+            }
         }
 
         void run_raytracer(const std::string& destination_path) {
@@ -61,9 +72,13 @@ class RaytracerEngine {
             auto ppm_printer = std::make_shared<netpbm::NetpbmPrinter<unsigned char>>(configs);
 
             for (auto & integrator : _running_settings->integrators) {
+                omg::logger.log(Logger::Type::INFO, integrator->get_suffix(), "rendering...");
                 integrator->render(*_scene);
-                integrator->get_camera()->get_film()->write(
-                        destination_path + integrator->get_suffix(), {ppm_printer}); 
+                omg::logger.log(Logger::Type::SUCCESS, integrator->get_suffix(), "scene rendered");
+                auto file_dest_path = destination_path + integrator->get_suffix();
+                omg::logger.log(Logger::Type::INFO, "writer", "writing to file " + file_dest_path);
+                integrator->get_camera()->get_film()->write(file_dest_path, {ppm_printer}); 
+                omg::logger.log(Logger::Type::SUCCESS, "writer", "written");
             }
         }
 

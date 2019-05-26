@@ -31,8 +31,6 @@ class NormalMapIntegrator : public SamplerIntegrator {
          * */
         RGBColor li(const Ray& ray,
                 const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr,
                 int depth=0) override {
             auto si = std::make_unique<SurfaceInteraction>();
@@ -43,6 +41,9 @@ class NormalMapIntegrator : public SamplerIntegrator {
                 auto b = (normal(2) + 1.0f) / 2.0f;
                 return RGBColor {r * 255.0f, g * 255.0f, b * 255.0f};
             } else {
+                auto [phi, theta] = ray.get_spherical_angles();
+                auto px = phi * INV_2PI;
+                auto py = theta * INV_PI;
                 return scene.get_background()->find(px, py);
             }
         }

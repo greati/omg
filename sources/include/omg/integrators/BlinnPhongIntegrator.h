@@ -1,6 +1,7 @@
 #ifndef _BLINN_INT_
 #define _BLINN_INT_
 
+
 #include "omg/integrators/SamplerIntegrator.h"
 #include "omg/materials/BlinnMaterial.h"
 #include "omg/common.h"
@@ -35,8 +36,6 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
          * */
         RGBColor li(const Ray& ray,
                 const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
                 const std::shared_ptr<Sampler> sampler = nullptr,
                 int depth=0) override {
 
@@ -54,6 +53,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             RealValue gloss;
             Vec3 normal;
 
+            //> Test intersection
             SurfaceInteraction si;
             bool hit = scene.intersect(ray, &si);
 
@@ -69,10 +69,10 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                    normal = tao::unitize(si._n);
                 }
             } else {
-                if (depth == 0)
-                    return scene.get_background()->find(px, py);
-                else
-                    return RGBColor {0.0, 0.0, 0.0};
+                auto [phi, theta] = ray.get_spherical_angles();
+                auto px = phi * INV_2PI;
+                auto py = theta * INV_PI;
+                return scene.get_background()->find(px, py);
             }
 
             for (auto& light : scene.get_lights()) {
@@ -106,7 +106,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
             if (!(material->km() == Vec3{0.0, 0.0, 0.0}) && depth < depth_max) {
                 auto ray_direction = tao::unitize(ray.get_direction());
                 auto reflected = ray_direction - 2.0f * (tao::dot(ray_direction, normal)) * normal;
-                L += km.element_wise(this->li(Ray {si._p, tao::unitize(reflected)}, scene, px, py, nullptr, depth + 1),
+                L += km.element_wise(this->li(Ray {si._p, tao::unitize(reflected)}, scene, nullptr, depth + 1),
                             [](auto x, auto y) {return x*y;});
             }
 

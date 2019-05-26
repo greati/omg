@@ -144,6 +144,20 @@ class Camera {
             return {u, v};
         }
 
+        /** 
+         * Compute the (i,j) from (u,v), u, v in [w, h]
+         *
+         * @param u horizontal displacement
+         * @param v vertical displacement
+         * @return the pair (i, j)
+         * */
+        std::pair<float, float> compute_i_j(float u, float v) const {
+            auto vd = this->_vpdims;
+            auto ii = ((u - vd.l) * _width) / (vd.r - vd.l) - 0.5;
+            auto jj = ((v - vd.b) * _height) / (vd.t - vd.b) - 0.5;
+            return {ii / _width, jj / _height};
+        }
+
         /**
          * Get the associated orthonormal basis.
          *
