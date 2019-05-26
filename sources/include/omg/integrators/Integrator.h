@@ -36,9 +36,8 @@ class Integrator {
         virtual RGBColor li(
                 const Ray& ray,
                 const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) = 0;
+                const std::shared_ptr<Sampler> sampler = nullptr,
+                int depth=0) = 0;
 
         /**
          * Execute after parsing the scene, to do specific

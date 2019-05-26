@@ -48,9 +48,8 @@ class DepthIntegrator : public SamplerIntegrator {
          * */
         RGBColor li(const Ray& ray,
                 const Scene& scene,
-                float px = 0.0,
-                float py = 0.0,
-                const std::shared_ptr<Sampler> sampler = nullptr) override {
+                const std::shared_ptr<Sampler> sampler = nullptr,
+                int depth=0) override {
             SurfaceInteraction si;
             if (scene.intersect(ray, &si)) {
                 auto t = si._t;
@@ -60,7 +59,7 @@ class DepthIntegrator : public SamplerIntegrator {
                 float b = lerp(t_norm, _tMin, _near_color(2), _tMax, _far_color(2));
                 return RGBColor{r, g, b};
             } else {
-                return _far_color;//scene.get_background()->find(px, py);
+                return _far_color;
             }
         }
 

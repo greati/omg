@@ -9,9 +9,16 @@
 #include "omg/integrators/FlatIntegrator.h"
 #include "omg/integrators/NormalMapIntegrator.h"
 #include "omg/integrators/DepthIntegrator.h"
+#include "omg/integrators/BlinnPhongIntegrator.h"
 #include "omg/materials/Material.h"
 #include "omg/materials/FlatMaterial.h"
+#include "omg/materials/BlinnMaterial.h"
 #include "omg/objects/GeometricPrimitive.h"
+#include "omg/lights/Light.h"
+#include "omg/lights/PointLight.h"
+#include "omg/lights/DirectionalLight.h"
+#include "omg/lights/AmbientLight.h"
+#include "omg/lights/SpotLight.h"
 #include <iostream>
 
 using namespace omg;
@@ -87,7 +94,14 @@ std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
     if (type == "flat") {
         RGBColor color = hard_require(node, "color").as<Vec3>();
         return std::make_shared<FlatMaterial>(color);
-    } 
+    } else if (type == "blinn") {
+        Vec3 ka = hard_require(node, "ambient").as<Vec3>();
+        Vec3 kd = hard_require(node, "diffuse").as<Vec3>();
+        Vec3 ks = hard_require(node, "specular").as<Vec3>();
+        Vec3 km = defaulted_require(node, "mirror", Vec3 {0.0, 0.0, 0.0});
+        RealValue glossiness = hard_require(node, "glossiness").as<RealValue>();
+        return std::make_shared<BlinnMaterial>(ka, kd, ks, km, glossiness);
+    }
     
     throw omg::ParseException("unknown material type " + type);
 }
@@ -228,6 +242,8 @@ std::shared_ptr<Integrator> YAMLParser::parse(const YAML::Node& integrator_node)
             }
         } else if (integrator_type == "normal_map") {
             integrator = std::make_shared<NormalMapIntegrator>(spp);
+        } else if (integrator_type == "blinn") {
+            integrator = std::make_shared<BlinnPhongIntegrator>(spp);
         } else {
             throw omg::ParseException("unknown integrator type " + integrator_type);
         }
@@ -249,11 +265,48 @@ void YAMLParser::parse_materials(const YAML::Node& node) {
 }
 
 template<>
+std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
+    try {
+        std::string type = hard_require(light_node, "type").as<std::string>();
+
+        std::shared_ptr<Light> light = nullptr;
+
+        auto intensity = hard_require(light_node, "intensity").as<Vec3>();
+
+        if (type == "point") {
+            auto position = hard_require(light_node, "position").as<Vec3>();
+            light = std::make_shared<PointLight>(intensity, position);             
+        } else if (type == "directional") {
+            auto direction = hard_require(light_node, "direction").as<Vec3>();
+            light = std::make_shared<DirectionalLight>(intensity, direction);             
+        } else if (type == "ambient") {
+            light = std::make_shared<AmbientLight>(intensity);             
+        } else if (type == "spot") {
+            auto position = hard_require(light_node, "position").as<Vec3>();
+            auto point_at = hard_require(light_node, "point_at").as<Vec3>();
+            auto falloff = hard_require(light_node, "falloff").as<float>();
+            auto cutoff = hard_require(light_node, "cutoff").as<float>();
+            cutoff = (cutoff * M_PI) / 180;
+            falloff = (falloff * M_PI) / 180;
+            light = std::make_shared<SpotLight>(intensity, position, point_at, falloff, cutoff);
+        } else {
+            throw omg::ParseException("unknown light type " + type);
+        }
+        return light;
+    } catch (omg::ParseException & e) {
+        throw;
+    } catch (YAML::BadConversion & e) {
+        throw omg::ParseException(e.what());
+    }
+}
+
+template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     // context
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);
     std::vector<std::shared_ptr<Primitive>> objects;
+    std::vector<std::shared_ptr<Light>> lights;
     // scene
     if (node["scene"]) {
         auto scene_node = node["scene"];
@@ -262,11 +315,15 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
             parse_materials(scene_node["materials"]);
         }
 
+        if (scene_node["lights"]) {
+            lights = this->parse_list<Light>(scene_node["lights"]);
+        }
+
         if (scene_node["objects"]) {
             objects = this->parse_list<Primitive>(scene_node["objects"]);
         }
     }
-    auto scene = std::make_shared<Scene>(background, camera, objects);
+    auto scene = std::make_shared<Scene>(background, camera, objects, lights);
     return scene;
 }
 

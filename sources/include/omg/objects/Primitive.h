@@ -4,6 +4,7 @@
 #include "omg/raytracer/Ray.h"
 #include "omg/raytracer/SurfaceInteraction.h"
 #include "omg/materials/Material.h"
+#include "omg/objects/Bounds3.h"
 
 /**
  * Represents a primitive to be rendered
@@ -39,6 +40,13 @@ class Primitive {
          * @return if intersection occurred
          * */
         virtual bool intersect(const Ray& ray) const = 0;
+
+        /**
+         * The world bound of this primitive.
+         *
+         * @return the world bound
+         * */
+        virtual Bounds3 world_bound() const = 0;
 
 };
 };

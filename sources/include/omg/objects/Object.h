@@ -4,6 +4,7 @@
 #include "omg/raytracer/Ray.h"
 #include "omg/raytracer/SurfaceInteraction.h"
 #include "omg/materials/Material.h"
+#include "Bounds3.h"
 
 namespace omg {
 /**
@@ -20,6 +21,8 @@ class Object {
         virtual bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) = 0;
 
         virtual bool intersect(const Ray& ray) = 0;
+
+        virtual Bounds3 world_bound() const = 0;
 };
 };
 #endif

@@ -2,11 +2,11 @@
 #define _SURF_INTER_
 
 #include "omg/common.h"
-#include "omg/objects/Primitive.h"
 
 namespace omg {
 
 class Primitive;
+class Ray;
 
 /**
  * Data regarding interaction of rays
@@ -29,6 +29,8 @@ class SurfaceInteraction {
     public:
 
         SurfaceInteraction() {/*empty*/}
+
+	SurfaceInteraction(const Point3& p) : _p {p} {/* empty */}
         
         SurfaceInteraction(const Point3& p, const Vec3& n,
                 const Vec3& wo, float time, const Point2& uv,
@@ -36,6 +38,8 @@ class SurfaceInteraction {
                 Primitive* primitive) 
         : _p {p}, _n {n}, _wo {wo}, _time {time}, _uv {uv}, _t {t}, _primitive {primitive}
         {/*empty*/}
+
+        Ray spaw_ray_to(const SurfaceInteraction& si1) const;
 
 };
 };
