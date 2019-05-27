@@ -1,0 +1,123 @@
+\hypertarget{classomg_1_1_integrator}{}\section{omg\+::Integrator Class Reference}
+\label{classomg_1_1_integrator}\index{omg::Integrator@{omg::Integrator}}
+
+
+Implements the rendering algorithm.  
+
+
+
+
+{\ttfamily \#include $<$Integrator.\+h$>$}
+
+Inheritance diagram for omg\+::Integrator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.500000cm]{classomg_1_1_integrator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classomg_1_1_integrator_a9353c1a5abd1396d7c1fcd4f3e250998}{render}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene)=0
+\begin{DoxyCompactList}\small\item\em Render a given scene. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \mbox{\hyperlink{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}{li}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ sampler=nullptr, int depth=0)=0
+\begin{DoxyCompactList}\small\item\em Incidence radiance computation for a given ray acting on a scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classomg_1_1_integrator_ac465a582d2dc3a795247f37f7edcdc47}{preprocess}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $\ast$sampler)
+\begin{DoxyCompactList}\small\item\em Execute after parsing the scene, to do specific implementations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_integrator_a5cf412974f768257924521e74d3a80ba}\label{classomg_1_1_integrator_a5cf412974f768257924521e74d3a80ba}} 
+\mbox{\hyperlink{classomg_1_1_camera}{Camera}} $\ast$ {\bfseries get\+\_\+camera} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_integrator_a6d8e807a4f87ee851d07aee6ebddebba}\label{classomg_1_1_integrator_a6d8e807a4f87ee851d07aee6ebddebba}} 
+void {\bfseries set\+\_\+suffix} (const std\+::string \&suff)
+\item 
+\mbox{\Hypertarget{classomg_1_1_integrator_a0652081c509c5e21b960ce3ec51f7b03}\label{classomg_1_1_integrator_a0652081c509c5e21b960ce3ec51f7b03}} 
+std\+::string {\bfseries get\+\_\+suffix} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_integrator_ad29a31e12c27836dce0212eec56db17b}\label{classomg_1_1_integrator_ad29a31e12c27836dce0212eec56db17b}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ {\bfseries \+\_\+camera}
+\item 
+\mbox{\Hypertarget{classomg_1_1_integrator_a4b7b411dd0432d9732415e4a780f1a00}\label{classomg_1_1_integrator_a4b7b411dd0432d9732415e4a780f1a00}} 
+std\+::string {\bfseries \+\_\+suffix} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements the rendering algorithm. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}\label{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}} 
+\index{omg::Integrator@{omg::Integrator}!li@{li}}
+\index{li@{li}!omg::Integrator@{omg::Integrator}}
+\subsubsection{\texorpdfstring{li()}{li()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} omg\+::\+Integrator\+::li (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$}]{sampler = {\ttfamily nullptr},  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Incidence radiance computation for a given ray acting on a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em scene} & the scene \\
+\hline
+{\em sampler} & pointer to a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_depth_integrator_a91ac6f83b0a56e67f754457f7d2f4365}{omg\+::\+Depth\+Integrator}}, \mbox{\hyperlink{classomg_1_1_blinn_phong_integrator_a5a55ac71748932d2697dcec8262900f2}{omg\+::\+Blinn\+Phong\+Integrator}}, \mbox{\hyperlink{classomg_1_1_normal_map_integrator_a8cdb4a7e141018712f63a58d158e3214}{omg\+::\+Normal\+Map\+Integrator}}, and \mbox{\hyperlink{classomg_1_1_flat_integrator_abda6cdbca64bc6a82ebc4460ab71a276}{omg\+::\+Flat\+Integrator}}.
+
+\mbox{\Hypertarget{classomg_1_1_integrator_ac465a582d2dc3a795247f37f7edcdc47}\label{classomg_1_1_integrator_ac465a582d2dc3a795247f37f7edcdc47}} 
+\index{omg::Integrator@{omg::Integrator}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!omg::Integrator@{omg::Integrator}}
+\subsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily virtual void omg\+::\+Integrator\+::preprocess (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{\mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $\ast$}]{sampler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Execute after parsing the scene, to do specific implementations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene \\
+\hline
+{\em sampler} & a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classomg_1_1_depth_integrator_a4ef7ff8e7499862d1416eda91b5ec2f1}{omg\+::\+Depth\+Integrator}}.
+
+\mbox{\Hypertarget{classomg_1_1_integrator_a9353c1a5abd1396d7c1fcd4f3e250998}\label{classomg_1_1_integrator_a9353c1a5abd1396d7c1fcd4f3e250998}} 
+\index{omg::Integrator@{omg::Integrator}!render@{render}}
+\index{render@{render}!omg::Integrator@{omg::Integrator}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void omg\+::\+Integrator\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Render a given scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_sampler_integrator_a4b147659d3227e8dd8a38e7518ab5d72}{omg\+::\+Sampler\+Integrator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/integrators/Integrator.\+h\end{DoxyCompactItemize}

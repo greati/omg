@@ -2,13 +2,20 @@ var searchData=
 [
   ['generate_5fray',['generate_ray',['../classomg_1_1_camera.html#aca08c044082cb3573d606a8c851f52fe',1,'omg::Camera::generate_ray()'],['../classomg_1_1_ortho_camera.html#af5dba96ad9cdf91121093d0c9d72e57f',1,'omg::OrthoCamera::generate_ray()'],['../classomg_1_1_perspective_camera.html#a6d849c2b0768f12aed7b50d3ce87afeb',1,'omg::PerspectiveCamera::generate_ray()']]],
   ['get',['get',['../class_configs.html#a6e7f850ce09a2298daf3634bfc0aba35',1,'Configs']]],
+  ['get_5f1d',['get_1d',['../classomg_1_1_sampler.html#ab577767afd5ef449d815493b81d8d7e0',1,'omg::Sampler']]],
+  ['get_5f1d_5farray',['get_1d_array',['../classomg_1_1_sampler.html#aeb4b5fa3758c26f2fc3307ce6f6e15f3',1,'omg::Sampler']]],
+  ['get_5f2d',['get_2d',['../classomg_1_1_sampler.html#a75c8c5ca9751d3c3c5ac025f3713bda0',1,'omg::Sampler']]],
+  ['get_5f2d_5farray',['get_2d_array',['../classomg_1_1_sampler.html#a3f727fa083652776d02cfe43cf8f24db',1,'omg::Sampler']]],
   ['get_5faspect_5fratio',['get_aspect_ratio',['../classomg_1_1_camera.html#ad9049467f7a5e4a3a089c789243b1463',1,'omg::Camera']]],
   ['get_5fbackground',['get_background',['../classomg_1_1_scene.html#a2eef3b62d9d01b19fb32751942f1fa7c',1,'omg::Scene']]],
-  ['get_5fbuffer',['get_buffer',['../classomg_1_1_raytracer_visitor.html#a02b6a31ad96feae340a34be792fa698e',1,'omg::RaytracerVisitor']]],
+  ['get_5fbuffer',['get_buffer',['../classomg_1_1_film.html#a41d69c25f1d84409b9cd435ad9856562',1,'omg::Film::get_buffer()'],['../classomg_1_1_raytracer_visitor.html#a02b6a31ad96feae340a34be792fa698e',1,'omg::RaytracerVisitor::get_buffer()']]],
   ['get_5fcamera',['get_camera',['../classomg_1_1_scene.html#a7f9aac9cd9ea4d984ac2df98ae553967',1,'omg::Scene']]],
-  ['get_5fdirection',['get_direction',['../classomg_1_1_ray.html#af78835511d6eb2d50fafdacb69e82b8c',1,'omg::Ray']]],
+  ['get_5fdirection',['get_direction',['../classomg_1_1_directional_light.html#a5f5f490112ecf2c0dfb2613d1f831e5b',1,'omg::DirectionalLight::get_direction()'],['../classomg_1_1_point_light.html#a064ca776b8304a2733bbe20619e071be',1,'omg::PointLight::get_direction()'],['../classomg_1_1_spot_light.html#a8a82a670fff00ac2d72cd2cd4baec335',1,'omg::SpotLight::get_direction()'],['../classomg_1_1_ray.html#aed10a92891a426b887927c75018f88b1',1,'omg::Ray::get_direction()']]],
+  ['get_5ffilm',['get_film',['../classomg_1_1_camera.html#a6feb3185dc41c47b1d2749d58b8d0c13',1,'omg::Camera']]],
   ['get_5fheight',['get_height',['../classomg_1_1_camera.html#a4003f1cf690980d47b3307e6eefe3003',1,'omg::Camera']]],
-  ['get_5forigin',['get_origin',['../classomg_1_1_ray.html#a7f7c541289c92949e737522248be9b98',1,'omg::Ray']]],
+  ['get_5fintensity',['get_intensity',['../classomg_1_1_light.html#a7be0cc4d0e3b3c8167ec50706abfd39b',1,'omg::Light']]],
+  ['get_5fmaterial',['get_material',['../classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21',1,'omg::AggregatePrimitive::get_material()'],['../classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a',1,'omg::GeometricPrimitive::get_material()'],['../classomg_1_1_primitive.html#ad9cb98c6f74581d53cadf800fc506333',1,'omg::Primitive::get_material()']]],
+  ['get_5forigin',['get_origin',['../classomg_1_1_ray.html#a3b2c3ade0173b74f72e7bb4e72363cf3',1,'omg::Ray']]],
   ['get_5fortho_5fbasis',['get_ortho_basis',['../classomg_1_1_camera.html#a7bc7168312ae9923904489e792ad0526',1,'omg::Camera']]],
   ['get_5fwidth',['get_width',['../classomg_1_1_camera.html#a9d27ce6b9428503ad27e0247deb65bba',1,'omg::Camera']]]
 ];

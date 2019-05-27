@@ -1,6 +1,9 @@
 var searchData=
 [
   ['label_5fmsg_5ftype',['label_msg_type',['../class_logger.html#abe4434e4ae0efd8b41cb2a61458a710d',1,'Logger::label_msg_type()'],['../class_standard_logger.html#a5803969715008363869dfd47326790bb',1,'StandardLogger::label_msg_type()']]],
+  ['li',['li',['../classomg_1_1_blinn_phong_integrator.html#a5a55ac71748932d2697dcec8262900f2',1,'omg::BlinnPhongIntegrator::li()'],['../classomg_1_1_depth_integrator.html#a91ac6f83b0a56e67f754457f7d2f4365',1,'omg::DepthIntegrator::li()'],['../classomg_1_1_flat_integrator.html#abda6cdbca64bc6a82ebc4460ab71a276',1,'omg::FlatIntegrator::li()'],['../classomg_1_1_integrator.html#a2922583794310f6b1ff8ee121666f7a1',1,'omg::Integrator::li()'],['../classomg_1_1_normal_map_integrator.html#a8cdb4a7e141018712f63a58d158e3214',1,'omg::NormalMapIntegrator::li()']]],
+  ['light',['Light',['../classomg_1_1_light.html',1,'omg']]],
+  ['listaggregate',['ListAggregate',['../classomg_1_1_list_aggregate.html',1,'omg::ListAggregate'],['../classomg_1_1_list_aggregate.html#a80d0fc549ba77def8767c0e10a774a49',1,'omg::ListAggregate::ListAggregate()']]],
   ['lodepngcolormode',['LodePNGColorMode',['../struct_lode_p_n_g_color_mode.html',1,'']]],
   ['lodepngcolorprofile',['LodePNGColorProfile',['../struct_lode_p_n_g_color_profile.html',1,'']]],
   ['lodepngcompresssettings',['LodePNGCompressSettings',['../struct_lode_p_n_g_compress_settings.html',1,'']]],

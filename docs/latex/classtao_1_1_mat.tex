@@ -1,148 +1,117 @@
-\hypertarget{classtao_1_1_mat}{}\section{tao\+::Mat$<$ T $>$ Class Template Reference}
-\label{classtao_1_1_mat}\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-Inheritance diagram for tao\+::Mat$<$ T $>$\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classtao_1_1_mat}
-\end{center}
-\end{figure}
+\hypertarget{classtao_1_1_mat}{}\section{tao\+::Mat$<$ T, Number\+Rows, Number\+Cols $>$ Class Template Reference}
+\label{classtao_1_1_mat}\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
+
+
+Represents a matrix whose elements are parameterized.  
+
+
+
+
+{\ttfamily \#include $<$Mat.\+h$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}\label{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}} 
-\mbox{\hyperlink{classtao_1_1_mat_a92faf4e75c90d8431fd6f60ef5e33b4a}{Mat}} ()
+\mbox{\Hypertarget{classtao_1_1_mat_a3422e33caa3cc8042afdbbdf05626d89}\label{classtao_1_1_mat_a3422e33caa3cc8042afdbbdf05626d89}} 
+\mbox{\hyperlink{classtao_1_1_mat_a3422e33caa3cc8042afdbbdf05626d89}{Mat}} ()
 \begin{DoxyCompactList}\small\item\em Number of cols. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat_a22ea16d2a3e3a1da5eb7de57e5bf02c2}{Mat}} (int dim)
-\begin{DoxyCompactList}\small\item\em Constructor of square matrices based on size only. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat_a8b2f68a1f5539462e6f4186bc5f8a5c7}{Mat}} (int \mbox{\hyperlink{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}{rows}}, int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}})
-\begin{DoxyCompactList}\small\item\em Constructor based on size only. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat_a83589751aea3dcecc363068fd540a930}{Mat}} (int \mbox{\hyperlink{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}{rows}}, int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}}, T val)
-\begin{DoxyCompactList}\small\item\em Constructor based on size and a fill value. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat_a2c26859cc4b8bf40eb26dd4335f2d3c0}{Mat}} (const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&elements)
+\mbox{\hyperlink{classtao_1_1_mat_a6faedd42462e245d11493065dc538b31}{Mat}} (T initial)
+\begin{DoxyCompactList}\small\item\em Constructor which initializes the matrix with an specified value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1_mat_a67875374bb4300b8b9a3b57eabb16450}{Mat}} (const std\+::initializer\+\_\+list$<$ T $>$ \&elements)
 \begin{DoxyCompactList}\small\item\em Construtor based on an initializer list. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat_a74c591cbc3893506d9f97cf9f54e7adf}{Mat}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&)
-\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}{operator=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&other)
-\begin{DoxyCompactList}\small\item\em Copy-\/assignment operator. \end{DoxyCompactList}\item 
-T \mbox{\hyperlink{classtao_1_1_mat_a814d02bbf96dab62938912f792aa7994}{operator()}} (int row, int col) const
+\mbox{\hyperlink{classtao_1_1_mat_a4e3a587a2d6466f391c4163dac1ddf24}{Mat}} (const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&elements)
+\begin{DoxyCompactList}\small\item\em Construtor based on an initializer list. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1_mat_a57eab1bb6cced77617322c10e5af1d21}{operator()}} (int row, int col=0) const
 \begin{DoxyCompactList}\small\item\em Row-\/column read-\/only access operator. \end{DoxyCompactList}\item 
-T \& \mbox{\hyperlink{classtao_1_1_mat_ac0372cf9e7da0ab734e7c58888e5d85a}{operator()}} (int row, int col)
+T \& \mbox{\hyperlink{classtao_1_1_mat_a15af7f1814cfb14b628e283e0fec5310}{operator()}} (int row, int col=0)
 \begin{DoxyCompactList}\small\item\em Row-\/column set access operator. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a84cc1217fbedd04adbcc6068d7fd493a}{operator+}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_a558aaf77a7c7e3feba292932bed7166f}{operator+}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs) const
 \begin{DoxyCompactList}\small\item\em Matrix element-\/wise sum. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a05438bfc32bbf1cb404baea6d596d92b}{operator-\/}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_a63968580e28124e87e38244aa29263e5}{operator-\/}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs) const
 \begin{DoxyCompactList}\small\item\em Matrix subtraction element-\/wise. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a0f550cb7daaaf75abe46f3cda97f7df9}{operator/}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_accb7566993c45504e983484ae0426071}{operator/}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs) const
 \begin{DoxyCompactList}\small\item\em Matrix division element-\/wise. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a5da0629614bcc00ae6d850a3107e4192}{operator-\/}} ()
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_a0a24345ea0ff734cfcf6dabc5a7d1089}{operator-\/}} () const
 \begin{DoxyCompactList}\small\item\em Unary matrix operator. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_ad328f559aab180d67e0fb4558c6c92a0}{operator $\ast$}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs)
-\begin{DoxyCompactList}\small\item\em Matrix product. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a83de238ae44b6cf2bcaa342dd514f333}{operator $\ast$}} (const T scalar)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_a9b10422fcba8efcdf1965ebbc9134984}{operator $\ast$}} (const T scalar) const
 \begin{DoxyCompactList}\small\item\em Product between matrix and scalar. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a3dde01988a0bb663e5fbeae1d509eb0c}{operator/}} (const T scalar)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_ac7fd637d3e6f33bfd0de2e906a6d2501}{operator/}} (const T scalar) const
 \begin{DoxyCompactList}\small\item\em Division between matrix and scalar. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}{operator==}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs)
-\begin{DoxyCompactList}\small\item\em Matrix product. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classtao_1_1_mat_a6391b9b7e8b36ceeb341e8bd94952d5c}{nrows}} () const
+int \mbox{\hyperlink{classtao_1_1_mat_a0ecf2fe071bee0ba5de27b5437c06e38}{nrows}} () const
 \begin{DoxyCompactList}\small\item\em The number of rows. \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{classtao_1_1_mat_ae13a111423bb288f81a3c2ff132955f7}{ncols}} () const
+int \mbox{\hyperlink{classtao_1_1_mat_a267e7b8c107a77c25777111a7add6b60}{ncols}} () const
 \begin{DoxyCompactList}\small\item\em The number of cols. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classtao_1_1_mat_a503d508f8f80c64a494f323649f20c55}{reset}} (const T \&val)
+void \mbox{\hyperlink{classtao_1_1_mat_a6f501dafd8e5fec2d40d036fe8faeb47}{reset}} (const T \&val)
 \begin{DoxyCompactList}\small\item\em Reset matrix with a value. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a6947500e8c7439144bcda888278944ff}{element\+\_\+wise}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs, std\+::function$<$ T(T, T)$>$ operation) const
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \mbox{\hyperlink{classtao_1_1_mat_a478949f4c6c7082ea0bfc78bf5d46b74}{element\+\_\+wise}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs, std\+::function$<$ T(T, T)$>$ operation) const
 \begin{DoxyCompactList}\small\item\em Performs an operation element-\/wise, producing a new matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_adf31d67ec117de70423499bfa81f124c}{element\+\_\+wise\+\_\+inplace}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs, std\+::function$<$ T(T, T)$>$ operation)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a4e0897f4d469def2d611be92f4b5d197}{element\+\_\+wise\+\_\+inplace}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs, std\+::function$<$ T(T, T)$>$ operation)
 \begin{DoxyCompactList}\small\item\em Performs an operation element-\/wise, modifying the current matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat_a2d900f9207772d4adcaaff6c697a9839}{t}} () const
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Cols, Number\+Rows $>$ \mbox{\hyperlink{classtao_1_1_mat_aa1c457eab2e6abb72ebf865c8284ed7c}{t}} () const
 \begin{DoxyCompactList}\small\item\em Computes the transpose of a matrix. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a8033892f80dec7742fbae2d4142718c9}{operator+=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_ab15d248a4f028f290670dd4ed1bdcb5c}{operator+=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs)
 \begin{DoxyCompactList}\small\item\em Sum and assignment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_ac7109400de3729992a23e6d8ea5857b6}{operator-\/=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a6bc77952fe5ed450eded94145cde42a1}{operator-\/=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs)
 \begin{DoxyCompactList}\small\item\em Subtract and assignment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a032760595aa5055588624aa56758b323}{operator/=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a93efaf5ad6559b2a8a847b8ce3efc6b0}{operator/=}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&rhs)
 \begin{DoxyCompactList}\small\item\em Divide and assignment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_add01ca6b2275ad6d4fbde98056d73276}{operator $\ast$=}} (const T scalar)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_ae684c7c3b2ccd9fc04b96170268a1af5}{operator $\ast$=}} (const T scalar)
 \begin{DoxyCompactList}\small\item\em Multiply by scalar and assignment. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat_a2c5e0650cbc59030c4491c439bcd5b28}{operator/=}} (const T scalar)
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \& \mbox{\hyperlink{classtao_1_1_mat_aaf383a5fdb98d14de8beca8da5415175}{operator/=}} (const T scalar)
 \begin{DoxyCompactList}\small\item\em Divide by scalar and assignment. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}{eq}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&rhs, float precision=0.\+0001) const
+{\footnotesize template$<$int O, int P$>$ }\\bool \mbox{\hyperlink{classtao_1_1_mat_a109f651508ab5ff613c7b11cefedd263}{eq}} (const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, O, P $>$ \&rhs, float precision=0.\+0001) const
 \begin{DoxyCompactList}\small\item\em Equality comparison with precision indication. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classtao_1_1_mat_abd0a080dca7580acf5fdba2086d04802}\label{classtao_1_1_mat_abd0a080dca7580acf5fdba2086d04802}} 
-std\+::unique\+\_\+ptr$<$ T\mbox{[}$\,$\mbox{]}$>$ {\bfseries data}
+\mbox{\Hypertarget{classtao_1_1_mat_a75755f968e77a5153cdf6c4cf2e913f2}\label{classtao_1_1_mat_a75755f968e77a5153cdf6c4cf2e913f2}} 
+\mbox{\hyperlink{structtao_1_1mat__storage__type__traits}{mat\+\_\+storage\+\_\+type\+\_\+traits}}$<$ Number\+Rows, Number\+Cols, T $>$\+::matrix\+\_\+storage\+\_\+type {\bfseries data}
 \item 
-\mbox{\Hypertarget{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}\label{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}} 
-int \mbox{\hyperlink{classtao_1_1_mat_adba65952e3b69680bd1d9f6477c20d7d}{rows}} \{0\}
-\begin{DoxyCompactList}\small\item\em Matrix data. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}\label{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}} 
-int \mbox{\hyperlink{classtao_1_1_mat_a80e80ef1ee80e33719d9637153186ee4}{cols}} \{0\}
+\mbox{\Hypertarget{classtao_1_1_mat_aee1b5ed6616059fb81925ad7d8145840}\label{classtao_1_1_mat_aee1b5ed6616059fb81925ad7d8145840}} 
+\mbox{\hyperlink{structtao_1_1mat__storage__initializer}{mat\+\_\+storage\+\_\+initializer}}$<$ Number\+Rows, Number\+Cols, T $>$ {\bfseries storage\+\_\+initializer}
+\item 
+\mbox{\Hypertarget{classtao_1_1_mat_a25f6ae54fdd89d4aa7ed5e019a16b087}\label{classtao_1_1_mat_a25f6ae54fdd89d4aa7ed5e019a16b087}} 
+int {\bfseries rows} \{Number\+Rows\}
+\item 
+\mbox{\Hypertarget{classtao_1_1_mat_aa9d8f0eac7b7e8e9183e6f8cb8908ef5}\label{classtao_1_1_mat_aa9d8f0eac7b7e8e9183e6f8cb8908ef5}} 
+int \mbox{\hyperlink{classtao_1_1_mat_aa9d8f0eac7b7e8e9183e6f8cb8908ef5}{cols}} \{Number\+Cols\}
 \begin{DoxyCompactList}\small\item\em Number of rows. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, int Number\+Rows, int Number\+Cols$>$\newline
+class tao\+::\+Mat$<$ T, Number\+Rows, Number\+Cols $>$}
+
+Represents a matrix whose elements are parameterized. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classtao_1_1_mat_a22ea16d2a3e3a1da5eb7de57e5bf02c2}\label{classtao_1_1_mat_a22ea16d2a3e3a1da5eb7de57e5bf02c2}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!Mat@{Mat}}
-\index{Mat@{Mat}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{int}]{dim }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classtao_1_1_mat_a6faedd42462e245d11493065dc538b31}\label{classtao_1_1_mat_a6faedd42462e245d11493065dc538b31}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!Mat@{Mat}}
+\index{Mat@{Mat}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
+\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{T}]{initial }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Constructor of square matrices based on size only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rows} & number of rows and cols \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a8b2f68a1f5539462e6f4186bc5f8a5c7}\label{classtao_1_1_mat_a8b2f68a1f5539462e6f4186bc5f8a5c7}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!Mat@{Mat}}
-\index{Mat@{Mat}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
-
-
-
-Constructor based on size only. 
+Constructor which initializes the matrix with an specified value. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em rows} & number of rows \\
-\hline
-{\em cols} & number of cols \\
+{\em initial} & the initial value \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a83589751aea3dcecc363068fd540a930}\label{classtao_1_1_mat_a83589751aea3dcecc363068fd540a930}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!Mat@{Mat}}
-\index{Mat@{Mat}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols,  }\item[{T}]{val }\end{DoxyParamCaption})}
-
-
-
-Constructor based on size and a fill value. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rows} & number of rows \\
-\hline
-{\em cols} & number of cols \\
-\hline
-{\em fill} & value to fill \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a2c26859cc4b8bf40eb26dd4335f2d3c0}\label{classtao_1_1_mat_a2c26859cc4b8bf40eb26dd4335f2d3c0}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!Mat@{Mat}}
-\index{Mat@{Mat}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&}]{elements }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classtao_1_1_mat_a67875374bb4300b8b9a3b57eabb16450}\label{classtao_1_1_mat_a67875374bb4300b8b9a3b57eabb16450}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!Mat@{Mat}}
+\index{Mat@{Mat}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
+\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -153,31 +122,31 @@ Construtor based on an initializer list.
 {\em elements} & the elements \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a74c591cbc3893506d9f97cf9f54e7adf}\label{classtao_1_1_mat_a74c591cbc3893506d9f97cf9f54e7adf}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!Mat@{Mat}}
-\index{Mat@{Mat}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classtao_1_1_mat_a4e3a587a2d6466f391c4163dac1ddf24}\label{classtao_1_1_mat_a4e3a587a2d6466f391c4163dac1ddf24}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!Mat@{Mat}}
+\index{Mat@{Mat}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
+\subsubsection{\texorpdfstring{Mat()}{Mat()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::\mbox{\hyperlink{classtao_1_1_mat}{Mat}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&}]{elements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Copy constructor. 
+Construtor based on an initializer list. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em the} & mat to be copied \\
+{\em elements} & the elements \\
 \hline
 \end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classtao_1_1_mat_a6947500e8c7439144bcda888278944ff}\label{classtao_1_1_mat_a6947500e8c7439144bcda888278944ff}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!element\_wise@{element\_wise}}
-\index{element\_wise@{element\_wise}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a478949f4c6c7082ea0bfc78bf5d46b74}\label{classtao_1_1_mat_a478949f4c6c7082ea0bfc78bf5d46b74}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!element\_wise@{element\_wise}}
+\index{element\_wise@{element\_wise}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{element\_wise()}{element\_wise()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::element\+\_\+wise (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs,  }\item[{std\+::function$<$ T(T, T)$>$}]{operation }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::element\+\_\+wise (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs,  }\item[{std\+::function$<$ T(T, T)$>$}]{operation }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -191,12 +160,12 @@ Performs an operation element-\/wise, producing a new matrix.
 \begin{DoxyReturn}{Returns}
 the resulting matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_adf31d67ec117de70423499bfa81f124c}\label{classtao_1_1_mat_adf31d67ec117de70423499bfa81f124c}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!element\_wise\_inplace@{element\_wise\_inplace}}
-\index{element\_wise\_inplace@{element\_wise\_inplace}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a4e0897f4d469def2d611be92f4b5d197}\label{classtao_1_1_mat_a4e0897f4d469def2d611be92f4b5d197}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!element\_wise\_inplace@{element\_wise\_inplace}}
+\index{element\_wise\_inplace@{element\_wise\_inplace}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{element\_wise\_inplace()}{element\_wise\_inplace()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::element\+\_\+wise\+\_\+inplace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs,  }\item[{std\+::function$<$ T(T, T)$>$}]{operation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::element\+\_\+wise\+\_\+inplace (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs,  }\item[{std\+::function$<$ T(T, T)$>$}]{operation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -210,12 +179,13 @@ Performs an operation element-\/wise, modifying the current matrix.
 \begin{DoxyReturn}{Returns}
 the resulting matrix 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}\label{classtao_1_1_mat_aba6fa294c4b246f9750f6836a116c6db}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!eq@{eq}}
-\index{eq@{eq}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a109f651508ab5ff613c7b11cefedd263}\label{classtao_1_1_mat_a109f651508ab5ff613c7b11cefedd263}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!eq@{eq}}
+\index{eq@{eq}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{eq()}{eq()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-bool \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::eq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs,  }\item[{float}]{precision = {\ttfamily 0.0001} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+template$<$int O, int P$>$ \\
+bool \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::eq (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, O, P $>$ \&}]{rhs,  }\item[{float}]{precision = {\ttfamily 0.0001} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -233,12 +203,12 @@ Equality comparison with precision indication.
 \begin{DoxyReturn}{Returns}
 if m1 == m2 according to the precision 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_ae13a111423bb288f81a3c2ff132955f7}\label{classtao_1_1_mat_ae13a111423bb288f81a3c2ff132955f7}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!ncols@{ncols}}
-\index{ncols@{ncols}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a267e7b8c107a77c25777111a7add6b60}\label{classtao_1_1_mat_a267e7b8c107a77c25777111a7add6b60}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!ncols@{ncols}}
+\index{ncols@{ncols}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{ncols()}{ncols()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-int \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::ncols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+int \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::ncols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -247,12 +217,12 @@ The number of cols.
 \begin{DoxyReturn}{Returns}
 the number of cols 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a6391b9b7e8b36ceeb341e8bd94952d5c}\label{classtao_1_1_mat_a6391b9b7e8b36ceeb341e8bd94952d5c}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!nrows@{nrows}}
-\index{nrows@{nrows}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a0ecf2fe071bee0ba5de27b5437c06e38}\label{classtao_1_1_mat_a0ecf2fe071bee0ba5de27b5437c06e38}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!nrows@{nrows}}
+\index{nrows@{nrows}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{nrows()}{nrows()}}
-{\footnotesize\ttfamily template$<$typename T$>$ \\
-int \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::nrows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+int \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::nrows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -261,31 +231,12 @@ The number of rows.
 \begin{DoxyReturn}{Returns}
 the number of rows 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_ad328f559aab180d67e0fb4558c6c92a0}\label{classtao_1_1_mat_ad328f559aab180d67e0fb4558c6c92a0}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator $\ast$@{operator $\ast$}}
-\index{operator $\ast$@{operator $\ast$}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
-
-
-
-Matrix product. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rhs} & the rhs \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-the convertional matrix pruduct 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a83de238ae44b6cf2bcaa342dd514f333}\label{classtao_1_1_mat_a83de238ae44b6cf2bcaa342dd514f333}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator $\ast$@{operator $\ast$}}
-\index{operator $\ast$@{operator $\ast$}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classtao_1_1_mat_a9b10422fcba8efcdf1965ebbc9134984}\label{classtao_1_1_mat_a9b10422fcba8efcdf1965ebbc9134984}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -299,12 +250,12 @@ Product between matrix and scalar.
 \begin{DoxyReturn}{Returns}
 the matrix multiplied by the scalar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_add01ca6b2275ad6d4fbde98056d73276}\label{classtao_1_1_mat_add01ca6b2275ad6d4fbde98056d73276}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
-\index{operator $\ast$=@{operator $\ast$=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_ae684c7c3b2ccd9fc04b96170268a1af5}\label{classtao_1_1_mat_ae684c7c3b2ccd9fc04b96170268a1af5}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -318,12 +269,12 @@ Multiply by scalar and assignment.
 \begin{DoxyReturn}{Returns}
 the result of multiplication as a reference 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a814d02bbf96dab62938912f792aa7994}\label{classtao_1_1_mat_a814d02bbf96dab62938912f792aa7994}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a57eab1bb6cced77617322c10e5af1d21}\label{classtao_1_1_mat_a57eab1bb6cced77617322c10e5af1d21}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-T \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+T \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -339,12 +290,12 @@ Row-\/column read-\/only access operator.
 \begin{DoxyReturn}{Returns}
 the element at row and col 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_ac0372cf9e7da0ab734e7c58888e5d85a}\label{classtao_1_1_mat_ac0372cf9e7da0ab734e7c58888e5d85a}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator()@{operator()}}
-\index{operator()@{operator()}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a15af7f1814cfb14b628e283e0fec5310}\label{classtao_1_1_mat_a15af7f1814cfb14b628e283e0fec5310}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-T \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+T\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -357,12 +308,12 @@ Row-\/column set access operator.
 {\em col} & the col, starting at left \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a84cc1217fbedd04adbcc6068d7fd493a}\label{classtao_1_1_mat_a84cc1217fbedd04adbcc6068d7fd493a}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator+@{operator+}}
-\index{operator+@{operator+}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a558aaf77a7c7e3feba292932bed7166f}\label{classtao_1_1_mat_a558aaf77a7c7e3feba292932bed7166f}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator+()}{operator+()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -376,12 +327,12 @@ Matrix element-\/wise sum.
 \begin{DoxyReturn}{Returns}
 the sum 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a8033892f80dec7742fbae2d4142718c9}\label{classtao_1_1_mat_a8033892f80dec7742fbae2d4142718c9}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator+=@{operator+=}}
-\index{operator+=@{operator+=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_ab15d248a4f028f290670dd4ed1bdcb5c}\label{classtao_1_1_mat_ab15d248a4f028f290670dd4ed1bdcb5c}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -395,12 +346,12 @@ Sum and assignment.
 \begin{DoxyReturn}{Returns}
 the result of adding as a reference 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a05438bfc32bbf1cb404baea6d596d92b}\label{classtao_1_1_mat_a05438bfc32bbf1cb404baea6d596d92b}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a63968580e28124e87e38244aa29263e5}\label{classtao_1_1_mat_a63968580e28124e87e38244aa29263e5}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -414,12 +365,12 @@ Matrix subtraction element-\/wise.
 \begin{DoxyReturn}{Returns}
 the subtraction 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a5da0629614bcc00ae6d850a3107e4192}\label{classtao_1_1_mat_a5da0629614bcc00ae6d850a3107e4192}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator-\/@{operator-\/}}
-\index{operator-\/@{operator-\/}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a0a24345ea0ff734cfcf6dabc5a7d1089}\label{classtao_1_1_mat_a0a24345ea0ff734cfcf6dabc5a7d1089}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -428,12 +379,12 @@ Unary matrix operator.
 \begin{DoxyReturn}{Returns}
 the additive inverse 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_ac7109400de3729992a23e6d8ea5857b6}\label{classtao_1_1_mat_ac7109400de3729992a23e6d8ea5857b6}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator-\/=@{operator-\/=}}
-\index{operator-\/=@{operator-\/=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a6bc77952fe5ed450eded94145cde42a1}\label{classtao_1_1_mat_a6bc77952fe5ed450eded94145cde42a1}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -447,12 +398,12 @@ Subtract and assignment.
 \begin{DoxyReturn}{Returns}
 the result of subtraction as a reference 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a0f550cb7daaaf75abe46f3cda97f7df9}\label{classtao_1_1_mat_a0f550cb7daaaf75abe46f3cda97f7df9}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator/@{operator/}}
-\index{operator/@{operator/}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_accb7566993c45504e983484ae0426071}\label{classtao_1_1_mat_accb7566993c45504e983484ae0426071}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -466,12 +417,12 @@ Matrix division element-\/wise.
 \begin{DoxyReturn}{Returns}
 the division 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a3dde01988a0bb663e5fbeae1d509eb0c}\label{classtao_1_1_mat_a3dde01988a0bb663e5fbeae1d509eb0c}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator/@{operator/}}
-\index{operator/@{operator/}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_ac7fd637d3e6f33bfd0de2e906a6d2501}\label{classtao_1_1_mat_ac7fd637d3e6f33bfd0de2e906a6d2501}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -485,12 +436,12 @@ Division between matrix and scalar.
 \begin{DoxyReturn}{Returns}
 the matrix multiplied by the scalar 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a032760595aa5055588624aa56758b323}\label{classtao_1_1_mat_a032760595aa5055588624aa56758b323}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator/=@{operator/=}}
-\index{operator/=@{operator/=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a93efaf5ad6559b2a8a847b8ce3efc6b0}\label{classtao_1_1_mat_a93efaf5ad6559b2a8a847b8ce3efc6b0}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T, Number\+Rows, Number\+Cols $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -504,12 +455,12 @@ Divide and assignment.
 \begin{DoxyReturn}{Returns}
 the result of division as a reference 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a2c5e0650cbc59030c4491c439bcd5b28}\label{classtao_1_1_mat_a2c5e0650cbc59030c4491c439bcd5b28}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator/=@{operator/=}}
-\index{operator/=@{operator/=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_aaf383a5fdb98d14de8beca8da5415175}\label{classtao_1_1_mat_aaf383a5fdb98d14de8beca8da5415175}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Rows, Number\+Cols$>$\& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -523,50 +474,12 @@ Divide by scalar and assignment.
 \begin{DoxyReturn}{Returns}
 the result of multiplication as a reference 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}\label{classtao_1_1_mat_adf9adc1479a4276601212e9399b18776}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator=@{operator=}}
-\index{operator=@{operator=}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{operator=()}{operator=()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{other }\end{DoxyParamCaption})}
-
-
-
-Copy-\/assignment operator. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em other} & the other \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-a reference to a copy 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}\label{classtao_1_1_mat_a81150ed4254e70ab1f3058f159ad2218}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!operator==@{operator==}}
-\index{operator==@{operator==}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
-\subsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-bool \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
-
-
-
-Matrix product. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em rhs} & the rhs \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true if equal 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classtao_1_1_mat_a503d508f8f80c64a494f323649f20c55}\label{classtao_1_1_mat_a503d508f8f80c64a494f323649f20c55}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!reset@{reset}}
-\index{reset@{reset}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_a6f501dafd8e5fec2d40d036fe8faeb47}\label{classtao_1_1_mat_a6f501dafd8e5fec2d40d036fe8faeb47}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!reset@{reset}}
+\index{reset@{reset}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{reset()}{reset()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::reset (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+void \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::reset (\begin{DoxyParamCaption}\item[{const T \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -577,12 +490,12 @@ Reset matrix with a value.
 {\em value} & the value to fill the matrix \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtao_1_1_mat_a2d900f9207772d4adcaaff6c697a9839}\label{classtao_1_1_mat_a2d900f9207772d4adcaaff6c697a9839}} 
-\index{tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}!t@{t}}
-\index{t@{t}!tao::Mat$<$ T $>$@{tao::Mat$<$ T $>$}}
+\mbox{\Hypertarget{classtao_1_1_mat_aa1c457eab2e6abb72ebf865c8284ed7c}\label{classtao_1_1_mat_aa1c457eab2e6abb72ebf865c8284ed7c}} 
+\index{tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}!t@{t}}
+\index{t@{t}!tao::Mat$<$ T, NumberRows, NumberCols $>$@{tao::Mat$<$ T, NumberRows, NumberCols $>$}}
 \subsubsection{\texorpdfstring{t()}{t()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-\mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T $>$\+::t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily template$<$typename T, int Number\+Rows, int Number\+Cols$>$ \\
+\mbox{\hyperlink{classtao_1_1_mat}{Mat}}$<$T, Number\+Cols, Number\+Rows$>$ \mbox{\hyperlink{classtao_1_1_mat}{tao\+::\+Mat}}$<$ T, Number\+Rows, Number\+Cols $>$\+::t (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -593,7 +506,6 @@ a new matrix which is the transpose
 \end{DoxyReturn}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/include/linalg/Mat.\+h\item 
-/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/src/linalg/Mat.\+cpp\end{DoxyCompactItemize}
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/include/tao/linalg/Mat.\+h\end{DoxyCompactItemize}

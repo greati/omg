@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.15"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>omg: Printer&lt; T, ConfigKeyType &gt; Class Template Reference</title>
+<title>omg: Printer&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">1.1.1</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -66,9 +66,10 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_printer-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Printer&lt; T, ConfigKeyType &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">Printer&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -77,64 +78,98 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_printer_8h_source.html">Printer.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for Printer&lt; T, ConfigKeyType &gt;:</div>
+Inheritance diagram for Printer&lt; T &gt;:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_printer.png" usemap="#Printer_3C_20T_2C_20ConfigKeyType_20_3E_map" alt=""/>
-  <map id="Printer_3C_20T_2C_20ConfigKeyType_20_3E_map" name="Printer_3C_20T_2C_20ConfigKeyType_20_3E_map">
-<area href="class_netpbm_printer.html" title="A printer for the netpbm format." alt="NetpbmPrinter&lt; T, ConfigKeyType &gt;" shape="rect" coords="0,56,219,80"/>
+  <img src="class_printer.png" usemap="#Printer_3C_20T_20_3E_map" alt=""/>
+  <map id="Printer_3C_20T_20_3E_map" name="Printer_3C_20T_20_3E_map">
+<area href="classnetpbm_1_1_netpbm_printer.html" title="A printer for the netpbm format." alt="netpbm::NetpbmPrinter&lt; T &gt;" shape="rect" coords="0,56,169,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a593e70d807258eefa413a52cd8e3c9ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#a593e70d807258eefa413a52cd8e3c9ee">print</a> (const T *data, const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;configs)</td></tr>
-<tr class="memdesc:a593e70d807258eefa413a52cd8e3c9ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the formatted data into the std output.  <a href="#a593e70d807258eefa413a52cd8e3c9ee">More...</a><br /></td></tr>
-<tr class="separator:a593e70d807258eefa413a52cd8e3c9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a726243ffd10cdc4c706767513c175a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#a726243ffd10cdc4c706767513c175a1b">print</a> (const T *data, const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;configs, const std::string &amp;dest)</td></tr>
-<tr class="memdesc:a726243ffd10cdc4c706767513c175a1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the formatted data into a file.  <a href="#a726243ffd10cdc4c706767513c175a1b">More...</a><br /></td></tr>
-<tr class="separator:a726243ffd10cdc4c706767513c175a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac6b3612e6179501f522964de56f70d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#adac6b3612e6179501f522964de56f70d">Printer</a> (const decltype(_configs) &amp;configs)</td></tr>
+<tr class="separator:adac6b3612e6179501f522964de56f70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93330573e6905facd02e08e7f18b4f8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#a93330573e6905facd02e08e7f18b4f8a">print</a> (const T *data)</td></tr>
+<tr class="memdesc:a93330573e6905facd02e08e7f18b4f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the formatted data into the std output.  <a href="#a93330573e6905facd02e08e7f18b4f8a">More...</a><br /></td></tr>
+<tr class="separator:a93330573e6905facd02e08e7f18b4f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d56046873ae78f533f240a3f55343d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#af5d56046873ae78f533f240a3f55343d">print</a> (const T *data, const std::string &amp;dest)</td></tr>
+<tr class="memdesc:af5d56046873ae78f533f240a3f55343d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the formatted data into a file.  <a href="#af5d56046873ae78f533f240a3f55343d">More...</a><br /></td></tr>
+<tr class="separator:af5d56046873ae78f533f240a3f55343d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a76931150a7fb3d4a69c3483bd08eed17"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#a76931150a7fb3d4a69c3483bd08eed17">convert</a> (const T *data, const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;configs) const =0</td></tr>
-<tr class="memdesc:a76931150a7fb3d4a69c3483bd08eed17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the data array into a string representation.  <a href="#a76931150a7fb3d4a69c3483bd08eed17">More...</a><br /></td></tr>
-<tr class="separator:a76931150a7fb3d4a69c3483bd08eed17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18646b8fcd793f222023ea57e3f7353b"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_printer.html#a18646b8fcd793f222023ea57e3f7353b">convert</a> (const T *data) const =0</td></tr>
+<tr class="memdesc:a18646b8fcd793f222023ea57e3f7353b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the data array into a string representation.  <a href="#a18646b8fcd793f222023ea57e3f7353b">More...</a><br /></td></tr>
+<tr class="separator:a18646b8fcd793f222023ea57e3f7353b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6082dcd65ab585fe3a03c4a11c804d48"><td class="memItemLeft" align="right" valign="top"><a id="a6082dcd65ab585fe3a03c4a11c804d48"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>validate</b> (const <a class="el" href="class_configs.html">Configs</a>&lt; std::string &gt; &amp;configs) const</td></tr>
+<tr class="separator:a6082dcd65ab585fe3a03c4a11c804d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:aa3c38294a37e1bad353262dfa1bbbf94"><td class="memItemLeft" align="right" valign="top"><a id="aa3c38294a37e1bad353262dfa1bbbf94"></a>
+<a class="el" href="class_configs.html">Configs</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_configs</b></td></tr>
+<tr class="separator:aa3c38294a37e1bad353262dfa1bbbf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42506a039bf355b398a40501c1568729"><td class="memItemLeft" align="right" valign="top"><a id="a42506a039bf355b398a40501c1568729"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_ext</b></td></tr>
+<tr class="separator:a42506a039bf355b398a40501c1568729"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;typename T, typename ConfigKeyType = std::string&gt;<br />
-class Printer&lt; T, ConfigKeyType &gt;</h3>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class Printer&lt; T &gt;</h3>
 
 <p>Interface for printers. </p>
 <dl class="section author"><dt>Author</dt><dd>Vitor Greati </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a76931150a7fb3d4a69c3483bd08eed17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76931150a7fb3d4a69c3483bd08eed17">&#9670;&nbsp;</a></span>convert()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="adac6b3612e6179501f522964de56f70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac6b3612e6179501f522964de56f70d">&#9670;&nbsp;</a></span>Printer()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename ConfigKeyType  = std::string&gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::string <a class="el" href="class_printer.html">Printer</a>&lt; T, ConfigKeyType &gt;::convert </td>
+          <td class="memname"><a class="el" href="class_printer.html">Printer</a>&lt; T &gt;::<a class="el" href="class_printer.html">Printer</a> </td>
+          <td>(</td>
+          <td class="paramtype">const decltype(_configs) &amp;&#160;</td>
+          <td class="paramname"><em>configs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>empty </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a18646b8fcd793f222023ea57e3f7353b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18646b8fcd793f222023ea57e3f7353b">&#9670;&nbsp;</a></span>convert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::string <a class="el" href="class_printer.html">Printer</a>&lt; T &gt;::convert </td>
           <td>(</td>
           <td class="paramtype">const T *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>configs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -155,37 +190,27 @@ template&lt;typename T , typename ConfigKeyType  = std::string&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string representation of that data </dd></dl>
 
-<p>Implemented in <a class="el" href="class_netpbm_printer.html#a7a361fc4d114a12cb5c2311744dc3d3d">NetpbmPrinter&lt; T, ConfigKeyType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classnetpbm_1_1_netpbm_printer.html#a0bc962be71fd453792743af6cb676da2">netpbm::NetpbmPrinter&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a593e70d807258eefa413a52cd8e3c9ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a593e70d807258eefa413a52cd8e3c9ee">&#9670;&nbsp;</a></span>print() <span class="overload">[1/2]</span></h2>
+<a id="a93330573e6905facd02e08e7f18b4f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93330573e6905facd02e08e7f18b4f8a">&#9670;&nbsp;</a></span>print() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename ConfigKeyType  = std::string&gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_printer.html">Printer</a>&lt; T, ConfigKeyType &gt;::print </td>
+          <td class="memname">void <a class="el" href="class_printer.html">Printer</a>&lt; T &gt;::print </td>
           <td>(</td>
           <td class="paramtype">const T *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>configs</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -205,28 +230,22 @@ template&lt;typename T , typename ConfigKeyType  = std::string&gt; </div>
 
 </div>
 </div>
-<a id="a726243ffd10cdc4c706767513c175a1b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a726243ffd10cdc4c706767513c175a1b">&#9670;&nbsp;</a></span>print() <span class="overload">[2/2]</span></h2>
+<a id="af5d56046873ae78f533f240a3f55343d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5d56046873ae78f533f240a3f55343d">&#9670;&nbsp;</a></span>print() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T , typename ConfigKeyType  = std::string&gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_printer.html">Printer</a>&lt; T, ConfigKeyType &gt;::print </td>
+          <td class="memname">void <a class="el" href="class_printer.html">Printer</a>&lt; T &gt;::print </td>
           <td>(</td>
           <td class="paramtype">const T *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="class_configs.html">Configs</a>&lt; ConfigKeyType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>configs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

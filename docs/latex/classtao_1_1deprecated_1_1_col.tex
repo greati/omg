@@ -1,0 +1,286 @@
+\hypertarget{classtao_1_1deprecated_1_1_col}{}\section{tao\+::deprecated\+::Col$<$ T $>$ Class Template Reference}
+\label{classtao_1_1deprecated_1_1_col}\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+Inheritance diagram for tao\+::deprecated\+::Col$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classtao_1_1deprecated_1_1_col}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a71db20226883e22a687cebe7d590cf6d}{Col}} (const std\+::initializer\+\_\+list$<$ T $>$ \&components)
+\begin{DoxyCompactList}\small\item\em Construct a column vector from its components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a458d95eede68b43105a240064cf47c23}\label{classtao_1_1deprecated_1_1_col_a458d95eede68b43105a240064cf47c23}} 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a458d95eede68b43105a240064cf47c23}{Col}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_mat}{tao\+::deprecated\+::\+Mat}}$<$ T $>$ \&colmat)
+\begin{DoxyCompactList}\small\item\em Construct a column vector from an Nx1 matrix. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a91cd4f8b512f2b982183ffca98b09a4e}{operator()}} (int i) const
+\begin{DoxyCompactList}\small\item\em Vector read-\/only access operator. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a5095560139f140b6ebac8e1eb33442f2}{operator()}} (int i)
+\begin{DoxyCompactList}\small\item\em Vector reference access operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a8123b7620282f28f271b7e723738a1dd}{operator-\/}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector difference. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_ac84032af63de62d7a14fe6c1e85c8251}{operator $\ast$}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise multiplication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a2c6cb515a46f76797dffdac251f4e3fa}{operator $\ast$=}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise multiplication with assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a7efce49157e7566d092dfe665dfaefd7}{operator/=}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector element-\/wise division with assignment. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a8501c1119f984d66f4a9172fa079bf6a}{norm}} () const
+\begin{DoxyCompactList}\small\item\em Euclidean norm of the vector. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_ad2cee269711ef1a9eebda2e54035f9f4}{unit}} (bool inplace=false)
+\begin{DoxyCompactList}\small\item\em The corresponding unit vector. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_ab1070d68d4b4570bcf7865f91178dd22}{dot}} (const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&c2)
+\begin{DoxyCompactList}\small\item\em Vector dot product. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a8074f1bab1ce2042f77de21c6a21867d}{operator $\ast$=}} (const T scalar)
+\begin{DoxyCompactList}\small\item\em Multiply by scalar and assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_a0d3991ffc0e7f3859bfa19cb2e125062}{operator/=}} (const T scalar)
+\begin{DoxyCompactList}\small\item\em Divide by scalar and assignment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col_aa5aaea7c660cbe4423f3656544d6a295}{operator $\ast$}} (const T scalar) const
+\begin{DoxyCompactList}\small\item\em Product between vector and scalar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a71db20226883e22a687cebe7d590cf6d}\label{classtao_1_1deprecated_1_1_col_a71db20226883e22a687cebe7d590cf6d}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!Col@{Col}}
+\index{Col@{Col}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{Col()}{Col()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}} (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{components }\end{DoxyParamCaption})}
+
+
+
+Construct a column vector from its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em components} & the components \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_ab1070d68d4b4570bcf7865f91178dd22}\label{classtao_1_1deprecated_1_1_col_ab1070d68d4b4570bcf7865f91178dd22}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!dot@{dot}}
+\index{dot@{dot}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector dot product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a8501c1119f984d66f4a9172fa079bf6a}\label{classtao_1_1deprecated_1_1_col_a8501c1119f984d66f4a9172fa079bf6a}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!norm@{norm}}
+\index{norm@{norm}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{norm()}{norm()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::norm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Euclidean norm of the vector. 
+
+\begin{DoxyReturn}{Returns}
+the euclidean norm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_ac84032af63de62d7a14fe6c1e85c8251}\label{classtao_1_1deprecated_1_1_col_ac84032af63de62d7a14fe6c1e85c8251}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise multiplication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_aa5aaea7c660cbe4423f3656544d6a295}\label{classtao_1_1deprecated_1_1_col_aa5aaea7c660cbe4423f3656544d6a295}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator $\ast$@{operator $\ast$}}
+\index{operator $\ast$@{operator $\ast$}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$()}{operator *()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator $\ast$ (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+Product between vector and scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & the scalar rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matrix multiplied by the scalar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a2c6cb515a46f76797dffdac251f4e3fa}\label{classtao_1_1deprecated_1_1_col_a2c6cb515a46f76797dffdac251f4e3fa}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise multiplication with assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the modified version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a8074f1bab1ce2042f77de21c6a21867d}\label{classtao_1_1deprecated_1_1_col_a8074f1bab1ce2042f77de21c6a21867d}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator $\ast$=@{operator $\ast$=}}
+\index{operator $\ast$=@{operator $\ast$=}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator $\ast$=()}{operator *=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator $\ast$= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Multiply by scalar and assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the matrix to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of multiplication as a reference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a91cd4f8b512f2b982183ffca98b09a4e}\label{classtao_1_1deprecated_1_1_col_a91cd4f8b512f2b982183ffca98b09a4e}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Vector read-\/only access operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+component value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a5095560139f140b6ebac8e1eb33442f2}\label{classtao_1_1deprecated_1_1_col_a5095560139f140b6ebac8e1eb33442f2}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator()@{operator()}}
+\index{operator()@{operator()}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator() (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Vector reference access operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & component position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+component value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a8123b7620282f28f271b7e723738a1dd}\label{classtao_1_1deprecated_1_1_col_a8123b7620282f28f271b7e723738a1dd}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$T$>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Vector difference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the other vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the difference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a7efce49157e7566d092dfe665dfaefd7}\label{classtao_1_1deprecated_1_1_col_a7efce49157e7566d092dfe665dfaefd7}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{Col}}$<$ T $>$ \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Vector element-\/wise division with assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c2} & the rhs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the modified version 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_a0d3991ffc0e7f3859bfa19cb2e125062}\label{classtao_1_1deprecated_1_1_col_a0d3991ffc0e7f3859bfa19cb2e125062}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ \& \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const T}]{scalar }\end{DoxyParamCaption})}
+
+
+
+Divide by scalar and assignment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the matrix to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of multiplication as a reference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtao_1_1deprecated_1_1_col_ad2cee269711ef1a9eebda2e54035f9f4}\label{classtao_1_1deprecated_1_1_col_ad2cee269711ef1a9eebda2e54035f9f4}} 
+\index{tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}!unit@{unit}}
+\index{unit@{unit}!tao::deprecated::Col$<$ T $>$@{tao::deprecated::Col$<$ T $>$}}
+\subsubsection{\texorpdfstring{unit()}{unit()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::optional$<$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$ $>$ \mbox{\hyperlink{classtao_1_1deprecated_1_1_col}{tao\+::deprecated\+::\+Col}}$<$ T $>$\+::unit (\begin{DoxyParamCaption}\item[{bool}]{inplace = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+The corresponding unit vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inplace} & if the vector should be modified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new vector or nothing, depending on the inplace value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/include/tao/linalg/dyn/Col.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/src/linalg/dyn/Col.\+cpp\end{DoxyCompactItemize}

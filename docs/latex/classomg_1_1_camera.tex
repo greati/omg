@@ -24,16 +24,16 @@ struct \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_a9c62e23a47414cc9838222f69b37ca8f}\label{classomg_1_1_camera_a9c62e23a47414cc9838222f69b37ca8f}} 
-\mbox{\hyperlink{classomg_1_1_camera_a9c62e23a47414cc9838222f69b37ca8f}{Camera}} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, const \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \&vpdims, const float aspect\+\_\+ratio)
-\begin{DoxyCompactList}\small\item\em Image plane normal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_camera_a9c62e23a47414cc9838222f69b37ca8f}{Camera}} (int width, int height, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&up, const \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \&vpdims, const float aspect\+\_\+ratio)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_film}{Film}} to display the image. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classomg_1_1_camera_ab538762b7a5ab089146209f1325dde59}\label{classomg_1_1_camera_ab538762b7a5ab089146209f1325dde59}} 
-{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, const \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \&vpdims)
+{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&up, const \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \&vpdims)
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_a5812def5e5ccf91b585467d4bd899306}\label{classomg_1_1_camera_a5812def5e5ccf91b585467d4bd899306}} 
-{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up)
+{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&up)
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_a4640624d27e5994e910da36d4cb0aef8}\label{classomg_1_1_camera_a4640624d27e5994e910da36d4cb0aef8}} 
-{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&up, float aspect\+\_\+ratio)
+{\bfseries Camera} (int width, int height, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&position, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&target, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&up, float aspect\+\_\+ratio)
 \item 
 virtual \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \mbox{\hyperlink{classomg_1_1_camera_aca08c044082cb3573d606a8c851f52fe}{generate\+\_\+ray}} (float x, float y)=0
 \begin{DoxyCompactList}\small\item\em Produces a ray given an x and y in \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
@@ -49,21 +49,27 @@ float \mbox{\hyperlink{classomg_1_1_camera_ad9049467f7a5e4a3a089c789243b1463}{ge
 \begin{DoxyCompactList}\small\item\em The aspect ratio. \end{DoxyCompactList}\item 
 std\+::pair$<$ float, float $>$ \mbox{\hyperlink{classomg_1_1_camera_a7978815c7f03689ea47eaf70065b4266}{compute\+\_\+u\+\_\+v}} (float i, float j) const
 \begin{DoxyCompactList}\small\item\em Compute the (u,v) from (i,j), i, j in \mbox{[}0,1\mbox{]}. \end{DoxyCompactList}\item 
-std\+::array$<$ \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}}, 3 $>$ \mbox{\hyperlink{classomg_1_1_camera_a7bc7168312ae9923904489e792ad0526}{get\+\_\+ortho\+\_\+basis}} ()
+std\+::pair$<$ float, float $>$ \mbox{\hyperlink{classomg_1_1_camera_a518b3b8bf80970e81408f0286293604c}{compute\+\_\+i\+\_\+j}} (float u, float v) const
+\begin{DoxyCompactList}\small\item\em Compute the (i,j) from (u,v), u, v in \mbox{[}w, h\mbox{]}. \end{DoxyCompactList}\item 
+std\+::array$<$ \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}, 3 $>$ \mbox{\hyperlink{classomg_1_1_camera_a7bc7168312ae9923904489e792ad0526}{get\+\_\+ortho\+\_\+basis}} ()
 \begin{DoxyCompactList}\small\item\em Get the associated orthonormal basis. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classomg_1_1_camera_a5983a689364dd5c9701e157b4620c2cd}{set\+\_\+plane\+\_\+normal}} (const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&normal)
-\begin{DoxyCompactList}\small\item\em Set the image plane normal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classomg_1_1_camera_a5983a689364dd5c9701e157b4620c2cd}{set\+\_\+plane\+\_\+normal}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&normal)
+\begin{DoxyCompactList}\small\item\em Set the image plane normal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classomg_1_1_camera_a7ad7dd69948685bc74286be8b80968cc}{set\+\_\+film}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_film}{Film}} $>$ film)
+\begin{DoxyCompactList}\small\item\em Set the film. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_film}{Film}} $\ast$ \mbox{\hyperlink{classomg_1_1_camera_a6feb3185dc41c47b1d2749d58b8d0c13}{get\+\_\+film}} ()
+\begin{DoxyCompactList}\small\item\em Get the film. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_a35fc7a83afb58ae9c9f344733097ff6f}\label{classomg_1_1_camera_a35fc7a83afb58ae9c9f344733097ff6f}} 
-\mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} {\bfseries \+\_\+position}
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} {\bfseries \+\_\+position}
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_abc759794d898df1a778630f8f1b4d3db}\label{classomg_1_1_camera_abc759794d898df1a778630f8f1b4d3db}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_abc759794d898df1a778630f8f1b4d3db}{\+\_\+target}}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_abc759794d898df1a778630f8f1b4d3db}{\+\_\+target}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} position. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classomg_1_1_camera_a62c7405659621d32e337ffa32567e4ce}\label{classomg_1_1_camera_a62c7405659621d32e337ffa32567e4ce}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_a62c7405659621d32e337ffa32567e4ce}{\+\_\+up}}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_a62c7405659621d32e337ffa32567e4ce}{\+\_\+up}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} direction. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classomg_1_1_camera_a5dcef17304c333a64a14f7d551e235af}\label{classomg_1_1_camera_a5dcef17304c333a64a14f7d551e235af}} 
 \mbox{\hyperlink{structomg_1_1_camera_1_1_vp_dims}{Vp\+Dims}} \mbox{\hyperlink{classomg_1_1_camera_a5dcef17304c333a64a14f7d551e235af}{\+\_\+vpdims}}
@@ -78,17 +84,20 @@ int \mbox{\hyperlink{classomg_1_1_camera_aa47802b7a9b765adcb9b8d3d83e48426}{\+\_
 int \mbox{\hyperlink{classomg_1_1_camera_affc19e62361a5c59785288987f584b4a}{\+\_\+height}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} width. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classomg_1_1_camera_a9cc9befcbf8720cc2b602d0e70173f4b}\label{classomg_1_1_camera_a9cc9befcbf8720cc2b602d0e70173f4b}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_a9cc9befcbf8720cc2b602d0e70173f4b}{\+\_\+u}}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_a9cc9befcbf8720cc2b602d0e70173f4b}{\+\_\+u}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} height. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classomg_1_1_camera_a2cdce9f4856f15fc73698a3889fa48d1}\label{classomg_1_1_camera_a2cdce9f4856f15fc73698a3889fa48d1}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} {\bfseries \+\_\+v}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries \+\_\+v}
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_ae3303071e2dc9e0e46442b936d961f10}\label{classomg_1_1_camera_ae3303071e2dc9e0e46442b936d961f10}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} {\bfseries \+\_\+w}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries \+\_\+w}
 \item 
 \mbox{\Hypertarget{classomg_1_1_camera_aabfc8456e81fa75da2267df6c0b447a5}\label{classomg_1_1_camera_aabfc8456e81fa75da2267df6c0b447a5}} 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_aabfc8456e81fa75da2267df6c0b447a5}{\+\_\+plane\+\_\+normal}}
-\begin{DoxyCompactList}\small\item\em Orthonormal basis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_camera_aabfc8456e81fa75da2267df6c0b447a5}{\+\_\+plane\+\_\+normal}}
+\begin{DoxyCompactList}\small\item\em Orthonormal basis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_camera_a6dfc504cf53512dd762bfb765a89baeb}\label{classomg_1_1_camera_a6dfc504cf53512dd762bfb765a89baeb}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_film}{Film}} $>$ \mbox{\hyperlink{classomg_1_1_camera_a6dfc504cf53512dd762bfb765a89baeb}{\+\_\+film}}
+\begin{DoxyCompactList}\small\item\em Image plane normal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -100,6 +109,26 @@ Vitor Greati
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_camera_a518b3b8bf80970e81408f0286293604c}\label{classomg_1_1_camera_a518b3b8bf80970e81408f0286293604c}} 
+\index{omg::Camera@{omg::Camera}!compute\_i\_j@{compute\_i\_j}}
+\index{compute\_i\_j@{compute\_i\_j}!omg::Camera@{omg::Camera}}
+\subsubsection{\texorpdfstring{compute\_i\_j()}{compute\_i\_j()}}
+{\footnotesize\ttfamily std\+::pair$<$float, float$>$ omg\+::\+Camera\+::compute\+\_\+i\+\_\+j (\begin{DoxyParamCaption}\item[{float}]{u,  }\item[{float}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compute the (i,j) from (u,v), u, v in \mbox{[}w, h\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & horizontal displacement \\
+\hline
+{\em v} & vertical displacement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pair (i, j) 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classomg_1_1_camera_a7978815c7f03689ea47eaf70065b4266}\label{classomg_1_1_camera_a7978815c7f03689ea47eaf70065b4266}} 
 \index{omg::Camera@{omg::Camera}!compute\_u\_v@{compute\_u\_v}}
 \index{compute\_u\_v@{compute\_u\_v}!omg::Camera@{omg::Camera}}
@@ -157,6 +186,19 @@ The aspect ratio.
 \begin{DoxyReturn}{Returns}
 the aspect ratio 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_camera_a6feb3185dc41c47b1d2749d58b8d0c13}\label{classomg_1_1_camera_a6feb3185dc41c47b1d2749d58b8d0c13}} 
+\index{omg::Camera@{omg::Camera}!get\_film@{get\_film}}
+\index{get\_film@{get\_film}!omg::Camera@{omg::Camera}}
+\subsubsection{\texorpdfstring{get\_film()}{get\_film()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_film}{Film}}$\ast$ omg\+::\+Camera\+::get\+\_\+film (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the film. 
+
+\begin{DoxyReturn}{Returns}
+the film 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classomg_1_1_camera_a4003f1cf690980d47b3307e6eefe3003}\label{classomg_1_1_camera_a4003f1cf690980d47b3307e6eefe3003}} 
 \index{omg::Camera@{omg::Camera}!get\_height@{get\_height}}
 \index{get\_height@{get\_height}!omg::Camera@{omg::Camera}}
@@ -174,7 +216,7 @@ the scene height
 \index{omg::Camera@{omg::Camera}!get\_ortho\_basis@{get\_ortho\_basis}}
 \index{get\_ortho\_basis@{get\_ortho\_basis}!omg::Camera@{omg::Camera}}
 \subsubsection{\texorpdfstring{get\_ortho\_basis()}{get\_ortho\_basis()}}
-{\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}}, 3$>$ omg\+::\+Camera\+::get\+\_\+ortho\+\_\+basis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::array$<$\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}, 3$>$ omg\+::\+Camera\+::get\+\_\+ortho\+\_\+basis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -196,6 +238,21 @@ The scene width.
 \begin{DoxyReturn}{Returns}
 the scene width 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_camera_a7ad7dd69948685bc74286be8b80968cc}\label{classomg_1_1_camera_a7ad7dd69948685bc74286be8b80968cc}} 
+\index{omg::Camera@{omg::Camera}!set\_film@{set\_film}}
+\index{set\_film@{set\_film}!omg::Camera@{omg::Camera}}
+\subsubsection{\texorpdfstring{set\_film()}{set\_film()}}
+{\footnotesize\ttfamily void omg\+::\+Camera\+::set\+\_\+film (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_film}{Film}} $>$}]{film }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the film. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em film} & a pointer to a film \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classomg_1_1_camera_a75d3baca3bae25365e5d3dddc005676e}\label{classomg_1_1_camera_a75d3baca3bae25365e5d3dddc005676e}} 
 \index{omg::Camera@{omg::Camera}!set\_height@{set\_height}}
 \index{set\_height@{set\_height}!omg::Camera@{omg::Camera}}
@@ -215,7 +272,7 @@ Set the scene height.
 \index{omg::Camera@{omg::Camera}!set\_plane\_normal@{set\_plane\_normal}}
 \index{set\_plane\_normal@{set\_plane\_normal}!omg::Camera@{omg::Camera}}
 \subsubsection{\texorpdfstring{set\_plane\_normal()}{set\_plane\_normal()}}
-{\footnotesize\ttfamily void omg\+::\+Camera\+::set\+\_\+plane\+\_\+normal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&}]{normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily void omg\+::\+Camera\+::set\+\_\+plane\+\_\+normal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{normal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

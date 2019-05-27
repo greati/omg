@@ -1,0 +1,54 @@
+\hypertarget{classomg_1_1_triangle}{}\section{omg\+::Triangle Class Reference}
+\label{classomg_1_1_triangle}\index{omg::Triangle@{omg::Triangle}}
+
+
+Represents a triangle in a mesh.  
+
+
+
+
+{\ttfamily \#include $<$Triangle.\+h$>$}
+
+Inheritance diagram for omg\+::Triangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_triangle}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_a64dc77293b948694a2004381dd085fbc}\label{classomg_1_1_triangle_a64dc77293b948694a2004381dd085fbc}} 
+{\bfseries Triangle} (bool bfc, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structomg_1_1_triangle_mesh}{Triangle\+Mesh}} $>$ \&mesh, int tri\+\_\+number)
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_ad22556418d61acfe7aa67d3bb0a5cb40}\label{classomg_1_1_triangle_ad22556418d61acfe7aa67d3bb0a5cb40}} 
+bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, float $\ast$t\+Hit, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$hit\+\_\+record) override
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_a4f269b31b840a553da91c5085fd10542}\label{classomg_1_1_triangle_a4f269b31b840a553da91c5085fd10542}} 
+bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) override
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_aff6ada0dec320d892e906860fcc02409}\label{classomg_1_1_triangle_aff6ada0dec320d892e906860fcc02409}} 
+std\+::tuple$<$ const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \& $>$ {\bfseries vertices} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_a4fcdf7ff7dfca3b2f03c8585fc14ebad}\label{classomg_1_1_triangle_a4fcdf7ff7dfca3b2f03c8585fc14ebad}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries world\+\_\+bound} () const override
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_triangle_afe024c094d76cc1047af285babdf5873}\label{classomg_1_1_triangle_afe024c094d76cc1047af285babdf5873}} 
+static std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_triangle}{Triangle}} $>$ $>$ {\bfseries create\+\_\+triangle\+\_\+mesh} (bool bfc, int n\+\_\+triangles, const int $\ast$indices, int n\+\_\+vertices, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} $\ast$ps, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$ns, const \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} $\ast$uvs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a triangle in a mesh. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Triangle.\+h\end{DoxyCompactItemize}

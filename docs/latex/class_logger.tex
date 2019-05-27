@@ -35,7 +35,16 @@ virtual void \mbox{\hyperlink{class_logger_a124934c1b2661b229aca0493f7ec5f30}{lo
 virtual void \mbox{\hyperlink{class_logger_a9bdd18a8fb9cd19134b9ddf37f74b5bd}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg, int line, int col) const =0
 \begin{DoxyCompactList}\small\item\em Print a log with file location info. \end{DoxyCompactList}\item 
 virtual std\+::string \mbox{\hyperlink{class_logger_abe4434e4ae0efd8b41cb2a61458a710d}{label\+\_\+msg\+\_\+type}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type) const =0
-\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_logger_a3630b175aeeb23473b2740563e9422d5}\label{class_logger_a3630b175aeeb23473b2740563e9422d5}} 
+virtual void \mbox{\hyperlink{class_logger_a3630b175aeeb23473b2740563e9422d5}{make\+\_\+progress\+\_\+bar}} (const std\+::string \&name, int limit=0, int current=0)=0
+\begin{DoxyCompactList}\small\item\em Build a new named progress bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_logger_a97b9f431c10b909bdda75b5dbbfd776c}\label{class_logger_a97b9f431c10b909bdda75b5dbbfd776c}} 
+virtual void \mbox{\hyperlink{class_logger_a97b9f431c10b909bdda75b5dbbfd776c}{update\+\_\+progress\+\_\+bar}} (const std\+::string \&name, int delta=1)=0
+\begin{DoxyCompactList}\small\item\em Update an existing progress bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_logger_afeee1dc03b3fc81bf4b0075d8b8a87bc}\label{class_logger_afeee1dc03b3fc81bf4b0075d8b8a87bc}} 
+virtual void \mbox{\hyperlink{class_logger_afeee1dc03b3fc81bf4b0075d8b8a87bc}{finish\+\_\+progress\+\_\+bar}} (const std\+::string \&name)=0
+\begin{DoxyCompactList}\small\item\em Finish an existing progress bar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 

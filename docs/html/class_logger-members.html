@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">1.1.1</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -71,11 +71,14 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="class_logger.html">Logger</a>, including all inherited members.</p>
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_prefix</b> (defined in <a class="el" href="class_logger.html">Logger</a>)</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_logger.html#abe4434e4ae0efd8b41cb2a61458a710d">label_msg_type</a>(const Logger::Type &amp;type) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#a124934c1b2661b229aca0493f7ec5f30">log</a>(const Logger::Type &amp;type, const std::string &amp;label, const std::string &amp;msg) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_logger.html#a9bdd18a8fb9cd19134b9ddf37f74b5bd">log</a>(const Logger::Type &amp;type, const std::string &amp;label, const std::string &amp;msg, int line, int col) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#a5eb8bf6f6a9111e62a7b2fee03ef7541">Logger</a>(const std::string &amp;prefix)</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_logger.html#afeee1dc03b3fc81bf4b0075d8b8a87bc">finish_progress_bar</a>(const std::string &amp;name)=0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#abe4434e4ae0efd8b41cb2a61458a710d">label_msg_type</a>(const Logger::Type &amp;type) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_logger.html#a124934c1b2661b229aca0493f7ec5f30">log</a>(const Logger::Type &amp;type, const std::string &amp;label, const std::string &amp;msg) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#a9bdd18a8fb9cd19134b9ddf37f74b5bd">log</a>(const Logger::Type &amp;type, const std::string &amp;label, const std::string &amp;msg, int line, int col) const =0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_logger.html#a5eb8bf6f6a9111e62a7b2fee03ef7541">Logger</a>(const std::string &amp;prefix)</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#a3630b175aeeb23473b2740563e9422d5">make_progress_bar</a>(const std::string &amp;name, int limit=0, int current=0)=0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_logger.html#acd39cb578d7a6750c959f2fad38d8db6">Type</a> enum name</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_logger.html#a97b9f431c10b909bdda75b5dbbfd776c">update_progress_bar</a>(const std::string &amp;name, int delta=1)=0</td><td class="entry"><a class="el" href="class_logger.html">Logger</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -18,11 +18,17 @@ Inheritance diagram for omg\+::Sphere\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classomg_1_1_sphere_a81f9a5180b9c883ce00669d4af4d38db}{Sphere}} (float radius, const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&center)
+\mbox{\hyperlink{classomg_1_1_sphere_a81f9a5180b9c883ce00669d4af4d38db}{Sphere}} (float radius, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&center)
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_sphere}{Sphere}} center. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classomg_1_1_sphere_af1c6cd10afe11eeb3c9d6c42722ab039}\label{classomg_1_1_sphere_af1c6cd10afe11eeb3c9d6c42722ab039}} 
-bool \mbox{\hyperlink{classomg_1_1_sphere_af1c6cd10afe11eeb3c9d6c42722ab039}{intersect}} (\mbox{\hyperlink{classomg_1_1_ray}{Ray}} ray, \mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Object\+::\+Hit\+Record}} \&hit\+\_\+record) override
-\begin{DoxyCompactList}\small\item\em Check whether the sphere intersect with a ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classomg_1_1_sphere_ad05c4f0083c55288119c0d1f7dc7f300}\label{classomg_1_1_sphere_ad05c4f0083c55288119c0d1f7dc7f300}} 
+bool \mbox{\hyperlink{classomg_1_1_sphere_ad05c4f0083c55288119c0d1f7dc7f300}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, float $\ast$t\+Hit, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$hit\+\_\+record) override
+\begin{DoxyCompactList}\small\item\em Check whether the sphere intersect with a ray. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_sphere_a4e7eb85961d4b2d0f384ea51144cbb95}\label{classomg_1_1_sphere_a4e7eb85961d4b2d0f384ea51144cbb95}} 
+bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) override
+\item 
+\mbox{\Hypertarget{classomg_1_1_sphere_a5d0a05e361f98cad7e0d83da4ebc0849}\label{classomg_1_1_sphere_a5d0a05e361f98cad7e0d83da4ebc0849}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries world\+\_\+bound} () const
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -38,7 +44,7 @@ Vitor Greati
 \index{omg::Sphere@{omg::Sphere}!Sphere@{Sphere}}
 \index{Sphere@{Sphere}!omg::Sphere@{omg::Sphere}}
 \subsubsection{\texorpdfstring{Sphere()}{Sphere()}}
-{\footnotesize\ttfamily omg\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{float}]{radius,  }\item[{const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&}]{center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily omg\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{float}]{radius,  }\item[{const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&}]{center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

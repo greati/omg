@@ -1,0 +1,60 @@
+\hypertarget{classomg_1_1_visibility_tester}{}\section{omg\+::Visibility\+Tester Class Reference}
+\label{classomg_1_1_visibility_tester}\index{omg::VisibilityTester@{omg::VisibilityTester}}
+
+
+Used for checking occlusions.  
+
+
+
+
+{\ttfamily \#include $<$Visibility\+Tester.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_visibility_tester_acf9a1f3043542bfcaebae91b45ee5bd5}\label{classomg_1_1_visibility_tester_acf9a1f3043542bfcaebae91b45ee5bd5}} 
+{\bfseries Visibility\+Tester} (const decltype(si0)\&si0, const decltype(si1)\&si1)
+\item 
+\mbox{\Hypertarget{classomg_1_1_visibility_tester_a312ed5f356f2a5bd6ce823560d853a99}\label{classomg_1_1_visibility_tester_a312ed5f356f2a5bd6ce823560d853a99}} 
+decltype(si0) const  \& {\bfseries get\+\_\+si0} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_visibility_tester_a9bb6292885c4627343d6f2f1ab489b47}\label{classomg_1_1_visibility_tester_a9bb6292885c4627343d6f2f1ab489b47}} 
+decltype(si1) const  \& {\bfseries get\+\_\+si1} () const
+\item 
+bool \mbox{\hyperlink{classomg_1_1_visibility_tester_ac2f4eda3866795981b48f4db367255ac}{unoccluded}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene) const
+\begin{DoxyCompactList}\small\item\em Spawns a shadow ray searching for occlusion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used for checking occlusions. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_visibility_tester_ac2f4eda3866795981b48f4db367255ac}\label{classomg_1_1_visibility_tester_ac2f4eda3866795981b48f4db367255ac}} 
+\index{omg::VisibilityTester@{omg::VisibilityTester}!unoccluded@{unoccluded}}
+\index{unoccluded@{unoccluded}!omg::VisibilityTester@{omg::VisibilityTester}}
+\subsubsection{\texorpdfstring{unoccluded()}{unoccluded()}}
+{\footnotesize\ttfamily bool Visibility\+Tester\+::unoccluded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption}) const}
+
+
+
+Spawns a shadow ray searching for occlusion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if occlusion happened 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/lights/Visibility\+Tester.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/lights/Visibility\+Tester.\+cpp\end{DoxyCompactItemize}

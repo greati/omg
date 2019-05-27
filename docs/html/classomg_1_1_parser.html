@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">1.1.1</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -91,19 +91,27 @@ Inheritance diagram for omg::Parser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a50199f934cb3471777cb859a7289739f"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#a50199f934cb3471777cb859a7289739f">parse_text</a> (const std::string &amp;text)=0</td></tr>
-<tr class="memdesc:a50199f934cb3471777cb859a7289739f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text.  <a href="#a50199f934cb3471777cb859a7289739f">More...</a><br /></td></tr>
-<tr class="separator:a50199f934cb3471777cb859a7289739f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a327a60ea0092d0b969a3ec393248ca8f"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#a327a60ea0092d0b969a3ec393248ca8f">parse_file</a> (const std::string &amp;file_path)=0</td></tr>
-<tr class="memdesc:a327a60ea0092d0b969a3ec393248ca8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text from a file.  <a href="#a327a60ea0092d0b969a3ec393248ca8f">More...</a><br /></td></tr>
-<tr class="separator:a327a60ea0092d0b969a3ec393248ca8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af47d9c929199cbf845d3150defc499f0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#af47d9c929199cbf845d3150defc499f0">init_from_text</a> (const std::string &amp;text)=0</td></tr>
+<tr class="memdesc:af47d9c929199cbf845d3150defc499f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text.  <a href="#af47d9c929199cbf845d3150defc499f0">More...</a><br /></td></tr>
+<tr class="separator:af47d9c929199cbf845d3150defc499f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c44ed0f01edc2958667589d66ebe8a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#aa0c44ed0f01edc2958667589d66ebe8a">init_from_file</a> (const std::string &amp;file_path)=0</td></tr>
+<tr class="memdesc:aa0c44ed0f01edc2958667589d66ebe8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text from a file.  <a href="#aa0c44ed0f01edc2958667589d66ebe8a">More...</a><br /></td></tr>
+<tr class="separator:aa0c44ed0f01edc2958667589d66ebe8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0647c32291684d2624a024119af7070"><td class="memItemLeft" align="right" valign="top"><a id="aa0647c32291684d2624a024119af7070"></a>
+virtual std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#aa0647c32291684d2624a024119af7070">parse_scene</a> ()=0</td></tr>
+<tr class="memdesc:aa0647c32291684d2624a024119af7070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a scene. <br /></td></tr>
+<tr class="separator:aa0647c32291684d2624a024119af7070"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a744a7e5e95d3b658653e8f1cb82eb9cb"><td class="memItemLeft" align="right" valign="top"><a id="a744a7e5e95d3b658653e8f1cb82eb9cb"></a>
+virtual std::shared_ptr&lt; <a class="el" href="structomg_1_1_raytracer_running_settings.html">RaytracerRunningSettings</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_parser.html#a744a7e5e95d3b658653e8f1cb82eb9cb">parse_running_settings</a> ()=0</td></tr>
+<tr class="memdesc:a744a7e5e95d3b658653e8f1cb82eb9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the running settings. <br /></td></tr>
+<tr class="separator:a744a7e5e95d3b658653e8f1cb82eb9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An interface for scene parsers. </p>
 <dl class="section author"><dt>Author</dt><dd>Vitor Greati </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a327a60ea0092d0b969a3ec393248ca8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a327a60ea0092d0b969a3ec393248ca8f">&#9670;&nbsp;</a></span>parse_file()</h2>
+<a id="aa0c44ed0f01edc2958667589d66ebe8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c44ed0f01edc2958667589d66ebe8a">&#9670;&nbsp;</a></span>init_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -112,7 +120,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="classomg_1_1_scene.html">Scene</a>&gt; omg::Parser::parse_file </td>
+          <td class="memname">virtual void omg::Parser::init_from_file </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -134,12 +142,12 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_y_a_m_l_parser.html#ab569d1029cec7dc2cb91eb0e08f5bc37">omg::YAMLParser</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_y_a_m_l_parser.html#a88af0bc72d0f4ce3e9e489e0b6037a53">omg::YAMLParser</a>.</p>
 
 </div>
 </div>
-<a id="a50199f934cb3471777cb859a7289739f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50199f934cb3471777cb859a7289739f">&#9670;&nbsp;</a></span>parse_text()</h2>
+<a id="af47d9c929199cbf845d3150defc499f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af47d9c929199cbf845d3150defc499f0">&#9670;&nbsp;</a></span>init_from_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +156,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="classomg_1_1_scene.html">Scene</a>&gt; omg::Parser::parse_text </td>
+          <td class="memname">virtual void omg::Parser::init_from_text </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>text</em></td><td>)</td>
@@ -170,7 +178,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_y_a_m_l_parser.html#a646b059fb458cbd5b9bc3a29c1f777f4">omg::YAMLParser</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_y_a_m_l_parser.html#a625f697e850b8d027095d74f7fe65acc">omg::YAMLParser</a>.</p>
 
 </div>
 </div>

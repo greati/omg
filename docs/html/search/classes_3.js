@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['hitrecord',['HitRecord',['../structomg_1_1_object_1_1_hit_record.html',1,'omg::Object']]]
+  ['depthintegrator',['DepthIntegrator',['../classomg_1_1_depth_integrator.html',1,'omg']]],
+  ['directionallight',['DirectionalLight',['../classomg_1_1_directional_light.html',1,'omg']]]
 ];

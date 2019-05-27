@@ -29,7 +29,16 @@ void \mbox{\hyperlink{class_standard_logger_a11c29fca1b05d7ff331b298e9c91cd81}{l
 void \mbox{\hyperlink{class_standard_logger_a4e63f888143cf77d576056b626f8de00}{log}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type, const std\+::string \&label, const std\+::string \&msg, int line, int col) const
 \begin{DoxyCompactList}\small\item\em Print a log with file location info. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_standard_logger_a5803969715008363869dfd47326790bb}{label\+\_\+msg\+\_\+type}} (const \mbox{\hyperlink{class_logger_acd39cb578d7a6750c959f2fad38d8db6}{Logger\+::\+Type}} \&type) const
-\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gives a label for a type of message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_standard_logger_a0330dccddacaff516fd8269aefa814c2}\label{class_standard_logger_a0330dccddacaff516fd8269aefa814c2}} 
+void \mbox{\hyperlink{class_standard_logger_a0330dccddacaff516fd8269aefa814c2}{make\+\_\+progress\+\_\+bar}} (const std\+::string \&name, int limit=0, int width=0) override
+\begin{DoxyCompactList}\small\item\em Build a new named progress bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_standard_logger_a95d31425aae55e3ee44a433f21112db1}\label{class_standard_logger_a95d31425aae55e3ee44a433f21112db1}} 
+void \mbox{\hyperlink{class_standard_logger_a95d31425aae55e3ee44a433f21112db1}{update\+\_\+progress\+\_\+bar}} (const std\+::string \&name, int delta=1) override
+\begin{DoxyCompactList}\small\item\em Update an existing progress bar. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_standard_logger_a121207fba738720a70048cf6c19648ba}\label{class_standard_logger_a121207fba738720a70048cf6c19648ba}} 
+virtual void \mbox{\hyperlink{class_standard_logger_a121207fba738720a70048cf6c19648ba}{finish\+\_\+progress\+\_\+bar}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Finish an existing progress bar. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}

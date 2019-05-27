@@ -1,0 +1,130 @@
+\hypertarget{classomg_1_1_geometric_primitive}{}\section{omg\+::Geometric\+Primitive Class Reference}
+\label{classomg_1_1_geometric_primitive}\index{omg::GeometricPrimitive@{omg::GeometricPrimitive}}
+
+
+Represents a primitive to be rendered in the screen.  
+
+
+
+
+{\ttfamily \#include $<$Geometric\+Primitive.\+h$>$}
+
+Inheritance diagram for omg\+::Geometric\+Primitive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_geometric_primitive}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_a1f6a07e3111c7b868b57913f44fe1a91}\label{classomg_1_1_geometric_primitive_a1f6a07e3111c7b868b57913f44fe1a91}} 
+{\bfseries Geometric\+Primitive} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_object}{Object}} $>$ \&object, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_material}{Material}} $>$ \&material)
+\item 
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_ab2fb03a946e7512066108df311cf2b63}\label{classomg_1_1_geometric_primitive_ab2fb03a946e7512066108df311cf2b63}} 
+\mbox{\hyperlink{classomg_1_1_object}{Object}} $\ast$ {\bfseries get\+\_\+object} () const
+\item 
+const \mbox{\hyperlink{classomg_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{classomg_1_1_geometric_primitive_ae7b7b9ed0a5fc336a3111ef16a09f27a}{get\+\_\+material}} () const override
+\begin{DoxyCompactList}\small\item\em Return the material of the primitive. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classomg_1_1_geometric_primitive_a21bc48f971cbc94b60791906f20bc925}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$interaction) const override
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classomg_1_1_geometric_primitive_a797a2eb74fb48a7e25c7f98f16c604a7}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) const override
+\begin{DoxyCompactList}\small\item\em Only check if intersection occurred. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_geometric_primitive_ae8f0945c180c43e32cad4faa75185522}{world\+\_\+bound}} () const
+\begin{DoxyCompactList}\small\item\em The world bound of this primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a primitive to be rendered in the screen. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_ae7b7b9ed0a5fc336a3111ef16a09f27a}\label{classomg_1_1_geometric_primitive_ae7b7b9ed0a5fc336a3111ef16a09f27a}} 
+\index{omg::GeometricPrimitive@{omg::GeometricPrimitive}!get\_material@{get\_material}}
+\index{get\_material@{get\_material}!omg::GeometricPrimitive@{omg::GeometricPrimitive}}
+\subsubsection{\texorpdfstring{get\_material()}{get\_material()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classomg_1_1_material}{Material}}$\ast$ omg\+::\+Geometric\+Primitive\+::get\+\_\+material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Return the material of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the material of the primitive 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_ad9cb98c6f74581d53cadf800fc506333}{omg\+::\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_a21bc48f971cbc94b60791906f20bc925}\label{classomg_1_1_geometric_primitive_a21bc48f971cbc94b60791906f20bc925}} 
+\index{omg::GeometricPrimitive@{omg::GeometricPrimitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::GeometricPrimitive@{omg::GeometricPrimitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool omg\+::\+Geometric\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$}]{interaction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em interaction} & collect information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a51f78d3f52794ae02e18688dff75414c}{omg\+::\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_a797a2eb74fb48a7e25c7f98f16c604a7}\label{classomg_1_1_geometric_primitive_a797a2eb74fb48a7e25c7f98f16c604a7}} 
+\index{omg::GeometricPrimitive@{omg::GeometricPrimitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::GeometricPrimitive@{omg::GeometricPrimitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool omg\+::\+Geometric\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Only check if intersection occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if intersection occurred 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a139c012a57ad2322c5bef078b5d7e653}{omg\+::\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_geometric_primitive_ae8f0945c180c43e32cad4faa75185522}\label{classomg_1_1_geometric_primitive_ae8f0945c180c43e32cad4faa75185522}} 
+\index{omg::GeometricPrimitive@{omg::GeometricPrimitive}!world\_bound@{world\_bound}}
+\index{world\_bound@{world\_bound}!omg::GeometricPrimitive@{omg::GeometricPrimitive}}
+\subsubsection{\texorpdfstring{world\_bound()}{world\_bound()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} omg\+::\+Geometric\+Primitive\+::world\+\_\+bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The world bound of this primitive. 
+
+\begin{DoxyReturn}{Returns}
+the world bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a457b29547bc918cf8874b24f5168ff86}{omg\+::\+Primitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Geometric\+Primitive.\+h\end{DoxyCompactItemize}

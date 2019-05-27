@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['point3',['Point3',['../namespaceomg.html#af3df7d66f0c70fe64649fcbe00edba5e',1,'omg']]]
+  ['rgbcolor',['RGBColor',['../namespaceomg.html#a7b0e3f3dcf76f2b4758c314a41885917',1,'omg']]]
 ];

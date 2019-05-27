@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">1.1.1</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -103,6 +103,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>print_header</b> (con
 <tr class="memitem:a5803969715008363869dfd47326790bb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_standard_logger.html#a5803969715008363869dfd47326790bb">label_msg_type</a> (const <a class="el" href="class_logger.html#acd39cb578d7a6750c959f2fad38d8db6">Logger::Type</a> &amp;type) const</td></tr>
 <tr class="memdesc:a5803969715008363869dfd47326790bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a label for a type of message.  <a href="#a5803969715008363869dfd47326790bb">More...</a><br /></td></tr>
 <tr class="separator:a5803969715008363869dfd47326790bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0330dccddacaff516fd8269aefa814c2"><td class="memItemLeft" align="right" valign="top"><a id="a0330dccddacaff516fd8269aefa814c2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_standard_logger.html#a0330dccddacaff516fd8269aefa814c2">make_progress_bar</a> (const std::string &amp;name, int limit=0, int width=0) override</td></tr>
+<tr class="memdesc:a0330dccddacaff516fd8269aefa814c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a new named progress bar. <br /></td></tr>
+<tr class="separator:a0330dccddacaff516fd8269aefa814c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d31425aae55e3ee44a433f21112db1"><td class="memItemLeft" align="right" valign="top"><a id="a95d31425aae55e3ee44a433f21112db1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_standard_logger.html#a95d31425aae55e3ee44a433f21112db1">update_progress_bar</a> (const std::string &amp;name, int delta=1) override</td></tr>
+<tr class="memdesc:a95d31425aae55e3ee44a433f21112db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing progress bar. <br /></td></tr>
+<tr class="separator:a95d31425aae55e3ee44a433f21112db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121207fba738720a70048cf6c19648ba"><td class="memItemLeft" align="right" valign="top"><a id="a121207fba738720a70048cf6c19648ba"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_standard_logger.html#a121207fba738720a70048cf6c19648ba">finish_progress_bar</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a121207fba738720a70048cf6c19648ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish an existing progress bar. <br /></td></tr>
+<tr class="separator:a121207fba738720a70048cf6c19648ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An interface for loggers, using the standard output. </p>

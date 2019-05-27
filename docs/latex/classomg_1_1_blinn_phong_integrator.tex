@@ -1,0 +1,65 @@
+\hypertarget{classomg_1_1_blinn_phong_integrator}{}\section{omg\+::Blinn\+Phong\+Integrator Class Reference}
+\label{classomg_1_1_blinn_phong_integrator}\index{omg::BlinnPhongIntegrator@{omg::BlinnPhongIntegrator}}
+
+
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} based on Blinn Phong.  
+
+
+
+
+{\ttfamily \#include $<$Blinn\+Phong\+Integrator.\+h$>$}
+
+Inheritance diagram for omg\+::Blinn\+Phong\+Integrator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_blinn_phong_integrator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_blinn_phong_integrator_a77a8fcab6b06486fcc070d4481900a8e}\label{classomg_1_1_blinn_phong_integrator_a77a8fcab6b06486fcc070d4481900a8e}} 
+{\bfseries Blinn\+Phong\+Integrator} (int spp)
+\item 
+\mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \mbox{\hyperlink{classomg_1_1_blinn_phong_integrator_a5a55ac71748932d2697dcec8262900f2}{li}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ sampler=nullptr, int depth=0) override
+\begin{DoxyCompactList}\small\item\em Incidence radiance computation for a given ray acting on a scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} based on Blinn Phong. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_blinn_phong_integrator_a5a55ac71748932d2697dcec8262900f2}\label{classomg_1_1_blinn_phong_integrator_a5a55ac71748932d2697dcec8262900f2}} 
+\index{omg::BlinnPhongIntegrator@{omg::BlinnPhongIntegrator}!li@{li}}
+\index{li@{li}!omg::BlinnPhongIntegrator@{omg::BlinnPhongIntegrator}}
+\subsubsection{\texorpdfstring{li()}{li()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} omg\+::\+Blinn\+Phong\+Integrator\+::li (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$}]{sampler = {\ttfamily nullptr},  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Incidence radiance computation for a given ray acting on a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em scene} & the scene \\
+\hline
+{\em sampler} & pointer to a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}{omg\+::\+Integrator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/integrators/Blinn\+Phong\+Integrator.\+h\end{DoxyCompactItemize}

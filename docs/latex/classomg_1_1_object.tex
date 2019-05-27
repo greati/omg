@@ -15,16 +15,18 @@ Inheritance diagram for omg\+::Object\+:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{classomg_1_1_object}
 \end{center}
 \end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Hit\+Record}}
-\begin{DoxyCompactList}\small\item\em Data regarding object hits by some ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual bool \mbox{\hyperlink{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}{intersect}} (\mbox{\hyperlink{classomg_1_1_ray}{Ray}} ray, \mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Object\+::\+Hit\+Record}} \&hit\+\_\+record)=0
-\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classomg_1_1_object_a56354058785d04afff686ae41e144970}\label{classomg_1_1_object_a56354058785d04afff686ae41e144970}} 
+virtual bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, float $\ast$t\+Hit, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$hit\+\_\+record)=0
+\item 
+\mbox{\Hypertarget{classomg_1_1_object_a6bea9275afdd17c67de345043bc0d3fc}\label{classomg_1_1_object_a6bea9275afdd17c67de345043bc0d3fc}} 
+virtual bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray)=0
+\item 
+\mbox{\Hypertarget{classomg_1_1_object_a571b05c10d7fb654449d68dda18b65e2}\label{classomg_1_1_object_a571b05c10d7fb654449d68dda18b65e2}} 
+virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries world\+\_\+bound} () const =0
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -33,31 +35,6 @@ Represents an object.
 \begin{DoxyAuthor}{Author}
 Vitor Greati 
 \end{DoxyAuthor}
-
-
-\subsection{Member Function Documentation}
-\mbox{\Hypertarget{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}\label{classomg_1_1_object_aa51d05f4952f3645dc88d5bcc52fed43}} 
-\index{omg::Object@{omg::Object}!intersect@{intersect}}
-\index{intersect@{intersect}!omg::Object@{omg::Object}}
-\subsubsection{\texorpdfstring{intersect()}{intersect()}}
-{\footnotesize\ttfamily virtual bool omg\+::\+Object\+::intersect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classomg_1_1_ray}{Ray}}}]{ray,  }\item[{\mbox{\hyperlink{structomg_1_1_object_1_1_hit_record}{Object\+::\+Hit\+Record}} \&}]{hit\+\_\+record }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-
-
-Determines if the object intersects with a ray. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em ray} & the ray \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-if the object intersects with the ray 
-\end{DoxyReturn}
-
-
-Implemented in \mbox{\hyperlink{classomg_1_1_sphere_af1c6cd10afe11eeb3c9d6c42722ab039}{omg\+::\+Sphere}}.
-
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

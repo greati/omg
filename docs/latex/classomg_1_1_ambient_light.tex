@@ -1,0 +1,62 @@
+\hypertarget{classomg_1_1_ambient_light}{}\section{omg\+::Ambient\+Light Class Reference}
+\label{classomg_1_1_ambient_light}\index{omg::AmbientLight@{omg::AmbientLight}}
+
+
+Represents a point light.  
+
+
+
+
+{\ttfamily \#include $<$Ambient\+Light.\+h$>$}
+
+Inheritance diagram for omg\+::Ambient\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_ambient_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_ambient_light_a6b642bdf031a92d0f7deea16cb4b4d92}\label{classomg_1_1_ambient_light_a6b642bdf031a92d0f7deea16cb4b4d92}} 
+{\bfseries Ambient\+Light} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&intensity)
+\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_ambient_light_a97dcae69b5ef72ca8845e03a4c3185e4}{is\+\_\+ambient}} () const
+\begin{DoxyCompactList}\small\item\em Inform if this is an ambient light. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_ambient_light_a83502a1ccd9b77845d26906e6eea94e6}\label{classomg_1_1_ambient_light_a83502a1ccd9b77845d26906e6eea94e6}} 
+virtual \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_ambient_light_a83502a1ccd9b77845d26906e6eea94e6}{sample\+\_\+li}} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&interaction, \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$wi, \mbox{\hyperlink{classomg_1_1_visibility_tester}{Visibility\+Tester}} $\ast$vt) const
+\begin{DoxyCompactList}\small\item\em Sample a point on the light source\textquotesingle{}s surface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a point light. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_ambient_light_a97dcae69b5ef72ca8845e03a4c3185e4}\label{classomg_1_1_ambient_light_a97dcae69b5ef72ca8845e03a4c3185e4}} 
+\index{omg::AmbientLight@{omg::AmbientLight}!is\_ambient@{is\_ambient}}
+\index{is\_ambient@{is\_ambient}!omg::AmbientLight@{omg::AmbientLight}}
+\subsubsection{\texorpdfstring{is\_ambient()}{is\_ambient()}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Ambient\+Light\+::is\+\_\+ambient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Inform if this is an ambient light. 
+
+\begin{DoxyReturn}{Returns}
+is ambient light 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classomg_1_1_light_a25277f4ac404857b8895e64f28c7cb13}{omg\+::\+Light}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/lights/Ambient\+Light.\+h\end{DoxyCompactItemize}

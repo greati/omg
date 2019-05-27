@@ -1,0 +1,28 @@
+\hypertarget{structtao_1_1mat__storage__type__traits}{}\section{tao\+::mat\+\_\+storage\+\_\+type\+\_\+traits$<$ M, N, T $>$ Struct Template Reference}
+\label{structtao_1_1mat__storage__type__traits}\index{tao::mat\_storage\_type\_traits$<$ M, N, T $>$@{tao::mat\_storage\_type\_traits$<$ M, N, T $>$}}
+
+
+Traits to define the matrix storage type at compile time.  
+
+
+
+
+{\ttfamily \#include $<$Mat.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structtao_1_1mat__storage__type__traits_ab5c165714dd573b8bf764e33ef3629bf}\label{structtao_1_1mat__storage__type__traits_ab5c165714dd573b8bf764e33ef3629bf}} 
+using {\bfseries matrix\+\_\+storage\+\_\+type} = typename std\+::conditional$<$(M==Dynamic \&\&N==Dynamic), typename std\+::unique\+\_\+ptr$<$ T\mbox{[}$\,$\mbox{]}$>$, typename std\+::conditional$<$(M !=Dynamic \&\&N !=Dynamic), std\+::array$<$ T, M $\ast$N $>$, std\+::array$<$ T, M $\ast$N $>$ $>$\+::type $>$\+::type
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int M, int N, typename T$>$\newline
+struct tao\+::mat\+\_\+storage\+\_\+type\+\_\+traits$<$ M, N, T $>$}
+
+Traits to define the matrix storage type at compile time. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/extern/tao/sources/include/tao/linalg/Mat.\+h\end{DoxyCompactItemize}
