@@ -20,7 +20,7 @@ raytracer:
             - type: triangle_mesh
               label: mesh1
               ntriangles: 2
-              indices: [0, 1, 2, 0, 2, 3]
+              indices: [2, 1, 0, 3, 2, 0]
               bfc: false
               vertices:
                   - [-3.0, -0.5, -3.0]
@@ -38,11 +38,11 @@ raytracer:
                   - [0, 1]
                   - [1, 1]
               material: grey
-              #- type: sphere
-              #  label: sphere1
-              #  radius: 0.5
-              #  center: [0.0, 0.0, 0.0]
-              #  material: greenish
+            - type: sphere
+              label: sphere1
+              radius: 0.5
+              center: [0.0, 0.0, 0.0]
+              material: greenish
               #- type: sphere
               #  label: sphere2
               #  radius: 0.5

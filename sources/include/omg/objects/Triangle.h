@@ -1,7 +1,7 @@
 #ifndef _OMG_TRIANGLE_
 #define _OMG_TRIANGLE_
 
-#define EPSILON 0.000001
+#define EPSILON 0.0000001
 
 #include "omg/objects/Object.h"
 #include "TriangleMesh.h"
@@ -20,12 +20,11 @@ class Triangle : public Object {
         std::shared_ptr<TriangleMesh> mesh;
         const int *v;
         bool bfc {true};
-        const Vec3& normal;
 
     public:
 
         Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number) 
-            : bfc {bfc}, mesh {mesh}, normal {mesh->normals[tri_number]} {
+            : bfc {bfc}, mesh {mesh} {
             v = &mesh->vertex_indices[3 * tri_number]; 
         }
 
@@ -81,12 +80,14 @@ class Triangle : public Object {
                    return false;
                auto inv_det = 1.0 / det;
                auto tvec = r_origin - p0;
+
                auto u = tao::dot(tvec, pvec) * inv_det;
                if (u < 0.0 || u > 1.0)
                    return false;
                uv(0) = u;
 
                auto qvec = tao::cross(tvec, edge1);
+
                auto v = tao::dot(r_direction, qvec) * inv_det;
                if (v < 0.0 || u + v > 1.0)
                    return false;
@@ -100,7 +101,12 @@ class Triangle : public Object {
                 hit_record->_uv = uv;
                 hit_record->_wo = -1.0f * (r_direction - r_origin);
                 hit_record->_t = *tHit;
-                hit_record->_n = tao::unitize(tao::cross(edge1, edge2));    //TODO change to phong interpolation
+
+                const auto& n0 = mesh->normals[v[0]];
+                const auto& n1 = mesh->normals[v[1]];
+                const auto& n2 = mesh->normals[v[2]];
+                hit_record->_n = tao::unitize((1-uv(0)-uv(1))*n0 + uv(0)*n1 + uv(1)*n2);
+                //tao::unitize(tao::cross(edge1, edge2));    //TODO change to phong interpolation
             }
 
             return true;

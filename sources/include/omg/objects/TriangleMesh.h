@@ -28,12 +28,12 @@ struct TriangleMesh {
         for (int i {0}; i < n_vertices; ++i)
             points[i] = ps[i];
 
-        normals.reset(new Vec3[n_triangles]);
-        for (int i {0}; i < n_triangles; ++i)
+        normals.reset(new Vec3[n_vertices]);
+        for (int i {0}; i < n_vertices; ++i)
             normals[i] = ns[i];
 
-        this->uvs.reset(new Point2[n_triangles]);
-        for (int i {0}; i < n_triangles; ++i)
+        this->uvs.reset(new Point2[n_vertices]);
+        for (int i {0}; i < n_vertices; ++i)
             (this->uvs)[i] = uvs[i];
 
     };
