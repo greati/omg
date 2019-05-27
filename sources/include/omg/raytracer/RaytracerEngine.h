@@ -51,7 +51,7 @@ class RaytracerEngine {
                 omg::logger.log(Logger::Type::INFO, "parsing", "parsing settings...");
                 _running_settings = _parser->parse_running_settings();
                 omg::logger.log(Logger::Type::SUCCESS, "parsing", "settings parsed");
-            } catch (const std::exception& e) {
+            } catch (const omg::ParseException& e) {
                 throw e;
             }
         }

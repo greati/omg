@@ -13,6 +13,9 @@ namespace omg {
     /** Represents a 3d vector */
     using Vec3 = tao::Vec3<RealValue>;
 
+    /** Represents a 3d vector */
+    using Vec2 = tao::Vec2<RealValue>;
+
     /** Represents an RGB color */
     using RGBColor = Vec3;
 

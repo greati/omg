@@ -19,9 +19,28 @@
 #include "omg/lights/DirectionalLight.h"
 #include "omg/lights/AmbientLight.h"
 #include "omg/lights/SpotLight.h"
+#include "omg/objects/Triangle.h"
+#include "omg/objects/TriangleMesh.h"
+#include "omg/objects/ListAggregate.h"
 #include <iostream>
 
 using namespace omg;
+
+template<>
+struct YAML::convert<Vec2> {
+    static YAML::Node encode(const Vec2& rhs) {
+        YAML::Node node;
+        return node;
+    }
+    static bool decode(const YAML::Node& node, Vec2 & rgbColor) {
+        if (!node.IsSequence() || node.size() != 2)
+            return false;
+
+        rgbColor(0) = node[0].as<float>(); 
+        rgbColor(1) = node[1].as<float>(); 
+        return true;
+    }
+};
 
 template<>
 struct YAML::convert<Vec3> {
@@ -55,6 +74,19 @@ std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
     return std::make_shared<Sphere>(radius, center);
 }
 
+
+template<>
+std::vector<std::shared_ptr<Triangle>> YAMLParser::parse_list(const YAML::Node& node) {
+    auto n_triangles = hard_require(node, "ntriangles").as<int>();
+    auto indices = hard_require(node, "indices").as<std::vector<int>>(); 
+    auto vertices = hard_require(node, "vertices").as<std::vector<Vec3>>();
+    auto normals = hard_require(node, "normals").as<std::vector<Vec3>>();
+    auto uvs = hard_require(node, "uvs").as<std::vector<Point2>>();
+    bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
+    return Triangle::create_triangle_mesh(bfc, n_triangles, indices.data(),
+            vertices.size(), vertices.data(), normals.data(), uvs.data());
+}
+
 template<>
 std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
     auto type = hard_require(node, "type").as<std::string>();
@@ -63,9 +95,14 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         auto sphereprim = parse<Sphere>(node);
         auto material = get_material(hard_require(node, "material").as<std::string>());
         return std::make_shared<GeometricPrimitive>(sphereprim, material);
-    } 
-
-    throw omg::ParseException("unknown object type " + type);
+    } else if (type=="triangle_mesh") {
+        auto triangles = parse_list<Triangle>(node);        
+        auto material = get_material(hard_require(node, "material").as<std::string>());
+        std::vector<std::shared_ptr<Primitive>> t_primitives;
+        for (auto& t : triangles)
+            t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
+        return std::make_shared<ListAggregate>(t_primitives);
+    } else throw omg::ParseException("unknown object type " + type);
 }
 
 template<typename NodeType>
@@ -87,6 +124,7 @@ std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node&
 
     return objs;
 }
+
 
 template<>
 std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {
@@ -307,6 +345,7 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     auto background = this->parse<Background>(node);
     std::vector<std::shared_ptr<Primitive>> objects;
     std::vector<std::shared_ptr<Light>> lights;
+    std::shared_ptr<AggregatePrimitive> aggregate;
     // scene
     if (node["scene"]) {
         auto scene_node = node["scene"];
@@ -321,9 +360,10 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
 
         if (scene_node["objects"]) {
             objects = this->parse_list<Primitive>(scene_node["objects"]);
+            aggregate = std::make_shared<ListAggregate>(objects);
         }
     }
-    auto scene = std::make_shared<Scene>(background, camera, objects, lights);
+    auto scene = std::make_shared<Scene>(background, camera, aggregate, lights);
     return scene;
 }
 

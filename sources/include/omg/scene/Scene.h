@@ -5,6 +5,7 @@
 #include "omg/backgrounds/Background.h"
 #include "omg/raytracer/SurfaceInteraction.h"
 #include "omg/objects/Primitive.h"
+#include "omg/objects/AggregatePrimitive.h"
 #include "omg/lights/Light.h"
 
 namespace omg {
@@ -21,8 +22,9 @@ class Scene {
 
         std::shared_ptr<Background> _background;        /** Background reference */
         std::shared_ptr<Camera> _camera;                /** Camera reference */
-        std::vector<std::shared_ptr<Primitive>> _primitives;  /** Scene objects */
         std::vector<std::shared_ptr<Light>> _lights;
+
+        std::shared_ptr<AggregatePrimitive> _aggregate;
 
         Bounds3 _world_bound;
 
@@ -38,18 +40,16 @@ class Scene {
          * */
         Scene(std::shared_ptr<Background> background,
               std::shared_ptr<Camera> camera,
-              const decltype(_primitives)& primitives,
+              const decltype(_aggregate)& aggregate,
               const decltype(_lights)& lights)
             : _background {background},
               _camera {camera},
-              _primitives {primitives},
+              _aggregate {aggregate},
               _lights {lights}
         {
 
-            //> Compute world bound //TODO change whe using aggregates
-            for (auto& p : _primitives) {
-                _world_bound = _world_bound.get_union(_world_bound, p->world_bound());
-            }
+            //> Compute world bound from primitive
+            _world_bound = _aggregate->world_bound();
 
             //> Call scene preprocessing
             for (auto& l : _lights)
@@ -83,8 +83,6 @@ class Scene {
          * @param camera the camera
          * */
         inline void set_camera(std::shared_ptr<Camera> camera) { this->_camera = camera; }
-
-        inline const std::vector<std::shared_ptr<Primitive>>& get_primitives() const { return _primitives; }
 
         inline const std::vector<std::shared_ptr<Light>>& get_lights() const { return _lights; }
 
