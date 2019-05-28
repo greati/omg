@@ -43,7 +43,7 @@ class Triangle : public Object {
         bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
             const auto& r_origin = ray.get_origin();
             const auto& r_direction = ray.get_direction();
-            const auto& [p0, p1, p2] = vertices();
+            const auto& [p0, p2, p1] = vertices();
             auto edge1 = p1 - p0;
             auto edge2 = p2 - p0;
 
@@ -52,7 +52,7 @@ class Triangle : public Object {
 
             Point2 uv;
 
-            if (bfc) {
+            if (!bfc) {
                 if (det < EPSILON)
                     return false;
 
@@ -102,11 +102,8 @@ class Triangle : public Object {
                 hit_record->_wo = -1.0f * (r_direction - r_origin);
                 hit_record->_t = *tHit;
 
-                const auto& n0 = mesh->normals[v[0]];
-                const auto& n1 = mesh->normals[v[1]];
-                const auto& n2 = mesh->normals[v[2]];
+		const auto& [n0, n1, n2] = normals();
                 hit_record->_n = tao::unitize((1-uv(0)-uv(1))*n0 + uv(0)*n1 + uv(1)*n2);
-                //tao::unitize(tao::cross(edge1, edge2));    //TODO change to phong interpolation
             }
 
             return true;
@@ -122,6 +119,13 @@ class Triangle : public Object {
             const auto& p1 = mesh->points[v[1]];
             const auto& p2 = mesh->points[v[2]];
             return {p0, p1, p2};
+        }
+
+        std::tuple<const Vec3&, const Vec3&, const Vec3&> normals() const {
+            const auto& n0 = mesh->normals[v[0]];
+            const auto& n1 = mesh->normals[v[1]];
+            const auto& n2 = mesh->normals[v[2]];
+            return {n0, n1, n2};
         }
 
         Bounds3 world_bound() const override {

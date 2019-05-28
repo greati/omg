@@ -8,10 +8,8 @@ raytracer:
             - [153, 204, 255]
     camera:
         type: perspective
-        position: [0.0, 2.0, 8.5]
+        position: [7.0, 2.0, 5.0]
         target: [0.0, 0.0, -1.0]
-        #position: [0.0, -8.0, 8.5]
-        #target: [0.0, 5.0, -1.0]
         up: [0.0, 1.0, 0.0]
         v_angle: 30.0
         fdist: 1.0
@@ -19,47 +17,26 @@ raytracer:
         height: 600
     scene:
         objects:
-            - type: triangle_mesh
-              label: mesh1
-              ntriangles: 2
-              indices: [0, 1, 2, 0, 2, 3]
-              bfc: false
-              vertices:
-                  - [-3.0, -0.5, -3.0]
-                  - [3.0, -0.5, -3.0]
-                  - [3.0, -0.5, 3.0]
-                  - [-3.0, -0.5, 3.0]
-              normals:
-                  - [0, 1, 0]
-                  - [0, 1, 0]
-                  - [0, 1, 0]
-                  - [0, 1, 0]
-              uvs:
-                  - [0, 0]
-                  - [1, 0]
-                  - [0, 1]
-                  - [1, 1]
-              material: grey
             - type: sphere
               label: sphere1
               radius: 0.5
               center: [0.0, 0.0, 0.0]
               material: greenish
-              #- type: sphere
-              #  label: sphere2
-              #  radius: 0.5
-              #  center: [-0.86, 0.0, -1.5]
-              #  material: redish
-              #- type: sphere
-              #  label: sphere3
-              #  radius: 0.5
-              #  center: [0.86, 0.0, -1.5]
-              #  material: blueish
-              #- type: sphere
-              #  label: sphere4
-              #  radius: 5000.0
-              #  center: [0.0, -5000.5, -1.0]
-              #  material: grey
+            - type: sphere
+              label: sphere2
+              radius: 0.5
+              center: [-0.86, 0.0, -1.5]
+              material: redish
+            - type: sphere
+              label: sphere3
+              radius: 0.5
+              center: [0.86, 0.0, -1.5]
+              material: blueish
+            - type: sphere
+              label: sphere4
+              radius: 5000.0
+              center: [0.0, -5000.5, -1.0]
+              material: grey
         materials:
             - type: blinn
               label: redish
@@ -89,11 +66,11 @@ raytracer:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
             - type: point
-              intensity: [229.5, 76.5, 76.5]
-              position: [-2.0, 1.1, -1.0]
+              intensity: [178, 178, 178]
+              position: [0.0, 0.5, -0.5]
             - type: point
-              intensity: [179.0, 179.0, 179.0]
-              position: [0.0, 1.1, -1.0]
+              intensity: [178, 178, 178]
+              position: [0.0, 0.5, -2.5]
     settings:
         integrators:
             - type: blinn
