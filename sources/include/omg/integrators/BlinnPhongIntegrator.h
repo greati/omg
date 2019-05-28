@@ -86,6 +86,8 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                     VisibilityTester vt;
                     auto I = light->sample_li(si, &wi, &vt);
 
+                    if (I == RGBColor{0.0, 0.0, 0.0}) continue;
+
                     if (vt.unoccluded(scene)) {
                         L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 
                                 [](auto x, auto y) {return x*y;});
