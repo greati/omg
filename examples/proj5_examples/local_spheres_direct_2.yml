@@ -68,7 +68,7 @@ raytracer:
               intensity: [25.5, 25.5, 25.5]
             - type: directional
               intensity: [229.5, 229.5, 229.5]
-              direction: [0.0, -1.0, 1.0]
+              direction: [0.0, 1.0, -1.0]
     settings:
         integrators:
             - type: blinn

@@ -72,7 +72,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                 auto [phi, theta] = ray.get_spherical_angles();
                 auto px = phi * INV_2PI;
                 auto py = theta * INV_PI;
-                return scene.get_background()->find(1-px, 1-py);
+                return scene.get_background()->find(1.0-px, 1.0-py);
             }
 
             for (auto& light : scene.get_lights()) {

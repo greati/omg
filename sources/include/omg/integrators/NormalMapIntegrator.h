@@ -44,7 +44,7 @@ class NormalMapIntegrator : public SamplerIntegrator {
                 auto [phi, theta] = ray.get_spherical_angles();
                 auto px = phi * INV_2PI;
                 auto py = theta * INV_PI;
-                return scene.get_background()->find(px, py);
+                return scene.get_background()->find(1.0-px, 1.0-py);
             }
         }
 };

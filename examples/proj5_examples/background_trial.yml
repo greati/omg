@@ -8,8 +8,8 @@ raytracer:
             - [0, 255, 0]
     camera:
         type: perspective
-        position: [9.0, 2.5, 5.0]
-        target: [2.0, 8.0, -1.0]
+        position: [0.0, 0.0, 20.0]
+        target: [0.0, 1.0, -1.0]
         up: [0.0, 1.0, 0.0]
         v_angle: 30.0
         fdist: 1.0
