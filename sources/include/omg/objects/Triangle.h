@@ -99,7 +99,7 @@ class Triangle : public Object {
                *tHit = tao::dot(edge2, qvec) * inv_det;
 
                if (*tHit < EPSILON)
-                   return false;
+                  return false;
             }
 
             if (hit_record != nullptr) {
@@ -108,7 +108,7 @@ class Triangle : public Object {
                 hit_record->_wo = -1.0f * (r_direction - r_origin);
                 hit_record->_t = *tHit;
 
-                const auto& [n0, n2, n1] = normals();
+                auto [n0, n2, n1] = normals();
                 hit_record->_n = tao::unitize((1-uv(0)-uv(1))*n0 + uv(0)*n1 + uv(1)*n2);
             }
 

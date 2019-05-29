@@ -8,19 +8,19 @@ raytracer:
             - [153, 204, 255]
     camera:
         type: perspective
-        position: [0.0, -90.0, 30.0]
+        position: [0.0, -100.0, 30.0]
         target: [0.0, 0.0, 0.0]
         up: [0.0, 1.0, 0.0]
         v_angle: 25.0
         fdist: 1.0
-        width: 450
-        height: 225
+        width: 250
+        height: 112
     scene:
         objects:
             - type: triangle_mesh
               label: mesh1
               bfc: true
-              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot.obj"
+              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot_high.obj"
               material: grey
               #- type: triangle_mesh
               #  label: plane
