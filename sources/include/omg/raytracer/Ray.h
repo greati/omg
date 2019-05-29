@@ -55,6 +55,7 @@ class Ray {
         inline std::pair<float, float> get_spherical_angles() const {
             auto d = _d;
             std::swap(d(1), d(2));
+            d(1) *= -1.0;
             auto phi = tao::spherical_phi(d);
             auto theta = tao::spherical_theta(d);
             return {phi, theta};
