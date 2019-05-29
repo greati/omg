@@ -74,6 +74,9 @@ class Triangle : public Object {
                 *tHit *= inv_det;
                 uv(0) *= inv_det;
                 uv(1) *= inv_det;
+
+               if (*tHit < EPSILON)
+                   return false;
             } else {
                 
                if (det > -EPSILON && det < EPSILON) 
@@ -102,7 +105,7 @@ class Triangle : public Object {
             if (hit_record != nullptr) {
                 hit_record->_p = ray(*tHit);//(1-uv(0)-uv(1))*p0 + uv(0)*p1 + uv(1)*p2;//ray(*tHit);
                 hit_record->_uv = uv;
-                hit_record->_wo = -1.0f * r_direction;//(r_direction - r_origin);
+                hit_record->_wo = -1.0f * (r_direction - r_origin);
                 hit_record->_t = *tHit;
 
                 const auto& [n0, n2, n1] = normals();

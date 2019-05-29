@@ -13,14 +13,14 @@ raytracer:
         up: [0.0, 1.0, 0.0]
         v_angle: 25.0
         fdist: 1.0
-        width: 900
-        height: 450
+        width: 450
+        height: 225
     scene:
         objects:
             - type: triangle_mesh
               label: mesh1
-              bfc: false
-              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot_low.obj"
+              bfc: true
+              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot.obj"
               material: grey
               #- type: triangle_mesh
               #  label: plane
