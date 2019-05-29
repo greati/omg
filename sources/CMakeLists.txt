@@ -58,7 +58,9 @@ add_executable(raytracer
     src/raytracer/RaytracerVisitor.cpp
     src/raytracer/SurfaceInteraction.cpp
     src/scene/Scene.cpp
-    src/lights/VisibilityTester.cpp)
+    src/lights/VisibilityTester.cpp
+    src/parsing/obj/CyObjParser.cpp
+    )
 target_link_libraries(raytracer PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
 target_include_directories(raytracer PUBLIC include PUBLIC extern/tao/sources/include PUBLIC ${yamlcpp_SOURCE_DIR}/include)
 

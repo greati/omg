@@ -22,6 +22,7 @@
 #include "omg/objects/Triangle.h"
 #include "omg/objects/TriangleMesh.h"
 #include "omg/objects/ListAggregate.h"
+#include "omg/parsing/obj/CyObjParser.h"
 #include <iostream>
 
 using namespace omg;
@@ -81,7 +82,7 @@ std::vector<std::shared_ptr<Triangle>> YAMLParser::parse_list(const YAML::Node& 
     auto indices = hard_require(node, "indices").as<std::vector<int>>(); 
     auto vertices = hard_require(node, "vertices").as<std::vector<Vec3>>();
     auto normals = hard_require(node, "normals").as<std::vector<Vec3>>();
-    auto uvs = hard_require(node, "uvs").as<std::vector<Point2>>();
+    std::vector<Point2> uvs; //TODO ask for uvs
     bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
     return Triangle::create_triangle_mesh(bfc, n_triangles, indices.data(),
             vertices.size(), vertices.data(), normals.data(), uvs.data());
@@ -96,12 +97,29 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         auto material = get_material(hard_require(node, "material").as<std::string>());
         return std::make_shared<GeometricPrimitive>(sphereprim, material);
     } else if (type=="triangle_mesh") {
-        auto triangles = parse_list<Triangle>(node);        
         auto material = get_material(hard_require(node, "material").as<std::string>());
+
+        std::vector<std::shared_ptr<Triangle>> triangles;
+
+        //> When a obj file is specified
+        if (node["obj_file"]) {
+            CyObjParser cyobjparser;
+            try {
+                auto obj_file = node["obj_file"].as<std::string>();
+                bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
+                triangles = cyobjparser.parse_tri_mesh(obj_file, bfc); 
+            } catch (omg::ParseException& e) {
+                throw;
+            }
+        //> Parse manually created mesh
+        } else {
+            triangles = parse_list<Triangle>(node); 
+        }
+        //> Create primitives
         std::vector<std::shared_ptr<Primitive>> t_primitives;
         for (auto& t : triangles)
             t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
-        return std::make_shared<ListAggregate>(t_primitives);
+        return std::make_shared<ListAggregate>(t_primitives); //TODO allow to change the aggregate type
     } else throw omg::ParseException("unknown object type " + type);
 }
 

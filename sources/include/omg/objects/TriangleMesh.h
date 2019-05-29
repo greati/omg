@@ -2,6 +2,7 @@
 #define _OMG_TR_MESH_
 
 #include "omg/common.h"
+#include <iostream>
 
 namespace omg {
 /**
@@ -32,13 +33,23 @@ struct TriangleMesh {
         for (int i {0}; i < n_vertices; ++i)
             normals[i] = ns[i];
 
-        this->uvs.reset(new Point2[n_vertices]);
-        for (int i {0}; i < n_vertices; ++i)
-            (this->uvs)[i] = uvs[i];
+        //TODO
+        //this->uvs.reset(new Point2[n_vertices]);
+        //for (int i {0}; i < n_vertices; ++i)
+        //    (this->uvs)[i] = uvs[i];
+        //
 
     };
 
 };
 };
+
+/*std::ostream& operator<<(std::ostream& out, const omg::TriangleMesh& mat) {
+    out << "NT: " << mat.n_triangles << std::endl;
+    out << "NV: " << mat.n_vertices << std::endl;
+    for (const auto& i : mat.vertex_indices)
+        out << i;
+    return out;
+}*/
 
 #endif

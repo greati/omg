@@ -1,0 +1,65 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [10, 10, 10]
+            - [10, 10, 10]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: perspective
+        position: [0.0, -90.0, 30.0]
+        target: [0.0, 0.0, 0.0]
+        up: [0.0, 1.0, 0.0]
+        v_angle: 25.0
+        fdist: 1.0
+        width: 450
+        height: 225
+    scene:
+        objects:
+            - type: triangle_mesh
+              label: mesh1
+              bfc: true
+              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot_low.obj"
+              material: grey
+              #- type: triangle_mesh
+              #  label: plane
+              #  bfc: true
+              #  material: cyan
+              #  ntriangles: 2
+              #  indices: [0, 1, 2, 0, 2, 3]
+              #  vertices:
+              #      - [-30.0, 30.5, -1.0]  
+              #      - [30.0, 30.5, -1.0]  
+              #      - [30.0, -30.5, -1.0]  
+              #      - [-30.0, -30.5, -1.0]
+              #  normals:
+              #      - [0, 0, 1]
+              #      - [0, 0, 1]
+              #      - [0, 0, 1]
+              #      - [0, 0, 1]
+        materials:
+            - type: blinn
+              label: grey
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.8, 0.8, 0.8]
+              specular: [0.0, 0.0, 0.0]
+              glossiness: 8
+            - type: blinn
+              label: cyan
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.1, 0.9, 0.9]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 128
+        lights:
+            - type: ambient
+              intensity: [25.5, 25.5, 25.5]
+            - type: directional
+              intensity: [229.5, 135, 112.5]
+              direction: [-5.0, -5.0, 10.0]
+            - type: directional
+              intensity: [229.5, 229.5, 229.5]
+              direction: [5.0, -5.0, 10.0]
+    settings:
+        integrators:
+            - type: blinn
