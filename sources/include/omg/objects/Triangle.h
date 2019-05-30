@@ -1,7 +1,7 @@
 #ifndef _OMG_TRIANGLE_
 #define _OMG_TRIANGLE_
 
-#define EPSILON 0.0000001
+#define EPSILON 0.0001
 
 #include "omg/objects/Object.h"
 #include "TriangleMesh.h"
@@ -101,6 +101,9 @@ class Triangle : public Object {
                if (*tHit < EPSILON)
                   return false;
             }
+
+	    if (*tHit > ray.tMax)
+		    return false;
 
             if (hit_record != nullptr) {
                 hit_record->_p = ray(*tHit);//(1-uv(0)-uv(1))*p0 + uv(0)*p1 + uv(1)*p2;//ray(*tHit);

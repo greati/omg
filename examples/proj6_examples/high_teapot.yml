@@ -20,7 +20,7 @@ raytracer:
             - type: triangle_mesh
               label: mesh1
               bfc: true
-              obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/teapot_high.obj"
+              obj_file: "/home/vitorgreati/omg/examples/objs/teapot-high.obj"
               material: grey
               #- type: triangle_mesh
               #  label: plane

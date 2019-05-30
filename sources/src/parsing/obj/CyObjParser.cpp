@@ -31,18 +31,24 @@ std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::st
         vertices.push_back(Point3{x, y, z});
     }
 
-    //> Process normals
-    std::vector<Vec3> normals;
     auto nnormals = cy_trimesh.NVN();
+
+    //> Process normals
+    if (!cy_trimesh.HasNormals() || nnormals < nvertices) {
+    	cy_trimesh.ComputeNormals(true);
+	nnormals = cy_trimesh.NVN();
+    }
+
+    std::vector<Vec3> normals;
     for (int i = 0; i < nnormals; ++i) {
         const auto& [x, y, z] = cy_trimesh.VN(i);
         normals.push_back(Vec3{x, y, z}); 
     }
-    auto last = normals.back();
-    while (nnormals < nvertices) {
-        normals.push_back(last);
-        nnormals++;
-    }
+    //auto last = normals.back();
+    //while (nnormals < nvertices) {
+    //    normals.push_back(last);
+    //    nnormals++;
+    //}
 
     //> Process barycentric
     std::vector<Point2> uvs;
