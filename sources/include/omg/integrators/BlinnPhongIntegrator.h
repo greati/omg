@@ -75,7 +75,7 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                 normal = tao::unitize(si._n);
 
                 //> Check if normal and ray are in the same hemisphere
-                if (tao::dot(normal, r_direction) >= 0)
+                if (tao::dot(normal, r_direction) >= 0.0)
                     return {0.0, 0.0, 0.0};
 
             } else {

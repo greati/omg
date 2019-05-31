@@ -1,7 +1,7 @@
 #ifndef _OMG_TRIANGLE_
 #define _OMG_TRIANGLE_
 
-#define EPSILON 0.0001
+#define EPSILON 0.0000001
 
 #include "omg/objects/Object.h"
 #include "TriangleMesh.h"
@@ -42,8 +42,9 @@ class Triangle : public Object {
 
         bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
             const auto& r_origin = ray.get_origin();
-            const auto& r_direction = ray.get_direction();
-            const auto& [p0, p2, p1] = vertices();
+            const auto r_direction = tao::unitize(ray.get_direction());
+            //TODO check whether to invert...
+            const auto& [p0, p1, p2] = vertices();
             auto edge1 = p1 - p0;
             auto edge2 = p2 - p0;
 
@@ -102,16 +103,16 @@ class Triangle : public Object {
                   return false;
             }
 
-	    if (*tHit > ray.tMax)
-		    return false;
+            if (*tHit > ray.tMax)
+                return false;
 
             if (hit_record != nullptr) {
                 hit_record->_p = ray(*tHit);//(1-uv(0)-uv(1))*p0 + uv(0)*p1 + uv(1)*p2;//ray(*tHit);
                 hit_record->_uv = uv;
-                hit_record->_wo = -1.0f * (r_direction - r_origin);
+                hit_record->_wo = -1.0f*ray.get_direction();//-1.0f * (r_direction - r_origin);
                 hit_record->_t = *tHit;
 
-                auto [n0, n2, n1] = normals();
+                auto [n0, n1, n2] = normals();
                 hit_record->_n = tao::unitize((1-uv(0)-uv(1))*n0 + uv(0)*n1 + uv(1)*n2);
             }
 
