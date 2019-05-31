@@ -84,8 +84,9 @@ std::vector<std::shared_ptr<Triangle>> YAMLParser::parse_list(const YAML::Node& 
     auto normals = hard_require(node, "normals").as<std::vector<Vec3>>();
     std::vector<Point2> uvs; //TODO ask for uvs
     bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
+    bool clockwise = node["clockwise"] ? node["clockwise"].as<bool>() : false;
     return Triangle::create_triangle_mesh(bfc, n_triangles, indices.data(),
-            vertices.size(), vertices.data(), normals.data(), uvs.data());
+            vertices.size(), vertices.data(), normals.data(), uvs.data(), false, clockwise);
 }
 
 template<>
@@ -107,7 +108,9 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
             try {
                 auto obj_file = node["obj_file"].as<std::string>();
                 bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
-                triangles = cyobjparser.parse_tri_mesh(obj_file, bfc); 
+                bool compute_normals = node["compute_normals"] ? node["compute_normals"].as<bool>() : false;
+                bool clockwise = node["clockwise"] ? node["clockwise"].as<bool>() : false;
+                triangles = cyobjparser.parse_tri_mesh(obj_file, bfc, compute_normals, clockwise); 
             } catch (omg::ParseException& e) {
                 throw;
             }

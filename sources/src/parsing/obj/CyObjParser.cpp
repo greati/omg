@@ -5,7 +5,8 @@
 
 using namespace omg;
 
-std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::string& file_name, bool bfc) const {
+std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::string& file_name, 
+        bool bfc, bool compute_normals, bool clockwise) const {
 
     cy::TriMesh cy_trimesh;
 
@@ -34,8 +35,8 @@ std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::st
     auto nnormals = cy_trimesh.NVN();
 
     //> Process normals
-    if (!cy_trimesh.HasNormals() || nnormals < nvertices) {
-    	cy_trimesh.ComputeNormals(true);
+    if (compute_normals || !cy_trimesh.HasNormals() || nnormals < nvertices) {
+    	cy_trimesh.ComputeNormals(clockwise);
         nnormals = cy_trimesh.NVN();
     }
 
@@ -50,5 +51,5 @@ std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::st
     //TODO
     
     return Triangle::create_triangle_mesh(bfc, ntriangles, indices.data(),
-            nvertices, vertices.data(), normals.data(), uvs.data());
+            nvertices, vertices.data(), normals.data(), uvs.data(), compute_normals, clockwise);
 }

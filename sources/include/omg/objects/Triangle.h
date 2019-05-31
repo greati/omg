@@ -1,7 +1,7 @@
 #ifndef _OMG_TRIANGLE_
 #define _OMG_TRIANGLE_
 
-#define EPSILON 0.0000001
+#define EPSILON 0.000001
 
 #include "omg/objects/Object.h"
 #include "TriangleMesh.h"
@@ -20,31 +20,36 @@ class Triangle : public Object {
         std::shared_ptr<TriangleMesh> mesh;
         const int *v;
         bool bfc {true};
+        bool clockwise {false};
 
     public:
 
-        Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number) 
-            : bfc {bfc}, mesh {mesh} {
+        Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number, bool clockwise = false) 
+            : bfc {bfc}, mesh {mesh}, clockwise {clockwise} {
             v = &mesh->vertex_indices[3 * tri_number]; 
         }
 
         static std::vector<std::shared_ptr<Triangle>> create_triangle_mesh(
                 bool bfc, int n_triangles, const int *indices, int n_vertices,
-                const Point3 *ps, const Vec3* ns, const Point2* uvs) {
+                const Point3 *ps, const Vec3* ns, const Point2* uvs, bool compute_normals = false,
+                bool clockwise = false) {
             std::shared_ptr<TriangleMesh> mesh = 
                 std::make_shared<TriangleMesh>(n_triangles, indices, n_vertices,
-                        ps, ns, uvs);
+                        ps, ns, uvs, compute_normals);
             std::vector<std::shared_ptr<Triangle>> triangles;
             for (int i = 0; i < n_triangles; ++i)
-                triangles.push_back(std::make_shared<Triangle>(bfc, mesh, i));
+                triangles.push_back(std::make_shared<Triangle>(bfc, mesh, i, clockwise));
             return triangles;
         } 
 
         bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
             const auto& r_origin = ray.get_origin();
             const auto r_direction = tao::unitize(ray.get_direction());
-            //TODO check whether to invert...
-            const auto& [p0, p1, p2] = vertices();
+            auto [p0, p1, p2] = vertices();
+
+            if (clockwise)
+                std::swap(p1, p2);
+
             auto edge1 = p1 - p0;
             auto edge2 = p2 - p0;
 
@@ -107,12 +112,16 @@ class Triangle : public Object {
                 return false;
 
             if (hit_record != nullptr) {
-                hit_record->_p = ray(*tHit);//(1-uv(0)-uv(1))*p0 + uv(0)*p1 + uv(1)*p2;//ray(*tHit);
+                hit_record->_p = ray(*tHit);
                 hit_record->_uv = uv;
-                hit_record->_wo = -1.0f*ray.get_direction();//-1.0f * (r_direction - r_origin);
+                hit_record->_wo = -1.0f*ray.get_direction();
                 hit_record->_t = *tHit;
 
                 auto [n0, n1, n2] = normals();
+
+                if (clockwise)
+                    std::swap(n1, n2);
+
                 hit_record->_n = tao::unitize((1-uv(0)-uv(1))*n0 + uv(0)*n1 + uv(1)*n2);
             }
 
@@ -124,17 +133,17 @@ class Triangle : public Object {
             return this->intersect(ray, &t, nullptr);
         }
 
-        std::tuple<const Point3&, const Point3&, const Point3&> vertices() const {
-            const auto& p0 = mesh->points[v[0]];
-            const auto& p1 = mesh->points[v[1]];
-            const auto& p2 = mesh->points[v[2]];
+        std::tuple<Point3, Point3, Point3> vertices() const {
+            auto p0 = mesh->points[v[0]];
+            auto p1 = mesh->points[v[1]];
+            auto p2 = mesh->points[v[2]];
             return {p0, p1, p2};
         }
 
-        std::tuple<const Vec3&, const Vec3&, const Vec3&> normals() const {
-            const auto& n0 = mesh->normals[v[0]];
-            const auto& n1 = mesh->normals[v[1]];
-            const auto& n2 = mesh->normals[v[2]];
+        std::tuple<Vec3, Vec3, Vec3> normals() const {
+            auto n0 = mesh->normals[v[0]];
+            auto n1 = mesh->normals[v[1]];
+            auto n2 = mesh->normals[v[2]];
             return {n0, n1, n2};
         }
 

@@ -22,11 +22,13 @@ raytracer:
               bfc: false
               obj_file: "../examples/objs/teapot.obj"
               material: grey
+              clockwise: false
             - type: triangle_mesh
               label: plane
               bfc: true
               material: cyan
               ntriangles: 2
+              clockwise: true
               indices: [0, 1, 2, 0, 2, 3]
               vertices:
                   - [-30.0, 30.5, -1.0]  

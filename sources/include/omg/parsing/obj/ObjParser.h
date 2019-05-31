@@ -13,7 +13,7 @@ class ObjParser {
 
         virtual 
         std::vector<std::shared_ptr<Triangle>> 
-        parse_tri_mesh(const std::string& file_name, bool bfc) const = 0;   
+        parse_tri_mesh(const std::string& file_name, bool bfc, bool compute_normals, bool clockwise) const = 0;   
 
 };
 };

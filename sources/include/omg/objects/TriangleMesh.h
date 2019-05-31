@@ -12,6 +12,8 @@ namespace omg {
  * */
 struct TriangleMesh {
 
+    bool compute_normals {false};
+
     const int n_triangles;
     const int n_vertices;
     std::vector<int> vertex_indices;
@@ -21,9 +23,9 @@ struct TriangleMesh {
     std::unique_ptr<Point2[]> uvs;
 
     TriangleMesh(int n_triangles, const int *indices, int n_vertices,
-            const Point3 *ps, const Vec3* ns, const Point2* uvs) 
+            const Point3 *ps, const Vec3* ns, const Point2* uvs, bool compute_normals = false) 
     : n_triangles {n_triangles}, n_vertices {n_vertices},
-    vertex_indices {indices, indices + 3 * n_triangles } {
+    vertex_indices {indices, indices + 3 * n_triangles }, compute_normals {compute_normals} {
         
         points.reset(new Point3[n_vertices]);
         for (int i {0}; i < n_vertices; ++i)
