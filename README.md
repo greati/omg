@@ -64,3 +64,7 @@ execute:
 - [ ] Objects
     - [x] Spheres
     - [x] Triangle meshes
+- [ ] Accelerators
+    - [ ] BVH
+    - [ ] KDTree
+- [ ] Geometric transformations
