@@ -12,13 +12,22 @@ Represents a ray in the raytracer technique.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classomg_1_1_ray_a7418b3be2225de5510c63781ee5ad3f1}{Ray}} (const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&o, const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&d)
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \mbox{\hyperlink{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}{operator()}} (float t)
+\mbox{\hyperlink{classomg_1_1_ray_a7418b3be2225de5510c63781ee5ad3f1}{Ray}} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&o, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&d)
+\begin{DoxyCompactList}\small\item\em Max distance that the ray achieved. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \mbox{\hyperlink{classomg_1_1_ray_a841e085c48864a211faf98e3f529d567}{operator()}} (float t) const
 \begin{DoxyCompactList}\small\item\em Gives the point p of the ray for parameter t, where p = o + d$\ast$t. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}{get\+\_\+origin}} ()
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_a3b2c3ade0173b74f72e7bb4e72363cf3}{get\+\_\+origin}} () const
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} origin. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}{get\+\_\+direction}} ()
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_ray_aed10a92891a426b887927c75018f88b1}{get\+\_\+direction}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_ray_a34ca629a70f809725e65158b3d841baa}\label{classomg_1_1_ray_a34ca629a70f809725e65158b3d841baa}} 
+std\+::pair$<$ float, float $>$ {\bfseries get\+\_\+spherical\+\_\+angles} () const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_ray_ab7848db0f649594f465d6b353786c552}\label{classomg_1_1_ray_ab7848db0f649594f465d6b353786c552}} 
+float \mbox{\hyperlink{classomg_1_1_ray_ab7848db0f649594f465d6b353786c552}{t\+Max}} \{std\+::numeric\+\_\+limits$<$float$>$\+::max()\}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -35,20 +44,20 @@ Vitor Greati
 \index{omg::Ray@{omg::Ray}!Ray@{Ray}}
 \index{Ray@{Ray}!omg::Ray@{omg::Ray}}
 \subsubsection{\texorpdfstring{Ray()}{Ray()}}
-{\footnotesize\ttfamily omg\+::\+Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} \&}]{o,  }\item[{const \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily omg\+::\+Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&}]{o,  }\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-\mbox{\hyperlink{classomg_1_1_ray}{Ray}} direction. 
+Max distance that the ray achieved. 
 
 Basic constructor. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}\label{classomg_1_1_ray_af78835511d6eb2d50fafdacb69e82b8c}} 
+\mbox{\Hypertarget{classomg_1_1_ray_aed10a92891a426b887927c75018f88b1}\label{classomg_1_1_ray_aed10a92891a426b887927c75018f88b1}} 
 \index{omg::Ray@{omg::Ray}!get\_direction@{get\_direction}}
 \index{get\_direction@{get\_direction}!omg::Ray@{omg::Ray}}
 \subsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} omg\+::\+Ray\+::get\+\_\+direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} omg\+::\+Ray\+::get\+\_\+direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -57,11 +66,11 @@ Basic constructor.
 \begin{DoxyReturn}{Returns}
 direction 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}\label{classomg_1_1_ray_a7f7c541289c92949e737522248be9b98}} 
+\mbox{\Hypertarget{classomg_1_1_ray_a3b2c3ade0173b74f72e7bb4e72363cf3}\label{classomg_1_1_ray_a3b2c3ade0173b74f72e7bb4e72363cf3}} 
 \index{omg::Ray@{omg::Ray}!get\_origin@{get\_origin}}
 \index{get\_origin@{get\_origin}!omg::Ray@{omg::Ray}}
 \subsubsection{\texorpdfstring{get\_origin()}{get\_origin()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_acf927839a305877d454c507f0b96730b}{Vec3}} omg\+::\+Ray\+::get\+\_\+origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} omg\+::\+Ray\+::get\+\_\+origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -70,11 +79,11 @@ direction
 \begin{DoxyReturn}{Returns}
 origin 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}\label{classomg_1_1_ray_aa330c945bb3265ff966071591173ec13}} 
+\mbox{\Hypertarget{classomg_1_1_ray_a841e085c48864a211faf98e3f529d567}\label{classomg_1_1_ray_a841e085c48864a211faf98e3f529d567}} 
 \index{omg::Ray@{omg::Ray}!operator()@{operator()}}
 \index{operator()@{operator()}!omg::Ray@{omg::Ray}}
 \subsubsection{\texorpdfstring{operator()()}{operator()()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_af3df7d66f0c70fe64649fcbe00edba5e}{Point3}} omg\+::\+Ray\+::operator() (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} omg\+::\+Ray\+::operator() (\begin{DoxyParamCaption}\item[{float}]{t }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

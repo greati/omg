@@ -1,5 +1,5 @@
-\hypertarget{class_printer}{}\section{Printer$<$ T, Config\+Key\+Type $>$ Class Template Reference}
-\label{class_printer}\index{Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}}
+\hypertarget{class_printer}{}\section{Printer$<$ T $>$ Class Template Reference}
+\label{class_printer}\index{Printer$<$ T $>$@{Printer$<$ T $>$}}
 
 
 Interface for printers.  
@@ -9,7 +9,7 @@ Interface for printers.
 
 {\ttfamily \#include $<$Printer.\+h$>$}
 
-Inheritance diagram for Printer$<$ T, Config\+Key\+Type $>$\+:\begin{figure}[H]
+Inheritance diagram for Printer$<$ T $>$\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{class_printer}
@@ -18,20 +18,34 @@ Inheritance diagram for Printer$<$ T, Config\+Key\+Type $>$\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_printer_a593e70d807258eefa413a52cd8e3c9ee}{print}} (const T $\ast$data, const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&configs)
+\mbox{\hyperlink{class_printer_adac6b3612e6179501f522964de56f70d}{Printer}} (const decltype(\+\_\+configs) \&configs)
+\item 
+void \mbox{\hyperlink{class_printer_a93330573e6905facd02e08e7f18b4f8a}{print}} (const T $\ast$data)
 \begin{DoxyCompactList}\small\item\em Print the formatted data into the std output. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_printer_a726243ffd10cdc4c706767513c175a1b}{print}} (const T $\ast$data, const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&configs, const std\+::string \&dest)
+void \mbox{\hyperlink{class_printer_af5d56046873ae78f533f240a3f55343d}{print}} (const T $\ast$data, const std\+::string \&dest)
 \begin{DoxyCompactList}\small\item\em Print the formatted data into a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual std\+::string \mbox{\hyperlink{class_printer_a76931150a7fb3d4a69c3483bd08eed17}{convert}} (const T $\ast$data, const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&configs) const =0
-\begin{DoxyCompactList}\small\item\em Convert the data array into a string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual std\+::string \mbox{\hyperlink{class_printer_a18646b8fcd793f222023ea57e3f7353b}{convert}} (const T $\ast$data) const =0
+\begin{DoxyCompactList}\small\item\em Convert the data array into a string representation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_printer_a6082dcd65ab585fe3a03c4a11c804d48}\label{class_printer_a6082dcd65ab585fe3a03c4a11c804d48}} 
+virtual void {\bfseries validate} (const \mbox{\hyperlink{class_configs}{Configs}}$<$ std\+::string $>$ \&configs) const
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_printer_aa3c38294a37e1bad353262dfa1bbbf94}\label{class_printer_aa3c38294a37e1bad353262dfa1bbbf94}} 
+\mbox{\hyperlink{class_configs}{Configs}}$<$ std\+::string $>$ {\bfseries \+\_\+configs}
+\item 
+\mbox{\Hypertarget{class_printer_a42506a039bf355b398a40501c1568729}\label{class_printer_a42506a039bf355b398a40501c1568729}} 
+std\+::string {\bfseries \+\_\+ext}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename T, typename Config\+Key\+Type = std\+::string$>$\newline
-class Printer$<$ T, Config\+Key\+Type $>$}
+\subsubsection*{template$<$typename T$>$\newline
+class Printer$<$ T $>$}
 
 Interface for printers. 
 
@@ -40,13 +54,23 @@ Vitor Greati
 \end{DoxyAuthor}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_printer_adac6b3612e6179501f522964de56f70d}\label{class_printer_adac6b3612e6179501f522964de56f70d}} 
+\index{Printer$<$ T $>$@{Printer$<$ T $>$}!Printer@{Printer}}
+\index{Printer@{Printer}!Printer$<$ T $>$@{Printer$<$ T $>$}}
+\subsubsection{\texorpdfstring{Printer()}{Printer()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_printer}{Printer}}$<$ T $>$\+::\mbox{\hyperlink{class_printer}{Printer}} (\begin{DoxyParamCaption}\item[{const decltype(\+\_\+configs) \&}]{configs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+empty 
+
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_printer_a76931150a7fb3d4a69c3483bd08eed17}\label{class_printer_a76931150a7fb3d4a69c3483bd08eed17}} 
-\index{Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}!convert@{convert}}
-\index{convert@{convert}!Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}}
+\mbox{\Hypertarget{class_printer_a18646b8fcd793f222023ea57e3f7353b}\label{class_printer_a18646b8fcd793f222023ea57e3f7353b}} 
+\index{Printer$<$ T $>$@{Printer$<$ T $>$}!convert@{convert}}
+\index{convert@{convert}!Printer$<$ T $>$@{Printer$<$ T $>$}}
 \subsubsection{\texorpdfstring{convert()}{convert()}}
-{\footnotesize\ttfamily template$<$typename T , typename Config\+Key\+Type  = std\+::string$>$ \\
-virtual std\+::string \mbox{\hyperlink{class_printer}{Printer}}$<$ T, Config\+Key\+Type $>$\+::convert (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&}]{configs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual std\+::string \mbox{\hyperlink{class_printer}{Printer}}$<$ T $>$\+::convert (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
 
 
 
@@ -66,14 +90,14 @@ string representation of that data
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{class_netpbm_printer_a7a361fc4d114a12cb5c2311744dc3d3d}{Netpbm\+Printer$<$ T, Config\+Key\+Type $>$}}.
+Implemented in \mbox{\hyperlink{classnetpbm_1_1_netpbm_printer_a0bc962be71fd453792743af6cb676da2}{netpbm\+::\+Netpbm\+Printer$<$ T $>$}}.
 
-\mbox{\Hypertarget{class_printer_a593e70d807258eefa413a52cd8e3c9ee}\label{class_printer_a593e70d807258eefa413a52cd8e3c9ee}} 
-\index{Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}!print@{print}}
-\index{print@{print}!Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}}
+\mbox{\Hypertarget{class_printer_a93330573e6905facd02e08e7f18b4f8a}\label{class_printer_a93330573e6905facd02e08e7f18b4f8a}} 
+\index{Printer$<$ T $>$@{Printer$<$ T $>$}!print@{print}}
+\index{print@{print}!Printer$<$ T $>$@{Printer$<$ T $>$}}
 \subsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily template$<$typename T , typename Config\+Key\+Type  = std\+::string$>$ \\
-void \mbox{\hyperlink{class_printer}{Printer}}$<$ T, Config\+Key\+Type $>$\+::print (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&}]{configs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_printer}{Printer}}$<$ T $>$\+::print (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -84,12 +108,12 @@ Print the formatted data into the std output.
 {\em data} & the data \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_printer_a726243ffd10cdc4c706767513c175a1b}\label{class_printer_a726243ffd10cdc4c706767513c175a1b}} 
-\index{Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}!print@{print}}
-\index{print@{print}!Printer$<$ T, ConfigKeyType $>$@{Printer$<$ T, ConfigKeyType $>$}}
+\mbox{\Hypertarget{class_printer_af5d56046873ae78f533f240a3f55343d}\label{class_printer_af5d56046873ae78f533f240a3f55343d}} 
+\index{Printer$<$ T $>$@{Printer$<$ T $>$}!print@{print}}
+\index{print@{print}!Printer$<$ T $>$@{Printer$<$ T $>$}}
 \subsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily template$<$typename T , typename Config\+Key\+Type  = std\+::string$>$ \\
-void \mbox{\hyperlink{class_printer}{Printer}}$<$ T, Config\+Key\+Type $>$\+::print (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_configs}{Configs}}$<$ Config\+Key\+Type $>$ \&}]{configs,  }\item[{const std\+::string \&}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{class_printer}{Printer}}$<$ T $>$\+::print (\begin{DoxyParamCaption}\item[{const T $\ast$}]{data,  }\item[{const std\+::string \&}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

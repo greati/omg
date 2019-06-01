@@ -1,0 +1,65 @@
+\hypertarget{classomg_1_1_normal_map_integrator}{}\section{omg\+::Normal\+Map\+Integrator Class Reference}
+\label{classomg_1_1_normal_map_integrator}\index{omg::NormalMapIntegrator@{omg::NormalMapIntegrator}}
+
+
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} that computes a color based on the normal vector in the point of intersection to the surface.  
+
+
+
+
+{\ttfamily \#include $<$Normal\+Map\+Integrator.\+h$>$}
+
+Inheritance diagram for omg\+::Normal\+Map\+Integrator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_normal_map_integrator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_normal_map_integrator_aa4d9ed6bdd12e53abd250c9b5101aba9}\label{classomg_1_1_normal_map_integrator_aa4d9ed6bdd12e53abd250c9b5101aba9}} 
+{\bfseries Normal\+Map\+Integrator} (int spp=1)
+\item 
+\mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \mbox{\hyperlink{classomg_1_1_normal_map_integrator_a8cdb4a7e141018712f63a58d158e3214}{li}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ sampler=nullptr, int depth=0) override
+\begin{DoxyCompactList}\small\item\em Incidence radiance computation for a given ray acting on a scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} that computes a color based on the normal vector in the point of intersection to the surface. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_normal_map_integrator_a8cdb4a7e141018712f63a58d158e3214}\label{classomg_1_1_normal_map_integrator_a8cdb4a7e141018712f63a58d158e3214}} 
+\index{omg::NormalMapIntegrator@{omg::NormalMapIntegrator}!li@{li}}
+\index{li@{li}!omg::NormalMapIntegrator@{omg::NormalMapIntegrator}}
+\subsubsection{\texorpdfstring{li()}{li()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} omg\+::\+Normal\+Map\+Integrator\+::li (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$}]{sampler = {\ttfamily nullptr},  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Incidence radiance computation for a given ray acting on a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em scene} & the scene \\
+\hline
+{\em sampler} & pointer to a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}{omg\+::\+Integrator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/integrators/Normal\+Map\+Integrator.\+h\end{DoxyCompactItemize}

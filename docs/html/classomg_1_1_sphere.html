@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -91,13 +91,19 @@ Inheritance diagram for omg::Sphere:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a81f9a5180b9c883ce00669d4af4d38db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db">Sphere</a> (float radius, const <a class="el" href="namespaceomg.html#af3df7d66f0c70fe64649fcbe00edba5e">Point3</a> &amp;center)</td></tr>
+<tr class="memitem:a81f9a5180b9c883ce00669d4af4d38db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db">Sphere</a> (float radius, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;center)</td></tr>
 <tr class="memdesc:a81f9a5180b9c883ce00669d4af4d38db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classomg_1_1_sphere.html" title="Represents a sphere.">Sphere</a> center.  <a href="#a81f9a5180b9c883ce00669d4af4d38db">More...</a><br /></td></tr>
 <tr class="separator:a81f9a5180b9c883ce00669d4af4d38db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1c6cd10afe11eeb3c9d6c42722ab039"><td class="memItemLeft" align="right" valign="top"><a id="af1c6cd10afe11eeb3c9d6c42722ab039"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#af1c6cd10afe11eeb3c9d6c42722ab039">intersect</a> (<a class="el" href="classomg_1_1_ray.html">Ray</a> ray, <a class="el" href="structomg_1_1_object_1_1_hit_record.html">Object::HitRecord</a> &amp;hit_record) override</td></tr>
-<tr class="memdesc:af1c6cd10afe11eeb3c9d6c42722ab039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the sphere intersect with a ray. <br /></td></tr>
-<tr class="separator:af1c6cd10afe11eeb3c9d6c42722ab039"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05c4f0083c55288119c0d1f7dc7f300"><td class="memItemLeft" align="right" valign="top"><a id="ad05c4f0083c55288119c0d1f7dc7f300"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#ad05c4f0083c55288119c0d1f7dc7f300">intersect</a> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record) override</td></tr>
+<tr class="memdesc:ad05c4f0083c55288119c0d1f7dc7f300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the sphere intersect with a ray. <br /></td></tr>
+<tr class="separator:ad05c4f0083c55288119c0d1f7dc7f300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e7eb85961d4b2d0f384ea51144cbb95"><td class="memItemLeft" align="right" valign="top"><a id="a4e7eb85961d4b2d0f384ea51144cbb95"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray) override</td></tr>
+<tr class="separator:a4e7eb85961d4b2d0f384ea51144cbb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d0a05e361f98cad7e0d83da4ebc0849"><td class="memItemLeft" align="right" valign="top"><a id="a5d0a05e361f98cad7e0d83da4ebc0849"></a>
+<a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const</td></tr>
+<tr class="separator:a5d0a05e361f98cad7e0d83da4ebc0849"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a sphere. </p>
@@ -121,7 +127,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="namespaceomg.html#af3df7d66f0c70fe64649fcbe00edba5e">Point3</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;&#160;</td>
           <td class="paramname"><em>center</em>&#160;</td>
         </tr>
         <tr>

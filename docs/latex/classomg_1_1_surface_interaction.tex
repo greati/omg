@@ -1,0 +1,64 @@
+\hypertarget{classomg_1_1_surface_interaction}{}\section{omg\+::Surface\+Interaction Class Reference}
+\label{classomg_1_1_surface_interaction}\index{omg::SurfaceInteraction@{omg::SurfaceInteraction}}
+
+
+Data regarding interaction of rays with surfaces.  
+
+
+
+
+{\ttfamily \#include $<$Surface\+Interaction.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_aa82edbc25acb336efceaf183d8269341}\label{classomg_1_1_surface_interaction_aa82edbc25acb336efceaf183d8269341}} 
+\mbox{\hyperlink{classomg_1_1_surface_interaction_aa82edbc25acb336efceaf183d8269341}{Surface\+Interaction}} ()
+\begin{DoxyCompactList}\small\item\em Pointer to the object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_ab21a4ce75d80f52e2e99d097561f9ac7}\label{classomg_1_1_surface_interaction_ab21a4ce75d80f52e2e99d097561f9ac7}} 
+{\bfseries Surface\+Interaction} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p)
+\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_ae72da560f03a1843f9c7df69000a436a}\label{classomg_1_1_surface_interaction_ae72da560f03a1843f9c7df69000a436a}} 
+{\bfseries Surface\+Interaction} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&n, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&wo, float time, const \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} \&uv, float t, \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $\ast$primitive)
+\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a9f27a9323990fa9a84dd670fa1a56a48}\label{classomg_1_1_surface_interaction_a9f27a9323990fa9a84dd670fa1a56a48}} 
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} {\bfseries spaw\+\_\+ray\+\_\+to} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&si1) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a9ceb01e81bdb8b3007717c0e11e98599}\label{classomg_1_1_surface_interaction_a9ceb01e81bdb8b3007717c0e11e98599}} 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} {\bfseries \+\_\+p}
+\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a288cb74966c9f00f41fa4f82833f25d0}\label{classomg_1_1_surface_interaction_a288cb74966c9f00f41fa4f82833f25d0}} 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_surface_interaction_a288cb74966c9f00f41fa4f82833f25d0}{\+\_\+n}}
+\begin{DoxyCompactList}\small\item\em Contact point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a3a5ecba08ee682009b2ec05421436000}\label{classomg_1_1_surface_interaction_a3a5ecba08ee682009b2ec05421436000}} 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_surface_interaction_a3a5ecba08ee682009b2ec05421436000}{\+\_\+wo}}
+\begin{DoxyCompactList}\small\item\em The surface normal. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a3387f913242c8a8a9dca727dd5df2b4d}\label{classomg_1_1_surface_interaction_a3387f913242c8a8a9dca727dd5df2b4d}} 
+float \mbox{\hyperlink{classomg_1_1_surface_interaction_a3387f913242c8a8a9dca727dd5df2b4d}{\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Outgoing direction of light, -\/ray. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_ac3fcf877fc15d5cd47147b2d921f458a}\label{classomg_1_1_surface_interaction_ac3fcf877fc15d5cd47147b2d921f458a}} 
+\mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} \mbox{\hyperlink{classomg_1_1_surface_interaction_ac3fcf877fc15d5cd47147b2d921f458a}{\+\_\+uv}}
+\begin{DoxyCompactList}\small\item\em Time of contact. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_a89650a01634a796109ef76c01aaa59b7}\label{classomg_1_1_surface_interaction_a89650a01634a796109ef76c01aaa59b7}} 
+float \mbox{\hyperlink{classomg_1_1_surface_interaction_a89650a01634a796109ef76c01aaa59b7}{\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Parametric coordinate of hit surface. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_surface_interaction_af18f32eaed705c2d4d693a1f362dd63f}\label{classomg_1_1_surface_interaction_af18f32eaed705c2d4d693a1f362dd63f}} 
+const \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $\ast$ \mbox{\hyperlink{classomg_1_1_surface_interaction_af18f32eaed705c2d4d693a1f362dd63f}{\+\_\+primitive}} = nullptr
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_ray}{Ray}} t parameter for which intersection occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data regarding interaction of rays with surfaces. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/raytracer/Surface\+Interaction.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/raytracer/Surface\+Interaction.\+cpp\end{DoxyCompactItemize}

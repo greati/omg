@@ -1,0 +1,107 @@
+\hypertarget{classomg_1_1_primitive}{}\section{omg\+::Primitive Class Reference}
+\label{classomg_1_1_primitive}\index{omg::Primitive@{omg::Primitive}}
+Inheritance diagram for omg\+::Primitive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_primitive}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \mbox{\hyperlink{classomg_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{classomg_1_1_primitive_ad9cb98c6f74581d53cadf800fc506333}{get\+\_\+material}} () const =0
+\begin{DoxyCompactList}\small\item\em Return the material of the primitive. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_primitive_a51f78d3f52794ae02e18688dff75414c}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$interaction) const =0
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_primitive_a139c012a57ad2322c5bef078b5d7e653}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) const =0
+\begin{DoxyCompactList}\small\item\em Only check if intersection occurred. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_primitive_a457b29547bc918cf8874b24f5168ff86}{world\+\_\+bound}} () const =0
+\begin{DoxyCompactList}\small\item\em The world bound of this primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_primitive_ad9cb98c6f74581d53cadf800fc506333}\label{classomg_1_1_primitive_ad9cb98c6f74581d53cadf800fc506333}} 
+\index{omg::Primitive@{omg::Primitive}!get\_material@{get\_material}}
+\index{get\_material@{get\_material}!omg::Primitive@{omg::Primitive}}
+\subsubsection{\texorpdfstring{get\_material()}{get\_material()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classomg_1_1_material}{Material}}$\ast$ omg\+::\+Primitive\+::get\+\_\+material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Return the material of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the material of the primitive 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_aggregate_primitive_a339e9fe3ab8e2c0c68c888345b834c21}{omg\+::\+Aggregate\+Primitive}}, and \mbox{\hyperlink{classomg_1_1_geometric_primitive_ae7b7b9ed0a5fc336a3111ef16a09f27a}{omg\+::\+Geometric\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_primitive_a51f78d3f52794ae02e18688dff75414c}\label{classomg_1_1_primitive_a51f78d3f52794ae02e18688dff75414c}} 
+\index{omg::Primitive@{omg::Primitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::Primitive@{omg::Primitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$}]{interaction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em interaction} & collect information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_geometric_primitive_a21bc48f971cbc94b60791906f20bc925}{omg\+::\+Geometric\+Primitive}}, \mbox{\hyperlink{classomg_1_1_list_aggregate_a55fdd3b0fa387cb14488b86634b3e877}{omg\+::\+List\+Aggregate}}, and \mbox{\hyperlink{classomg_1_1_aggregate_primitive_a07ab041d9071295e4f648475c7163470}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_primitive_a139c012a57ad2322c5bef078b5d7e653}\label{classomg_1_1_primitive_a139c012a57ad2322c5bef078b5d7e653}} 
+\index{omg::Primitive@{omg::Primitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::Primitive@{omg::Primitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Only check if intersection occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if intersection occurred 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_geometric_primitive_a797a2eb74fb48a7e25c7f98f16c604a7}{omg\+::\+Geometric\+Primitive}}, \mbox{\hyperlink{classomg_1_1_list_aggregate_ac3abd78ca5ce87eb3821bf19bf5194cf}{omg\+::\+List\+Aggregate}}, and \mbox{\hyperlink{classomg_1_1_aggregate_primitive_af6009e1c54b0f2341d78d95afb4268cc}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_primitive_a457b29547bc918cf8874b24f5168ff86}\label{classomg_1_1_primitive_a457b29547bc918cf8874b24f5168ff86}} 
+\index{omg::Primitive@{omg::Primitive}!world\_bound@{world\_bound}}
+\index{world\_bound@{world\_bound}!omg::Primitive@{omg::Primitive}}
+\subsubsection{\texorpdfstring{world\_bound()}{world\_bound()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} omg\+::\+Primitive\+::world\+\_\+bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The world bound of this primitive. 
+
+\begin{DoxyReturn}{Returns}
+the world bound 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_geometric_primitive_ae8f0945c180c43e32cad4faa75185522}{omg\+::\+Geometric\+Primitive}}, \mbox{\hyperlink{classomg_1_1_list_aggregate_a8c7b3a6c7c8a087355a1a35519c79555}{omg\+::\+List\+Aggregate}}, and \mbox{\hyperlink{classomg_1_1_aggregate_primitive_ad8a385aaa01354acffad18fe8f23fa25}{omg\+::\+Aggregate\+Primitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Primitive.\+h\end{DoxyCompactItemize}

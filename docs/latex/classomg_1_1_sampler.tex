@@ -1,0 +1,184 @@
+\hypertarget{classomg_1_1_sampler}{}\section{omg\+::Sampler Class Reference}
+\label{classomg_1_1_sampler}\index{omg::Sampler@{omg::Sampler}}
+
+
+Base sampler.  
+
+
+
+
+{\ttfamily \#include $<$Sampler.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classomg_1_1_sampler_a6cf599ab70a735b2a352b20f35a0e2eb}{Sampler}} (int64\+\_\+t samples\+\_\+per\+\_\+pixel)
+\begin{DoxyCompactList}\small\item\em Samples per pixel. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classomg_1_1_sampler_aa4a2172276ec0bec3e717b7e035872d5}{start\+\_\+pixel}} (const \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} \&p)=0
+\begin{DoxyCompactList}\small\item\em Initialize the sampling for a given point, used for performing set up operations before the sampling algorithm. \end{DoxyCompactList}\item 
+virtual float \mbox{\hyperlink{classomg_1_1_sampler_ab577767afd5ef449d815493b81d8d7e0}{get\+\_\+1d}} ()=0
+\begin{DoxyCompactList}\small\item\em Sample for the next dimension. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} \mbox{\hyperlink{classomg_1_1_sampler_a75c8c5ca9751d3c3c5ac025f3713bda0}{get\+\_\+2d}} ()=0
+\begin{DoxyCompactList}\small\item\em Sample for the next two dimensions. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ float $>$ \mbox{\hyperlink{classomg_1_1_sampler_aeb4b5fa3758c26f2fc3307ce6f6e15f3}{get\+\_\+1d\+\_\+array}} (int n)
+\begin{DoxyCompactList}\small\item\em Sample an array of 1d samples. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} $>$ \mbox{\hyperlink{classomg_1_1_sampler_a3f727fa083652776d02cfe43cf8f24db}{get\+\_\+2d\+\_\+array}} (int n)
+\begin{DoxyCompactList}\small\item\em Sample an array of 2d samples. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_sampler_ae2b33610cc24dced31dd8d15b4778cba}{start\+\_\+next\+\_\+sample}} ()
+\begin{DoxyCompactList}\small\item\em Method for starting the next sample. \end{DoxyCompactList}\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ \mbox{\hyperlink{classomg_1_1_sampler_ae546e8114ce2d6fc1b760c10a73f6d71}{clone}} (int seed=1)=0
+\begin{DoxyCompactList}\small\item\em To be used when concurrency is to be implemented, so that each thread creates its own sampler. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_sampler_aceffa7bf3f74a77dafb12192b0aaf232}{set\+\_\+sample\+\_\+number}} (int64\+\_\+t sample\+\_\+number)
+\begin{DoxyCompactList}\small\item\em To be used when don\textquotesingle{}t used all of the samples in a pixel before going to the next pixel, but instead jump around pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base sampler. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classomg_1_1_sampler_a6cf599ab70a735b2a352b20f35a0e2eb}\label{classomg_1_1_sampler_a6cf599ab70a735b2a352b20f35a0e2eb}} 
+\index{omg::Sampler@{omg::Sampler}!Sampler@{Sampler}}
+\index{Sampler@{Sampler}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{Sampler()}{Sampler()}}
+{\footnotesize\ttfamily omg\+::\+Sampler\+::\+Sampler (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{samples\+\_\+per\+\_\+pixel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Samples per pixel. 
+
+Basic constructor. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_sampler_ae546e8114ce2d6fc1b760c10a73f6d71}\label{classomg_1_1_sampler_ae546e8114ce2d6fc1b760c10a73f6d71}} 
+\index{omg::Sampler@{omg::Sampler}!clone@{clone}}
+\index{clone@{clone}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classomg_1_1_sampler}{Sampler}}$>$ omg\+::\+Sampler\+::clone (\begin{DoxyParamCaption}\item[{int}]{seed = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+To be used when concurrency is to be implemented, so that each thread creates its own sampler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & the random seed that may be necessary for some samplers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new sampler 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_ab577767afd5ef449d815493b81d8d7e0}\label{classomg_1_1_sampler_ab577767afd5ef449d815493b81d8d7e0}} 
+\index{omg::Sampler@{omg::Sampler}!get\_1d@{get\_1d}}
+\index{get\_1d@{get\_1d}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{get\_1d()}{get\_1d()}}
+{\footnotesize\ttfamily virtual float omg\+::\+Sampler\+::get\+\_\+1d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sample for the next dimension. 
+
+\begin{DoxyReturn}{Returns}
+the sample 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_aeb4b5fa3758c26f2fc3307ce6f6e15f3}\label{classomg_1_1_sampler_aeb4b5fa3758c26f2fc3307ce6f6e15f3}} 
+\index{omg::Sampler@{omg::Sampler}!get\_1d\_array@{get\_1d\_array}}
+\index{get\_1d\_array@{get\_1d\_array}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{get\_1d\_array()}{get\_1d\_array()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$float$>$ omg\+::\+Sampler\+::get\+\_\+1d\+\_\+array (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sample an array of 1d samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a list of samples 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_a75c8c5ca9751d3c3c5ac025f3713bda0}\label{classomg_1_1_sampler_a75c8c5ca9751d3c3c5ac025f3713bda0}} 
+\index{omg::Sampler@{omg::Sampler}!get\_2d@{get\_2d}}
+\index{get\_2d@{get\_2d}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{get\_2d()}{get\_2d()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} omg\+::\+Sampler\+::get\+\_\+2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sample for the next two dimensions. 
+
+\begin{DoxyReturn}{Returns}
+the sample 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_a3f727fa083652776d02cfe43cf8f24db}\label{classomg_1_1_sampler_a3f727fa083652776d02cfe43cf8f24db}} 
+\index{omg::Sampler@{omg::Sampler}!get\_2d\_array@{get\_2d\_array}}
+\index{get\_2d\_array@{get\_2d\_array}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{get\_2d\_array()}{get\_2d\_array()}}
+{\footnotesize\ttfamily virtual std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}}$>$ omg\+::\+Sampler\+::get\+\_\+2d\+\_\+array (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sample an array of 2d samples. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a list of samples 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_aceffa7bf3f74a77dafb12192b0aaf232}\label{classomg_1_1_sampler_aceffa7bf3f74a77dafb12192b0aaf232}} 
+\index{omg::Sampler@{omg::Sampler}!set\_sample\_number@{set\_sample\_number}}
+\index{set\_sample\_number@{set\_sample\_number}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{set\_sample\_number()}{set\_sample\_number()}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Sampler\+::set\+\_\+sample\+\_\+number (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{sample\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+To be used when don\textquotesingle{}t used all of the samples in a pixel before going to the next pixel, but instead jump around pixels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+number} & the sampler sumber \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false then sample\+\_\+number is greater than the number of requested samples per pixel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_ae2b33610cc24dced31dd8d15b4778cba}\label{classomg_1_1_sampler_ae2b33610cc24dced31dd8d15b4778cba}} 
+\index{omg::Sampler@{omg::Sampler}!start\_next\_sample@{start\_next\_sample}}
+\index{start\_next\_sample@{start\_next\_sample}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{start\_next\_sample()}{start\_next\_sample()}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Sampler\+::start\+\_\+next\+\_\+sample (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Method for starting the next sample. 
+
+\begin{DoxyReturn}{Returns}
+true until the number of the originally requested samples per pixel have been generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_sampler_aa4a2172276ec0bec3e717b7e035872d5}\label{classomg_1_1_sampler_aa4a2172276ec0bec3e717b7e035872d5}} 
+\index{omg::Sampler@{omg::Sampler}!start\_pixel@{start\_pixel}}
+\index{start\_pixel@{start\_pixel}!omg::Sampler@{omg::Sampler}}
+\subsubsection{\texorpdfstring{start\_pixel()}{start\_pixel()}}
+{\footnotesize\ttfamily virtual void omg\+::\+Sampler\+::start\+\_\+pixel (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initialize the sampling for a given point, used for performing set up operations before the sampling algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & the pixel \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/samplers/Sampler.\+h\end{DoxyCompactItemize}

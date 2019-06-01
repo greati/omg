@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['scene',['Scene',['../classomg_1_1_scene.html',1,'omg::Scene'],['../classomg_1_1_scene.html#af5d02c499b861b1293e0d6232dabd2c8',1,'omg::Scene::Scene()'],['../classomg_1_1_scene.html#a83a49456e4edc7d5cf5c6dc652b128ef',1,'omg::Scene::Scene(std::shared_ptr&lt; Background &gt; background, std::shared_ptr&lt; Camera &gt; camera)']]],
-  ['scenenode',['SceneNode',['../classomg_1_1_scene_node.html',1,'omg']]],
-  ['set',['set',['../classomg_1_1_buffer.html#a8b3d3ee363be87e1051a157a2f3abed6',1,'omg::Buffer::set(int row, int col, const Value &amp;v)'],['../classomg_1_1_buffer.html#a80204f5078fb0445eb21e586ec3644c3',1,'omg::Buffer::set(const Cartesian &amp;cartesian, const Value &amp;v)']]],
-  ['set_5fbackground',['set_background',['../classomg_1_1_scene.html#a66a4d47f99b8cf56d0ffeec665400d56',1,'omg::Scene']]],
-  ['set_5fcamera',['set_camera',['../classomg_1_1_scene.html#a07875fddcc199bc2f70b1c20fd294af4',1,'omg::Scene']]],
-  ['set_5fheight',['set_height',['../classomg_1_1_camera.html#a75d3baca3bae25365e5d3dddc005676e',1,'omg::Camera']]],
-  ['set_5fplane_5fnormal',['set_plane_normal',['../classomg_1_1_camera.html#a5983a689364dd5c9701e157b4620c2cd',1,'omg::Camera']]],
-  ['set_5fwidth',['set_width',['../classomg_1_1_camera.html#a3ef1ff0d4ca0deb6b32b5e08d7dcb159',1,'omg::Camera']]],
-  ['solidbackground',['SolidBackground',['../classomg_1_1_solid_background.html',1,'omg']]],
-  ['sphere',['Sphere',['../classomg_1_1_sphere.html',1,'omg::Sphere'],['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere()']]],
-  ['standardlogger',['StandardLogger',['../class_standard_logger.html',1,'StandardLogger'],['../class_standard_logger.html#aa037227d1766af8b649e46849d466d8c',1,'StandardLogger::StandardLogger()']]]
+  ['ray',['Ray',['../classomg_1_1_ray.html',1,'omg::Ray'],['../classomg_1_1_ray.html#a7418b3be2225de5510c63781ee5ad3f1',1,'omg::Ray::Ray()']]],
+  ['raytracerengine',['RaytracerEngine',['../classomg_1_1_raytracer_engine.html',1,'omg']]],
+  ['raytracerrunningsettings',['RaytracerRunningSettings',['../structomg_1_1_raytracer_running_settings.html',1,'omg']]],
+  ['raytracervisitor',['RaytracerVisitor',['../classomg_1_1_raytracer_visitor.html',1,'omg']]],
+  ['render',['render',['../classomg_1_1_integrator.html#a9353c1a5abd1396d7c1fcd4f3e250998',1,'omg::Integrator::render()'],['../classomg_1_1_sampler_integrator.html#a4b147659d3227e8dd8a38e7518ab5d72',1,'omg::SamplerIntegrator::render()']]],
+  ['reset',['reset',['../classtao_1_1deprecated_1_1_mat.html#a77c9519c2b0c652d12fedbe5adc2eaf7',1,'tao::deprecated::Mat::reset()'],['../classtao_1_1_mat.html#a6f501dafd8e5fec2d40d036fe8faeb47',1,'tao::Mat::reset()'],['../classomg_1_1_buffer.html#a674041ad7b285bf2418b75b7653ded36',1,'omg::Buffer::reset()']]],
+  ['rgbcolor',['RGBColor',['../namespaceomg.html#a7b0e3f3dcf76f2b4758c314a41885917',1,'omg']]],
+  ['row',['Row',['../classtao_1_1deprecated_1_1_row.html',1,'tao::deprecated::Row&lt; T &gt;'],['../classtao_1_1deprecated_1_1_row.html#a4666537e6b41ef3af827ccbe672d25a2',1,'tao::deprecated::Row::Row(const std::initializer_list&lt; T &gt; &amp;components)'],['../classtao_1_1deprecated_1_1_row.html#a7f28f0351cb93664f791ede85ac2568d',1,'tao::deprecated::Row::Row(const tao::deprecated::Mat&lt; T &gt; &amp;rowmat)']]],
+  ['rows',['rows',['../classtao_1_1deprecated_1_1_mat.html#aefbe18686fd37ac1d5525196649282c8',1,'tao::deprecated::Mat']]]
 ];

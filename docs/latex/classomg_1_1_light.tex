@@ -1,0 +1,123 @@
+\hypertarget{classomg_1_1_light}{}\section{omg\+::Light Class Reference}
+\label{classomg_1_1_light}\index{omg::Light@{omg::Light}}
+
+
+Interface for lights.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+h$>$}
+
+Inheritance diagram for omg\+::Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_light_a4c27672a71952e1c7b9151bb1d661a7e}\label{classomg_1_1_light_a4c27672a71952e1c7b9151bb1d661a7e}} 
+{\bfseries Light} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&intensity)
+\item 
+virtual \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_light_a046b7db0856d786f171979189df68037}{sample\+\_\+li}} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&interaction, \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$wi, \mbox{\hyperlink{classomg_1_1_visibility_tester}{Visibility\+Tester}} $\ast$vt) const =0
+\begin{DoxyCompactList}\small\item\em Sample a point on the light source\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_light_a25277f4ac404857b8895e64f28c7cb13}{is\+\_\+ambient}} () const
+\begin{DoxyCompactList}\small\item\em Inform if this is an ambient light. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \& \mbox{\hyperlink{classomg_1_1_light_a7be0cc4d0e3b3c8167ec50706abfd39b}{get\+\_\+intensity}} () const
+\begin{DoxyCompactList}\small\item\em The light intensity (color). \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classomg_1_1_light_a8379b1dea7517c4e7fb6e0b5280c94d6}{preprocess}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene)
+\begin{DoxyCompactList}\small\item\em Performs some preprocessing before the rendering stage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_light_a12089e968c45e27f3dcab7054f51578f}\label{classomg_1_1_light_a12089e968c45e27f3dcab7054f51578f}} 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries \+\_\+intensity}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for lights. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_light_a7be0cc4d0e3b3c8167ec50706abfd39b}\label{classomg_1_1_light_a7be0cc4d0e3b3c8167ec50706abfd39b}} 
+\index{omg::Light@{omg::Light}!get\_intensity@{get\_intensity}}
+\index{get\_intensity@{get\_intensity}!omg::Light@{omg::Light}}
+\subsubsection{\texorpdfstring{get\_intensity()}{get\_intensity()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}\& omg\+::\+Light\+::get\+\_\+intensity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The light intensity (color). 
+
+\begin{DoxyReturn}{Returns}
+the light intensity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_light_a25277f4ac404857b8895e64f28c7cb13}\label{classomg_1_1_light_a25277f4ac404857b8895e64f28c7cb13}} 
+\index{omg::Light@{omg::Light}!is\_ambient@{is\_ambient}}
+\index{is\_ambient@{is\_ambient}!omg::Light@{omg::Light}}
+\subsubsection{\texorpdfstring{is\_ambient()}{is\_ambient()}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Light\+::is\+\_\+ambient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Inform if this is an ambient light. 
+
+\begin{DoxyReturn}{Returns}
+is ambient light 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classomg_1_1_ambient_light_a97dcae69b5ef72ca8845e03a4c3185e4}{omg\+::\+Ambient\+Light}}.
+
+\mbox{\Hypertarget{classomg_1_1_light_a8379b1dea7517c4e7fb6e0b5280c94d6}\label{classomg_1_1_light_a8379b1dea7517c4e7fb6e0b5280c94d6}} 
+\index{omg::Light@{omg::Light}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!omg::Light@{omg::Light}}
+\subsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily virtual void omg\+::\+Light\+::preprocess (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Performs some preprocessing before the rendering stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classomg_1_1_directional_light_ae7df9384508e8692781f1e1df03ccf4e}{omg\+::\+Directional\+Light}}.
+
+\mbox{\Hypertarget{classomg_1_1_light_a046b7db0856d786f171979189df68037}\label{classomg_1_1_light_a046b7db0856d786f171979189df68037}} 
+\index{omg::Light@{omg::Light}!sample\_li@{sample\_li}}
+\index{sample\_li@{sample\_li}!omg::Light@{omg::Light}}
+\subsubsection{\texorpdfstring{sample\_li()}{sample\_li()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} omg\+::\+Light\+::sample\+\_\+li (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&}]{interaction,  }\item[{\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$}]{wi,  }\item[{\mbox{\hyperlink{classomg_1_1_visibility_tester}{Visibility\+Tester}} $\ast$}]{vt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sample a point on the light source\textquotesingle{}s surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interaction} & surface interaction \\
+\hline
+{\em wi} & the vector towards the light \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classomg_1_1_spot_light_abac464ecd5e2799577c3d01983b87ff6}{omg\+::\+Spot\+Light}}, \mbox{\hyperlink{classomg_1_1_directional_light_a565733b42c77973b765d7afea14461f5}{omg\+::\+Directional\+Light}}, \mbox{\hyperlink{classomg_1_1_point_light_aa77747811ae675d0f6140ca75ecbebda}{omg\+::\+Point\+Light}}, and \mbox{\hyperlink{classomg_1_1_ambient_light_a83502a1ccd9b77845d26906e6eea94e6}{omg\+::\+Ambient\+Light}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/lights/Light.\+h\end{DoxyCompactItemize}

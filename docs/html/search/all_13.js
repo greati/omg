@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['vec',['Vec',['../namespacetao.html#aef6beca09ab46f269a3189f3027ebc77',1,'tao']]],
-  ['vec3',['Vec3',['../namespaceomg.html#acf927839a305877d454c507f0b96730b',1,'omg']]],
-  ['vecf',['VecF',['../namespacetao.html#acdec2e843192294a6f3d4ab911c6cbae',1,'tao']]],
-  ['veci',['VecI',['../namespacetao.html#ab5f7e9ed819043c0ea00dfb243c5a84d',1,'tao']]],
-  ['visit',['visit',['../classomg_1_1_visitor.html#af697e96f0f5da7c9b882ae316c81e80c',1,'omg::Visitor::visit()'],['../classomg_1_1_raytracer_visitor.html#ac469c21e8ac5e9a01ca6a58108bc860e',1,'omg::RaytracerVisitor::visit()']]],
-  ['visitor',['Visitor',['../classomg_1_1_visitor.html',1,'omg']]],
-  ['vpdims',['VpDims',['../structomg_1_1_camera_1_1_vp_dims.html',1,'omg::Camera']]]
+  ['ucvector',['ucvector',['../structucvector.html',1,'']]],
+  ['unit',['unit',['../classtao_1_1deprecated_1_1_col.html#ad2cee269711ef1a9eebda2e54035f9f4',1,'tao::deprecated::Col::unit()'],['../classtao_1_1deprecated_1_1_row.html#a8e523db6cc0623ef5497995e90c41b7d',1,'tao::deprecated::Row::unit()']]],
+  ['unitize',['unitize',['../namespacetao.html#a413b369fdee9e7ff22a073ef73d2e302',1,'tao']]],
+  ['unoccluded',['unoccluded',['../classomg_1_1_visibility_tester.html#ac2f4eda3866795981b48f4db367255ac',1,'omg::VisibilityTester']]],
+  ['update_5fprogress_5fbar',['update_progress_bar',['../class_logger.html#a97b9f431c10b909bdda75b5dbbfd776c',1,'Logger::update_progress_bar()'],['../class_standard_logger.html#a95d31425aae55e3ee44a433f21112db1',1,'StandardLogger::update_progress_bar()']]]
 ];

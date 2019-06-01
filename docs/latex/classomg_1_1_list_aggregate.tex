@@ -1,0 +1,108 @@
+\hypertarget{classomg_1_1_list_aggregate}{}\section{omg\+::List\+Aggregate Class Reference}
+\label{classomg_1_1_list_aggregate}\index{omg::ListAggregate@{omg::ListAggregate}}
+
+
+Represents an aggregate of primitives to be rendered in the screen.  
+
+
+
+
+{\ttfamily \#include $<$List\+Aggregate.\+h$>$}
+
+Inheritance diagram for omg\+::List\+Aggregate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_list_aggregate}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_list_aggregate_a80d0fc549ba77def8767c0e10a774a49}\label{classomg_1_1_list_aggregate_a80d0fc549ba77def8767c0e10a774a49}} 
+\mbox{\hyperlink{classomg_1_1_list_aggregate_a80d0fc549ba77def8767c0e10a774a49}{List\+Aggregate}} (const decltype(\+\_\+primitives)\&primitives)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_scene}{Scene}} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classomg_1_1_list_aggregate_a55fdd3b0fa387cb14488b86634b3e877}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$si) const
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_list_aggregate_ac3abd78ca5ce87eb3821bf19bf5194cf}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) const
+\begin{DoxyCompactList}\small\item\em Only check if intersection occurred. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_list_aggregate_a8c7b3a6c7c8a087355a1a35519c79555}{world\+\_\+bound}} () const override
+\begin{DoxyCompactList}\small\item\em The world bound of this primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an aggregate of primitives to be rendered in the screen. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_list_aggregate_a55fdd3b0fa387cb14488b86634b3e877}\label{classomg_1_1_list_aggregate_a55fdd3b0fa387cb14488b86634b3e877}} 
+\index{omg::ListAggregate@{omg::ListAggregate}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::ListAggregate@{omg::ListAggregate}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool omg\+::\+List\+Aggregate\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$}]{si }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em interaction} & collect information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_a07ab041d9071295e4f648475c7163470}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_list_aggregate_ac3abd78ca5ce87eb3821bf19bf5194cf}\label{classomg_1_1_list_aggregate_ac3abd78ca5ce87eb3821bf19bf5194cf}} 
+\index{omg::ListAggregate@{omg::ListAggregate}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::ListAggregate@{omg::ListAggregate}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool omg\+::\+List\+Aggregate\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Only check if intersection occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if intersection occurred 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_af6009e1c54b0f2341d78d95afb4268cc}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_list_aggregate_a8c7b3a6c7c8a087355a1a35519c79555}\label{classomg_1_1_list_aggregate_a8c7b3a6c7c8a087355a1a35519c79555}} 
+\index{omg::ListAggregate@{omg::ListAggregate}!world\_bound@{world\_bound}}
+\index{world\_bound@{world\_bound}!omg::ListAggregate@{omg::ListAggregate}}
+\subsubsection{\texorpdfstring{world\_bound()}{world\_bound()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} omg\+::\+List\+Aggregate\+::world\+\_\+bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+The world bound of this primitive. 
+
+\begin{DoxyReturn}{Returns}
+the world bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_ad8a385aaa01354acffad18fe8f23fa25}{omg\+::\+Aggregate\+Primitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/List\+Aggregate.\+h\end{DoxyCompactItemize}

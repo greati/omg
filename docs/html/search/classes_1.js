@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['camera',['Camera',['../classomg_1_1_camera.html',1,'omg']]],
-  ['col',['Col',['../classtao_1_1_col.html',1,'tao']]],
-  ['configs',['Configs',['../class_configs.html',1,'']]],
-  ['convert_3c_20rgbcolor_20_3e',['convert&lt; RGBColor &gt;',['../struct_y_a_m_l_1_1convert_3_01_r_g_b_color_01_4.html',1,'YAML']]]
+  ['background',['Background',['../classomg_1_1_background.html',1,'omg']]],
+  ['blinnmaterial',['BlinnMaterial',['../classomg_1_1_blinn_material.html',1,'omg']]],
+  ['blinnphongintegrator',['BlinnPhongIntegrator',['../classomg_1_1_blinn_phong_integrator.html',1,'omg']]],
+  ['bounds3',['Bounds3',['../classomg_1_1_bounds3.html',1,'omg']]],
+  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg']]]
 ];

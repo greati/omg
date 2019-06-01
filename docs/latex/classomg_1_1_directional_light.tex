@@ -1,0 +1,84 @@
+\hypertarget{classomg_1_1_directional_light}{}\section{omg\+::Directional\+Light Class Reference}
+\label{classomg_1_1_directional_light}\index{omg::DirectionalLight@{omg::DirectionalLight}}
+
+
+Represents a directional source of light.  
+
+
+
+
+{\ttfamily \#include $<$Directional\+Light.\+h$>$}
+
+Inheritance diagram for omg\+::Directional\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_directional_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_directional_light_abbc46171dd84ce2d36ba94d2775601d3}\label{classomg_1_1_directional_light_abbc46171dd84ce2d36ba94d2775601d3}} 
+{\bfseries Directional\+Light} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&intensity, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&direction)
+\item 
+\mbox{\Hypertarget{classomg_1_1_directional_light_a565733b42c77973b765d7afea14461f5}\label{classomg_1_1_directional_light_a565733b42c77973b765d7afea14461f5}} 
+virtual \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_directional_light_a565733b42c77973b765d7afea14461f5}{sample\+\_\+li}} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&interaction, \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$wi, \mbox{\hyperlink{classomg_1_1_visibility_tester}{Visibility\+Tester}} $\ast$vt) const
+\begin{DoxyCompactList}\small\item\em Sample a point on the light source\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+virtual std\+::optional$<$ \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $>$ \mbox{\hyperlink{classomg_1_1_directional_light_a5f5f490112ecf2c0dfb2613d1f831e5b}{get\+\_\+direction}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&surface\+\_\+point) const
+\begin{DoxyCompactList}\small\item\em Returns the direction of the light, when it possibly depends on the intersection position over the surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classomg_1_1_directional_light_ae7df9384508e8692781f1e1df03ccf4e}{preprocess}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene) override
+\begin{DoxyCompactList}\small\item\em Performs some preprocessing before the rendering stage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a directional source of light. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_directional_light_a5f5f490112ecf2c0dfb2613d1f831e5b}\label{classomg_1_1_directional_light_a5f5f490112ecf2c0dfb2613d1f831e5b}} 
+\index{omg::DirectionalLight@{omg::DirectionalLight}!get\_direction@{get\_direction}}
+\index{get\_direction@{get\_direction}!omg::DirectionalLight@{omg::DirectionalLight}}
+\subsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
+{\footnotesize\ttfamily virtual std\+::optional$<$\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}$>$ omg\+::\+Directional\+Light\+::get\+\_\+direction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{surface\+\_\+point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the direction of the light, when it possibly depends on the intersection position over the surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the intersection position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+light direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_directional_light_ae7df9384508e8692781f1e1df03ccf4e}\label{classomg_1_1_directional_light_ae7df9384508e8692781f1e1df03ccf4e}} 
+\index{omg::DirectionalLight@{omg::DirectionalLight}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!omg::DirectionalLight@{omg::DirectionalLight}}
+\subsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily void omg\+::\+Directional\+Light\+::preprocess (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Performs some preprocessing before the rendering stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classomg_1_1_light_a8379b1dea7517c4e7fb6e0b5280c94d6}{omg\+::\+Light}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/lights/Directional\+Light.\+h\end{DoxyCompactItemize}

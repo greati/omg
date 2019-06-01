@@ -1,0 +1,54 @@
+\hypertarget{structomg_1_1_triangle_mesh}{}\section{omg\+::Triangle\+Mesh Struct Reference}
+\label{structomg_1_1_triangle_mesh}\index{omg::TriangleMesh@{omg::TriangleMesh}}
+
+
+Represents a triangle mesh.  
+
+
+
+
+{\ttfamily \#include $<$Triangle\+Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_a2abd234e8bd5ed7910d4899bef94a2f5}\label{structomg_1_1_triangle_mesh_a2abd234e8bd5ed7910d4899bef94a2f5}} 
+{\bfseries Triangle\+Mesh} (int n\+\_\+triangles, const int $\ast$indices, int n\+\_\+vertices, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} $\ast$ps, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$ns, const \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}} $\ast$uvs, bool compute\+\_\+normals=false)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_a67bbcb1d89af858be82c48c92255db3c}\label{structomg_1_1_triangle_mesh_a67bbcb1d89af858be82c48c92255db3c}} 
+bool {\bfseries compute\+\_\+normals} \{false\}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_a7ead07a90b3a63a39103f10f64958f84}\label{structomg_1_1_triangle_mesh_a7ead07a90b3a63a39103f10f64958f84}} 
+const int {\bfseries n\+\_\+triangles}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_a2a411a56a3a866435604845a7e01cfcc}\label{structomg_1_1_triangle_mesh_a2a411a56a3a866435604845a7e01cfcc}} 
+const int {\bfseries n\+\_\+vertices}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_ae98575726e9ed88cb9c20bfccef66094}\label{structomg_1_1_triangle_mesh_ae98575726e9ed88cb9c20bfccef66094}} 
+std\+::vector$<$ int $>$ {\bfseries vertex\+\_\+indices}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_abaa3dc4be890e4a08ee2267d52e25404}\label{structomg_1_1_triangle_mesh_abaa3dc4be890e4a08ee2267d52e25404}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}\mbox{[}$\,$\mbox{]}$>$ {\bfseries points}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_ab04183e23af3c094145e26a363f9bdfa}\label{structomg_1_1_triangle_mesh_ab04183e23af3c094145e26a363f9bdfa}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}\mbox{[}$\,$\mbox{]}$>$ {\bfseries normals}
+\item 
+\mbox{\Hypertarget{structomg_1_1_triangle_mesh_a7ed2552b0fb9512c6ed04664ac559be3}\label{structomg_1_1_triangle_mesh_a7ed2552b0fb9512c6ed04664ac559be3}} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{namespaceomg_a18e42fb7bbc4159e9137145b866ec578}{Point2}}\mbox{[}$\,$\mbox{]}$>$ {\bfseries uvs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a triangle mesh. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Triangle\+Mesh.\+h\end{DoxyCompactItemize}

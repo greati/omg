@@ -1,0 +1,63 @@
+\hypertarget{classomg_1_1_point_light}{}\section{omg\+::Point\+Light Class Reference}
+\label{classomg_1_1_point_light}\index{omg::PointLight@{omg::PointLight}}
+
+
+Represents a point light.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Light.\+h$>$}
+
+Inheritance diagram for omg\+::Point\+Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_point_light}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_point_light_a1a78f905915bac18dfc917a20849fccc}\label{classomg_1_1_point_light_a1a78f905915bac18dfc917a20849fccc}} 
+{\bfseries Point\+Light} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&intensity, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&position)
+\item 
+\mbox{\Hypertarget{classomg_1_1_point_light_aa77747811ae675d0f6140ca75ecbebda}\label{classomg_1_1_point_light_aa77747811ae675d0f6140ca75ecbebda}} 
+virtual \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_point_light_aa77747811ae675d0f6140ca75ecbebda}{sample\+\_\+li}} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&interaction, \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $\ast$wi, \mbox{\hyperlink{classomg_1_1_visibility_tester}{Visibility\+Tester}} $\ast$vt) const
+\begin{DoxyCompactList}\small\item\em Sample a point on the light source\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+virtual std\+::optional$<$ \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} $>$ \mbox{\hyperlink{classomg_1_1_point_light_a064ca776b8304a2733bbe20619e071be}{get\+\_\+direction}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&surface\+\_\+point) const
+\begin{DoxyCompactList}\small\item\em Returns the direction of the light, when it depends on the intersection position over the surface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a point light. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_point_light_a064ca776b8304a2733bbe20619e071be}\label{classomg_1_1_point_light_a064ca776b8304a2733bbe20619e071be}} 
+\index{omg::PointLight@{omg::PointLight}!get\_direction@{get\_direction}}
+\index{get\_direction@{get\_direction}!omg::PointLight@{omg::PointLight}}
+\subsubsection{\texorpdfstring{get\_direction()}{get\_direction()}}
+{\footnotesize\ttfamily virtual std\+::optional$<$\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}}$>$ omg\+::\+Point\+Light\+::get\+\_\+direction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{surface\+\_\+point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the direction of the light, when it depends on the intersection position over the surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the intersection position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+light direction 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/lights/Point\+Light.\+h\end{DoxyCompactItemize}

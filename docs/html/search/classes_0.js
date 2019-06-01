@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['background',['Background',['../classomg_1_1_background.html',1,'omg']]],
-  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg']]],
-  ['builder',['Builder',['../classomg_1_1_scene_1_1_builder.html',1,'omg::Scene']]]
+  ['aggregateprimitive',['AggregatePrimitive',['../classomg_1_1_aggregate_primitive.html',1,'omg']]],
+  ['ambientlight',['AmbientLight',['../classomg_1_1_ambient_light.html',1,'omg']]]
 ];

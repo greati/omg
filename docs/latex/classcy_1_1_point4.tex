@@ -1,0 +1,282 @@
+\hypertarget{classcy_1_1_point4}{}\section{cy\+::Point4$<$ T\+Y\+PE $>$ Class Template Reference}
+\label{classcy_1_1_point4}\index{cy::Point4$<$ TYPE $>$@{cy::Point4$<$ TYPE $>$}}
+
+
+4D point (vector) class  
+
+
+
+
+{\ttfamily \#include $<$cy\+Point.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a280496e8cf99738e029200e93168f778}\label{classcy_1_1_point4_a280496e8cf99738e029200e93168f778}} 
+{\bfseries Point4} ()
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_ab4f77aa944f2dd34e8f813409713c6a8}\label{classcy_1_1_point4_ab4f77aa944f2dd34e8f813409713c6a8}} 
+{\bfseries Point4} (T\+Y\+PE \+\_\+x, T\+Y\+PE \+\_\+y, T\+Y\+PE \+\_\+z, T\+Y\+PE \+\_\+w)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a29e0a62f6e897d3250e405fe97ed178c}\label{classcy_1_1_point4_a29e0a62f6e897d3250e405fe97ed178c}} 
+{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a6083a0e123da87890b3cb673f0b4c3ce}\label{classcy_1_1_point4_a6083a0e123da87890b3cb673f0b4c3ce}} 
+{\bfseries Point4} (T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a45ad9e89774268f2d2700331b8085996}\label{classcy_1_1_point4_a45ad9e89774268f2d2700331b8085996}} 
+{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point3}{Point3}}$<$ T\+Y\+PE $>$ \&p, T\+Y\+PE \+\_\+w=1)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a0ca1cf042f56dfad9c02fd7a17525d4f}\label{classcy_1_1_point4_a0ca1cf042f56dfad9c02fd7a17525d4f}} 
+{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point2}{Point2}}$<$ T\+Y\+PE $>$ \&p, T\+Y\+PE \+\_\+z=0, T\+Y\+PE \+\_\+w=1)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_acb7aeecd65362c4514249d8b1c7e5b3d}\label{classcy_1_1_point4_acb7aeecd65362c4514249d8b1c7e5b3d}} 
+{\footnotesize template$<$typename T $>$ }\\{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}}$<$ T $>$ \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_abf9952c10cdba39d7463495ccf622141}\label{classcy_1_1_point4_abf9952c10cdba39d7463495ccf622141}} 
+{\footnotesize template$<$typename T $>$ }\\{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point3}{Point3}}$<$ T $>$ \&p, T\+Y\+PE \+\_\+w=1)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a706923bb60f52176280e5e7effdae89d}\label{classcy_1_1_point4_a706923bb60f52176280e5e7effdae89d}} 
+{\footnotesize template$<$typename T $>$ }\\{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point2}{Point2}}$<$ T $>$ \&p, T\+Y\+PE \+\_\+z=0, T\+Y\+PE \+\_\+w=1)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a198409f7316c075a3278dd1669b40d93}\label{classcy_1_1_point4_a198409f7316c075a3278dd1669b40d93}} 
+{\footnotesize template$<$int M$>$ }\\{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point}{Point}}$<$ T\+Y\+PE, M $>$ \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a117650f2c8bd5e585bf5940c0f730623}\label{classcy_1_1_point4_a117650f2c8bd5e585bf5940c0f730623}} 
+{\footnotesize template$<$typename T , int M$>$ }\\{\bfseries Point4} (const \mbox{\hyperlink{classcy_1_1_point}{Point}}$<$ T, M $>$ \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a50f5d2d040ca94df38bc7c44f42bc7e8}\label{classcy_1_1_point4_a50f5d2d040ca94df38bc7c44f42bc7e8}} 
+{\footnotesize template$<$typename P $>$ }\\{\bfseries Point4} (const P \&p)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Set \& Get value methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_ac6b511e23ae61d959cc612a28e781408}\label{classcy_1_1_point4_ac6b511e23ae61d959cc612a28e781408}} 
+void \mbox{\hyperlink{classcy_1_1_point4_ac6b511e23ae61d959cc612a28e781408}{Zero}} ()
+\begin{DoxyCompactList}\small\item\em Sets the coordinates as zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a154f859d2d39f3fa8c3cba1d63ff9761}\label{classcy_1_1_point4_a154f859d2d39f3fa8c3cba1d63ff9761}} 
+void \mbox{\hyperlink{classcy_1_1_point4_a154f859d2d39f3fa8c3cba1d63ff9761}{Get}} (T\+Y\+PE $\ast$p) const
+\begin{DoxyCompactList}\small\item\em Puts the coordinate values into the array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a7799953e23649cc40fda5b6b5c75c76c}\label{classcy_1_1_point4_a7799953e23649cc40fda5b6b5c75c76c}} 
+void \mbox{\hyperlink{classcy_1_1_point4_a7799953e23649cc40fda5b6b5c75c76c}{Set}} (const T\+Y\+PE $\ast$p)
+\begin{DoxyCompactList}\small\item\em Sets the coordinates using the values in the given array. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a4728cd518c7525e5a6e19482d30e0eb5}\label{classcy_1_1_point4_a4728cd518c7525e5a6e19482d30e0eb5}} 
+void \mbox{\hyperlink{classcy_1_1_point4_a4728cd518c7525e5a6e19482d30e0eb5}{Set}} (T\+Y\+PE v)
+\begin{DoxyCompactList}\small\item\em Sets all coordinates using the given value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aa31d1b6b8860b1e6d41a22add3fdae27}\label{classcy_1_1_point4_aa31d1b6b8860b1e6d41a22add3fdae27}} 
+void \mbox{\hyperlink{classcy_1_1_point4_aa31d1b6b8860b1e6d41a22add3fdae27}{Set}} (T\+Y\+PE \+\_\+x, T\+Y\+PE \+\_\+y, T\+Y\+PE \+\_\+z, T\+Y\+PE \+\_\+w=1)
+\begin{DoxyCompactList}\small\item\em Sets the coordinates using the given values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ General methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a595bbb930efdbf2224c13dbc52fbe3e0}\label{classcy_1_1_point4_a595bbb930efdbf2224c13dbc52fbe3e0}} 
+T\+Y\+PE \mbox{\hyperlink{classcy_1_1_point4_a595bbb930efdbf2224c13dbc52fbe3e0}{Length\+Squared}} () const
+\begin{DoxyCompactList}\small\item\em Returns the square of the length. Effectively, this is the dot product of the vector with itself. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_acf90aa47ed2d91a14acaaed9bdbe8a7d}\label{classcy_1_1_point4_acf90aa47ed2d91a14acaaed9bdbe8a7d}} 
+T\+Y\+PE \mbox{\hyperlink{classcy_1_1_point4_acf90aa47ed2d91a14acaaed9bdbe8a7d}{Length}} () const
+\begin{DoxyCompactList}\small\item\em Returns the length of the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_af9ec37cb472224a4f7d2e479aaefee2f}\label{classcy_1_1_point4_af9ec37cb472224a4f7d2e479aaefee2f}} 
+void \mbox{\hyperlink{classcy_1_1_point4_af9ec37cb472224a4f7d2e479aaefee2f}{Normalize}} ()
+\begin{DoxyCompactList}\small\item\em Normalizes the vector, such that its length becomes 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a02c375e3506cd45258f9857e32fa3bef}\label{classcy_1_1_point4_a02c375e3506cd45258f9857e32fa3bef}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} \mbox{\hyperlink{classcy_1_1_point4_a02c375e3506cd45258f9857e32fa3bef}{Get\+Normalized}} () const
+\begin{DoxyCompactList}\small\item\em Returns a normalized copy of the vector. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_ad942a70a12dff276db6dfc0e883a9ed7}\label{classcy_1_1_point4_ad942a70a12dff276db6dfc0e883a9ed7}} 
+T\+Y\+PE \mbox{\hyperlink{classcy_1_1_point4_ad942a70a12dff276db6dfc0e883a9ed7}{Sum}} () const
+\begin{DoxyCompactList}\small\item\em Returns the sum of its components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a3fe943680fdfb39ef2011dd13d505a8e}\label{classcy_1_1_point4_a3fe943680fdfb39ef2011dd13d505a8e}} 
+bool \mbox{\hyperlink{classcy_1_1_point4_a3fe943680fdfb39ef2011dd13d505a8e}{Is\+Zero}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if all components are exactly zero. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a30c34a621a406b8bf9f1c15ad370085d}\label{classcy_1_1_point4_a30c34a621a406b8bf9f1c15ad370085d}} 
+T\+Y\+PE {\bfseries Min} () const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_ae3b0c380efcff930da12daffc0bddf19}\label{classcy_1_1_point4_ae3b0c380efcff930da12daffc0bddf19}} 
+T\+Y\+PE {\bfseries Max} () const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a941289f9b54d1cc34a3498ae8c79046e}\label{classcy_1_1_point4_a941289f9b54d1cc34a3498ae8c79046e}} 
+int {\bfseries Min\+ID} () const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a7a7d924891e989e78f6e3f503d4efbcb}\label{classcy_1_1_point4_a7a7d924891e989e78f6e3f503d4efbcb}} 
+int {\bfseries Max\+ID} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Limit methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a0861d5ab7799479c469fe752524dd969}\label{classcy_1_1_point4_a0861d5ab7799479c469fe752524dd969}} 
+void {\bfseries Clamp} (T\+Y\+PE min\+Value, T\+Y\+PE max\+Value)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a8441fccce05e099edc0c981768249e9f}\label{classcy_1_1_point4_a8441fccce05e099edc0c981768249e9f}} 
+void {\bfseries Clamp\+Min} (T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a8be3c2157bbb0a887d26db920be9a5eb}\label{classcy_1_1_point4_a8be3c2157bbb0a887d26db920be9a5eb}} 
+void {\bfseries Clamp\+Max} (T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a8cb4a844d83df5db0c0b6c302545cede}\label{classcy_1_1_point4_a8cb4a844d83df5db0c0b6c302545cede}} 
+void \mbox{\hyperlink{classcy_1_1_point4_a8cb4a844d83df5db0c0b6c302545cede}{Abs}} ()
+\begin{DoxyCompactList}\small\item\em Converts all negative components to positive values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Unary operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_acc5d2ef639e2371234b4c69df5e1c02b}\label{classcy_1_1_point4_acc5d2ef639e2371234b4c69df5e1c02b}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator -\/} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Binary operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a59b7c0eccecb6bfc33f33955bbcb62d6}\label{classcy_1_1_point4_a59b7c0eccecb6bfc33f33955bbcb62d6}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator+} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a55c113f82df7e75206019743d7682264}\label{classcy_1_1_point4_a55c113f82df7e75206019743d7682264}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator -\/} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a3a7fed6f1e9de174e70ac1983c2a5075}\label{classcy_1_1_point4_a3a7fed6f1e9de174e70ac1983c2a5075}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator $\ast$} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a1d68d60333890dabd9f250b21e2d8c18}\label{classcy_1_1_point4_a1d68d60333890dabd9f250b21e2d8c18}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator/} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a89840342cf782888132da246b86ed1df}\label{classcy_1_1_point4_a89840342cf782888132da246b86ed1df}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator+} (const T\+Y\+PE v) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a650638f422e40191e217bd57c0b96b61}\label{classcy_1_1_point4_a650638f422e40191e217bd57c0b96b61}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator -\/} (const T\+Y\+PE v) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a7a8ad79c393ca5e9a4f0f95e9e1b1282}\label{classcy_1_1_point4_a7a8ad79c393ca5e9a4f0f95e9e1b1282}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator $\ast$} (const T\+Y\+PE v) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a3ad6f9f86ef62e4e139306f8d4b0791a}\label{classcy_1_1_point4_a3ad6f9f86ef62e4e139306f8d4b0791a}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} {\bfseries operator/} (const T\+Y\+PE v) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Assignment operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a4d36d1e08f45f51516096708a0a3617f}\label{classcy_1_1_point4_a4d36d1e08f45f51516096708a0a3617f}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_acf307a0974cd10090331134c4f79ff5b}\label{classcy_1_1_point4_acf307a0974cd10090331134c4f79ff5b}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator+=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a035d66917868f734206b5d66cc225170}\label{classcy_1_1_point4_a035d66917868f734206b5d66cc225170}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator -\/=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a316c9996fe6ea2022e6dce6bf328883f}\label{classcy_1_1_point4_a316c9996fe6ea2022e6dce6bf328883f}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator $\ast$=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a2c33f70991b4fb2772f9a6e4374d67ad}\label{classcy_1_1_point4_a2c33f70991b4fb2772f9a6e4374d67ad}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator/=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a0169966a3ae22c375e4ca4ed2492b76c}\label{classcy_1_1_point4_a0169966a3ae22c375e4ca4ed2492b76c}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator+=} (const T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a5eb134edc18497217e259719f6d4b339}\label{classcy_1_1_point4_a5eb134edc18497217e259719f6d4b339}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator -\/=} (const T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aebee815853dbebb48b8b6a1cfb1fe398}\label{classcy_1_1_point4_aebee815853dbebb48b8b6a1cfb1fe398}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator $\ast$=} (const T\+Y\+PE v)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aee627a00656483866e81ac9df860637b}\label{classcy_1_1_point4_aee627a00656483866e81ac9df860637b}} 
+const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \& {\bfseries operator/=} (const T\+Y\+PE v)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Test operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a0a08566027408bd3709ccd833191851c}\label{classcy_1_1_point4_a0a08566027408bd3709ccd833191851c}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_af4bfc8cc28da731e4b54c1daa3c7d931}\label{classcy_1_1_point4_af4bfc8cc28da731e4b54c1daa3c7d931}} 
+bool {\bfseries operator !=} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Access operators}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a028bf21b88f60d8ec9dfa45057cf2fd4}\label{classcy_1_1_point4_a028bf21b88f60d8ec9dfa45057cf2fd4}} 
+T\+Y\+PE \& {\bfseries operator \mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aeb76cc8c5ab9816a5e1a9eb3684b1eaa}\label{classcy_1_1_point4_aeb76cc8c5ab9816a5e1a9eb3684b1eaa}} 
+const T\+Y\+PE \& {\bfseries operator \mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a6a8e22fe5e291106ed445e9a8de22598}\label{classcy_1_1_point4_a6a8e22fe5e291106ed445e9a8de22598}} 
+T\+Y\+PE \& {\bfseries Element} (int i)
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a4ba9f7ee9db1a40c60484192499259e7}\label{classcy_1_1_point4_a4ba9f7ee9db1a40c60484192499259e7}} 
+const T\+Y\+PE \& {\bfseries Element} (int i) const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_abc6b7bfb6e38eac29243f0fbe4b369b1}\label{classcy_1_1_point4_abc6b7bfb6e38eac29243f0fbe4b369b1}} 
+T\+Y\+PE $\ast$ {\bfseries Data} ()
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a1d17ef63c2000347132ebce671c0fefa}\label{classcy_1_1_point4_a1d17ef63c2000347132ebce671c0fefa}} 
+const T\+Y\+PE $\ast$ {\bfseries Data} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Dot product}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a2cdbb44bed05babf6947d4aa498a51f0}\label{classcy_1_1_point4_a2cdbb44bed05babf6947d4aa498a51f0}} 
+T\+Y\+PE \mbox{\hyperlink{classcy_1_1_point4_a2cdbb44bed05babf6947d4aa498a51f0}{Dot}} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\begin{DoxyCompactList}\small\item\em Dot product. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a6df61c3138fd261c21512a75b3d22492}\label{classcy_1_1_point4_a6df61c3138fd261c21512a75b3d22492}} 
+T\+Y\+PE \mbox{\hyperlink{classcy_1_1_point4_a6df61c3138fd261c21512a75b3d22492}{operator \%}} (const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p) const
+\begin{DoxyCompactList}\small\item\em Dot product. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Conversion Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a003efb69cebb245df63471a04a138ae5}\label{classcy_1_1_point4_a003efb69cebb245df63471a04a138ae5}} 
+\mbox{\hyperlink{classcy_1_1_point2}{Point2}}$<$ T\+Y\+PE $>$ {\bfseries XY} () const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aa421cad025d724d1878e2f1de3eae395}\label{classcy_1_1_point4_aa421cad025d724d1878e2f1de3eae395}} 
+\mbox{\hyperlink{classcy_1_1_point3}{Point3}}$<$ T\+Y\+PE $>$ {\bfseries X\+YZ} () const
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_aca74d4e6dbdce9adbcc4fb23ddf4cc13}\label{classcy_1_1_point4_aca74d4e6dbdce9adbcc4fb23ddf4cc13}} 
+\mbox{\hyperlink{classcy_1_1_point3}{Point3}}$<$ T\+Y\+PE $>$ {\bfseries Get\+Non\+Homogeneous} () const
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Public Attributes}
+\begin{Indent}\textbf{ Components of the point/vector}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_ac03b4cea739f8082e527d2873261a109}\label{classcy_1_1_point4_ac03b4cea739f8082e527d2873261a109}} 
+T\+Y\+PE {\bfseries x}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_adc8469a37bd0131c4a5a9924c84ac5b0}\label{classcy_1_1_point4_adc8469a37bd0131c4a5a9924c84ac5b0}} 
+T\+Y\+PE {\bfseries y}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a125700f4007807c9f179e77b71e430d2}\label{classcy_1_1_point4_a125700f4007807c9f179e77b71e430d2}} 
+T\+Y\+PE {\bfseries z}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a631984ef10deb521b8f8d0f8655c2da1}\label{classcy_1_1_point4_a631984ef10deb521b8f8d0f8655c2da1}} 
+T\+Y\+PE {\bfseries w}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a46a904672e82ebf31ba3543b2aa4e9a1}\label{classcy_1_1_point4_a46a904672e82ebf31ba3543b2aa4e9a1}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} \mbox{\hyperlink{classcy_1_1_point4_a46a904672e82ebf31ba3543b2aa4e9a1}{operator+}} (const T\+Y\+PE v, const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\begin{DoxyCompactList}\small\item\em Addition with a constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_a3498366f6bf113f68ad623023e092ffc}\label{classcy_1_1_point4_a3498366f6bf113f68ad623023e092ffc}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} \mbox{\hyperlink{classcy_1_1_point4_a3498366f6bf113f68ad623023e092ffc}{operator -\/}} (const T\+Y\+PE v, const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\begin{DoxyCompactList}\small\item\em Subtraction from a constant. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_point4_affde1fba0200ea1723a3c44eb77706a0}\label{classcy_1_1_point4_affde1fba0200ea1723a3c44eb77706a0}} 
+\mbox{\hyperlink{classcy_1_1_point4}{Point4}} \mbox{\hyperlink{classcy_1_1_point4_affde1fba0200ea1723a3c44eb77706a0}{operator $\ast$}} (const T\+Y\+PE v, const \mbox{\hyperlink{classcy_1_1_point4}{Point4}} \&p)
+\begin{DoxyCompactList}\small\item\em Multiplication with a constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T\+Y\+PE$>$\newline
+class cy\+::\+Point4$<$ T\+Y\+P\+E $>$}
+
+4D point (vector) class 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/external/cycodebase/\mbox{\hyperlink{cy_point_8h}{cy\+Point.\+h}}\end{DoxyCompactItemize}

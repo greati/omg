@@ -1,0 +1,105 @@
+\hypertarget{cy_core_8h}{}\section{/home/vitorgreati/git-\/repos/omg/sources/include/external/cycodebase/cy\+Core.h File Reference}
+\label{cy_core_8h}\index{/home/vitorgreati/git-\/repos/omg/sources/include/external/cycodebase/cyCore.h@{/home/vitorgreati/git-\/repos/omg/sources/include/external/cycodebase/cyCore.h}}
+
+
+Core functions and macros.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cy_core_8h_a1b8facf402255441c5ecb097c6472f99}\label{cy_core_8h_a1b8facf402255441c5ecb097c6472f99}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+C\+O\+R\+E\+\_\+\+M\+E\+M\+C\+P\+Y\+\_\+\+L\+I\+M\+IT}~256
+\item 
+\mbox{\Hypertarget{cy_core_8h_a4768713af9674c0fd20c2ff7b7c88555}\label{cy_core_8h_a4768713af9674c0fd20c2ff7b7c88555}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+U\+N\+K\+N\+O\+WN}
+\item 
+\mbox{\Hypertarget{cy_core_8h_acf412620bcdce400cdc8808f8fcff6bc}\label{cy_core_8h_acf412620bcdce400cdc8808f8fcff6bc}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+V\+E\+R\+\_\+\+M\+E\+E\+TS}(msc,  gcc,  clang,  intel)~false
+\item 
+\mbox{\Hypertarget{cy_core_8h_a474cf42a3b5c23e7b1f101abf81b70d1}\label{cy_core_8h_a474cf42a3b5c23e7b1f101abf81b70d1}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+V\+E\+R\+\_\+\+B\+E\+L\+OW}(msc,  gcc,  clang,  intel)~false
+\item 
+\mbox{\Hypertarget{cy_core_8h_a72f0657181cca64b44eb186b707eb380}\label{cy_core_8h_a72f0657181cca64b44eb186b707eb380}} 
+\#define {\bfseries constexpr}
+\item 
+\mbox{\Hypertarget{cy_core_8h_a6a3f1d6f860890a083fbf4f8c3f5ae83}\label{cy_core_8h_a6a3f1d6f860890a083fbf4f8c3f5ae83}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+A\+L\+I\+A\+S\+\_\+\+U\+N\+P\+A\+CK}(...)~\+\_\+\+\_\+\+V\+A\+\_\+\+A\+R\+G\+S\+\_\+\+\_\+
+\item 
+\mbox{\Hypertarget{cy_core_8h_affb343327323ab3bd1bae322673a539c}\label{cy_core_8h_affb343327323ab3bd1bae322673a539c}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+A\+L\+I\+AS}(template\+\_\+name,  template\+\_\+equivalent)~using template\+\_\+name = \+\_\+\+C\+Y\+\_\+\+T\+E\+M\+P\+L\+A\+T\+E\+\_\+\+A\+L\+I\+A\+S\+\_\+\+U\+N\+P\+A\+CK template\+\_\+equivalent
+\item 
+\mbox{\Hypertarget{cy_core_8h_aab685aacb579d96b38e788763e7f6c40}\label{cy_core_8h_aab685aacb579d96b38e788763e7f6c40}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+I\+V\+D\+EP}
+\item 
+\mbox{\Hypertarget{cy_core_8h_a26f3991ce6149c816344e7ff6c81e938}\label{cy_core_8h_a26f3991ce6149c816344e7ff6c81e938}} 
+\#define {\bfseries \+\_\+\+C\+Y\+\_\+\+I\+V\+D\+E\+P\+\_\+\+F\+OR}~\+\_\+\+C\+Y\+\_\+\+I\+V\+D\+EP for
+\end{DoxyCompactItemize}
+\subsection*{Common math function templates}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{cy_core_8h_abae598a17fd8d00149afef9ca9bd6a46}\label{cy_core_8h_abae598a17fd8d00149afef9ca9bd6a46}} 
+\#define {\bfseries C\+Y\+\_\+\+M\+E\+M\+C\+O\+PY}(type,  dest,  source,  n)~\{ for ( int i=0; i$<$(n); i++ ) (dest)\mbox{[}i\mbox{]} = (source)\mbox{[}i\mbox{]}; \}
+\item 
+\mbox{\Hypertarget{cy_core_8h_a4908df1f077d8054937a5184431ac311}\label{cy_core_8h_a4908df1f077d8054937a5184431ac311}} 
+\#define {\bfseries C\+Y\+\_\+\+M\+E\+M\+C\+O\+N\+V\+E\+RT}(type,  dest,  source,  n)~\{ for ( int i=0; i$<$(n); i++ ) (dest)\mbox{[}i\mbox{]} = type((source)\mbox{[}i\mbox{]}); \}
+\item 
+\mbox{\Hypertarget{cy_core_8h_a86225a3f12212d58d3b6685b85bb0b39}\label{cy_core_8h_a86225a3f12212d58d3b6685b85bb0b39}} 
+\#define {\bfseries C\+Y\+\_\+\+M\+E\+M\+C\+L\+E\+AR}(type,  dest,  n)~memset(dest,0,(n)$\ast$sizeof(type))
+\item 
+\mbox{\Hypertarget{cy_core_8h_a16df04d44333de5d897f3ef9a21362ec}\label{cy_core_8h_a16df04d44333de5d897f3ef9a21362ec}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Sin} (T\+Y\+PE a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_afc6696cd3394b313ddd31856c39aa431}\label{cy_core_8h_afc6696cd3394b313ddd31856c39aa431}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Cos} (T\+Y\+PE a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a95223c6ee7e4e99d74df87396adfc9e3}\label{cy_core_8h_a95223c6ee7e4e99d74df87396adfc9e3}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Tan} (T\+Y\+PE a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a6a4d7a42abb06cd9ff800751e8ce0280}\label{cy_core_8h_a6a4d7a42abb06cd9ff800751e8ce0280}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Abs} (T\+Y\+PE a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a77a5a629d833cb6152f7bd5e216a015a}\label{cy_core_8h_a77a5a629d833cb6152f7bd5e216a015a}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Sqrt} (T\+Y\+PE a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_aa06db5176ceb280e179cbced530ebbaa}\label{cy_core_8h_aa06db5176ceb280e179cbced530ebbaa}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Pow} (T\+Y\+PE a, T\+Y\+PE e)
+\item 
+\mbox{\Hypertarget{cy_core_8h_adf4099dab6741750f795422524c7d7c2}\label{cy_core_8h_adf4099dab6741750f795422524c7d7c2}} 
+{\footnotesize template$<$typename T\+Y\+PE $>$ }\\T\+Y\+PE {\bfseries cy\+::cy\+Pi} ()
+\item 
+\mbox{\Hypertarget{cy_core_8h_a876568d032b2f8c1f5ec2b7a9fc32251}\label{cy_core_8h_a876568d032b2f8c1f5ec2b7a9fc32251}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Sin$<$ float $>$} (float a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_ad5ac093a85bb3a12c0c2c30b8e605084}\label{cy_core_8h_ad5ac093a85bb3a12c0c2c30b8e605084}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Cos$<$ float $>$} (float a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a4f96babcd11985fbc2c0bcdd3efeb537}\label{cy_core_8h_a4f96babcd11985fbc2c0bcdd3efeb537}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Tan$<$ float $>$} (float a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a915cf7d6ce28bdf6e35bf314c9067fcf}\label{cy_core_8h_a915cf7d6ce28bdf6e35bf314c9067fcf}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Abs$<$ float $>$} (float a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_af0da5bce5a2075e889feae4ff3e8c0bf}\label{cy_core_8h_af0da5bce5a2075e889feae4ff3e8c0bf}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Sqrt$<$ float $>$} (float a)
+\item 
+\mbox{\Hypertarget{cy_core_8h_a3fee720643ea46c3d8c646c52db4a6fb}\label{cy_core_8h_a3fee720643ea46c3d8c646c52db4a6fb}} 
+{\footnotesize template$<$$>$ }\\float {\bfseries cy\+::cy\+Pow$<$ float $>$} (float a, float e)
+\item 
+\mbox{\Hypertarget{cy_core_8h_ab2d4967c66516856fd0fb81cd03bbff0}\label{cy_core_8h_ab2d4967c66516856fd0fb81cd03bbff0}} 
+{\footnotesize template$<$$>$ }\\double {\bfseries cy\+::cy\+Abs} (double a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core functions and macros. 
+
+\begin{DoxyAuthor}{Author}
+Cem Yuksel
+\end{DoxyAuthor}
+Core functions and macros for math and other common operations 

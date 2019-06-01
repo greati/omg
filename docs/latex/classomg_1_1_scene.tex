@@ -9,24 +9,14 @@ Represents a 3D scene.
 
 {\ttfamily \#include $<$Scene.\+h$>$}
 
-Inheritance diagram for omg\+::Scene\+:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{classomg_1_1_scene}
-\end{center}
-\end{figure}
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-class \mbox{\hyperlink{classomg_1_1_scene_1_1_builder}{Builder}}
-\begin{DoxyCompactList}\small\item\em A builder for building scenes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}\label{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}} 
 \mbox{\hyperlink{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}{Scene}} ()
-\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_camera}{Camera}} reference. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}\label{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}} 
-\mbox{\hyperlink{classomg_1_1_scene_a83a49456e4edc7d5cf5c6dc652b128ef}{Scene}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ background, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ camera)
+\begin{DoxyCompactList}\small\item\em Empty constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_scene_aa96c0cb9a873edb3eefb0fd344ce524a}\label{classomg_1_1_scene_aa96c0cb9a873edb3eefb0fd344ce524a}} 
+\mbox{\hyperlink{classomg_1_1_scene_aa96c0cb9a873edb3eefb0fd344ce524a}{Scene}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ background, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ camera, const decltype(\+\_\+aggregate)\&aggregate, const decltype(\+\_\+lights)\&lights)
 \begin{DoxyCompactList}\small\item\em Complete scene constructor. \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ \mbox{\hyperlink{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}{get\+\_\+background}} () const
 \begin{DoxyCompactList}\small\item\em The scene background. \end{DoxyCompactList}\item 
@@ -36,8 +26,18 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ \mb
 \begin{DoxyCompactList}\small\item\em Retrieve the camera. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classomg_1_1_scene_a07875fddcc199bc2f70b1c20fd294af4}{set\+\_\+camera}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ camera)
 \begin{DoxyCompactList}\small\item\em Set the scene camera. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}{accept}} (\mbox{\hyperlink{classomg_1_1_visitor}{Visitor}} \&visitor) override
-\begin{DoxyCompactList}\small\item\em Accept a visitor to process this node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classomg_1_1_scene_a298107557a29d0ad43908978ee6ff353}\label{classomg_1_1_scene_a298107557a29d0ad43908978ee6ff353}} 
+const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_light}{Light}} $>$ $>$ \& {\bfseries get\+\_\+lights} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_scene_adcf48963a0622d97b8847797fb243cae}\label{classomg_1_1_scene_adcf48963a0622d97b8847797fb243cae}} 
+bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$si) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_scene_a8ff0a10b9315ae3b2b8affae5b04b374}\label{classomg_1_1_scene_a8ff0a10b9315ae3b2b8affae5b04b374}} 
+bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_scene_ad11da2d52099b120ece997dab3737570}\label{classomg_1_1_scene_ad11da2d52099b120ece997dab3737570}} 
+const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \& {\bfseries world\+\_\+bound} () const
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -48,39 +48,7 @@ Vitor Greati
 \end{DoxyAuthor}
 
 
-\subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}\label{classomg_1_1_scene_af5d02c499b861b1293e0d6232dabd2c8}} 
-\index{omg::Scene@{omg::Scene}!Scene@{Scene}}
-\index{Scene@{Scene}!omg::Scene@{omg::Scene}}
-\subsubsection{\texorpdfstring{Scene()}{Scene()}}
-{\footnotesize\ttfamily omg\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-\mbox{\hyperlink{classomg_1_1_camera}{Camera}} reference. 
-
-Empty constructor. 
-
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}\label{classomg_1_1_scene_a460b3582d6dc72fcaeff4c08d44335d9}} 
-\index{omg::Scene@{omg::Scene}!accept@{accept}}
-\index{accept@{accept}!omg::Scene@{omg::Scene}}
-\subsubsection{\texorpdfstring{accept()}{accept()}}
-{\footnotesize\ttfamily void omg\+::\+Scene\+::accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classomg_1_1_visitor}{Visitor}} \&}]{visitor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Accept a visitor to process this node. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em visitor} & the visitor \\
-\hline
-\end{DoxyParams}
-
-
-Implements \mbox{\hyperlink{classomg_1_1_scene_node_ad8e1595d15c4b92ab505828a0633a4d9}{omg\+::\+Scene\+Node}}.
-
 \mbox{\Hypertarget{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}\label{classomg_1_1_scene_a2eef3b62d9d01b19fb32751942f1fa7c}} 
 \index{omg::Scene@{omg::Scene}!get\_background@{get\_background}}
 \index{get\_background@{get\_background}!omg::Scene@{omg::Scene}}
@@ -139,6 +107,7 @@ Set the scene camera.
 \end{DoxyParams}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/vitorgreati/git-\/repos/omg/sources/include/omg/scene/Scene.\+h\end{DoxyCompactItemize}
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/scene/Scene.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/scene/Scene.\+cpp\end{DoxyCompactItemize}

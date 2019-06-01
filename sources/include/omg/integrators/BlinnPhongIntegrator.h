@@ -39,6 +39,10 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                 const std::shared_ptr<Sampler> sampler = nullptr,
                 int depth=0) override {
 
+            //> Ray
+            const auto& r_origin = ray.get_origin();
+            const auto& r_direction = ray.get_direction();
+
             //> Resulting irradiance
             RGBColor L {0.0, 0.0, 0.0};
 
@@ -66,13 +70,19 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                    ks = material->ks();
                    km = material->km();
                    gloss = material->glossiness();
-                   normal = tao::unitize(si._n);
                 }
+
+                normal = tao::unitize(si._n);
+
+                //> Check if normal and ray are in the same hemisphere
+                if (tao::dot(normal, r_direction) >= 0.0)
+                    return {0.0, 0.0, 0.0};
+
             } else {
                 auto [phi, theta] = ray.get_spherical_angles();
                 auto px = phi * INV_2PI;
                 auto py = theta * INV_PI;
-                return scene.get_background()->find(px, py);
+                return scene.get_background()->find(1.0-px, 1.0-py);
             }
 
             for (auto& light : scene.get_lights()) {
@@ -85,6 +95,8 @@ class BlinnPhongIntegrator : public SamplerIntegrator {
                     Vec3 wi;
                     VisibilityTester vt;
                     auto I = light->sample_li(si, &wi, &vt);
+
+                    if (I == RGBColor{0.0, 0.0, 0.0}) continue;
 
                     if (vt.unoccluded(scene)) {
                         L += std::max(0.0f, tao::dot(normal, wi)) * kd.element_wise(I, 

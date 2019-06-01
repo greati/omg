@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -111,6 +111,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe4434e4ae0efd8b41cb2a61458a710d"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#abe4434e4ae0efd8b41cb2a61458a710d">label_msg_type</a> (const <a class="el" href="class_logger.html#acd39cb578d7a6750c959f2fad38d8db6">Logger::Type</a> &amp;type) const =0</td></tr>
 <tr class="memdesc:abe4434e4ae0efd8b41cb2a61458a710d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives a label for a type of message.  <a href="#abe4434e4ae0efd8b41cb2a61458a710d">More...</a><br /></td></tr>
 <tr class="separator:abe4434e4ae0efd8b41cb2a61458a710d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3630b175aeeb23473b2740563e9422d5"><td class="memItemLeft" align="right" valign="top"><a id="a3630b175aeeb23473b2740563e9422d5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a3630b175aeeb23473b2740563e9422d5">make_progress_bar</a> (const std::string &amp;name, int limit=0, int current=0)=0</td></tr>
+<tr class="memdesc:a3630b175aeeb23473b2740563e9422d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a new named progress bar. <br /></td></tr>
+<tr class="separator:a3630b175aeeb23473b2740563e9422d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97b9f431c10b909bdda75b5dbbfd776c"><td class="memItemLeft" align="right" valign="top"><a id="a97b9f431c10b909bdda75b5dbbfd776c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#a97b9f431c10b909bdda75b5dbbfd776c">update_progress_bar</a> (const std::string &amp;name, int delta=1)=0</td></tr>
+<tr class="memdesc:a97b9f431c10b909bdda75b5dbbfd776c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update an existing progress bar. <br /></td></tr>
+<tr class="separator:a97b9f431c10b909bdda75b5dbbfd776c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeee1dc03b3fc81bf4b0075d8b8a87bc"><td class="memItemLeft" align="right" valign="top"><a id="afeee1dc03b3fc81bf4b0075d8b8a87bc"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logger.html#afeee1dc03b3fc81bf4b0075d8b8a87bc">finish_progress_bar</a> (const std::string &amp;name)=0</td></tr>
+<tr class="memdesc:afeee1dc03b3fc81bf4b0075d8b8a87bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish an existing progress bar. <br /></td></tr>
+<tr class="separator:afeee1dc03b3fc81bf4b0075d8b8a87bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>

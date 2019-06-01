@@ -1,11 +1,19 @@
 var searchData=
 [
   ['_5faspect_5fratio',['_aspect_ratio',['../classomg_1_1_camera.html#a8b10fe4cb5a45bf8e5c0774a7fbc8793',1,'omg::Camera']]],
+  ['_5ffilm',['_film',['../classomg_1_1_camera.html#a6dfc504cf53512dd762bfb765a89baeb',1,'omg::Camera']]],
   ['_5fheight',['_height',['../classomg_1_1_camera.html#affc19e62361a5c59785288987f584b4a',1,'omg::Camera']]],
+  ['_5fn',['_n',['../classomg_1_1_surface_interaction.html#a288cb74966c9f00f41fa4f82833f25d0',1,'omg::SurfaceInteraction']]],
   ['_5fplane_5fnormal',['_plane_normal',['../classomg_1_1_camera.html#aabfc8456e81fa75da2267df6c0b447a5',1,'omg::Camera']]],
+  ['_5fprimitive',['_primitive',['../classomg_1_1_surface_interaction.html#af18f32eaed705c2d4d693a1f362dd63f',1,'omg::SurfaceInteraction']]],
+  ['_5fsampler',['_sampler',['../classomg_1_1_sampler_integrator.html#a691d281396ff8f004817cc22f5638e94',1,'omg::SamplerIntegrator']]],
+  ['_5ft',['_t',['../classomg_1_1_surface_interaction.html#a89650a01634a796109ef76c01aaa59b7',1,'omg::SurfaceInteraction']]],
   ['_5ftarget',['_target',['../classomg_1_1_camera.html#abc759794d898df1a778630f8f1b4d3db',1,'omg::Camera']]],
+  ['_5ftime',['_time',['../classomg_1_1_surface_interaction.html#a3387f913242c8a8a9dca727dd5df2b4d',1,'omg::SurfaceInteraction']]],
   ['_5fu',['_u',['../classomg_1_1_camera.html#a9cc9befcbf8720cc2b602d0e70173f4b',1,'omg::Camera']]],
   ['_5fup',['_up',['../classomg_1_1_camera.html#a62c7405659621d32e337ffa32567e4ce',1,'omg::Camera']]],
+  ['_5fuv',['_uv',['../classomg_1_1_surface_interaction.html#ac3fcf877fc15d5cd47147b2d921f458a',1,'omg::SurfaceInteraction']]],
   ['_5fvpdims',['_vpdims',['../classomg_1_1_camera.html#a5dcef17304c333a64a14f7d551e235af',1,'omg::Camera']]],
-  ['_5fwidth',['_width',['../classomg_1_1_camera.html#aa47802b7a9b765adcb9b8d3d83e48426',1,'omg::Camera']]]
+  ['_5fwidth',['_width',['../classomg_1_1_camera.html#aa47802b7a9b765adcb9b8d3d83e48426',1,'omg::Camera']]],
+  ['_5fwo',['_wo',['../classomg_1_1_surface_interaction.html#a3a5ecba08ee682009b2ec05421436000',1,'omg::SurfaceInteraction']]]
 ];

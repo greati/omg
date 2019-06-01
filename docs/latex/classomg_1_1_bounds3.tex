@@ -1,0 +1,73 @@
+\hypertarget{classomg_1_1_bounds3}{}\section{omg\+::Bounds3 Class Reference}
+\label{classomg_1_1_bounds3}\index{omg::Bounds3@{omg::Bounds3}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_af0a852f0a3c0ef61f8288e64f14bb85d}\label{classomg_1_1_bounds3_af0a852f0a3c0ef61f8288e64f14bb85d}} 
+{\bfseries Bounds3} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a6b758ce579c215ad17ea8f368b85d999}\label{classomg_1_1_bounds3_a6b758ce579c215ad17ea8f368b85d999}} 
+{\bfseries Bounds3} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p1, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p2)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a083a61dc10d16d2bc60601523fe5089a}\label{classomg_1_1_bounds3_a083a61dc10d16d2bc60601523fe5089a}} 
+const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a7f32d6a5e95ad2dc0faa7fec793023ae}\label{classomg_1_1_bounds3_a7f32d6a5e95ad2dc0faa7fec793023ae}} 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (int i)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a217d5fb4a0ecbf40b40861bcd251e6f0}\label{classomg_1_1_bounds3_a217d5fb4a0ecbf40b40861bcd251e6f0}} 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} {\bfseries corner} (int c) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_aa4a10b461acb4bcd7bea1e7be829268c}\label{classomg_1_1_bounds3_aa4a10b461acb4bcd7bea1e7be829268c}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries get\+\_\+union} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b, const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a9f3afb354e1081628dffc6990850f9cd}\label{classomg_1_1_bounds3_a9f3afb354e1081628dffc6990850f9cd}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries get\+\_\+union} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b1, const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b2)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_ae382b960af0fd54115706930f348fc78}\label{classomg_1_1_bounds3_ae382b960af0fd54115706930f348fc78}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries get\+\_\+intersection} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b1, const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b2)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a4465d3c264c75bc7eb7228be7fe5f027}\label{classomg_1_1_bounds3_a4465d3c264c75bc7eb7228be7fe5f027}} 
+bool {\bfseries overlaps} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b1, const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b2)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_ac183a998f3ed11b6483f93308bb08858}\label{classomg_1_1_bounds3_ac183a998f3ed11b6483f93308bb08858}} 
+bool {\bfseries inside} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p, const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a04c10a6988054d01fcb70e466c4655ae}\label{classomg_1_1_bounds3_a04c10a6988054d01fcb70e466c4655ae}} 
+bool {\bfseries inside\+\_\+exclusive} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p, const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a175bd51d3829198bf65ae4c28ac09ccd}\label{classomg_1_1_bounds3_a175bd51d3829198bf65ae4c28ac09ccd}} 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries expand} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b, Real\+Value delta)
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a97e2bf7ef472565ea0a076cd85234230}\label{classomg_1_1_bounds3_a97e2bf7ef472565ea0a076cd85234230}} 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries diagonal} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_aaccb9e481d3061cbbd9aefa1669cefcc}\label{classomg_1_1_bounds3_aaccb9e481d3061cbbd9aefa1669cefcc}} 
+Real\+Value {\bfseries surface\+\_\+area} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_ac5df1e7d717da90fe8bb10cbe858a892}\label{classomg_1_1_bounds3_ac5df1e7d717da90fe8bb10cbe858a892}} 
+Real\+Value {\bfseries volume} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a02fe90c43be415be2cd29b4d503e0ec8}\label{classomg_1_1_bounds3_a02fe90c43be415be2cd29b4d503e0ec8}} 
+int {\bfseries maximum\+\_\+extent} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_aeef6c693085f4a8f59b1711c9341a15d}\label{classomg_1_1_bounds3_aeef6c693085f4a8f59b1711c9341a15d}} 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries offset} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_afc7671ef48879ef8405e1105fe2e50d6}\label{classomg_1_1_bounds3_afc7671ef48879ef8405e1105fe2e50d6}} 
+void {\bfseries bounding\+\_\+sphere} (\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} $\ast$center, float $\ast$radius) const
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a6ccd4b172b8daa976fb75d9864934977}\label{classomg_1_1_bounds3_a6ccd4b172b8daa976fb75d9864934977}} 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} {\bfseries p\+Min}
+\item 
+\mbox{\Hypertarget{classomg_1_1_bounds3_a9cda721148a1a768eeb906df14fc41b2}\label{classomg_1_1_bounds3_a9cda721148a1a768eeb906df14fc41b2}} 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} {\bfseries p\+Max}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Bounds3.\+h\end{DoxyCompactItemize}

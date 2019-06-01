@@ -1,0 +1,232 @@
+\hypertarget{classcy_1_1_tri_mesh}{}\section{cy\+::Tri\+Mesh Class Reference}
+\label{classcy_1_1_tri_mesh}\index{cy::TriMesh@{cy::TriMesh}}
+
+
+Triangular Mesh Class.  
+
+
+
+
+{\ttfamily \#include $<$cy\+Tri\+Mesh.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_mtl}{Mtl}}
+\begin{DoxyCompactList}\small\item\em Material definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_str}{Str}}
+\begin{DoxyCompactList}\small\item\em Simple character string. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}}
+\begin{DoxyCompactList}\small\item\em Triangular Mesh Face. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{Indent}\textbf{ Constructors and Destructor}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a10cf48530b128593d7d4cbd82c968027}\label{classcy_1_1_tri_mesh_a10cf48530b128593d7d4cbd82c968027}} 
+{\bfseries Tri\+Mesh} ()
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_acb27c9ac4fae24649d4fbfb141b96b50}\label{classcy_1_1_tri_mesh_acb27c9ac4fae24649d4fbfb141b96b50}} 
+{\bfseries Tri\+Mesh} (const \mbox{\hyperlink{classcy_1_1_tri_mesh}{Tri\+Mesh}} \&t)
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_af5f1a49cbc1caeed92030e1090e7578d}\label{classcy_1_1_tri_mesh_af5f1a49cbc1caeed92030e1090e7578d}} 
+virtual {\bfseries $\sim$\+Tri\+Mesh} ()
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Component Access Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a149ae1b31af3dce9190f8972723e4c0b}\label{classcy_1_1_tri_mesh_a149ae1b31af3dce9190f8972723e4c0b}} 
+const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a149ae1b31af3dce9190f8972723e4c0b}{V}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a17c9284a69badd3a451948a41a5ec8fb}\label{classcy_1_1_tri_mesh_a17c9284a69badd3a451948a41a5ec8fb}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a17c9284a69badd3a451948a41a5ec8fb}{V}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a85599ce72b06d6fc1b47a8d6f89ba181}\label{classcy_1_1_tri_mesh_a85599ce72b06d6fc1b47a8d6f89ba181}} 
+const \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a85599ce72b06d6fc1b47a8d6f89ba181}{F}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ab72f8393472e3a43686aeb929ddc8dc6}\label{classcy_1_1_tri_mesh_ab72f8393472e3a43686aeb929ddc8dc6}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_ab72f8393472e3a43686aeb929ddc8dc6}{F}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a72013a049d75b72e76c5d4bc797166e4}\label{classcy_1_1_tri_mesh_a72013a049d75b72e76c5d4bc797166e4}} 
+const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a72013a049d75b72e76c5d4bc797166e4}{VN}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex normal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_af3799080c9d62edcf54762341cb33d0e}\label{classcy_1_1_tri_mesh_af3799080c9d62edcf54762341cb33d0e}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_af3799080c9d62edcf54762341cb33d0e}{VN}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex normal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_af58a4b7d10765e54f67ff2740b8f7397}\label{classcy_1_1_tri_mesh_af58a4b7d10765e54f67ff2740b8f7397}} 
+const \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_af58a4b7d10765e54f67ff2740b8f7397}{FN}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th normal face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a5a9efdd50d678e5536ba837d16fe94cd}\label{classcy_1_1_tri_mesh_a5a9efdd50d678e5536ba837d16fe94cd}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a5a9efdd50d678e5536ba837d16fe94cd}{FN}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th normal face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a942c8e35e5d96f7c437c958a15e164e3}\label{classcy_1_1_tri_mesh_a942c8e35e5d96f7c437c958a15e164e3}} 
+const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a942c8e35e5d96f7c437c958a15e164e3}{VT}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex texture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a83185963b3787326700e01e17a0b1b5f}\label{classcy_1_1_tri_mesh_a83185963b3787326700e01e17a0b1b5f}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a83185963b3787326700e01e17a0b1b5f}{VT}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th vertex texture \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_adff6ab5d828408b933f480f4bf3d16a2}\label{classcy_1_1_tri_mesh_adff6ab5d828408b933f480f4bf3d16a2}} 
+const \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_adff6ab5d828408b933f480f4bf3d16a2}{FT}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th texture face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_aa8aa52ceb2bb7d9879b98325f594cc4f}\label{classcy_1_1_tri_mesh_aa8aa52ceb2bb7d9879b98325f594cc4f}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_aa8aa52ceb2bb7d9879b98325f594cc4f}{FT}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th texture face \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a3275fea2270601a1072369937b5b4ef8}\label{classcy_1_1_tri_mesh_a3275fea2270601a1072369937b5b4ef8}} 
+const \mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_mtl}{Mtl}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a3275fea2270601a1072369937b5b4ef8}{M}} (int i) const
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th material \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a8f67c231865905312f6efcae3909ecd7}\label{classcy_1_1_tri_mesh_a8f67c231865905312f6efcae3909ecd7}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_mtl}{Mtl}} \& \mbox{\hyperlink{classcy_1_1_tri_mesh_a8f67c231865905312f6efcae3909ecd7}{M}} (int i)
+\begin{DoxyCompactList}\small\item\em returns the i$^\wedge$th material \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a552c06563648ef0a972ff982dfe70984}\label{classcy_1_1_tri_mesh_a552c06563648ef0a972ff982dfe70984}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a552c06563648ef0a972ff982dfe70984}{NV}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a2f702fb021982a136f1f89ec14727bad}\label{classcy_1_1_tri_mesh_a2f702fb021982a136f1f89ec14727bad}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a2f702fb021982a136f1f89ec14727bad}{NF}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of faces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a421d2ecc9e98d136ea65eb9d07f7c62e}\label{classcy_1_1_tri_mesh_a421d2ecc9e98d136ea65eb9d07f7c62e}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a421d2ecc9e98d136ea65eb9d07f7c62e}{N\+VN}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of vertex normals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_af3874ecc8da7b12d20602b96f6143128}\label{classcy_1_1_tri_mesh_af3874ecc8da7b12d20602b96f6143128}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_af3874ecc8da7b12d20602b96f6143128}{N\+VT}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of texture vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a8fd188cf85fda75cc3983d02581acb22}\label{classcy_1_1_tri_mesh_a8fd188cf85fda75cc3983d02581acb22}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a8fd188cf85fda75cc3983d02581acb22}{NM}} () const
+\begin{DoxyCompactList}\small\item\em returns the number of materials \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ae989ce9d52a27e62acfb98a21584bcf9}\label{classcy_1_1_tri_mesh_ae989ce9d52a27e62acfb98a21584bcf9}} 
+bool \mbox{\hyperlink{classcy_1_1_tri_mesh_ae989ce9d52a27e62acfb98a21584bcf9}{Has\+Normals}} () const
+\begin{DoxyCompactList}\small\item\em returns true if the mesh has vertex normals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ac82d9d8a4cbadc06cd8ab3dc9b83ec4f}\label{classcy_1_1_tri_mesh_ac82d9d8a4cbadc06cd8ab3dc9b83ec4f}} 
+bool \mbox{\hyperlink{classcy_1_1_tri_mesh_ac82d9d8a4cbadc06cd8ab3dc9b83ec4f}{Has\+Texture\+Vertices}} () const
+\begin{DoxyCompactList}\small\item\em returns true if the mesh has texture vertices \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Set Component Count}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ae2a0cecd7da333e31d4ff855215467b8}\label{classcy_1_1_tri_mesh_ae2a0cecd7da333e31d4ff855215467b8}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_ae2a0cecd7da333e31d4ff855215467b8}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Deletes all components of the mesh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a5111afec31edabbc6a665bacf02e67fe}\label{classcy_1_1_tri_mesh_a5111afec31edabbc6a665bacf02e67fe}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_a5111afec31edabbc6a665bacf02e67fe}{Set\+Num\+Vertex}} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em Sets the number of vertices and allocates memory for vertex positions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a6871200c8950a45c3bd8f6bf1bc76827}\label{classcy_1_1_tri_mesh_a6871200c8950a45c3bd8f6bf1bc76827}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_a6871200c8950a45c3bd8f6bf1bc76827}{Set\+Num\+Faces}} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em Sets the number of faces and allocates memory for face data. Normal faces and texture faces are also allocated, if they are used. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_aae2471b77847c8a15ec42ea4bcd4355e}\label{classcy_1_1_tri_mesh_aae2471b77847c8a15ec42ea4bcd4355e}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_aae2471b77847c8a15ec42ea4bcd4355e}{Set\+Num\+Normals}} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em Sets the number of normals and allocates memory for normals and normal faces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_afcd5630009a54c86b414d4c9ab15dca0}\label{classcy_1_1_tri_mesh_afcd5630009a54c86b414d4c9ab15dca0}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_afcd5630009a54c86b414d4c9ab15dca0}{Set\+Num\+Tex\+Verts}} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em Sets the number of texture coordinates and allocates memory for texture coordinates and texture faces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a9d18a6c73dd67edfb9fda6283136b42e}\label{classcy_1_1_tri_mesh_a9d18a6c73dd67edfb9fda6283136b42e}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_a9d18a6c73dd67edfb9fda6283136b42e}{Set\+Num\+Mtls}} (unsigned int n)
+\begin{DoxyCompactList}\small\item\em Sets the number of materials and allocates memory for material data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_aa6cccc2f90b45ee0bceae7e8c0a4b56e}\label{classcy_1_1_tri_mesh_aa6cccc2f90b45ee0bceae7e8c0a4b56e}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_aa6cccc2f90b45ee0bceae7e8c0a4b56e}{operator=}} (const \mbox{\hyperlink{classcy_1_1_tri_mesh}{Tri\+Mesh}} \&t)
+\begin{DoxyCompactList}\small\item\em Copies mesh data from the given mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Get Property Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a1a1b72b9e92dc08798b05af712bc275f}\label{classcy_1_1_tri_mesh_a1a1b72b9e92dc08798b05af712bc275f}} 
+bool \mbox{\hyperlink{classcy_1_1_tri_mesh_a1a1b72b9e92dc08798b05af712bc275f}{Is\+Bound\+Box\+Ready}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the bounding box has been computed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_afd6a879b2a76df71f25c78a96bca6630}\label{classcy_1_1_tri_mesh_afd6a879b2a76df71f25c78a96bca6630}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_afd6a879b2a76df71f25c78a96bca6630}{Get\+Bound\+Min}} () const
+\begin{DoxyCompactList}\small\item\em Returns the minimum values of the bounding box. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a617c04a6de649e0430be48b9af0c7ae2}\label{classcy_1_1_tri_mesh_a617c04a6de649e0430be48b9af0c7ae2}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_a617c04a6de649e0430be48b9af0c7ae2}{Get\+Bound\+Max}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum values of the bounding box. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a7cdf9b7a24c70c3f838269ef49f608e5}\label{classcy_1_1_tri_mesh_a7cdf9b7a24c70c3f838269ef49f608e5}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_a7cdf9b7a24c70c3f838269ef49f608e5}{Get\+Point}} (int face\+ID, const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \&bc) const
+\begin{DoxyCompactList}\small\item\em Returns the point on the given face with the given barycentric coordinates (bc). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_afa937fd947f1b58ebad1b0f2d6386894}\label{classcy_1_1_tri_mesh_afa937fd947f1b58ebad1b0f2d6386894}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_afa937fd947f1b58ebad1b0f2d6386894}{Get\+Normal}} (int face\+ID, const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \&bc) const
+\begin{DoxyCompactList}\small\item\em Returns the the surface normal on the given face at the given barycentric coordinates (bc). The returned vector is not normalized. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a3f0d11b98c3f5a181676feed26da0b7c}\label{classcy_1_1_tri_mesh_a3f0d11b98c3f5a181676feed26da0b7c}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_a3f0d11b98c3f5a181676feed26da0b7c}{Get\+Tex\+Coord}} (int face\+ID, const \mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \&bc) const
+\begin{DoxyCompactList}\small\item\em Returns the texture coordinate on the given face at the given barycentric coordinates (bc). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a17bcc0d0e03e86085438103caefd1213}\label{classcy_1_1_tri_mesh_a17bcc0d0e03e86085438103caefd1213}} 
+int \mbox{\hyperlink{classcy_1_1_tri_mesh_a17bcc0d0e03e86085438103caefd1213}{Get\+Material\+Index}} (int face\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns the material index of the face. This method goes through material counts of all materials to find the material index of the face. Returns a negative number if the face as no material. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a9fc8ef7872ac87aea372efc7b32a0e5d}\label{classcy_1_1_tri_mesh_a9fc8ef7872ac87aea372efc7b32a0e5d}} 
+int \mbox{\hyperlink{classcy_1_1_tri_mesh_a9fc8ef7872ac87aea372efc7b32a0e5d}{Get\+Material\+Face\+Count}} (int mtl\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns the number of faces associated with the given material ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_aff81f71434952539e03bd911bd7ef7ed}\label{classcy_1_1_tri_mesh_aff81f71434952539e03bd911bd7ef7ed}} 
+int \mbox{\hyperlink{classcy_1_1_tri_mesh_aff81f71434952539e03bd911bd7ef7ed}{Get\+Material\+First\+Face}} (int mtl\+ID) const
+\begin{DoxyCompactList}\small\item\em Returns the first face index associated with the given material ID. Other faces associated with the same material are placed are placed consecutively. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Compute Methods}\par
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a9758e3930f987da5db1c1c55821558c9}\label{classcy_1_1_tri_mesh_a9758e3930f987da5db1c1c55821558c9}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_a9758e3930f987da5db1c1c55821558c9}{Compute\+Bounding\+Box}} ()
+\begin{DoxyCompactList}\small\item\em Computes the bounding box. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a6d19efa260ce0838b01036f7607368f5}\label{classcy_1_1_tri_mesh_a6d19efa260ce0838b01036f7607368f5}} 
+void \mbox{\hyperlink{classcy_1_1_tri_mesh_a6d19efa260ce0838b01036f7607368f5}{Compute\+Normals}} (bool clockwise=false)
+\begin{DoxyCompactList}\small\item\em Computes and stores vertex normals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a0b178f40e0b25ae337444d7a8fa821d7}\label{classcy_1_1_tri_mesh_a0b178f40e0b25ae337444d7a8fa821d7}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_a0b178f40e0b25ae337444d7a8fa821d7}{v}}
+\begin{DoxyCompactList}\small\item\em vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a113dcd80412d5532f582156c11dc5d10}\label{classcy_1_1_tri_mesh_a113dcd80412d5532f582156c11dc5d10}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_a113dcd80412d5532f582156c11dc5d10}{f}}
+\begin{DoxyCompactList}\small\item\em faces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a117f6929df545b92782844badd8b549b}\label{classcy_1_1_tri_mesh_a117f6929df545b92782844badd8b549b}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_a117f6929df545b92782844badd8b549b}{vn}}
+\begin{DoxyCompactList}\small\item\em vertex normal \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a310223ff450dda7517608534ad39194a}\label{classcy_1_1_tri_mesh_a310223ff450dda7517608534ad39194a}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_a310223ff450dda7517608534ad39194a}{fn}}
+\begin{DoxyCompactList}\small\item\em normal faces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_aa0bbb9abdee6a50d3848c332910ed262}\label{classcy_1_1_tri_mesh_aa0bbb9abdee6a50d3848c332910ed262}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_aa0bbb9abdee6a50d3848c332910ed262}{vt}}
+\begin{DoxyCompactList}\small\item\em texture vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ab0e5dfa4827ee0f3fb9b2a7b9bb48d6a}\label{classcy_1_1_tri_mesh_ab0e5dfa4827ee0f3fb9b2a7b9bb48d6a}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_tri_face}{Tri\+Face}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_ab0e5dfa4827ee0f3fb9b2a7b9bb48d6a}{ft}}
+\begin{DoxyCompactList}\small\item\em texture faces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a062c7719ebc5ae951cec0015c5c92d95}\label{classcy_1_1_tri_mesh_a062c7719ebc5ae951cec0015c5c92d95}} 
+\mbox{\hyperlink{structcy_1_1_tri_mesh_1_1_mtl}{Mtl}} $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_a062c7719ebc5ae951cec0015c5c92d95}{m}}
+\begin{DoxyCompactList}\small\item\em materials \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_acaedc5acbe10644dbedf7391eb70afe5}\label{classcy_1_1_tri_mesh_acaedc5acbe10644dbedf7391eb70afe5}} 
+int $\ast$ \mbox{\hyperlink{classcy_1_1_tri_mesh_acaedc5acbe10644dbedf7391eb70afe5}{mcfc}}
+\begin{DoxyCompactList}\small\item\em material cumulative face count \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a5fb3eb684debe3950e0369106f85bab5}\label{classcy_1_1_tri_mesh_a5fb3eb684debe3950e0369106f85bab5}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a5fb3eb684debe3950e0369106f85bab5}{nv}}
+\begin{DoxyCompactList}\small\item\em number of vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ab2de45bdc5374ad44dbfce2a23a47a93}\label{classcy_1_1_tri_mesh_ab2de45bdc5374ad44dbfce2a23a47a93}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_ab2de45bdc5374ad44dbfce2a23a47a93}{nf}}
+\begin{DoxyCompactList}\small\item\em number of faces \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a30471647ea302c622b497fad6e4725cb}\label{classcy_1_1_tri_mesh_a30471647ea302c622b497fad6e4725cb}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a30471647ea302c622b497fad6e4725cb}{nvn}}
+\begin{DoxyCompactList}\small\item\em number of vertex normals \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a316a1b7eb2d4ffc656cc11930f644989}\label{classcy_1_1_tri_mesh_a316a1b7eb2d4ffc656cc11930f644989}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_a316a1b7eb2d4ffc656cc11930f644989}{nvt}}
+\begin{DoxyCompactList}\small\item\em number of texture vertices \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ab2a9769b2436b0f4b525047955643c82}\label{classcy_1_1_tri_mesh_ab2a9769b2436b0f4b525047955643c82}} 
+unsigned int \mbox{\hyperlink{classcy_1_1_tri_mesh_ab2a9769b2436b0f4b525047955643c82}{nm}}
+\begin{DoxyCompactList}\small\item\em number of materials \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a39804674d585805e827bd162ff99f865}\label{classcy_1_1_tri_mesh_a39804674d585805e827bd162ff99f865}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_a39804674d585805e827bd162ff99f865}{bound\+Min}}
+\begin{DoxyCompactList}\small\item\em Bounding box minimum bound. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_ac1543c944d7780a7108495680690792f}\label{classcy_1_1_tri_mesh_ac1543c944d7780a7108495680690792f}} 
+\mbox{\hyperlink{cy_point_8h_aa1aa4fec5c403aa116dc50e9e94f85aa}{Point3f}} \mbox{\hyperlink{classcy_1_1_tri_mesh_ac1543c944d7780a7108495680690792f}{bound\+Max}}
+\begin{DoxyCompactList}\small\item\em Bounding box maximum bound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Load and Save methods}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a2d50f45e92935d1b5e5616cde20f9ef6}\label{classcy_1_1_tri_mesh_a2d50f45e92935d1b5e5616cde20f9ef6}} 
+bool \mbox{\hyperlink{classcy_1_1_tri_mesh_a2d50f45e92935d1b5e5616cde20f9ef6}{Load\+From\+File\+Obj}} (const char $\ast$filename, bool load\+Mtl=true, std\+::ostream $\ast$out\+Stream=\&std\+::cout)
+\begin{DoxyCompactList}\small\item\em Loads the mesh from an O\+BJ file. Automatically converts all faces to triangles. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcy_1_1_tri_mesh_a273971c7700cdef33384dc1206800974}\label{classcy_1_1_tri_mesh_a273971c7700cdef33384dc1206800974}} 
+bool \mbox{\hyperlink{classcy_1_1_tri_mesh_a273971c7700cdef33384dc1206800974}{Save\+To\+File\+Obj}} (const char $\ast$filename, std\+::ostream $\ast$out\+Stream)
+\begin{DoxyCompactList}\small\item\em Saves the mesh to an O\+BJ file with the given name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Triangular Mesh Class. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/external/cycodebase/\mbox{\hyperlink{cy_tri_mesh_8h}{cy\+Tri\+Mesh.\+h}}\end{DoxyCompactItemize}

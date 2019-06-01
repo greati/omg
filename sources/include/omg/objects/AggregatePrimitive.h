@@ -24,9 +24,7 @@ class AggregatePrimitive : public Primitive {
          * @param interaction collect information
          * @return if the object intersects with the ray
          * */
-        bool intersect(const Ray& ray, SurfaceInteraction* interaction) const override {
-            return false; 
-        }
+        virtual bool intersect(const Ray& ray, SurfaceInteraction* interaction) const = 0;
 
         /**
          * Only check if intersection occurred.
@@ -34,11 +32,13 @@ class AggregatePrimitive : public Primitive {
          * @param ray the ray
          * @return if intersection occurred
          * */
-        bool intersect(const Ray& ray) const override {
-            return false; 
+        virtual bool intersect(const Ray& ray) const = 0;
+
+        virtual const Material* get_material() const {
+            return nullptr;
         }
 
-        Bounds3 world_bound() const {}
+        Bounds3 world_bound() const = 0;
 
 };
 };

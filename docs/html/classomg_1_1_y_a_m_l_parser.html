@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -91,12 +91,48 @@ Inheritance diagram for omg::YAMLParser:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a646b059fb458cbd5b9bc3a29c1f777f4"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#a646b059fb458cbd5b9bc3a29c1f777f4">parse_text</a> (const std::string &amp;text) override</td></tr>
-<tr class="memdesc:a646b059fb458cbd5b9bc3a29c1f777f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text.  <a href="#a646b059fb458cbd5b9bc3a29c1f777f4">More...</a><br /></td></tr>
-<tr class="separator:a646b059fb458cbd5b9bc3a29c1f777f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab569d1029cec7dc2cb91eb0e08f5bc37"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#ab569d1029cec7dc2cb91eb0e08f5bc37">parse_file</a> (const std::string &amp;file_path) override</td></tr>
-<tr class="memdesc:ab569d1029cec7dc2cb91eb0e08f5bc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text from a file.  <a href="#ab569d1029cec7dc2cb91eb0e08f5bc37">More...</a><br /></td></tr>
-<tr class="separator:ab569d1029cec7dc2cb91eb0e08f5bc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625f697e850b8d027095d74f7fe65acc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#a625f697e850b8d027095d74f7fe65acc">init_from_text</a> (const std::string &amp;text) override</td></tr>
+<tr class="memdesc:a625f697e850b8d027095d74f7fe65acc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text.  <a href="#a625f697e850b8d027095d74f7fe65acc">More...</a><br /></td></tr>
+<tr class="separator:a625f697e850b8d027095d74f7fe65acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88af0bc72d0f4ce3e9e489e0b6037a53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#a88af0bc72d0f4ce3e9e489e0b6037a53">init_from_file</a> (const std::string &amp;file_path) override</td></tr>
+<tr class="memdesc:a88af0bc72d0f4ce3e9e489e0b6037a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a text from a file.  <a href="#a88af0bc72d0f4ce3e9e489e0b6037a53">More...</a><br /></td></tr>
+<tr class="separator:a88af0bc72d0f4ce3e9e489e0b6037a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b9aa0f7e9e43c0f40ae494a2f290d2"><td class="memItemLeft" align="right" valign="top"><a id="a53b9aa0f7e9e43c0f40ae494a2f290d2"></a>
+std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#a53b9aa0f7e9e43c0f40ae494a2f290d2">parse_scene</a> () override</td></tr>
+<tr class="memdesc:a53b9aa0f7e9e43c0f40ae494a2f290d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a scene. <br /></td></tr>
+<tr class="separator:a53b9aa0f7e9e43c0f40ae494a2f290d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb42aa4859c252619e26f165b9a77efd"><td class="memItemLeft" align="right" valign="top"><a id="aeb42aa4859c252619e26f165b9a77efd"></a>
+std::shared_ptr&lt; <a class="el" href="structomg_1_1_raytracer_running_settings.html">RaytracerRunningSettings</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_y_a_m_l_parser.html#aeb42aa4859c252619e26f165b9a77efd">parse_running_settings</a> () override</td></tr>
+<tr class="memdesc:aeb42aa4859c252619e26f165b9a77efd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse the running settings. <br /></td></tr>
+<tr class="separator:aeb42aa4859c252619e26f165b9a77efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd1ccd8900aad880d1f32f73d5bf56a"><td class="memTemplParams" colspan="2"><a id="a0fd1ccd8900aad880d1f32f73d5bf56a"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a0fd1ccd8900aad880d1f32f73d5bf56a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>defaulted_require</b> (const YAML::Node &amp;curr_node, const std::string &amp;node_name, const <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a> &amp;def) const</td></tr>
+<tr class="separator:a0fd1ccd8900aad880d1f32f73d5bf56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50793579e616dc6ec88a617d74080786"><td class="memTemplParams" colspan="2"><a id="a50793579e616dc6ec88a617d74080786"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a50793579e616dc6ec88a617d74080786"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_sphere.html">Sphere</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:a50793579e616dc6ec88a617d74080786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a6ffe5e8dd000873db4f9814274c80"><td class="memTemplParams" colspan="2"><a id="ab6a6ffe5e8dd000873db4f9814274c80"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ab6a6ffe5e8dd000873db4f9814274c80"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classomg_1_1_triangle.html">Triangle</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse_list</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:ab6a6ffe5e8dd000873db4f9814274c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a039cf7c78c0cfc5efec22841aea56380"><td class="memTemplParams" colspan="2"><a id="a039cf7c78c0cfc5efec22841aea56380"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a039cf7c78c0cfc5efec22841aea56380"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_primitive.html">Primitive</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:a039cf7c78c0cfc5efec22841aea56380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0baf9cfe2c38f4f347458ecb4d4939c"><td class="memTemplParams" colspan="2"><a id="ab0baf9cfe2c38f4f347458ecb4d4939c"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:ab0baf9cfe2c38f4f347458ecb4d4939c"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classomg_1_1_primitive.html">Primitive</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse_list</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:ab0baf9cfe2c38f4f347458ecb4d4939c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c72beefd1858a812f5cec59c8536d0f"><td class="memTemplParams" colspan="2"><a id="a2c72beefd1858a812f5cec59c8536d0f"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a2c72beefd1858a812f5cec59c8536d0f"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_material.html">Material</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:a2c72beefd1858a812f5cec59c8536d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8c854b90d0f732896e189f97891ed4"><td class="memTemplParams" colspan="2"><a id="a0d8c854b90d0f732896e189f97891ed4"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a0d8c854b90d0f732896e189f97891ed4"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structomg_1_1_raytracer_running_settings.html">RaytracerRunningSettings</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
+<tr class="separator:a0d8c854b90d0f732896e189f97891ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0148bff25d36e0f0a46ab52647e5ef7"><td class="memTemplParams" colspan="2"><a id="ad0148bff25d36e0f0a46ab52647e5ef7"></a>
 template&lt;&gt; </td></tr>
 <tr class="memitem:ad0148bff25d36e0f0a46ab52647e5ef7"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_background.html">Background</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
@@ -109,6 +145,14 @@ template&lt;&gt; </td></tr>
 template&lt;&gt; </td></tr>
 <tr class="memitem:aae786077463e555fc165bf237cd71835"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_camera.html">Camera</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
 <tr class="separator:aae786077463e555fc165bf237cd71835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93084f0ddcf54201b05c2afd17768437"><td class="memTemplParams" colspan="2"><a id="a93084f0ddcf54201b05c2afd17768437"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a93084f0ddcf54201b05c2afd17768437"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_integrator.html">Integrator</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;integrator_node)</td></tr>
+<tr class="separator:a93084f0ddcf54201b05c2afd17768437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d909cba439b132bcad0440079a1d436"><td class="memTemplParams" colspan="2"><a id="a9d909cba439b132bcad0440079a1d436"></a>
+template&lt;&gt; </td></tr>
+<tr class="memitem:a9d909cba439b132bcad0440079a1d436"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_light.html">Light</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;light_node)</td></tr>
+<tr class="separator:a9d909cba439b132bcad0440079a1d436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a164befb2f6725d60dd2d127651497ec9"><td class="memTemplParams" colspan="2"><a id="a164befb2f6725d60dd2d127651497ec9"></a>
 template&lt;&gt; </td></tr>
 <tr class="memitem:a164befb2f6725d60dd2d127651497ec9"><td class="memTemplItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>parse</b> (const YAML::Node &amp;node)</td></tr>
@@ -118,8 +162,8 @@ template&lt;&gt; </td></tr>
 <div class="textblock"><p>A scene parser using YAML. </p>
 <dl class="section author"><dt>Author</dt><dd>Vitor Greati </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab569d1029cec7dc2cb91eb0e08f5bc37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab569d1029cec7dc2cb91eb0e08f5bc37">&#9670;&nbsp;</a></span>parse_file()</h2>
+<a id="a88af0bc72d0f4ce3e9e489e0b6037a53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88af0bc72d0f4ce3e9e489e0b6037a53">&#9670;&nbsp;</a></span>init_from_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,7 +172,7 @@ template&lt;&gt; </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt; YAMLParser::parse_file </td>
+          <td class="memname">void YAMLParser::init_from_file </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>file_path</em></td><td>)</td>
@@ -150,12 +194,12 @@ template&lt;&gt; </td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classomg_1_1_parser.html#a327a60ea0092d0b969a3ec393248ca8f">omg::Parser</a>.</p>
+<p>Implements <a class="el" href="classomg_1_1_parser.html#aa0c44ed0f01edc2958667589d66ebe8a">omg::Parser</a>.</p>
 
 </div>
 </div>
-<a id="a646b059fb458cbd5b9bc3a29c1f777f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a646b059fb458cbd5b9bc3a29c1f777f4">&#9670;&nbsp;</a></span>parse_text()</h2>
+<a id="a625f697e850b8d027095d74f7fe65acc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625f697e850b8d027095d74f7fe65acc">&#9670;&nbsp;</a></span>init_from_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +208,7 @@ template&lt;&gt; </td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classomg_1_1_scene.html">Scene</a> &gt; YAMLParser::parse_text </td>
+          <td class="memname">void YAMLParser::init_from_text </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>text</em></td><td>)</td>
@@ -186,7 +230,7 @@ template&lt;&gt; </td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classomg_1_1_parser.html#a50199f934cb3471777cb859a7289739f">omg::Parser</a>.</p>
+<p>Implements <a class="el" href="classomg_1_1_parser.html#af47d9c929199cbf845d3150defc499f0">omg::Parser</a>.</p>
 
 </div>
 </div>

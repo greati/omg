@@ -1,0 +1,94 @@
+\hypertarget{classomg_1_1_depth_integrator}{}\section{omg\+::Depth\+Integrator Class Reference}
+\label{classomg_1_1_depth_integrator}\index{omg::DepthIntegrator@{omg::DepthIntegrator}}
+
+
+An integrator based on depth.  
+
+
+
+
+{\ttfamily \#include $<$Depth\+Integrator.\+h$>$}
+
+Inheritance diagram for omg\+::Depth\+Integrator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_depth_integrator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_depth_integrator_a8a48035369453b21bc75bebd39e5d195}\label{classomg_1_1_depth_integrator_a8a48035369453b21bc75bebd39e5d195}} 
+{\bfseries Depth\+Integrator} (const \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \&near, const \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \&far, int spp=1)
+\item 
+\mbox{\Hypertarget{classomg_1_1_depth_integrator_aa2a8505057af57cdf7c5c93b2f69b9c3}\label{classomg_1_1_depth_integrator_aa2a8505057af57cdf7c5c93b2f69b9c3}} 
+{\bfseries Depth\+Integrator} (const \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \&near, const \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \&far, float t\+Min, float t\+Max, int spp=1)
+\item 
+\mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} \mbox{\hyperlink{classomg_1_1_depth_integrator_a91ac6f83b0a56e67f754457f7d2f4365}{li}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ sampler=nullptr, int depth=0) override
+\begin{DoxyCompactList}\small\item\em Incidence radiance computation for a given ray acting on a scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_depth_integrator_aae1bb28843a58312e98c6ba2f7ed6ef1}\label{classomg_1_1_depth_integrator_aae1bb28843a58312e98c6ba2f7ed6ef1}} 
+float {\bfseries lerp} (float x, float x0, float y0, float x1, float y1) const
+\item 
+void \mbox{\hyperlink{classomg_1_1_depth_integrator_a4ef7ff8e7499862d1416eda91b5ec2f1}{preprocess}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene, \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $\ast$sampler) override
+\begin{DoxyCompactList}\small\item\em Execute after parsing the scene, to do specific implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+An integrator based on depth. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_depth_integrator_a91ac6f83b0a56e67f754457f7d2f4365}\label{classomg_1_1_depth_integrator_a91ac6f83b0a56e67f754457f7d2f4365}} 
+\index{omg::DepthIntegrator@{omg::DepthIntegrator}!li@{li}}
+\index{li@{li}!omg::DepthIntegrator@{omg::DepthIntegrator}}
+\subsubsection{\texorpdfstring{li()}{li()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a7b0e3f3dcf76f2b4758c314a41885917}{R\+G\+B\+Color}} omg\+::\+Depth\+Integrator\+::li (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$}]{sampler = {\ttfamily nullptr},  }\item[{int}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Incidence radiance computation for a given ray acting on a scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em scene} & the scene \\
+\hline
+{\em sampler} & pointer to a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_integrator_a2922583794310f6b1ff8ee121666f7a1}{omg\+::\+Integrator}}.
+
+\mbox{\Hypertarget{classomg_1_1_depth_integrator_a4ef7ff8e7499862d1416eda91b5ec2f1}\label{classomg_1_1_depth_integrator_a4ef7ff8e7499862d1416eda91b5ec2f1}} 
+\index{omg::DepthIntegrator@{omg::DepthIntegrator}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!omg::DepthIntegrator@{omg::DepthIntegrator}}
+\subsubsection{\texorpdfstring{preprocess()}{preprocess()}}
+{\footnotesize\ttfamily void omg\+::\+Depth\+Integrator\+::preprocess (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene,  }\item[{\mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $\ast$}]{sampler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute after parsing the scene, to do specific implementations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene \\
+\hline
+{\em sampler} & a sampler \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classomg_1_1_integrator_ac465a582d2dc3a795247f37f7edcdc47}{omg\+::\+Integrator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/integrators/Depth\+Integrator.\+h\end{DoxyCompactItemize}

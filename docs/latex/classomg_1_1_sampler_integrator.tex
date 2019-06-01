@@ -1,0 +1,69 @@
+\hypertarget{classomg_1_1_sampler_integrator}{}\section{omg\+::Sampler\+Integrator Class Reference}
+\label{classomg_1_1_sampler_integrator}\index{omg::SamplerIntegrator@{omg::SamplerIntegrator}}
+
+
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} based on sampling.  
+
+
+
+
+{\ttfamily \#include $<$Sampler\+Integrator.\+h$>$}
+
+Inheritance diagram for omg\+::Sampler\+Integrator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.500000cm]{classomg_1_1_sampler_integrator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_sampler_integrator_a3ee9f6dfcbddfb06ba3888d52cfeefe1}\label{classomg_1_1_sampler_integrator_a3ee9f6dfcbddfb06ba3888d52cfeefe1}} 
+{\bfseries Sampler\+Integrator} (int spp=1)
+\item 
+void \mbox{\hyperlink{classomg_1_1_sampler_integrator_a4b147659d3227e8dd8a38e7518ab5d72}{render}} (const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&scene) override
+\begin{DoxyCompactList}\small\item\em Render a given scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_sampler_integrator_af005c6bd4439a052b6cd61532e5f52aa}\label{classomg_1_1_sampler_integrator_af005c6bd4439a052b6cd61532e5f52aa}} 
+int {\bfseries \+\_\+spp}
+\item 
+\mbox{\Hypertarget{classomg_1_1_sampler_integrator_a691d281396ff8f004817cc22f5638e94}\label{classomg_1_1_sampler_integrator_a691d281396ff8f004817cc22f5638e94}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sampler}{Sampler}} $>$ \mbox{\hyperlink{classomg_1_1_sampler_integrator_a691d281396ff8f004817cc22f5638e94}{\+\_\+sampler}}
+\begin{DoxyCompactList}\small\item\em samples per pixel \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} based on sampling. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_sampler_integrator_a4b147659d3227e8dd8a38e7518ab5d72}\label{classomg_1_1_sampler_integrator_a4b147659d3227e8dd8a38e7518ab5d72}} 
+\index{omg::SamplerIntegrator@{omg::SamplerIntegrator}!render@{render}}
+\index{render@{render}!omg::SamplerIntegrator@{omg::SamplerIntegrator}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void omg\+::\+Sampler\+Integrator\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_scene}{Scene}} \&}]{scene }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Render a given scene. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & the scene to be rendered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_integrator_a9353c1a5abd1396d7c1fcd4f3e250998}{omg\+::\+Integrator}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/integrators/Sampler\+Integrator.\+h\end{DoxyCompactItemize}

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">0.9.0</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -68,7 +68,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classomg_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -86,74 +85,27 @@ Inheritance diagram for omg::Object:</div>
  <div class="center">
   <img src="classomg_1_1_object.png" usemap="#omg::Object_map" alt=""/>
   <map id="omg::Object_map" name="omg::Object_map">
-<area href="classomg_1_1_sphere.html" title="Represents a sphere." alt="omg::Sphere" shape="rect" coords="0,56,82,80"/>
+<area href="classomg_1_1_sphere.html" title="Represents a sphere." alt="omg::Sphere" shape="rect" coords="0,56,87,80"/>
+<area href="classomg_1_1_triangle.html" title="Represents a triangle in a mesh." alt="omg::Triangle" shape="rect" coords="97,56,184,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structomg_1_1_object_1_1_hit_record.html">HitRecord</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data regarding object hits by some ray.  <a href="structomg_1_1_object_1_1_hit_record.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa51d05f4952f3645dc88d5bcc52fed43"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_object.html#aa51d05f4952f3645dc88d5bcc52fed43">intersect</a> (<a class="el" href="classomg_1_1_ray.html">Ray</a> ray, <a class="el" href="structomg_1_1_object_1_1_hit_record.html">Object::HitRecord</a> &amp;hit_record)=0</td></tr>
-<tr class="memdesc:aa51d05f4952f3645dc88d5bcc52fed43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the object intersects with a ray.  <a href="#aa51d05f4952f3645dc88d5bcc52fed43">More...</a><br /></td></tr>
-<tr class="separator:aa51d05f4952f3645dc88d5bcc52fed43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56354058785d04afff686ae41e144970"><td class="memItemLeft" align="right" valign="top"><a id="a56354058785d04afff686ae41e144970"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record)=0</td></tr>
+<tr class="separator:a56354058785d04afff686ae41e144970"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bea9275afdd17c67de345043bc0d3fc"><td class="memItemLeft" align="right" valign="top"><a id="a6bea9275afdd17c67de345043bc0d3fc"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray)=0</td></tr>
+<tr class="separator:a6bea9275afdd17c67de345043bc0d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571b05c10d7fb654449d68dda18b65e2"><td class="memItemLeft" align="right" valign="top"><a id="a571b05c10d7fb654449d68dda18b65e2"></a>
+virtual <a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const =0</td></tr>
+<tr class="separator:a571b05c10d7fb654449d68dda18b65e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an object. </p>
 <dl class="section author"><dt>Author</dt><dd>Vitor Greati </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa51d05f4952f3645dc88d5bcc52fed43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa51d05f4952f3645dc88d5bcc52fed43">&#9670;&nbsp;</a></span>intersect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool omg::Object::intersect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classomg_1_1_ray.html">Ray</a>&#160;</td>
-          <td class="paramname"><em>ray</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structomg_1_1_object_1_1_hit_record.html">Object::HitRecord</a> &amp;&#160;</td>
-          <td class="paramname"><em>hit_record</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines if the object intersects with a ray. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ray</td><td>the ray </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>if the object intersects with the ray </dd></dl>
-
-<p>Implemented in <a class="el" href="classomg_1_1_sphere.html#af1c6cd10afe11eeb3c9d6c42722ab039">omg::Sphere</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/vitorgreati/git-repos/omg/sources/include/omg/objects/<a class="el" href="_object_8h_source.html">Object.h</a></li>
 </ul>
 </div><!-- contents -->

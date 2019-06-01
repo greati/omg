@@ -18,10 +18,37 @@ Inheritance diagram for omg\+::Y\+A\+M\+L\+Parser\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}{parse\+\_\+text}} (const std\+::string \&text) override
+void \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_a625f697e850b8d027095d74f7fe65acc}{init\+\_\+from\+\_\+text}} (const std\+::string \&text) override
 \begin{DoxyCompactList}\small\item\em Parse a text. \end{DoxyCompactList}\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}{parse\+\_\+file}} (const std\+::string \&file\+\_\+path) override
+void \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_a88af0bc72d0f4ce3e9e489e0b6037a53}{init\+\_\+from\+\_\+file}} (const std\+::string \&file\+\_\+path) override
 \begin{DoxyCompactList}\small\item\em Parse a text from a file. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a53b9aa0f7e9e43c0f40ae494a2f290d2}\label{classomg_1_1_y_a_m_l_parser_a53b9aa0f7e9e43c0f40ae494a2f290d2}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_a53b9aa0f7e9e43c0f40ae494a2f290d2}{parse\+\_\+scene}} () override
+\begin{DoxyCompactList}\small\item\em Parse a scene. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_aeb42aa4859c252619e26f165b9a77efd}\label{classomg_1_1_y_a_m_l_parser_aeb42aa4859c252619e26f165b9a77efd}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structomg_1_1_raytracer_running_settings}{Raytracer\+Running\+Settings}} $>$ \mbox{\hyperlink{classomg_1_1_y_a_m_l_parser_aeb42aa4859c252619e26f165b9a77efd}{parse\+\_\+running\+\_\+settings}} () override
+\begin{DoxyCompactList}\small\item\em Parse the running settings. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a0fd1ccd8900aad880d1f32f73d5bf56a}\label{classomg_1_1_y_a_m_l_parser_a0fd1ccd8900aad880d1f32f73d5bf56a}} 
+{\footnotesize template$<$$>$ }\\\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} {\bfseries defaulted\+\_\+require} (const Y\+A\+M\+L\+::\+Node \&curr\+\_\+node, const std\+::string \&node\+\_\+name, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&def) const
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a50793579e616dc6ec88a617d74080786}\label{classomg_1_1_y_a_m_l_parser_a50793579e616dc6ec88a617d74080786}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_sphere}{Sphere}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ab6a6ffe5e8dd000873db4f9814274c80}\label{classomg_1_1_y_a_m_l_parser_ab6a6ffe5e8dd000873db4f9814274c80}} 
+{\footnotesize template$<$$>$ }\\std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_triangle}{Triangle}} $>$ $>$ {\bfseries parse\+\_\+list} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a039cf7c78c0cfc5efec22841aea56380}\label{classomg_1_1_y_a_m_l_parser_a039cf7c78c0cfc5efec22841aea56380}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ab0baf9cfe2c38f4f347458ecb4d4939c}\label{classomg_1_1_y_a_m_l_parser_ab0baf9cfe2c38f4f347458ecb4d4939c}} 
+{\footnotesize template$<$$>$ }\\std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $>$ $>$ {\bfseries parse\+\_\+list} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a2c72beefd1858a812f5cec59c8536d0f}\label{classomg_1_1_y_a_m_l_parser_a2c72beefd1858a812f5cec59c8536d0f}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_material}{Material}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a0d8c854b90d0f732896e189f97891ed4}\label{classomg_1_1_y_a_m_l_parser_a0d8c854b90d0f732896e189f97891ed4}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{structomg_1_1_raytracer_running_settings}{Raytracer\+Running\+Settings}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
 \mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ad0148bff25d36e0f0a46ab52647e5ef7}\label{classomg_1_1_y_a_m_l_parser_ad0148bff25d36e0f0a46ab52647e5ef7}} 
 {\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_background}{Background}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
 \item 
@@ -30,6 +57,12 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ \mbox
 \item 
 \mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_aae786077463e555fc165bf237cd71835}\label{classomg_1_1_y_a_m_l_parser_aae786077463e555fc165bf237cd71835}} 
 {\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_camera}{Camera}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a93084f0ddcf54201b05c2afd17768437}\label{classomg_1_1_y_a_m_l_parser_a93084f0ddcf54201b05c2afd17768437}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_integrator}{Integrator}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&integrator\+\_\+node)
+\item 
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a9d909cba439b132bcad0440079a1d436}\label{classomg_1_1_y_a_m_l_parser_a9d909cba439b132bcad0440079a1d436}} 
+{\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_light}{Light}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&light\+\_\+node)
 \item 
 \mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a164befb2f6725d60dd2d127651497ec9}\label{classomg_1_1_y_a_m_l_parser_a164befb2f6725d60dd2d127651497ec9}} 
 {\footnotesize template$<$$>$ }\\std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ {\bfseries parse} (const Y\+A\+M\+L\+::\+Node \&node)
@@ -45,11 +78,11 @@ Vitor Greati
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}\label{classomg_1_1_y_a_m_l_parser_ab569d1029cec7dc2cb91eb0e08f5bc37}} 
-\index{omg::YAMLParser@{omg::YAMLParser}!parse\_file@{parse\_file}}
-\index{parse\_file@{parse\_file}!omg::YAMLParser@{omg::YAMLParser}}
-\subsubsection{\texorpdfstring{parse\_file()}{parse\_file()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a88af0bc72d0f4ce3e9e489e0b6037a53}\label{classomg_1_1_y_a_m_l_parser_a88af0bc72d0f4ce3e9e489e0b6037a53}} 
+\index{omg::YAMLParser@{omg::YAMLParser}!init\_from\_file@{init\_from\_file}}
+\index{init\_from\_file@{init\_from\_file}!omg::YAMLParser@{omg::YAMLParser}}
+\subsubsection{\texorpdfstring{init\_from\_file()}{init\_from\_file()}}
+{\footnotesize\ttfamily void Y\+A\+M\+L\+Parser\+::init\+\_\+from\+\_\+file (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -62,13 +95,13 @@ Parse a text from a file.
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{classomg_1_1_parser_a327a60ea0092d0b969a3ec393248ca8f}{omg\+::\+Parser}}.
+Implements \mbox{\hyperlink{classomg_1_1_parser_aa0c44ed0f01edc2958667589d66ebe8a}{omg\+::\+Parser}}.
 
-\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}\label{classomg_1_1_y_a_m_l_parser_a646b059fb458cbd5b9bc3a29c1f777f4}} 
-\index{omg::YAMLParser@{omg::YAMLParser}!parse\_text@{parse\_text}}
-\index{parse\_text@{parse\_text}!omg::YAMLParser@{omg::YAMLParser}}
-\subsubsection{\texorpdfstring{parse\_text()}{parse\_text()}}
-{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_scene}{Scene}} $>$ Y\+A\+M\+L\+Parser\+::parse\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classomg_1_1_y_a_m_l_parser_a625f697e850b8d027095d74f7fe65acc}\label{classomg_1_1_y_a_m_l_parser_a625f697e850b8d027095d74f7fe65acc}} 
+\index{omg::YAMLParser@{omg::YAMLParser}!init\_from\_text@{init\_from\_text}}
+\index{init\_from\_text@{init\_from\_text}!omg::YAMLParser@{omg::YAMLParser}}
+\subsubsection{\texorpdfstring{init\_from\_text()}{init\_from\_text()}}
+{\footnotesize\ttfamily void Y\+A\+M\+L\+Parser\+::init\+\_\+from\+\_\+text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -81,7 +114,7 @@ Parse a text.
 \end{DoxyParams}
 
 
-Implements \mbox{\hyperlink{classomg_1_1_parser_a50199f934cb3471777cb859a7289739f}{omg\+::\+Parser}}.
+Implements \mbox{\hyperlink{classomg_1_1_parser_af47d9c929199cbf845d3150defc499f0}{omg\+::\+Parser}}.
 
 
 
