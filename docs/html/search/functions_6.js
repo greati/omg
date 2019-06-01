@@ -1,7 +1,7 @@
 var searchData=
 [
   ['generate_5fray',['generate_ray',['../classomg_1_1_camera.html#aca08c044082cb3573d606a8c851f52fe',1,'omg::Camera::generate_ray()'],['../classomg_1_1_ortho_camera.html#af5dba96ad9cdf91121093d0c9d72e57f',1,'omg::OrthoCamera::generate_ray()'],['../classomg_1_1_perspective_camera.html#a6d849c2b0768f12aed7b50d3ce87afeb',1,'omg::PerspectiveCamera::generate_ray()']]],
-  ['get',['get',['../class_configs.html#a6e7f850ce09a2298daf3634bfc0aba35',1,'Configs']]],
+  ['get',['get',['../class_configs.html#a6e7f850ce09a2298daf3634bfc0aba35',1,'Configs::get()'],['../classcy_1_1_point.html#aff929054b35f72e1aeee9ec1c7155e2f',1,'cy::Point::Get()'],['../classcy_1_1_point2.html#a2bc886ab0ae873d9a05ffd62edf3f75e',1,'cy::Point2::Get()'],['../classcy_1_1_point3.html#a1b4d35472c5d034956009d4793593dca',1,'cy::Point3::Get()'],['../classcy_1_1_point4.html#a154f859d2d39f3fa8c3cba1d63ff9761',1,'cy::Point4::Get()']]],
   ['get_5f1d',['get_1d',['../classomg_1_1_sampler.html#ab577767afd5ef449d815493b81d8d7e0',1,'omg::Sampler']]],
   ['get_5f1d_5farray',['get_1d_array',['../classomg_1_1_sampler.html#aeb4b5fa3758c26f2fc3307ce6f6e15f3',1,'omg::Sampler']]],
   ['get_5f2d',['get_2d',['../classomg_1_1_sampler.html#a75c8c5ca9751d3c3c5ac025f3713bda0',1,'omg::Sampler']]],
@@ -17,5 +17,14 @@ var searchData=
   ['get_5fmaterial',['get_material',['../classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21',1,'omg::AggregatePrimitive::get_material()'],['../classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a',1,'omg::GeometricPrimitive::get_material()'],['../classomg_1_1_primitive.html#ad9cb98c6f74581d53cadf800fc506333',1,'omg::Primitive::get_material()']]],
   ['get_5forigin',['get_origin',['../classomg_1_1_ray.html#a3b2c3ade0173b74f72e7bb4e72363cf3',1,'omg::Ray']]],
   ['get_5fortho_5fbasis',['get_ortho_basis',['../classomg_1_1_camera.html#a7bc7168312ae9923904489e792ad0526',1,'omg::Camera']]],
-  ['get_5fwidth',['get_width',['../classomg_1_1_camera.html#a9d27ce6b9428503ad27e0247deb65bba',1,'omg::Camera']]]
+  ['get_5fwidth',['get_width',['../classomg_1_1_camera.html#a9d27ce6b9428503ad27e0247deb65bba',1,'omg::Camera']]],
+  ['getboundmax',['GetBoundMax',['../classcy_1_1_tri_mesh.html#a617c04a6de649e0430be48b9af0c7ae2',1,'cy::TriMesh']]],
+  ['getboundmin',['GetBoundMin',['../classcy_1_1_tri_mesh.html#afd6a879b2a76df71f25c78a96bca6630',1,'cy::TriMesh']]],
+  ['getmaterialfacecount',['GetMaterialFaceCount',['../classcy_1_1_tri_mesh.html#a9fc8ef7872ac87aea372efc7b32a0e5d',1,'cy::TriMesh']]],
+  ['getmaterialfirstface',['GetMaterialFirstFace',['../classcy_1_1_tri_mesh.html#aff81f71434952539e03bd911bd7ef7ed',1,'cy::TriMesh']]],
+  ['getmaterialindex',['GetMaterialIndex',['../classcy_1_1_tri_mesh.html#a17bcc0d0e03e86085438103caefd1213',1,'cy::TriMesh']]],
+  ['getnormal',['GetNormal',['../classcy_1_1_tri_mesh.html#afa937fd947f1b58ebad1b0f2d6386894',1,'cy::TriMesh']]],
+  ['getnormalized',['GetNormalized',['../classcy_1_1_point.html#abdf04ff4cdebd120502fc84aafd594fd',1,'cy::Point::GetNormalized()'],['../classcy_1_1_point2.html#ac2859fd8c141324e4cb92440eb73b5f8',1,'cy::Point2::GetNormalized()'],['../classcy_1_1_point3.html#ae925ffd3c67b85a005f757d9e18ac906',1,'cy::Point3::GetNormalized()'],['../classcy_1_1_point4.html#a02c375e3506cd45258f9857e32fa3bef',1,'cy::Point4::GetNormalized()']]],
+  ['getpoint',['GetPoint',['../classcy_1_1_tri_mesh.html#a7cdf9b7a24c70c3f838269ef49f608e5',1,'cy::TriMesh']]],
+  ['gettexcoord',['GetTexCoord',['../classcy_1_1_tri_mesh.html#a3f0d11b98c3f5a181676feed26da0b7c',1,'cy::TriMesh']]]
 ];

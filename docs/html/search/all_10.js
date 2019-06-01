@@ -1,23 +1,12 @@
 var searchData=
 [
-  ['sample_5fli',['sample_li',['../classomg_1_1_ambient_light.html#a83502a1ccd9b77845d26906e6eea94e6',1,'omg::AmbientLight::sample_li()'],['../classomg_1_1_directional_light.html#a565733b42c77973b765d7afea14461f5',1,'omg::DirectionalLight::sample_li()'],['../classomg_1_1_light.html#a046b7db0856d786f171979189df68037',1,'omg::Light::sample_li()'],['../classomg_1_1_point_light.html#aa77747811ae675d0f6140ca75ecbebda',1,'omg::PointLight::sample_li()'],['../classomg_1_1_spot_light.html#abac464ecd5e2799577c3d01983b87ff6',1,'omg::SpotLight::sample_li()']]],
-  ['sampler',['Sampler',['../classomg_1_1_sampler.html',1,'omg::Sampler'],['../classomg_1_1_sampler.html#a6cf599ab70a735b2a352b20f35a0e2eb',1,'omg::Sampler::Sampler()']]],
-  ['samplerintegrator',['SamplerIntegrator',['../classomg_1_1_sampler_integrator.html',1,'omg']]],
-  ['scene',['Scene',['../classomg_1_1_scene.html',1,'omg::Scene'],['../classomg_1_1_scene.html#af5d02c499b861b1293e0d6232dabd2c8',1,'omg::Scene::Scene()'],['../classomg_1_1_scene.html#aa96c0cb9a873edb3eefb0fd344ce524a',1,'omg::Scene::Scene(std::shared_ptr&lt; Background &gt; background, std::shared_ptr&lt; Camera &gt; camera, const decltype(_aggregate)&amp;aggregate, const decltype(_lights)&amp;lights)']]],
-  ['scenenode',['SceneNode',['../classomg_1_1_scene_node.html',1,'omg']]],
-  ['set',['set',['../classomg_1_1_buffer.html#a8b3d3ee363be87e1051a157a2f3abed6',1,'omg::Buffer::set(int row, int col, const Value &amp;v)'],['../classomg_1_1_buffer.html#a80204f5078fb0445eb21e586ec3644c3',1,'omg::Buffer::set(const Cartesian &amp;cartesian, const Value &amp;v)']]],
-  ['set_5fbackground',['set_background',['../classomg_1_1_scene.html#a66a4d47f99b8cf56d0ffeec665400d56',1,'omg::Scene']]],
-  ['set_5fcamera',['set_camera',['../classomg_1_1_scene.html#a07875fddcc199bc2f70b1c20fd294af4',1,'omg::Scene']]],
-  ['set_5ffilm',['set_film',['../classomg_1_1_camera.html#a7ad7dd69948685bc74286be8b80968cc',1,'omg::Camera']]],
-  ['set_5fheight',['set_height',['../classomg_1_1_camera.html#a75d3baca3bae25365e5d3dddc005676e',1,'omg::Camera']]],
-  ['set_5fplane_5fnormal',['set_plane_normal',['../classomg_1_1_camera.html#a5983a689364dd5c9701e157b4620c2cd',1,'omg::Camera']]],
-  ['set_5fsample_5fnumber',['set_sample_number',['../classomg_1_1_sampler.html#aceffa7bf3f74a77dafb12192b0aaf232',1,'omg::Sampler']]],
-  ['set_5fwidth',['set_width',['../classomg_1_1_camera.html#a3ef1ff0d4ca0deb6b32b5e08d7dcb159',1,'omg::Camera']]],
-  ['solidbackground',['SolidBackground',['../classomg_1_1_solid_background.html',1,'omg']]],
-  ['sphere',['Sphere',['../classomg_1_1_sphere.html',1,'omg::Sphere'],['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere()']]],
-  ['spotlight',['SpotLight',['../classomg_1_1_spot_light.html',1,'omg']]],
-  ['standardlogger',['StandardLogger',['../class_standard_logger.html',1,'StandardLogger'],['../class_standard_logger.html#aa037227d1766af8b649e46849d466d8c',1,'StandardLogger::StandardLogger()']]],
-  ['start_5fnext_5fsample',['start_next_sample',['../classomg_1_1_sampler.html#ae2b33610cc24dced31dd8d15b4778cba',1,'omg::Sampler']]],
-  ['start_5fpixel',['start_pixel',['../classomg_1_1_sampler.html#aa4a2172276ec0bec3e717b7e035872d5',1,'omg::Sampler']]],
-  ['surfaceinteraction',['SurfaceInteraction',['../classomg_1_1_surface_interaction.html',1,'omg::SurfaceInteraction'],['../classomg_1_1_surface_interaction.html#aa82edbc25acb336efceaf183d8269341',1,'omg::SurfaceInteraction::SurfaceInteraction()']]]
+  ['ray',['Ray',['../classomg_1_1_ray.html',1,'omg::Ray'],['../classomg_1_1_ray.html#a7418b3be2225de5510c63781ee5ad3f1',1,'omg::Ray::Ray()']]],
+  ['raytracerengine',['RaytracerEngine',['../classomg_1_1_raytracer_engine.html',1,'omg']]],
+  ['raytracerrunningsettings',['RaytracerRunningSettings',['../structomg_1_1_raytracer_running_settings.html',1,'omg']]],
+  ['raytracervisitor',['RaytracerVisitor',['../classomg_1_1_raytracer_visitor.html',1,'omg']]],
+  ['render',['render',['../classomg_1_1_integrator.html#a9353c1a5abd1396d7c1fcd4f3e250998',1,'omg::Integrator::render()'],['../classomg_1_1_sampler_integrator.html#a4b147659d3227e8dd8a38e7518ab5d72',1,'omg::SamplerIntegrator::render()']]],
+  ['reset',['reset',['../classtao_1_1deprecated_1_1_mat.html#a77c9519c2b0c652d12fedbe5adc2eaf7',1,'tao::deprecated::Mat::reset()'],['../classtao_1_1_mat.html#a6f501dafd8e5fec2d40d036fe8faeb47',1,'tao::Mat::reset()'],['../classomg_1_1_buffer.html#a674041ad7b285bf2418b75b7653ded36',1,'omg::Buffer::reset()']]],
+  ['rgbcolor',['RGBColor',['../namespaceomg.html#a7b0e3f3dcf76f2b4758c314a41885917',1,'omg']]],
+  ['row',['Row',['../classtao_1_1deprecated_1_1_row.html',1,'tao::deprecated::Row&lt; T &gt;'],['../classtao_1_1deprecated_1_1_row.html#a4666537e6b41ef3af827ccbe672d25a2',1,'tao::deprecated::Row::Row(const std::initializer_list&lt; T &gt; &amp;components)'],['../classtao_1_1deprecated_1_1_row.html#a7f28f0351cb93664f791ede85ac2568d',1,'tao::deprecated::Row::Row(const tao::deprecated::Mat&lt; T &gt; &amp;rowmat)']]],
+  ['rows',['rows',['../classtao_1_1deprecated_1_1_mat.html#aefbe18686fd37ac1d5525196649282c8',1,'tao::deprecated::Mat']]]
 ];

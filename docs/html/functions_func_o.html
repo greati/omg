@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">1.1.1</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -66,6 +66,12 @@ $(function() {
 &#160;
 
 <h3><a id="index_o"></a>- o -</h3><ul>
+<li>operator %()
+: <a class="el" href="classcy_1_1_point2.html#a1ecee5a5fb039327de2fbe100750c4b3">cy::Point2&lt; TYPE &gt;</a>
+, <a class="el" href="classcy_1_1_point3.html#a94e2fc1ec478d0e120fe9b623a7efd41">cy::Point3&lt; TYPE &gt;</a>
+, <a class="el" href="classcy_1_1_point4.html#a6df61c3138fd261c21512a75b3d22492">cy::Point4&lt; TYPE &gt;</a>
+, <a class="el" href="classcy_1_1_point.html#a78e5fde0ddbbc3bd107e427b900cb0d4">cy::Point&lt; TYPE, N &gt;</a>
+</li>
 <li>operator *()
 : <a class="el" href="classtao_1_1deprecated_1_1_col.html#ac84032af63de62d7a14fe6c1e85c8251">tao::deprecated::Col&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a2dc34699cf25a6097dc7cb8f556a7d9e">tao::deprecated::Mat&lt; T &gt;</a>
@@ -73,16 +79,23 @@ $(function() {
 , <a class="el" href="classtao_1_1_mat.html#a9b10422fcba8efcdf1965ebbc9134984">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
 </li>
 <li>operator *=()
-: <a class="el" href="classtao_1_1deprecated_1_1_col.html#a8074f1bab1ce2042f77de21c6a21867d">tao::deprecated::Col&lt; T &gt;</a>
+: <a class="el" href="classtao_1_1deprecated_1_1_col.html#a2c6cb515a46f76797dffdac251f4e3fa">tao::deprecated::Col&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a83be68d91111675cc9ba60dd85cb173a">tao::deprecated::Mat&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_row.html#aa4180f95e280e3dae3153230169f264f">tao::deprecated::Row&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1_mat.html#ae684c7c3b2ccd9fc04b96170268a1af5">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
+</li>
+<li>operator ^()
+: <a class="el" href="classcy_1_1_point2.html#a2074a70132528c486ad4420ae74e52dd">cy::Point2&lt; TYPE &gt;</a>
+, <a class="el" href="classcy_1_1_point3.html#a8d79ee2ef4847812e02b078b364ba37a">cy::Point3&lt; TYPE &gt;</a>
+</li>
+<li>operator const char *()
+: <a class="el" href="structcy_1_1_tri_mesh_1_1_str.html#ad65b36c6506c55cf3c95d650e26802e5">cy::TriMesh::Str</a>
 </li>
 <li>operator()()
 : <a class="el" href="classomg_1_1_buffer.html#ae9b4a3c2c3357ca29b1b1847c303b1f7">omg::Buffer&lt; N, StoredType &gt;</a>
 , <a class="el" href="classomg_1_1_ray.html#a841e085c48864a211faf98e3f529d567">omg::Ray</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_col.html#a91cd4f8b512f2b982183ffca98b09a4e">tao::deprecated::Col&lt; T &gt;</a>
-, <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a9262e6fd8ccf2e3348a36155ade52331">tao::deprecated::Mat&lt; T &gt;</a>
+, <a class="el" href="classtao_1_1deprecated_1_1_mat.html#ae6836422348c15929bbe0ee727077db4">tao::deprecated::Mat&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_row.html#abf8099cac43814ff7407d7e3030fbce6">tao::deprecated::Row&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1_mat.html#a57eab1bb6cced77617322c10e5af1d21">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
 </li>
@@ -96,7 +109,7 @@ $(function() {
 </li>
 <li>operator-()
 : <a class="el" href="classtao_1_1deprecated_1_1_col.html#a8123b7620282f28f271b7e723738a1dd">tao::deprecated::Col&lt; T &gt;</a>
-, <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a1c7c0fe3e4ea42e4b96f3571ba29fef4">tao::deprecated::Mat&lt; T &gt;</a>
+, <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a7a015cf22c258251c83fa028b34ded1e">tao::deprecated::Mat&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1_mat.html#a63968580e28124e87e38244aa29263e5">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
 </li>
 <li>operator-=()
@@ -105,16 +118,18 @@ $(function() {
 </li>
 <li>operator/()
 : <a class="el" href="classtao_1_1deprecated_1_1_mat.html#af0e5743c7b40425e732d7400b0da3819">tao::deprecated::Mat&lt; T &gt;</a>
-, <a class="el" href="classtao_1_1_mat.html#ac7fd637d3e6f33bfd0de2e906a6d2501">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
+, <a class="el" href="classtao_1_1_mat.html#accb7566993c45504e983484ae0426071">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
 </li>
 <li>operator/=()
-: <a class="el" href="classtao_1_1deprecated_1_1_col.html#a0d3991ffc0e7f3859bfa19cb2e125062">tao::deprecated::Col&lt; T &gt;</a>
+: <a class="el" href="classtao_1_1deprecated_1_1_col.html#a7efce49157e7566d092dfe665dfaefd7">tao::deprecated::Col&lt; T &gt;</a>
 , <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a0f7a98577afc930a74bfd5ee35553eca">tao::deprecated::Mat&lt; T &gt;</a>
-, <a class="el" href="classtao_1_1deprecated_1_1_row.html#af3e824e781b2c81ebbf1dd8739dc3c98">tao::deprecated::Row&lt; T &gt;</a>
-, <a class="el" href="classtao_1_1_mat.html#a93efaf5ad6559b2a8a847b8ce3efc6b0">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
+, <a class="el" href="classtao_1_1deprecated_1_1_row.html#ab242e3d56534a00c5942c35a4770c79f">tao::deprecated::Row&lt; T &gt;</a>
+, <a class="el" href="classtao_1_1_mat.html#aaf383a5fdb98d14de8beca8da5415175">tao::Mat&lt; T, NumberRows, NumberCols &gt;</a>
 </li>
 <li>operator=()
-: <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a67db37627eca2a32f98d4417a70847a1">tao::deprecated::Mat&lt; T &gt;</a>
+: <a class="el" href="classcy_1_1_tri_mesh.html#aa6cccc2f90b45ee0bceae7e8c0a4b56e">cy::TriMesh</a>
+, <a class="el" href="structcy_1_1_tri_mesh_1_1_str.html#a89bd29b7c6c1152c55125fd5b60d7053">cy::TriMesh::Str</a>
+, <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a67db37627eca2a32f98d4417a70847a1">tao::deprecated::Mat&lt; T &gt;</a>
 </li>
 <li>operator==()
 : <a class="el" href="classtao_1_1deprecated_1_1_mat.html#a4257e6245d857e7557401dc36aab084f">tao::deprecated::Mat&lt; T &gt;</a>

@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">1.1.1</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -92,27 +92,30 @@ Inheritance diagram for omg::Triangle:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a64dc77293b948694a2004381dd085fbc"><td class="memItemLeft" align="right" valign="top"><a id="a64dc77293b948694a2004381dd085fbc"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Triangle</b> (bool bfc, const std::shared_ptr&lt; <a class="el" href="structomg_1_1_triangle_mesh.html">TriangleMesh</a> &gt; &amp;mesh, int tri_number)</td></tr>
-<tr class="separator:a64dc77293b948694a2004381dd085fbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf8c1867f7cf9b0e9610b94a0a96f76"><td class="memItemLeft" align="right" valign="top"><a id="acdf8c1867f7cf9b0e9610b94a0a96f76"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Triangle</b> (bool bfc, const std::shared_ptr&lt; <a class="el" href="structomg_1_1_triangle_mesh.html">TriangleMesh</a> &gt; &amp;mesh, int tri_number, bool clockwise=false)</td></tr>
+<tr class="separator:acdf8c1867f7cf9b0e9610b94a0a96f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad22556418d61acfe7aa67d3bb0a5cb40"><td class="memItemLeft" align="right" valign="top"><a id="ad22556418d61acfe7aa67d3bb0a5cb40"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record) override</td></tr>
 <tr class="separator:ad22556418d61acfe7aa67d3bb0a5cb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f269b31b840a553da91c5085fd10542"><td class="memItemLeft" align="right" valign="top"><a id="a4f269b31b840a553da91c5085fd10542"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray) override</td></tr>
 <tr class="separator:a4f269b31b840a553da91c5085fd10542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff6ada0dec320d892e906860fcc02409"><td class="memItemLeft" align="right" valign="top"><a id="aff6ada0dec320d892e906860fcc02409"></a>
-std::tuple&lt; const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertices</b> () const</td></tr>
-<tr class="separator:aff6ada0dec320d892e906860fcc02409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dd65bc222d4ca0cc14d99d8165e0cd"><td class="memItemLeft" align="right" valign="top"><a id="a20dd65bc222d4ca0cc14d99d8165e0cd"></a>
+std::tuple&lt; <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a>, <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a>, <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertices</b> () const</td></tr>
+<tr class="separator:a20dd65bc222d4ca0cc14d99d8165e0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b4f9d9508f0f87d9cd214cc27c74f6"><td class="memItemLeft" align="right" valign="top"><a id="a84b4f9d9508f0f87d9cd214cc27c74f6"></a>
+std::tuple&lt; <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a>, <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a>, <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>normals</b> () const</td></tr>
+<tr class="separator:a84b4f9d9508f0f87d9cd214cc27c74f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fcdf7ff7dfca3b2f03c8585fc14ebad"><td class="memItemLeft" align="right" valign="top"><a id="a4fcdf7ff7dfca3b2f03c8585fc14ebad"></a>
 <a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const override</td></tr>
 <tr class="separator:a4fcdf7ff7dfca3b2f03c8585fc14ebad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:afe024c094d76cc1047af285babdf5873"><td class="memItemLeft" align="right" valign="top"><a id="afe024c094d76cc1047af285babdf5873"></a>
-static std::vector&lt; std::shared_ptr&lt; <a class="el" href="classomg_1_1_triangle.html">Triangle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>create_triangle_mesh</b> (bool bfc, int n_triangles, const int *indices, int n_vertices, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> *ps, const <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a> *ns, const <a class="el" href="namespaceomg.html#a18e42fb7bbc4159e9137145b866ec578">Point2</a> *uvs)</td></tr>
-<tr class="separator:afe024c094d76cc1047af285babdf5873"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add80a128602d2be0f1fda612725b633c"><td class="memItemLeft" align="right" valign="top"><a id="add80a128602d2be0f1fda612725b633c"></a>
+static std::vector&lt; std::shared_ptr&lt; <a class="el" href="classomg_1_1_triangle.html">Triangle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>create_triangle_mesh</b> (bool bfc, int n_triangles, const int *indices, int n_vertices, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> *ps, const <a class="el" href="namespaceomg.html#a45a9482677fee9933ff369b49894e316">Vec3</a> *ns, const <a class="el" href="namespaceomg.html#a18e42fb7bbc4159e9137145b866ec578">Point2</a> *uvs, bool compute_normals=false, bool clockwise=false)</td></tr>
+<tr class="separator:add80a128602d2be0f1fda612725b633c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a triangle in a mesh. </p>

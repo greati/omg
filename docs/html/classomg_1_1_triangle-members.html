@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">1.1.1</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -74,13 +74,14 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>, including all inherited members.</p>
 <table class="directory">
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>create_triangle_mesh</b>(bool bfc, int n_triangles, const int *indices, int n_vertices, const Point3 *ps, const Vec3 *ns, const Point2 *uvs) (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>create_triangle_mesh</b>(bool bfc, int n_triangles, const int *indices, int n_vertices, const Point3 *ps, const Vec3 *ns, const Point2 *uvs, bool compute_normals=false, bool clockwise=false) (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">static</span></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>intersect</b>(const Ray &amp;ray, float *tHit, SurfaceInteraction *hit_record) override (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>intersect</b>(const Ray &amp;ray) override (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>Object</b>() (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Triangle</b>(bool bfc, const std::shared_ptr&lt; TriangleMesh &gt; &amp;mesh, int tri_number) (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>vertices</b>() const (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>world_bound</b>() const override (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>normals</b>() const (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Object</b>() (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Triangle</b>(bool bfc, const std::shared_ptr&lt; TriangleMesh &gt; &amp;mesh, int tri_number, bool clockwise=false) (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>vertices</b>() const (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>world_bound</b>() const override (defined in <a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a>)</td><td class="entry"><a class="el" href="classomg_1_1_triangle.html">omg::Triangle</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
