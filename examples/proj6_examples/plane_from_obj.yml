@@ -21,7 +21,7 @@ raytracer:
         objects:
             - type: triangle_mesh
               label: mesh1
-              bfc: true
+              bfc: false
               obj_file: "/home/vitorgreati/git-repos/omg/examples/objs/plane.obj"
               material: grey
             - type: sphere

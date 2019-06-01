@@ -23,7 +23,8 @@ raytracer:
               label: mesh1
               ntriangles: 2
               indices: [0, 1, 2, 0, 2, 3]
-              bfc: true
+              clockwise: true
+              bfc: false
               vertices:
                   - [-3.0, -0.5, -3.0]
                   - [3.0, -0.5, -3.0]
