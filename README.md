@@ -61,3 +61,6 @@ execute:
     - [x] Depth map
     - [x] Normal map
     - [x] Blinn Phong (with reflection and hard shadow)
+- [ ] Objects
+    - [x] Spheres
+    - [x] Triangle meshes
