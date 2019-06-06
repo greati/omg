@@ -72,9 +72,25 @@ class BVHAccel : public AggregatePrimitive {
                 split_axis = axis;
                 n_primitives = 0;
             }
-
-
         };
+
+        /**
+         * A node in the flattened tree.
+         * */
+        struct LinearBVHNode {
+            Bounds3 bounds;
+            union {
+                int primitives_offset;
+                int secondChild_offset;
+            }; 
+            uint16_t n_primitives;
+            uint8_t axis;
+            uint8_t pad[1];
+        };
+
+        std::unique_ptr<LinearBVHNode[]> nodes;
+
+        void flatten_bvh_tree(BVHBuildNode* node, int *offset);
 
     public:
 

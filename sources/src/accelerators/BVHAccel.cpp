@@ -26,6 +26,10 @@ BVHAccel::BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
     else
         root = recursive_build(prim_infos, 0, _primitives.size(), &total_nodes, ordered_prims);
     _primitives.swap(ordered_prims);
+    //- Flatten the tree
+    nodes.reset(new LinearBVHNode[_primitives.size()]);
+    int offset = 0;
+    this->flatten_bvh_tree(root, &offset);
 }
 
 
@@ -41,6 +45,7 @@ BVHAccel::BVHBuildNode* BVHAccel::recursive_build(std::vector<BVHPrimitiveInfo>&
         bounds = bounds.get_union(bounds, prim_info[i].bounds);
 
     int n_primitives = end - start;
+    // if 1 primitive in the box, make a leaf
     if (n_primitives == 1) {
         int first_prim_offset = ordered_prims.size();
         for (auto i {start}; i < end; ++i) {
@@ -50,7 +55,6 @@ BVHAccel::BVHBuildNode* BVHAccel::recursive_build(std::vector<BVHPrimitiveInfo>&
         node->init_leaf(first_prim_offset, n_primitives, bounds);
         return node.get();
     } else {
-
         Bounds3 centroid_bounds;
         for (auto i {start}; i < end; ++i) {
             centroid_bounds = centroid_bounds.get_union(centroid_bounds, prim_info[i].centroid);
@@ -97,6 +101,10 @@ BVHAccel::BVHBuildNode* BVHAccel::recursive_build(std::vector<BVHPrimitiveInfo>&
     }
     
     return node.get();
+}
+
+void BVHAccel::flatten_bvh_tree(BVHBuildNode* node, int *offset) {
+
 }
 
 bool BVHAccel::intersect(const Ray& ray, SurfaceInteraction* interaction) const {
