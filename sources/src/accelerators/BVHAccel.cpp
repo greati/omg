@@ -5,7 +5,7 @@ using namespace omg;
 BVHAccel::BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
                 int max_prims_node, SplitMethod split_method)
     : _primitives {primitives}, 
-      _max_prims_node {std::max(255, max_prims_node)}, 
+      _max_prims_node {std::min(255, max_prims_node)}, 
       _split_method {split_method}{
 
     if (primitives.size() == 0)
@@ -14,7 +14,7 @@ BVHAccel::BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
     //> Compute the tree
     //- Initialize vector of infos
     std::vector<BVHPrimitiveInfo> prim_infos {_primitives.size()};
-    for (size_t i {0}; i < prim_infos.size(); ++i) {
+    for (size_t i {0}; i < primitives.size(); ++i) {
         prim_infos[i] = BVHPrimitiveInfo{i, _primitives[i]->world_bound()};
     }
     //- Call the appropriate method
@@ -27,7 +27,7 @@ BVHAccel::BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
         root = recursive_build(prim_infos, 0, _primitives.size(), &total_nodes, ordered_prims);
     _primitives.swap(ordered_prims);
     //- Flatten the tree
-    nodes.reset(new LinearBVHNode[_primitives.size()]);
+    nodes.reset(new LinearBVHNode[total_nodes]);
     int offset = 0;
     this->flatten_bvh_tree(root, &offset);
 }
@@ -103,20 +103,98 @@ BVHAccel::BVHBuildNode* BVHAccel::recursive_build(std::vector<BVHPrimitiveInfo>&
     return node.get();
 }
 
-void BVHAccel::flatten_bvh_tree(BVHBuildNode* node, int *offset) {
-
+int BVHAccel::flatten_bvh_tree(BVHBuildNode* node, int *offset) {
+    LinearBVHNode* linear_node = &nodes[*offset];
+    linear_node->bounds = node->bounds;
+    int my_offset = (*offset)++;
+    if (node->n_primitives > 0) {
+        linear_node->primitives_offset = node->first_prim_offset;
+        linear_node->n_primitives = node->n_primitives;
+    } else {
+        linear_node->axis = node->split_axis;
+        linear_node->n_primitives = 0;
+        flatten_bvh_tree(node->children[0], offset);
+        linear_node->secondChild_offset = flatten_bvh_tree(node->children[1], offset);       
+    }
+    return my_offset;
 }
 
 bool BVHAccel::intersect(const Ray& ray, SurfaceInteraction* interaction) const {
-    return false;
+    bool hit = false;
+    const auto& r_dir = ray.get_direction();
+    Vec3 inv_dir ({1/r_dir(0), 1/r_dir(1), 1/r_dir(2)});
+    int dir_is_neg[3] = {inv_dir(0) < 0, inv_dir(1) < 0, inv_dir(2) < 0};
+    
+    int to_visit_offset = 0, current_node_index = 0;
+    int nodes_to_vis[64];
+    while (true) {
+        const LinearBVHNode* node = &nodes[current_node_index];
+        if (node->bounds.intersect(ray, inv_dir, dir_is_neg)) {
+            if (node->n_primitives > 0) {
+                for (int i = 0; i < node->n_primitives; ++i) {
+                    if (_primitives[node->primitives_offset + i]->intersect(ray, interaction)) {
+                        hit = true;
+                    }
+                }    
+                if (to_visit_offset == 0) break;
+                current_node_index = nodes_to_vis[--to_visit_offset];
+            } else {
+                if (dir_is_neg[node->axis]) {
+                    nodes_to_vis[to_visit_offset++] = current_node_index + 1;
+                    current_node_index = node->secondChild_offset;
+                } else {
+                    nodes_to_vis[to_visit_offset++] = node->secondChild_offset;
+                    current_node_index = current_node_index + 1;
+                }
+            }
+        } else {
+            if (to_visit_offset == 0) break; 
+            current_node_index = nodes_to_vis[--to_visit_offset];
+        }
+    }
+
+    return hit;
 }
 
 bool BVHAccel::intersect(const Ray& ray) const {
-    return false;
+    bool hit = false;
+    const auto& r_dir = ray.get_direction();
+    Vec3 inv_dir ({1/r_dir(0), 1/r_dir(1), 1/r_dir(2)});
+    int dir_is_neg[3] = {inv_dir(0) < 0, inv_dir(1) < 0, inv_dir(2) < 0};
+    
+    int to_visit_offset = 0, current_node_index = 0;
+    int nodes_to_vis[64];
+    while (true) {
+        const LinearBVHNode* node = &nodes[current_node_index];
+        if (node->bounds.intersect(ray, inv_dir, dir_is_neg)) {
+            if (node->n_primitives > 0) {
+                for (int i = 0; i < node->n_primitives; ++i) {
+                    if (_primitives[node->primitives_offset + i]->intersect(ray)) {
+                        return true;
+                    }
+                }    
+                if (to_visit_offset == 0) break;
+                current_node_index = nodes_to_vis[--to_visit_offset];
+            } else {
+                if (dir_is_neg[node->axis]) {
+                    nodes_to_vis[to_visit_offset++] = current_node_index + 1;
+                    current_node_index = node->secondChild_offset;
+                } else {
+                    nodes_to_vis[to_visit_offset++] = node->secondChild_offset;
+                    current_node_index = current_node_index + 1;
+                }
+            }
+        } else {
+            if (to_visit_offset == 0) break; 
+            current_node_index = nodes_to_vis[--to_visit_offset];
+        }
+    }
+
+    return hit;
 }
 
 Bounds3 BVHAccel::world_bound() const {
-    return Bounds3();
+    return nodes[0].bounds;
 }
 
 

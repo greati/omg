@@ -33,6 +33,7 @@ class Bounds3 {
         const Point3& operator[](int i) const {
             if (i == 0) return pMin;
             if (i == 1) return pMax;
+            throw std::invalid_argument("invalid access to bound3 " + std::to_string(i));
         }
 
         Point3& operator[](int i) {
@@ -160,6 +161,58 @@ class Bounds3 {
         void bounding_sphere(Point3 * center, float * radius) const {
             *center = (pMin + pMax) / 2;
             *radius = inside(*center, *this) ? distance(*center, pMax) : 0;
+        }
+
+        inline bool intersect(const Ray& ray, float *hitt0, float* hitt1) const {
+            float t0 = 0, t1 = ray.tMax;
+            for (int i = 0; i < 3; ++i) {
+                float inv_ray_dir = 1 / ray.get_direction()(i);
+                float t_near = (pMin(i) - ray.get_origin()(i)) * inv_ray_dir;
+                float t_far = (pMax(i) - ray.get_origin()(i)) * inv_ray_dir;
+                if (t_near > t_far) std::swap(t_near, t_far);
+                t_far *= 1 + 2*omg::gamma(3);
+                t0 = t_near > t0 ? t_near : t0;
+                t1 = t_far < t0 ? t_far : t1;
+                if (t0 > t1) return false;
+            }
+            if (hitt0) *hitt0 = t0;
+            if (hitt1) *hitt1 = t1;
+            return true;
+        }
+
+        inline bool intersect(const Ray& ray, const Vec3 &inv_dir, 
+                const int dir_is_neg[3]) const {
+            const Bounds3& bounds = *this;  
+
+            float t_min = (bounds[dir_is_neg[0]](0) - ray.get_origin()(0)) * inv_dir(0);
+            float t_max = (bounds[1-dir_is_neg[0]](0) - ray.get_origin()(0)) * inv_dir(0);
+            float ty_min = (bounds[dir_is_neg[1]](1) - ray.get_origin()(1)) * inv_dir(1);
+            float ty_max = (bounds[1-dir_is_neg[1]](1) - ray.get_origin()(1)) * inv_dir(1);
+
+            // update tMax and tMin to robust intersection
+            t_max *= 1 + 2*omg::gamma(3);
+            ty_max *= 1 + 2*omg::gamma(3);
+            
+            if (t_min > ty_max || ty_min > t_max)
+                return false;
+            if (ty_min > t_min) 
+                t_min = ty_min;
+            if (ty_max < t_max) 
+                t_max = ty_max;
+
+            float tz_min = (bounds[dir_is_neg[2]](2) - ray.get_origin()(2)) * inv_dir(2);
+            float tz_max = (bounds[1-dir_is_neg[2]](2) - ray.get_origin()(2)) * inv_dir(2);
+
+            tz_max *= 1 + 2*omg::gamma(3);
+
+            if (t_min > tz_min || tz_min > t_max)
+                return false;
+            if (tz_min > t_min)
+                t_min = tz_min;
+            if (tz_max < t_max)
+                t_max = tz_max;
+
+            return (t_min < ray.tMax) && (t_max > 0);
         }
 };
 };

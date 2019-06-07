@@ -88,9 +88,9 @@ class BVHAccel : public AggregatePrimitive {
             uint8_t pad[1];
         };
 
-        std::unique_ptr<LinearBVHNode[]> nodes;
+        std::unique_ptr<LinearBVHNode[]> nodes = nullptr;
 
-        void flatten_bvh_tree(BVHBuildNode* node, int *offset);
+        int flatten_bvh_tree(BVHBuildNode* node, int *offset);
 
     public:
 
