@@ -123,7 +123,8 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         std::vector<std::shared_ptr<Primitive>> t_primitives;
         for (auto& t : triangles)
             t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
-        return std::make_shared<ListAggregate>(t_primitives); //TODO allow to change the aggregate type
+        //return std::make_shared<ListAggregate>(t_primitives); //TODO allow to change the aggregate type
+        return std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
     } else throw omg::ParseException("unknown object type " + type);
 }
 
@@ -383,7 +384,7 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
         if (scene_node["objects"]) {
             objects = this->parse_list<Primitive>(scene_node["objects"]);
             //aggregate = std::make_shared<ListAggregate>(objects);
-            aggregate = std::make_shared<BVHAccel>(objects, 2, BVHAccel::SplitMethod::Middle);
+            aggregate = std::make_shared<BVHAccel>(objects, 4, BVHAccel::SplitMethod::Middle);
         }
     }
     auto scene = std::make_shared<Scene>(background, camera, aggregate, lights);

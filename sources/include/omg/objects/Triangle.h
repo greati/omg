@@ -44,7 +44,12 @@ class Triangle : public Object {
 
         bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
             const auto& r_origin = ray.get_origin();
-            const auto r_direction = tao::unitize(ray.get_direction());
+            auto r_direction = ray.get_direction();//tao::unitize(ray.get_direction());
+
+            if (hit_record != nullptr) {
+                r_direction = tao::unitize(r_direction);
+            }
+
             auto [p0, p1, p2] = vertices();
 
             if (clockwise)

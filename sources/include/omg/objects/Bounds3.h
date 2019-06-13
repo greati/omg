@@ -205,7 +205,7 @@ class Bounds3 {
 
             tz_max *= 1 + 2*omg::gamma(3);
 
-            if (t_min > tz_min || tz_min > t_max)
+            if (t_min > tz_max || tz_min > t_max)
                 return false;
             if (tz_min > t_min)
                 t_min = tz_min;

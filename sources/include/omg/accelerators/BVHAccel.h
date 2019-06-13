@@ -55,7 +55,7 @@ class BVHAccel : public AggregatePrimitive {
          * */
         struct BVHBuildNode {
             Bounds3 bounds;
-            BVHBuildNode *children[2];
+            std::shared_ptr<BVHBuildNode> children[2];
             int split_axis, first_prim_offset, n_primitives;
 
             void init_leaf(int first, int n, const Bounds3& b) {
@@ -65,7 +65,7 @@ class BVHAccel : public AggregatePrimitive {
                 children[0] = children[1] = nullptr;
             }
 
-            void init_interior(int axis, BVHBuildNode* c0, BVHBuildNode* c1) {
+            void init_interior(int axis, const std::shared_ptr<BVHBuildNode>& c0, const std::shared_ptr<BVHBuildNode>& c1) {
                 children[0] = c0;
                 children[1] = c1;
                 bounds = c0->bounds.get_union(c0->bounds, c1->bounds);
@@ -90,14 +90,14 @@ class BVHAccel : public AggregatePrimitive {
 
         std::unique_ptr<LinearBVHNode[]> nodes = nullptr;
 
-        int flatten_bvh_tree(BVHBuildNode* node, int *offset);
+        int flatten_bvh_tree(const std::shared_ptr<BVHBuildNode>& node, int *offset);
 
     public:
 
         BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
                 int max_prims_node, SplitMethod split_method);
 
-        BVHBuildNode* recursive_build(std::vector<BVHPrimitiveInfo>& prim_info, 
+        std::shared_ptr<BVHBuildNode> recursive_build(std::vector<BVHPrimitiveInfo>& prim_info, 
                 int start, int end, int* total_nodes,
                 std::vector<std::shared_ptr<Primitive>>& ordered_prims);
 

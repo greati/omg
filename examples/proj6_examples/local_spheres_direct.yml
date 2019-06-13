@@ -1,0 +1,145 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [10, 10, 10]
+            - [10, 10, 10]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: perspective
+        position: [-2.0, 4.5, -10.0]
+        target: [0.0, 0.0, 0.0]
+        #position: [-2.0, -10.0, -10.0]
+        #target: [0.0, 5.0, 0.0]
+        up: [0.0, 1.0, 0.0]
+        v_angle: 30.0
+        fdist: 1.0
+        width: 900
+        height: 450
+    scene:
+        objects:
+            - type: triangle_mesh
+              label: mesh1
+              ntriangles: 2
+              indices: [0, 1, 2, 0, 2, 3]
+              clockwise: true
+              bfc: false
+              vertices:
+                  - [-3.0, -0.5, -3.0]
+                  - [3.0, -0.5, -3.0]
+                  - [3.0, -0.5, 3.0]
+                  - [-3.0, -0.5, 3.0]
+              normals:
+                  - [0, 1, 0]
+                  - [0, 1, 0]
+                  - [0, 1, 0]
+                  - [0, 1, 0]
+              material: grey
+            - type: sphere
+              label: sphere1
+              radius: 0.5
+              center: [0.0, 0.0, 1.0]
+              material: greenish
+            - type: sphere
+              label: sphere2
+              radius: 0.5
+              center: [0.0, 1.0, 1.0]
+              material: cyan
+            - type: sphere
+              label: sphere3
+              radius: 0.5
+              center: [0.0, 2.0, 1.0]
+              material: yellow
+            - type: sphere
+              label: sphere4
+              radius: 0.5
+              center: [-1.86, 0.0, -1.0]
+              material: redish
+            - type: sphere
+              label: sphere5
+              radius: 0.5
+              center: [0.86, 0.0, -1.0]
+              material: blueish
+            - type: sphere
+              label: sphere6
+              radius: 0.5
+              center: [0.86, 1.0, -1.0]
+              material: magenta
+            - type: sphere
+              label: sphere7
+              radius: 0.5
+              center: [2.5, 0.0, -2.5]
+              material: white
+            - type: sphere
+              label: sphere8
+              radius: 0.5
+              center: [-2.5, 0.0, 2.5]
+              material: black
+        materials:
+            - type: blinn
+              label: black
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.1, 0.1, 0.1]
+              specular: [0.9, 0.9, 0.9]
+              glossiness: 128
+            - type: blinn
+              label: yellow
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.9, 0.1]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: magenta
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.1, 0.9]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: cyan
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.1, 0.9, 0.9]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: redish
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.2, 0.1]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            - type: blinn
+              label: greenish
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.2, 0.9, 0.2]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 256
+            - type: blinn
+              label: blueish
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.1, 0.2, 0.9]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 20
+            - type: blinn
+              label: white
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.9, 0.9]
+              specular: [1.0, 1.0, 1.0]
+              glossiness: 256
+            - type: blinn
+              label: grey
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.8, 0.8, 0.8]
+              specular: [0.0, 0.0, 0.0]
+              glossiness: 8
+        lights:
+            - type: ambient
+              intensity: [25.5, 25.5, 25.5]
+            - type: directional
+              intensity: [229.5, 229.5, 229.5]
+              direction: [1.0, 0.5, 1.0]
+            - type: directional
+              intensity: [102.0, 102.0, 102.0]
+              direction: [-0.3, 0.3, 1.0]
+    settings:
+        integrators:
+            - type: blinn

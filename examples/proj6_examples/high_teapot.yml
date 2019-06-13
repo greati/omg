@@ -13,8 +13,8 @@ raytracer:
         up: [0.0, 1.0, 0.0]
         v_angle: 25.0
         fdist: 1.0
-        width: 450
-        height: 225
+        width: 1800
+        height: 900
     scene:
         objects:
             - type: triangle_mesh
@@ -23,6 +23,7 @@ raytracer:
               obj_file: "../examples/objs/teapot.obj"
               material: grey
               clockwise: false
+              compute_normals: true
             - type: triangle_mesh
               label: plane
               bfc: true
