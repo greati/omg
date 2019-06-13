@@ -4,6 +4,8 @@
 #include "omg/objects/Object.h"
 #include <cmath>
 
+#define T_MIN_SPHERE 0.001
+
 namespace omg {
 /**
  * Represents a sphere.
@@ -51,7 +53,7 @@ class Sphere : public Object {
 
             if (t1 > t2) std::swap(t1, t2);
 
-            if (t1 > ray.tMax || t2 <= 0)
+            if (t1 > ray.tMax || t2 <= T_MIN_SPHERE)
                 return false;
 
             //float tShapeHit = std::min(t1, t2);
@@ -59,7 +61,7 @@ class Sphere : public Object {
 
             //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
             //   return false; 
-            if (tShapeHit <= 0) {
+            if (tShapeHit <= T_MIN_SPHERE) {
                 tShapeHit = t2;
                 if (tShapeHit > ray.tMax)
                     return false;
@@ -96,14 +98,14 @@ class Sphere : public Object {
 
             if (t1 > t2) std::swap(t1, t2);
 
-            if (t1 > ray.tMax || t2 <= 0)
+            if (t1 > ray.tMax || t2 <= T_MIN_SPHERE)
                 return false;
 
             float tShapeHit = t1;
 
             //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
             //   return false; 
-            if (tShapeHit <= 0) {
+            if (tShapeHit <= T_MIN_SPHERE) {
                 tShapeHit = t2;
                 if (tShapeHit > ray.tMax)
                     return false;

@@ -13,16 +13,28 @@ raytracer:
         up: [0.0, 1.0, 0.0]
         v_angle: 25.0
         fdist: 1.0
-        width: 900
-        height: 450
+        width: 1800
+        height: 900
     scene:
         objects:
+            - type: aggregate
+              structure:
+                  type: bvh
+                  max_prims_node: 4
+                  split_method: middle
+              objects:
+                  - type: sphere
+                    label: sphere1
+                    radius: 2
+                    center: [-30.0, 40.5, -1.0]
+                    material: cyan
             - type: triangle_mesh
               label: mesh1
               bfc: false
               obj_file: "../examples/objs/teapot.obj"
               material: grey
               clockwise: false
+              compute_normals: true
             - type: triangle_mesh
               label: plane
               bfc: true

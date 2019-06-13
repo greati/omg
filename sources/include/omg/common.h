@@ -3,6 +3,7 @@
 
 #include <array>
 #include <tuple>
+#include "omg/globals.h"
 #include "tao/core.h"
 #include "logger/StandardLogger.h"
 
