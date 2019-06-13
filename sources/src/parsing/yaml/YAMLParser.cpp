@@ -62,6 +62,25 @@ struct YAML::convert<Vec3> {
 };
 
 template<>
+struct YAML::convert<BVHAccel::SplitMethod> {
+    static YAML::Node encode(const BVHAccel::SplitMethod& rhs) {
+        YAML::Node node;
+        return node;
+    }
+    static bool decode(const YAML::Node& node, BVHAccel::SplitMethod & splitMethod) {
+
+        auto method = node.as<std::string>();
+        if (method == "middle")
+             splitMethod = BVHAccel::SplitMethod::Middle;
+        else if (method == "equal_counts")
+             splitMethod = BVHAccel::SplitMethod::EqualCounts;
+        else return false;
+
+        return true;
+    }
+};
+
+template<>
 Vec3 YAMLParser::defaulted_require(const YAML::Node & curr_node, 
         const std::string& node_name, const Vec3& def) const {
     if (curr_node[node_name])
@@ -91,10 +110,54 @@ std::vector<std::shared_ptr<Triangle>> YAMLParser::parse_list(const YAML::Node& 
 }
 
 template<>
+std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node);
+
+template<typename NodeType>
+std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<NodeType>> objs;
+    for (auto & n : node) {
+        objs.push_back(parse<NodeType>(n)); 
+    }
+    return objs;
+}
+
+template<>
+std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node& node) {
+    std::vector<std::shared_ptr<Primitive>> objs;
+
+    for (auto & n : node) {
+        objs.push_back(parse<Primitive>(n));
+    }
+
+    return objs;
+}
+
+template<>
 std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
     auto type = hard_require(node, "type").as<std::string>();
 
-    if (type == "sphere") {
+    if (type == "aggregate") {
+        
+        std::vector<std::shared_ptr<Primitive>> objects; 
+
+        if (node["objects"])
+            objects = this->parse_list<Primitive>(node["objects"]);
+
+        if (node["structure"]) {
+            auto node_structure = node["structure"];
+            auto structure_type = hard_require(node_structure, "type").as<std::string>();
+
+            if (structure_type == "bvh") {
+                auto max_prims_nodes = node_structure["max_prims_node"].as<int>();
+                auto split_method = node_structure["split_method"].as<BVHAccel::SplitMethod>();
+                return std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
+            } else if (structure_type == "list") {
+                return std::make_shared<ListAggregate>(objects);
+            } else throw omg::ParseException("unknown structure type " + type);
+        } else 
+            return std::make_shared<ListAggregate>(objects);
+
+    } else if (type == "sphere") {
         auto sphereprim = parse<Sphere>(node);
         auto material = get_material(hard_require(node, "material").as<std::string>());
         return std::make_shared<GeometricPrimitive>(sphereprim, material);
@@ -123,30 +186,11 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         std::vector<std::shared_ptr<Primitive>> t_primitives;
         for (auto& t : triangles)
             t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
-        //return std::make_shared<ListAggregate>(t_primitives); //TODO allow to change the aggregate type
         return std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
     } else throw omg::ParseException("unknown object type " + type);
 }
 
-template<typename NodeType>
-std::vector<std::shared_ptr<NodeType>> YAMLParser::parse_list(const YAML::Node& node) {
-    std::vector<std::shared_ptr<NodeType>> objs;
-    for (auto & n : node) {
-        objs.push_back(parse<NodeType>(n)); 
-    }
-    return objs;
-}
 
-template<>
-std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node& node) {
-    std::vector<std::shared_ptr<Primitive>> objs;
-
-    for (auto & n : node) {
-        objs.push_back(parse<Primitive>(n));
-    }
-
-    return objs;
-}
 
 
 template<>
@@ -383,8 +427,7 @@ std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
 
         if (scene_node["objects"]) {
             objects = this->parse_list<Primitive>(scene_node["objects"]);
-            //aggregate = std::make_shared<ListAggregate>(objects);
-            aggregate = std::make_shared<BVHAccel>(objects, 4, BVHAccel::SplitMethod::Middle);
+            aggregate = std::make_shared<ListAggregate>(objects);
         }
     }
     auto scene = std::make_shared<Scene>(background, camera, aggregate, lights);
