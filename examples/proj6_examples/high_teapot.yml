@@ -17,6 +17,17 @@ raytracer:
         height: 900
     scene:
         objects:
+            - type: aggregate
+              structure:
+                  type: bvh
+                  max_prims_node: 4
+                  split_method: middle
+              objects:
+                  - type: sphere
+                    label: sphere1
+                    radius: 2
+                    center: [-30.0, 40.5, -1.0]
+                    material: cyan
             - type: triangle_mesh
               label: mesh1
               bfc: false
