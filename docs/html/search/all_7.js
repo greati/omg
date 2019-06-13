@@ -15,7 +15,7 @@ var searchData=
   ['get_5ffilm',['get_film',['../classomg_1_1_camera.html#a6feb3185dc41c47b1d2749d58b8d0c13',1,'omg::Camera']]],
   ['get_5fheight',['get_height',['../classomg_1_1_camera.html#a4003f1cf690980d47b3307e6eefe3003',1,'omg::Camera']]],
   ['get_5fintensity',['get_intensity',['../classomg_1_1_light.html#a7be0cc4d0e3b3c8167ec50706abfd39b',1,'omg::Light']]],
-  ['get_5fmaterial',['get_material',['../classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21',1,'omg::AggregatePrimitive::get_material()'],['../classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a',1,'omg::GeometricPrimitive::get_material()'],['../classomg_1_1_primitive.html#ad9cb98c6f74581d53cadf800fc506333',1,'omg::Primitive::get_material()']]],
+  ['get_5fmaterial',['get_material',['../classomg_1_1_b_v_h_accel.html#afc47144553f2de1a23c4053e56747eee',1,'omg::BVHAccel::get_material()'],['../classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21',1,'omg::AggregatePrimitive::get_material()'],['../classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a',1,'omg::GeometricPrimitive::get_material()'],['../classomg_1_1_primitive.html#ad9cb98c6f74581d53cadf800fc506333',1,'omg::Primitive::get_material()']]],
   ['get_5forigin',['get_origin',['../classomg_1_1_ray.html#a3b2c3ade0173b74f72e7bb4e72363cf3',1,'omg::Ray']]],
   ['get_5fortho_5fbasis',['get_ortho_basis',['../classomg_1_1_camera.html#a7bc7168312ae9923904489e792ad0526',1,'omg::Camera']]],
   ['get_5fwidth',['get_width',['../classomg_1_1_camera.html#a9d27ce6b9428503ad27e0247deb65bba',1,'omg::Camera']]],

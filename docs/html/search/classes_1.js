@@ -4,5 +4,6 @@ var searchData=
   ['blinnmaterial',['BlinnMaterial',['../classomg_1_1_blinn_material.html',1,'omg']]],
   ['blinnphongintegrator',['BlinnPhongIntegrator',['../classomg_1_1_blinn_phong_integrator.html',1,'omg']]],
   ['bounds3',['Bounds3',['../classomg_1_1_bounds3.html',1,'omg']]],
-  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg']]]
+  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg']]],
+  ['bvhaccel',['BVHAccel',['../classomg_1_1_b_v_h_accel.html',1,'omg']]]
 ];

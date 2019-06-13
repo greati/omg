@@ -6,5 +6,6 @@ var searchData=
   ['boundmax',['boundMax',['../classcy_1_1_tri_mesh.html#ac1543c944d7780a7108495680690792f',1,'cy::TriMesh']]],
   ['boundmin',['boundMin',['../classcy_1_1_tri_mesh.html#a39804674d585805e827bd162ff99f865',1,'cy::TriMesh']]],
   ['bounds3',['Bounds3',['../classomg_1_1_bounds3.html',1,'omg']]],
-  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg::Buffer&lt; N, StoredType &gt;'],['../classomg_1_1_buffer.html#aea5eaa6530d6506d47a4efee72485c42',1,'omg::Buffer::Buffer()']]]
+  ['buffer',['Buffer',['../classomg_1_1_buffer.html',1,'omg::Buffer&lt; N, StoredType &gt;'],['../classomg_1_1_buffer.html#aea5eaa6530d6506d47a4efee72485c42',1,'omg::Buffer::Buffer()']]],
+  ['bvhaccel',['BVHAccel',['../classomg_1_1_b_v_h_accel.html',1,'omg']]]
 ];

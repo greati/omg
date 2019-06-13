@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">2.0.0</span>
+   &#160;<span id="projectnumber">3.0.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -80,9 +80,10 @@ Inheritance diagram for omg::Primitive:</div>
  <div class="center">
   <img src="classomg_1_1_primitive.png" usemap="#omg::Primitive_map" alt=""/>
   <map id="omg::Primitive_map" name="omg::Primitive_map">
-<area href="classomg_1_1_aggregate_primitive.html" title="Represents an aggregate of primitives to be rendered in the screen." alt="omg::AggregatePrimitive" shape="rect" coords="0,56,148,80"/>
-<area href="classomg_1_1_geometric_primitive.html" title="Represents a primitive to be rendered in the screen." alt="omg::GeometricPrimitive" shape="rect" coords="158,56,306,80"/>
-<area href="classomg_1_1_list_aggregate.html" title="Represents an aggregate of primitives to be rendered in the screen." alt="omg::ListAggregate" shape="rect" coords="0,112,148,136"/>
+<area href="classomg_1_1_aggregate_primitive.html" title="Represents an aggregate of primitives to be rendered in the screen." alt="omg::AggregatePrimitive" shape="rect" coords="79,56,227,80"/>
+<area href="classomg_1_1_geometric_primitive.html" title="Represents a primitive to be rendered in the screen." alt="omg::GeometricPrimitive" shape="rect" coords="237,56,385,80"/>
+<area href="classomg_1_1_b_v_h_accel.html" title="Bounded Volumes Hierarchy ray tracing acceleration." alt="omg::BVHAccel" shape="rect" coords="0,112,148,136"/>
+<area href="classomg_1_1_list_aggregate.html" title="Represents an aggregate of primitives to be rendered in the screen." alt="omg::ListAggregate" shape="rect" coords="158,112,306,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -128,7 +129,7 @@ Public Member Functions</h2></td></tr>
 <p>Return the material of the primitive. </p>
 <dl class="section return"><dt>Returns</dt><dd>the material of the primitive </dd></dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21">omg::AggregatePrimitive</a>, and <a class="el" href="classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a">omg::GeometricPrimitive</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_b_v_h_accel.html#afc47144553f2de1a23c4053e56747eee">omg::BVHAccel</a>, <a class="el" href="classomg_1_1_aggregate_primitive.html#a339e9fe3ab8e2c0c68c888345b834c21">omg::AggregatePrimitive</a>, and <a class="el" href="classomg_1_1_geometric_primitive.html#ae7b7b9ed0a5fc336a3111ef16a09f27a">omg::GeometricPrimitive</a>.</p>
 
 </div>
 </div>
@@ -176,7 +177,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>if the object intersects with the ray </dd></dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_geometric_primitive.html#a21bc48f971cbc94b60791906f20bc925">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#a55fdd3b0fa387cb14488b86634b3e877">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#a07ab041d9071295e4f648475c7163470">omg::AggregatePrimitive</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_b_v_h_accel.html#a368b5156d04fdac833f8c9917f13d91e">omg::BVHAccel</a>, <a class="el" href="classomg_1_1_geometric_primitive.html#a21bc48f971cbc94b60791906f20bc925">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#a55fdd3b0fa387cb14488b86634b3e877">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#a07ab041d9071295e4f648475c7163470">omg::AggregatePrimitive</a>.</p>
 
 </div>
 </div>
@@ -213,7 +214,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>if intersection occurred </dd></dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_geometric_primitive.html#a797a2eb74fb48a7e25c7f98f16c604a7">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#ac3abd78ca5ce87eb3821bf19bf5194cf">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#af6009e1c54b0f2341d78d95afb4268cc">omg::AggregatePrimitive</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_b_v_h_accel.html#a110cd424f8f4d628668cb500ff3c6e7a">omg::BVHAccel</a>, <a class="el" href="classomg_1_1_geometric_primitive.html#a797a2eb74fb48a7e25c7f98f16c604a7">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#ac3abd78ca5ce87eb3821bf19bf5194cf">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#af6009e1c54b0f2341d78d95afb4268cc">omg::AggregatePrimitive</a>.</p>
 
 </div>
 </div>
@@ -243,7 +244,7 @@ Public Member Functions</h2></td></tr>
 <p>The world bound of this primitive. </p>
 <dl class="section return"><dt>Returns</dt><dd>the world bound </dd></dl>
 
-<p>Implemented in <a class="el" href="classomg_1_1_geometric_primitive.html#ae8f0945c180c43e32cad4faa75185522">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#a8c7b3a6c7c8a087355a1a35519c79555">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#ad8a385aaa01354acffad18fe8f23fa25">omg::AggregatePrimitive</a>.</p>
+<p>Implemented in <a class="el" href="classomg_1_1_b_v_h_accel.html#a8de5010cc4ddf9e0673461d711b9930b">omg::BVHAccel</a>, <a class="el" href="classomg_1_1_geometric_primitive.html#ae8f0945c180c43e32cad4faa75185522">omg::GeometricPrimitive</a>, <a class="el" href="classomg_1_1_list_aggregate.html#a8c7b3a6c7c8a087355a1a35519c79555">omg::ListAggregate</a>, and <a class="el" href="classomg_1_1_aggregate_primitive.html#ad8a385aaa01354acffad18fe8f23fa25">omg::AggregatePrimitive</a>.</p>
 
 </div>
 </div>

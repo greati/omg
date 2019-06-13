@@ -1,0 +1,144 @@
+\hypertarget{classomg_1_1_b_v_h_accel}{}\section{omg\+::B\+V\+H\+Accel Class Reference}
+\label{classomg_1_1_b_v_h_accel}\index{omg::BVHAccel@{omg::BVHAccel}}
+
+
+Bounded Volumes Hierarchy ray tracing acceleration.  
+
+
+
+
+{\ttfamily \#include $<$B\+V\+H\+Accel.\+h$>$}
+
+Inheritance diagram for omg\+::B\+V\+H\+Accel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classomg_1_1_b_v_h_accel}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_a76a87ca6ffce37773ad59bc4d540c33f}\label{classomg_1_1_b_v_h_accel_a76a87ca6ffce37773ad59bc4d540c33f}} 
+enum \mbox{\hyperlink{classomg_1_1_b_v_h_accel_a76a87ca6ffce37773ad59bc4d540c33f}{Split\+Method}} \{ {\bfseries S\+AH}, 
+{\bfseries H\+L\+B\+VH}, 
+{\bfseries Middle}, 
+{\bfseries Equal\+Counts}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of partition strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_aa802d0dd148e67e8b100a5254dbab42b}\label{classomg_1_1_b_v_h_accel_aa802d0dd148e67e8b100a5254dbab42b}} 
+{\bfseries B\+V\+H\+Accel} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $>$$>$ \&primitives, int max\+\_\+prims\+\_\+node, \mbox{\hyperlink{classomg_1_1_b_v_h_accel_a76a87ca6ffce37773ad59bc4d540c33f}{Split\+Method}} split\+\_\+method)
+\item 
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_a965c67c0887a4b61ec822757dcae874c}\label{classomg_1_1_b_v_h_accel_a965c67c0887a4b61ec822757dcae874c}} 
+std\+::shared\+\_\+ptr$<$ B\+V\+H\+Build\+Node $>$ {\bfseries recursive\+\_\+build} (std\+::vector$<$ B\+V\+H\+Primitive\+Info $>$ \&prim\+\_\+info, int start, int end, int $\ast$total\+\_\+nodes, std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $>$$>$ \&ordered\+\_\+prims)
+\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_b_v_h_accel_a368b5156d04fdac833f8c9917f13d91e}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$interaction) const
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_b_v_h_accel_a110cd424f8f4d628668cb500ff3c6e7a}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray) const
+\begin{DoxyCompactList}\small\item\em Only check if intersection occurred. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classomg_1_1_material}{Material}} $\ast$ \mbox{\hyperlink{classomg_1_1_b_v_h_accel_afc47144553f2de1a23c4053e56747eee}{get\+\_\+material}} () const
+\begin{DoxyCompactList}\small\item\em Return the material of the primitive. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_ad124bae28521ee2aa4324177f2a03e8f}\label{classomg_1_1_b_v_h_accel_ad124bae28521ee2aa4324177f2a03e8f}} 
+void {\bfseries print\+\_\+tree} (B\+V\+H\+Build\+Node $\ast$root) const
+\item 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_b_v_h_accel_a8de5010cc4ddf9e0673461d711b9930b}{world\+\_\+bound}} () const
+\begin{DoxyCompactList}\small\item\em The world bound of this primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bounded Volumes Hierarchy ray tracing acceleration. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_afc47144553f2de1a23c4053e56747eee}\label{classomg_1_1_b_v_h_accel_afc47144553f2de1a23c4053e56747eee}} 
+\index{omg::BVHAccel@{omg::BVHAccel}!get\_material@{get\_material}}
+\index{get\_material@{get\_material}!omg::BVHAccel@{omg::BVHAccel}}
+\subsubsection{\texorpdfstring{get\_material()}{get\_material()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classomg_1_1_material}{Material}}$\ast$ omg\+::\+B\+V\+H\+Accel\+::get\+\_\+material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the material of the primitive. 
+
+\begin{DoxyReturn}{Returns}
+the material of the primitive 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classomg_1_1_aggregate_primitive_a339e9fe3ab8e2c0c68c888345b834c21}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_a368b5156d04fdac833f8c9917f13d91e}\label{classomg_1_1_b_v_h_accel_a368b5156d04fdac833f8c9917f13d91e}} 
+\index{omg::BVHAccel@{omg::BVHAccel}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::BVHAccel@{omg::BVHAccel}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool B\+V\+H\+Accel\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$}]{interaction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em interaction} & collect information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_a07ab041d9071295e4f648475c7163470}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_a110cd424f8f4d628668cb500ff3c6e7a}\label{classomg_1_1_b_v_h_accel_a110cd424f8f4d628668cb500ff3c6e7a}} 
+\index{omg::BVHAccel@{omg::BVHAccel}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::BVHAccel@{omg::BVHAccel}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool B\+V\+H\+Accel\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Only check if intersection occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if intersection occurred 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_af6009e1c54b0f2341d78d95afb4268cc}{omg\+::\+Aggregate\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_b_v_h_accel_a8de5010cc4ddf9e0673461d711b9930b}\label{classomg_1_1_b_v_h_accel_a8de5010cc4ddf9e0673461d711b9930b}} 
+\index{omg::BVHAccel@{omg::BVHAccel}!world\_bound@{world\_bound}}
+\index{world\_bound@{world\_bound}!omg::BVHAccel@{omg::BVHAccel}}
+\subsubsection{\texorpdfstring{world\_bound()}{world\_bound()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} B\+V\+H\+Accel\+::world\+\_\+bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The world bound of this primitive. 
+
+\begin{DoxyReturn}{Returns}
+the world bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_aggregate_primitive_ad8a385aaa01354acffad18fe8f23fa25}{omg\+::\+Aggregate\+Primitive}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/accelerators/B\+V\+H\+Accel.\+h\item 
+/home/vitorgreati/git-\/repos/omg/sources/src/accelerators/B\+V\+H\+Accel.\+cpp\end{DoxyCompactItemize}
