@@ -109,6 +109,8 @@ class BVHAccel : public AggregatePrimitive {
             return nullptr;
         }
 
+        void print_tree(BVHBuildNode* root) const;
+
         Bounds3 world_bound() const;
 
 };

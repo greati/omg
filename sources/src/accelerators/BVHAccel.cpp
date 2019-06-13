@@ -25,13 +25,33 @@ BVHAccel::BVHAccel(const std::vector<std::shared_ptr<Primitive>>& primitives,
         throw std::invalid_argument("unavailable option");
     else
         root = recursive_build(prim_infos, 0, _primitives.size(), &total_nodes, ordered_prims);
+
+    print_tree(root);
+    //# print ordered prims
+    std::cout << total_nodes << std::endl;
+    std::cout << ordered_prims.size() << std::endl;
+
     _primitives.swap(ordered_prims);
     //- Flatten the tree
     nodes.reset(new LinearBVHNode[total_nodes]);
     int offset = 0;
     this->flatten_bvh_tree(root, &offset);
+
+    //# print nodes
+    for (int i = 0; i < _primitives.size(); ++i) {
+        std::cout << nodes[i].n_primitives << std::endl;
+    }
 }
 
+void BVHAccel::print_tree(BVHBuildNode* root) const {
+    if (root->children[0] == nullptr && root->children[1] == nullptr) {
+        std::cout << "l: " << root->n_primitives << std::endl;         
+    } else {
+        std::cout << "i: " << root->n_primitives << std::endl;         
+        print_tree(root->children[0]);
+        print_tree(root->children[1]);
+    }
+}
 
 BVHAccel::BVHBuildNode* BVHAccel::recursive_build(std::vector<BVHPrimitiveInfo>& prim_info, 
         int start, int end, int* total_nodes,
