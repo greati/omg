@@ -4,7 +4,7 @@
 #include "omg/objects/Object.h"
 #include <cmath>
 
-#define T_MIN_SPHERE 0.001
+#define T_MIN_SPHERE 0.0001
 
 namespace omg {
 /**

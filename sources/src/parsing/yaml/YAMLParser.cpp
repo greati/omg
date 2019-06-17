@@ -24,6 +24,7 @@
 #include "omg/objects/ListAggregate.h"
 #include "omg/parsing/obj/CyObjParser.h"
 #include "omg/accelerators/BVHAccel.h"
+#include "omg/objects/Transform.h"
 #include <iostream>
 
 using namespace omg;
