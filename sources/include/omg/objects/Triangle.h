@@ -24,6 +24,14 @@ class Triangle : public Object {
 
     public:
 
+        Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number,
+                 const std::shared_ptr<Transform>& object_to_world,
+                 const std::shared_ptr<Transform>& world_to_object, 
+                 bool clockwise = false)
+            : Object{object_to_world, world_to_object}, bfc {bfc}, mesh {mesh}, clockwise {clockwise} {
+            v = &mesh->vertex_indices[3 * tri_number]; 
+        }
+
         Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number, bool clockwise = false) 
             : bfc {bfc}, mesh {mesh}, clockwise {clockwise} {
             v = &mesh->vertex_indices[3 * tri_number]; 

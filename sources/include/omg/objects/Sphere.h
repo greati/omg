@@ -29,6 +29,16 @@ class Sphere : public Object {
         {/* empty */}
 
         /**
+         * Basic constructor.
+         * */
+        Sphere(float radius, const Point3& center,const std::shared_ptr<Transform>& object_to_world,
+                const std::shared_ptr<Transform>& world_to_object)
+            : Object{object_to_world, world_to_object}, _radius {radius}, _center {center}
+        {/* empty */}
+
+
+
+        /**
          * Check whether the sphere intersect
          * with a ray.
          *

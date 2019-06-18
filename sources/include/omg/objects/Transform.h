@@ -2,6 +2,7 @@
 #define _OMG_TRANSFORM_
 
 #include "omg/common.h"
+#include "omg/objects/Bounds3.h"
 #include "tao/geometry/geometry.h"
 
 namespace omg {
@@ -285,6 +286,25 @@ class Transform {
             ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMin(1), b.pMax(2)}));
             ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMax(1), b.pMax(2)}));
             return ret;
+        }
+
+        /**
+         * Transform surface interaction.
+         *
+         * @param a surface interaction
+         * @return the resulting surface interaction
+         * */
+        SurfaceInteraction t_si(const SurfaceInteraction& b) const {
+            const Transform& M = *this;
+            SurfaceInteraction si;
+            si._p = t_point3(b._p);
+            si._n = t_normal3(b._n);
+            si._wo = t_vec3(b._wo);
+            si._uv = b._uv; //TODO should this be transformed?
+            si._t = b._t;
+            si._primitive = b._primitive;
+            si._time = b._time;
+            return si;
         }
 
         /**
