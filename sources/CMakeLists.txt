@@ -108,6 +108,7 @@ set(test_sources ${test_sources}
     tests/main.cpp
     tests/ray_tests.cpp
     tests/camera_tests.cpp
+    tests/transform_tests.cpp
 )
 
 add_executable(maintest ${test_sources})
