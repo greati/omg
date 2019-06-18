@@ -275,6 +275,31 @@ class Transform {
          * @return the resulting bounds
          * */
         Bounds3 t_bounds3(const Bounds3& b) const {
+            const Transform& M = *this;
+            Bounds3 ret(M.t_point3(Point3{b.pMin(0), b.pMin(1), b.pMin(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMin(1), b.pMin(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMin(0), b.pMax(1), b.pMin(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMin(0), b.pMin(1), b.pMax(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMin(0), b.pMax(1), b.pMax(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMax(1), b.pMin(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMin(1), b.pMax(2)}));
+            ret = Bounds3::make_union(ret, M.t_point3(Point3{b.pMax(0), b.pMax(1), b.pMax(2)}));
+            return ret;
+        }
+
+        /**
+         * Composition of transformations.
+         * */
+        inline Transform operator*(const Transform& t2) const {
+            return Transform {mat * t2.mat, t2.mInv * mInv};
+        }
+
+        bool swap_handedness() const {
+            float det = 
+                mat(0, 0) * (mat(1, 1) * mat(2, 2) - mat(1, 2) * mat(2, 1)) -
+                mat(0, 1) * (mat(1, 0) * mat(2, 2) - mat(1, 2) * mat(2, 0)) +
+                mat(0, 2) * (mat(1, 0) * mat(2, 1) - mat(1, 1) * mat(2, 0));
+            return det < 0;
         }
 };
 

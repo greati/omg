@@ -79,6 +79,21 @@ class Bounds3 {
             };
         };
 
+        static Bounds3 make_union(const Bounds3& b1, const Bounds3& b2) {
+            return Bounds3 {
+                Point3 {
+                    std::min(b1.pMin(0), b2.pMin(0)),
+                    std::min(b1.pMin(1), b2.pMin(1)),
+                    std::min(b1.pMin(2), b2.pMin(2))
+                },
+                Point3 {
+                    std::max(b1.pMax(0), b2.pMax(0)),
+                    std::max(b1.pMax(1), b2.pMax(1)),
+                    std::max(b1.pMax(2), b2.pMax(2))
+                },
+            };
+        };
+
         Bounds3 get_intersection(const Bounds3& b1, const Bounds3& b2) {
              return Bounds3 {
                 Point3 {
