@@ -321,6 +321,16 @@ class Transform {
                 mat(0, 2) * (mat(1, 0) * mat(2, 1) - mat(1, 1) * mat(2, 0));
             return det < 0;
         }
+
+        bool operator<(const Transform& t2) const {
+            for (int i = 0; i < 4; ++i) {
+                for (int j = 0; j < 4; ++j) {
+                    if (mat(i, j) < t2.mat(i, j)) return true;
+                    if (mat(i, j) > t2.mat(i, j)) return false;
+                }
+            }
+            return false;
+        }
 };
 
 };
