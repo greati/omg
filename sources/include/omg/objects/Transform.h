@@ -4,6 +4,8 @@
 #include "omg/common.h"
 #include "omg/objects/Bounds3.h"
 #include "tao/geometry/geometry.h"
+#include "omg/raytracer/SurfaceInteraction.h"
+#include "omg/raytracer/Ray.h"
 
 namespace omg {
 
@@ -20,7 +22,9 @@ class Transform {
 
     public:
 
-        Transform() {}
+        Transform() :
+        mat {Matrix4x4::identity()},
+        mInv {Matrix4x4::identity()} {}
 
         Transform(const Matrix4x4& mat)
         : mat {mat}, mInv {tao::inverse(mat)} {}
@@ -312,6 +316,14 @@ class Transform {
          * */
         inline Transform operator*(const Transform& t2) const {
             return Transform {mat * t2.mat, t2.mInv * mInv};
+        }
+
+        inline static std::shared_ptr<Transform> compose(const std::vector<std::shared_ptr<Transform>>& ts) {
+            Transform transform = Transform(); 
+            for (auto t : ts) {
+                transform = (*t) * transform;
+            }
+            return std::make_shared<Transform>(transform);
         }
 
         bool swap_handedness() const {

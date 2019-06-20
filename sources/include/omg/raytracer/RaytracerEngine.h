@@ -3,6 +3,7 @@
 
 #include "omg/raytracer/RaytracerRunningSettings.h"
 #include "omg/raytracer/TransformCache.h"
+#include "printer/NetpbmPrinter.h"
 
 namespace omg {
 /**

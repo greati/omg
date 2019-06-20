@@ -26,6 +26,7 @@
 #include "omg/accelerators/BVHAccel.h"
 #include "omg/objects/Transform.h"
 #include "omg/objects/TransformedPrimitive.h"
+#include "omg/raytracer/RaytracerEngine.h"
 #include <iostream>
 
 using namespace omg;
@@ -136,7 +137,30 @@ std::vector<std::shared_ptr<Primitive>> YAMLParser::parse_list(const YAML::Node&
 
 template<>
 std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
+
+    std::shared_ptr<Primitive> primitive = nullptr;
+
     auto type = hard_require(node, "type").as<std::string>();
+
+    bool is_transformed = false;
+
+    if (node["transform"]) {
+
+        is_transformed = true;
+
+        auto node_transform = node["transform"];
+        auto transform_list = parse_list<Transform>(node["transform"]);
+
+        //auto comp_result = Transform::compose(transform_list);
+
+        // Take the transform
+        //Transform* t;
+        //RaytracerEngine::transform_cache.lookup(*comp_result, &t, nullptr);
+        // Put it in the stack
+        //transStack.push(*t);
+        // Update current
+        //curTrans = (*t) * curTrans;
+    }
 
     if (type == "aggregate") {
         
@@ -152,17 +176,21 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
             if (structure_type == "bvh") {
                 auto max_prims_nodes = node_structure["max_prims_node"].as<int>();
                 auto split_method = node_structure["split_method"].as<BVHAccel::SplitMethod>();
-                return std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
+                //return std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
+                primitive = std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
             } else if (structure_type == "list") {
-                return std::make_shared<ListAggregate>(objects);
+                ///return std::make_shared<ListAggregate>(objects);
+                primitive = std::make_shared<ListAggregate>(objects);
             } else throw omg::ParseException("unknown structure type " + type);
         } else 
-            return std::make_shared<ListAggregate>(objects);
+            //return std::make_shared<ListAggregate>(objects);
+            primitive = std::make_shared<ListAggregate>(objects);
 
     } else if (type == "sphere") {
         auto sphereprim = parse<Sphere>(node);
         auto material = get_material(hard_require(node, "material").as<std::string>());
-        return std::make_shared<GeometricPrimitive>(sphereprim, material);
+        //return std::make_shared<GeometricPrimitive>(sphereprim, material);
+        primitive = std::make_shared<GeometricPrimitive>(sphereprim, material);
     } else if (type=="triangle_mesh") {
         auto material = get_material(hard_require(node, "material").as<std::string>());
 
@@ -188,8 +216,20 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         std::vector<std::shared_ptr<Primitive>> t_primitives;
         for (auto& t : triangles)
             t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
-        return std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
-    } else throw omg::ParseException("unknown object type " + type);
+        //return std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
+        primitive = std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
+    } else 
+        throw omg::ParseException("unknown object type " + type);
+
+    if (is_transformed) {
+        // update cur transform
+        auto t = transStack.top();
+        curTrans = inverse(t) * curTrans;
+        // pop stack
+        transStack.pop();
+    }
+
+    return primitive;
 }
 
 
@@ -408,7 +448,43 @@ std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
 }
 
 template<>
+std::shared_ptr<Transform> YAMLParser::parse(const YAML::Node& node) {
+    Transform* transform = nullptr;
+    
+    auto type = hard_require(node, "type").as<std::string>();
+
+    if (type=="rotation_x") {
+        auto angle = hard_require(node, "angle").as<float>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateX(angle), &transform, nullptr);
+    } else if (type=="rotation_y") {
+        auto angle = hard_require(node, "angle").as<float>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateY(angle), &transform, nullptr);
+    } else if (type=="rotation_z") {
+        auto angle = hard_require(node, "angle").as<float>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateZ(angle), &transform, nullptr);
+    } else if (type=="rotation") {
+        auto angle = hard_require(node, "angle").as<float>();
+        auto axis = hard_require(node, "axis").as<Vec3>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotate(angle, axis), &transform, nullptr);
+    } else if (type=="scale") {
+        auto xyz = hard_require(node, "xyz").as<Vec3>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_scale(xyz(0), xyz(1), xyz(2)), &transform, nullptr);
+    } else if (type=="translation") {
+        auto delta = hard_require(node, "delta").as<Vec3>();
+        RaytracerEngine::transform_cache.lookup(Transform::make_translate(delta), &transform, nullptr);
+    }
+    //return std::make_shared<Transform>(transform);
+    return std::shared_ptr<Transform>(transform);
+}
+
+template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
+    // initialize transform cache
+    Transform* tIdentity;
+    RaytracerEngine::transform_cache.lookup(Matrix4x4::identity(), &tIdentity, nullptr);
+    curTrans = *tIdentity;
+    transStack.push(curTrans);
+
     // context
     auto camera = this->parse<Camera>(node);
     auto background = this->parse<Background>(node);

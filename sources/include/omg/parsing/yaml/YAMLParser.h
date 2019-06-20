@@ -4,6 +4,8 @@
 #include "omg/parsing/Parser.h"
 #include "yaml-cpp/yaml.h"
 #include "omg/materials/Material.h"
+#include "omg/raytracer/TransformCache.h"
+#include <stack>
 
 namespace omg {
 /**
@@ -28,6 +30,10 @@ class YAMLParser : public Parser {
         std::map<std::string, std::shared_ptr<Material>> _materials;
 
         YAML::Node root;
+
+        std::stack<Transform> transStack;
+
+        Transform curTrans;
 
         /**
          * Parse some node of a specific type.
@@ -65,8 +71,19 @@ class YAMLParser : public Parser {
          * */
         bool soft_require(const YAML::Node & curr_node, const std::string& node_name) const;
 
+        /**
+         * Require a parameter, providing a default value when
+         * not available.
+         *
+         * @param curr_node
+         * @param node_name
+         * @param def
+         * @return the default value
+         * */
         template<typename DefType>
-        DefType defaulted_require(const YAML::Node & curr_node, const std::string& node_name, const DefType& def) const;
+        DefType defaulted_require(const YAML::Node & curr_node, 
+                const std::string& node_name, 
+                const DefType& def) const;
 
         /**
          * Searches a parsed material stored in the materials dictionary.
