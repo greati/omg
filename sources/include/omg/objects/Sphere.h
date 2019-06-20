@@ -136,10 +136,6 @@ class Sphere : public Object {
         }
 
         Bounds3 world_bound() const override {
-            //Vec3 radiuses {_radius, _radius, _radius};
-            //auto upper_corner = _center + radiuses;
-            //auto lower_corner = _center - radiuses;
-            //return Bounds3 {lower_corner, upper_corner};
             return object_to_world->t_bounds3(object_bound());
         }
 };

@@ -151,8 +151,6 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
 
     bool is_transformed = false;
 
-    std::cout << "Before transform:" << curTrans;
-
     if (node["transform"]) {
 
         is_transformed = true;
@@ -171,8 +169,6 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         curTrans = (*t) * curTrans;
     }
 
-    std::cout << "After transform:" << curTrans;
-
     if (type == "aggregate") {
         
         std::vector<std::shared_ptr<Primitive>> objects; 
@@ -187,20 +183,16 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
             if (structure_type == "bvh") {
                 auto max_prims_nodes = node_structure["max_prims_node"].as<int>();
                 auto split_method = node_structure["split_method"].as<BVHAccel::SplitMethod>();
-                //return std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
                 primitive = std::make_shared<BVHAccel>(objects, max_prims_nodes, split_method);
             } else if (structure_type == "list") {
-                ///return std::make_shared<ListAggregate>(objects);
                 primitive = std::make_shared<ListAggregate>(objects);
             } else throw omg::ParseException("unknown structure type " + type);
         } else 
-            //return std::make_shared<ListAggregate>(objects);
             primitive = std::make_shared<ListAggregate>(objects);
 
     } else if (type == "sphere") {
         auto sphereprim = parse<Sphere>(node);
         auto material = get_material(hard_require(node, "material").as<std::string>());
-        //return std::make_shared<GeometricPrimitive>(sphereprim, material);
         primitive = std::make_shared<GeometricPrimitive>(sphereprim, material);
     } else if (type=="triangle_mesh") {
         auto material = get_material(hard_require(node, "material").as<std::string>());
@@ -231,7 +223,6 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         std::vector<std::shared_ptr<Primitive>> t_primitives;
         for (auto& t : triangles)
             t_primitives.push_back(std::make_shared<GeometricPrimitive>(t, material));
-        //return std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
         primitive = std::make_shared<BVHAccel>(t_primitives, 4, BVHAccel::SplitMethod::Middle);
     } else 
         throw omg::ParseException("unknown object type " + type);
@@ -246,9 +237,6 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
 
     return primitive;
 }
-
-
-
 
 template<>
 std::shared_ptr<Material> YAMLParser::parse(const YAML::Node& node) {

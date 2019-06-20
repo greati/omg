@@ -165,15 +165,18 @@ class Triangle : public Object {
 
         Bounds3 object_bound() const override {
             auto [p0, p1, p2] = vertices();
-            auto bounds = Bounds3{p0, p1};
-            return bounds.get_union(bounds, p2);
+            auto bounds = Bounds3{
+                world_to_object->t_point3(p0), 
+                world_to_object->t_point3(p1)};
+            return bounds.get_union(bounds, world_to_object->t_point3(p2));
         }
 
         Bounds3 world_bound() const override {
-            //auto [p0, p1, p2] = vertices();
-            //auto bounds = Bounds3{p0, p1};
-            //return bounds.get_union(bounds, p2);
-            return world_to_object->t_bounds3(object_bound());
+            auto [p0, p1, p2] = vertices();
+            auto bounds = Bounds3{
+                p0, 
+                p1};
+            return bounds.get_union(bounds, p2);
         }
 };
 };

@@ -31,12 +31,12 @@ struct TriangleMesh {
         
         points.reset(new Point3[n_vertices]);
         for (int i {0}; i < n_vertices; ++i) {
-            points[i] = ps[i];
+            points[i] = object_to_world->t_point3(ps[i]);
         }
 
         normals.reset(new Vec3[n_vertices]);
         for (int i {0}; i < n_vertices; ++i) {
-            normals[i] = ns[i];
+            normals[i] = object_to_world->t_normal3(ns[i]);
         }
 
         //TODO
