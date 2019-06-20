@@ -17,31 +17,40 @@ raytracer:
         height: 900
     scene:
         objects:
-            - type: aggregate
-              structure:
-                  type: bvh
-                  max_prims_node: 4
-                  split_method: middle
-              objects:
-                  - type: sphere
-                    label: sphere1
-                    radius: 2
-                    center: [-30.0, 40.5, -1.0]
-                    material: cyan
+            - type: triangle_mesh
+              label: dragon
+              bfc: false
+              obj_file: "../examples/objs/dragon.obj"
+              material: dark_green
+              clockwise: false
+              compute_normals: true
+              transform:
+                  - type: scale
+                    xyz: [40, 40, 40]
+                  - type: rotation_x
+                    angle: 90.0
+                  - type: rotation_z
+                    angle: 90.0
+                  - type: translation
+                    delta: [0, 5, 2]
             - type: triangle_mesh
               label: mesh1
               bfc: false
-              obj_file: "../examples/objs/teapot.obj"
+              obj_file: "../examples/objs/new_teapot_body.obj"
               material: grey
               clockwise: false
               compute_normals: true
               transform:
                   - type: scale
-                    xyz: [0.5, 0.5, 0.5]
+                    xyz: [1.5, 1.5, 1.5]
+                  - type: rotation_x
+                    angle: 90
+                  - type: rotation_z
+                    angle: 90
                   - type: rotation_y
-                    angle: 25
+                    angle: 30
                   - type: translation
-                    delta: [0, 5, 4]
+                    delta: [-28.0, 5, 10]
             - type: triangle_mesh
               label: plane
               bfc: true
@@ -63,13 +72,19 @@ raytracer:
             - type: blinn
               label: grey
               ambient: [0.1, 0.1, 0.1]
-              diffuse: [0.8, 0.8, 0.8]
+              diffuse: [0.7, 0.7, 0.7]
+              specular: [0.0, 0.0, 0.0]
+              glossiness: 8
+            - type: blinn
+              label: dark_green
+              ambient: [0.3, 0.3, 0.3]
+              diffuse: [0.2, 0.5, 0.2]
               specular: [0.0, 0.0, 0.0]
               glossiness: 8
             - type: blinn
               label: cyan
               ambient: [0.1, 0.1, 0.1]
-              diffuse: [0.1, 0.9, 0.9]
+              diffuse: [0.1, 0.4, 0.9]
               specular: [0.8, 0.8, 0.8]
               mirror: [0.9, 0.9, 0.9]
               glossiness: 128
@@ -77,7 +92,8 @@ raytracer:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
             - type: directional
-              intensity: [229.5, 135, 112.5]
+              #intensity: [229.5, 135, 112.5]
+              intensity: [229.5, 229.5, 229.5]
               direction: [-5.0, -5.0, 10.0]
             - type: directional
               intensity: [229.5, 229.5, 229.5]

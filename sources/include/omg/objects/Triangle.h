@@ -1,7 +1,7 @@
 #ifndef _OMG_TRIANGLE_
 #define _OMG_TRIANGLE_
 
-#define EPSILON 0.001
+#define EPSILON 0.000001
 
 #include "omg/objects/Object.h"
 #include "TriangleMesh.h"
