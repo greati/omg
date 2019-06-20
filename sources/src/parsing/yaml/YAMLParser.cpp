@@ -95,7 +95,10 @@ template<>
 std::shared_ptr<Sphere> YAMLParser::parse(const YAML::Node& node) {
     auto radius = hard_require(node, "radius").as<float>();
     auto center = hard_require(node, "center").as<Vec3>();
-    return std::make_shared<Sphere>(radius, center);
+    // Get transforms
+    std::shared_ptr<Transform> otw, wto;
+    RaytracerEngine::transform_cache.lookup(curTrans, otw, wto);
+    return std::make_shared<Sphere>(radius, center, otw, wto);
 }
 
 
@@ -108,7 +111,11 @@ std::vector<std::shared_ptr<Triangle>> YAMLParser::parse_list(const YAML::Node& 
     std::vector<Point2> uvs; //TODO ask for uvs
     bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
     bool clockwise = node["clockwise"] ? node["clockwise"].as<bool>() : false;
-    return Triangle::create_triangle_mesh(bfc, n_triangles, indices.data(),
+
+    std::shared_ptr<Transform> otw, wto;
+    RaytracerEngine::transform_cache.lookup(curTrans, otw, wto);
+
+    return Triangle::create_triangle_mesh(otw, wto, bfc, n_triangles, indices.data(),
             vertices.size(), vertices.data(), normals.data(), uvs.data(), false, clockwise);
 }
 
@@ -144,6 +151,8 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
 
     bool is_transformed = false;
 
+    std::cout << "Before transform:" << curTrans;
+
     if (node["transform"]) {
 
         is_transformed = true;
@@ -151,16 +160,18 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         auto node_transform = node["transform"];
         auto transform_list = parse_list<Transform>(node["transform"]);
 
-        //auto comp_result = Transform::compose(transform_list);
+        auto comp_result = Transform::compose(transform_list);
 
         // Take the transform
-        //Transform* t;
-        //RaytracerEngine::transform_cache.lookup(*comp_result, &t, nullptr);
+        std::shared_ptr<Transform> t;
+        RaytracerEngine::transform_cache.lookup(*comp_result, t);
         // Put it in the stack
-        //transStack.push(*t);
+        transStack.push(*t);
         // Update current
-        //curTrans = (*t) * curTrans;
+        curTrans = (*t) * curTrans;
     }
+
+    std::cout << "After transform:" << curTrans;
 
     if (type == "aggregate") {
         
@@ -204,7 +215,11 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
                 bool bfc = node["bfc"] ? node["bfc"].as<bool>() : true;
                 bool compute_normals = node["compute_normals"] ? node["compute_normals"].as<bool>() : false;
                 bool clockwise = node["clockwise"] ? node["clockwise"].as<bool>() : false;
-                triangles = cyobjparser.parse_tri_mesh(obj_file, bfc, compute_normals, clockwise); 
+
+                std::shared_ptr<Transform> otw, wto;
+                RaytracerEngine::transform_cache.lookup(curTrans, otw, wto);
+
+                triangles = cyobjparser.parse_tri_mesh(otw, wto, obj_file, bfc, compute_normals, clockwise); 
             } catch (omg::ParseException& e) {
                 throw;
             }
@@ -449,39 +464,39 @@ std::shared_ptr<Light> YAMLParser::parse(const YAML::Node& light_node) {
 
 template<>
 std::shared_ptr<Transform> YAMLParser::parse(const YAML::Node& node) {
-    Transform* transform = nullptr;
+    std::shared_ptr<Transform> transform;
     
     auto type = hard_require(node, "type").as<std::string>();
 
     if (type=="rotation_x") {
         auto angle = hard_require(node, "angle").as<float>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_rotateX(angle), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateX(angle), transform);
     } else if (type=="rotation_y") {
         auto angle = hard_require(node, "angle").as<float>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_rotateY(angle), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateY(angle), transform);
     } else if (type=="rotation_z") {
         auto angle = hard_require(node, "angle").as<float>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_rotateZ(angle), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotateZ(angle), transform);
     } else if (type=="rotation") {
         auto angle = hard_require(node, "angle").as<float>();
         auto axis = hard_require(node, "axis").as<Vec3>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_rotate(angle, axis), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_rotate(angle, axis), transform);
     } else if (type=="scale") {
         auto xyz = hard_require(node, "xyz").as<Vec3>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_scale(xyz(0), xyz(1), xyz(2)), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_scale(xyz(0), xyz(1), xyz(2)), transform);
     } else if (type=="translation") {
         auto delta = hard_require(node, "delta").as<Vec3>();
-        RaytracerEngine::transform_cache.lookup(Transform::make_translate(delta), &transform, nullptr);
+        RaytracerEngine::transform_cache.lookup(Transform::make_translate(delta), transform);
     }
-    //return std::make_shared<Transform>(transform);
-    return std::shared_ptr<Transform>(transform);
+
+    return transform;
 }
 
 template<>
 std::shared_ptr<Scene> YAMLParser::parse(const YAML::Node& node) {
     // initialize transform cache
-    Transform* tIdentity;
-    RaytracerEngine::transform_cache.lookup(Matrix4x4::identity(), &tIdentity, nullptr);
+    std::shared_ptr<Transform> tIdentity;
+    RaytracerEngine::transform_cache.lookup(Matrix4x4::identity(), tIdentity);
     curTrans = *tIdentity;
     transStack.push(curTrans);
 

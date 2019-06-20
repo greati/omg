@@ -24,10 +24,11 @@ class Triangle : public Object {
 
     public:
 
-        Triangle(bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number,
-                 const std::shared_ptr<Transform>& object_to_world,
-                 const std::shared_ptr<Transform>& world_to_object, 
-                 bool clockwise = false)
+        Triangle(
+                const std::shared_ptr<Transform>& object_to_world,
+                const std::shared_ptr<Transform>& world_to_object, 
+                bool bfc, const std::shared_ptr<TriangleMesh>& mesh, int tri_number,
+                bool clockwise = false)
             : Object{object_to_world, world_to_object}, bfc {bfc}, mesh {mesh}, clockwise {clockwise} {
             v = &mesh->vertex_indices[3 * tri_number]; 
         }
@@ -38,15 +39,17 @@ class Triangle : public Object {
         }
 
         static std::vector<std::shared_ptr<Triangle>> create_triangle_mesh(
+                const std::shared_ptr<Transform> object_to_world,
+                const std::shared_ptr<Transform> world_to_object,
                 bool bfc, int n_triangles, const int *indices, int n_vertices,
                 const Point3 *ps, const Vec3* ns, const Point2* uvs, bool compute_normals = false,
                 bool clockwise = false) {
             std::shared_ptr<TriangleMesh> mesh = 
-                std::make_shared<TriangleMesh>(n_triangles, indices, n_vertices,
+                std::make_shared<TriangleMesh>(object_to_world, n_triangles, indices, n_vertices,
                         ps, ns, uvs, compute_normals);
             std::vector<std::shared_ptr<Triangle>> triangles;
             for (int i = 0; i < n_triangles; ++i)
-                triangles.push_back(std::make_shared<Triangle>(bfc, mesh, i, clockwise));
+                triangles.push_back(std::make_shared<Triangle>(object_to_world, world_to_object, bfc, mesh, i, clockwise));
             return triangles;
         } 
 
@@ -160,10 +163,17 @@ class Triangle : public Object {
             return {n0, n1, n2};
         }
 
-        Bounds3 world_bound() const override {
+        Bounds3 object_bound() const override {
             auto [p0, p1, p2] = vertices();
             auto bounds = Bounds3{p0, p1};
             return bounds.get_union(bounds, p2);
+        }
+
+        Bounds3 world_bound() const override {
+            //auto [p0, p1, p2] = vertices();
+            //auto bounds = Bounds3{p0, p1};
+            //return bounds.get_union(bounds, p2);
+            return world_to_object->t_bounds3(object_bound());
         }
 };
 };

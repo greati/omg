@@ -2,6 +2,7 @@
 #define _OMG_TRANS_CACHE_
 
 #include "omg/objects/Transform.h"
+#include <optional>
 
 namespace omg {
 /**
@@ -24,15 +25,14 @@ class TransformCache {
     public:
 
 
+
         inline bool lookup(const Transform& t, 
-                Transform** m_dest, 
-                Transform** m_inv_dest) {
+                std::shared_ptr<Transform>& m_dest,
+                std::shared_ptr<Transform>& m_inv_dest) {
             auto it = cache.find(t);
             if (it != cache.end()) {
-               if (m_dest != nullptr)
-                   *m_dest = it->second.first.get();
-               if (m_inv_dest != nullptr)
-                   *m_inv_dest = it->second.second.get();
+               m_dest = it->second.first;
+               m_inv_dest = it->second.second;
                return true;
             } else {
                auto mat = std::make_shared<Transform>(t);
@@ -43,10 +43,28 @@ class TransformCache {
                                     std::make_shared<Transform>(inverse(*mat))
                                 )
                            )); 
-               if (m_dest != nullptr)
-                   *m_dest = it_insert.first->second.first.get();
-               if (m_inv_dest != nullptr)
-                   *m_inv_dest = it_insert.first->second.second.get();
+               m_dest = it_insert.first->second.first;
+               m_inv_dest = it_insert.first->second.second;
+               return false;
+            }
+        }
+
+        inline bool lookup(const Transform& t, 
+                std::shared_ptr<Transform>& m_dest) {
+            auto it = cache.find(t);
+            if (it != cache.end()) {
+               m_dest = it->second.first;
+               return true;
+            } else {
+               auto mat = std::make_shared<Transform>(t);
+               auto it_insert = cache.insert(std::pair(
+                                *mat,
+                                std::pair(
+                                    mat,
+                                    std::make_shared<Transform>(inverse(*mat))
+                                )
+                           )); 
+               m_dest = it_insert.first->second.first;
                return false;
             }
         }

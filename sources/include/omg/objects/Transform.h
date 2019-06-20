@@ -254,9 +254,9 @@ class Transform {
         Vec3 t_normal3(const Vec3& n) const {
             RealValue x = n(0), y = n(1), z = n(2);
             return Vec3 {
-                mInv(0, 0) * x + mInv(0, 1) * y + mInv(0, 2) * z,
-                mInv(1, 0) * x + mInv(1, 1) * y + mInv(1, 2) * z,
-                mInv(2, 0) * x + mInv(2, 1) * y + mInv(2, 2) * z,
+                mInv(0, 0) * x + mInv(1, 0) * y + mInv(2, 0) * z,
+                mInv(0, 1) * x + mInv(1, 1) * y + mInv(2, 1) * z,
+                mInv(0, 2) * x + mInv(1, 2) * y + mInv(2, 2) * z,
             };
         }
 
@@ -270,7 +270,9 @@ class Transform {
             //TODO deal with round off error
             Point3 o = t_point3(r.get_origin()); 
             Vec3 d = t_vec3(r.get_direction()); 
-            return Ray(o, d);
+            Ray r_res {o, d};
+            r_res.tMax = r.tMax;
+            return r_res;
         }
 
         /**
@@ -320,7 +322,7 @@ class Transform {
 
         inline static std::shared_ptr<Transform> compose(const std::vector<std::shared_ptr<Transform>>& ts) {
             Transform transform = Transform(); 
-            for (auto t : ts) {
+            for (auto& t : ts) {
                 transform = (*t) * transform;
             }
             return std::make_shared<Transform>(transform);
@@ -342,6 +344,10 @@ class Transform {
                 }
             }
             return false;
+        }
+
+        friend std::ostream& operator<<(std::ostream& out, const Transform& t) {
+            return out << t.mat << std::endl << t.mInv;
         }
 };
 

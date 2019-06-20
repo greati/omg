@@ -5,7 +5,10 @@
 
 using namespace omg;
 
-std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::string& file_name, 
+std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(
+        const std::shared_ptr<Transform>& object_to_world,
+        const std::shared_ptr<Transform>& world_to_object,
+        const std::string& file_name, 
         bool bfc, bool compute_normals, bool clockwise) const {
 
     cy::TriMesh cy_trimesh;
@@ -50,6 +53,6 @@ std::vector<std::shared_ptr<Triangle>> CyObjParser::parse_tri_mesh(const std::st
     std::vector<Point2> uvs;
     //TODO
     
-    return Triangle::create_triangle_mesh(bfc, ntriangles, indices.data(),
+    return Triangle::create_triangle_mesh(object_to_world, world_to_object, bfc, ntriangles, indices.data(),
             nvertices, vertices.data(), normals.data(), uvs.data(), compute_normals, clockwise);
 }

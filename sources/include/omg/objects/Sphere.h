@@ -43,7 +43,10 @@ class Sphere : public Object {
          * with a ray.
          *
          * */
-        bool intersect(const Ray& ray, float * tHit, SurfaceInteraction* hit_record) override {
+        bool intersect(const Ray& wray, float * tHit, SurfaceInteraction* hit_record) override {
+
+            Ray ray = world_to_object->t_ray(wray);
+
             const auto& origin = ray.get_origin();
             const auto& direction = ray.get_direction();        
 
@@ -57,7 +60,6 @@ class Sphere : public Object {
 
             if (delta < 0.0) return false;
 
-
             float t1 = (-B + std::sqrt(delta)) / (2 * A);
             float t2 = (-B - std::sqrt(delta)) / (2 * A);
 
@@ -66,11 +68,8 @@ class Sphere : public Object {
             if (t1 > ray.tMax || t2 <= T_MIN_SPHERE)
                 return false;
 
-            //float tShapeHit = std::min(t1, t2);
             float tShapeHit = t1;
 
-            //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
-            //   return false; 
             if (tShapeHit <= T_MIN_SPHERE) {
                 tShapeHit = t2;
                 if (tShapeHit > ray.tMax)
@@ -80,16 +79,23 @@ class Sphere : public Object {
             *tHit = tShapeHit;
 
             if (hit_record != nullptr) {
-                hit_record->_t = tShapeHit;
-                hit_record->_p = ray(hit_record->_t);
-                hit_record->_n = 2.0f * (hit_record->_p - _center);
-                hit_record->_wo = -1.0f * (direction - origin);
+
+                SurfaceInteraction obj_si;
+                obj_si._t = tShapeHit;
+                obj_si._p = ray(obj_si._t);
+                obj_si._n = 2.0f * (obj_si._p - _center);
+                obj_si._wo = -1.0f * (direction - origin);
+                
+                *hit_record = object_to_world->t_si(obj_si);
             }
 
             return true;
         }
 
-        bool intersect(const Ray& ray) override {
+        bool intersect(const Ray& wray) override {
+
+            Ray ray = world_to_object->t_ray(wray);
+
             const auto& origin = ray.get_origin();
             const auto& direction = ray.get_direction();        
 
@@ -113,8 +119,6 @@ class Sphere : public Object {
 
             float tShapeHit = t1;
 
-            //if (tShapeHit > ray.tMax || tShapeHit < 0.0)
-            //   return false; 
             if (tShapeHit <= T_MIN_SPHERE) {
                 tShapeHit = t2;
                 if (tShapeHit > ray.tMax)
@@ -124,11 +128,19 @@ class Sphere : public Object {
             return true;
         }
 
-        Bounds3 world_bound() const {
+        Bounds3 object_bound() const override {
             Vec3 radiuses {_radius, _radius, _radius};
             auto upper_corner = _center + radiuses;
             auto lower_corner = _center - radiuses;
             return Bounds3 {lower_corner, upper_corner};
+        }
+
+        Bounds3 world_bound() const override {
+            //Vec3 radiuses {_radius, _radius, _radius};
+            //auto upper_corner = _center + radiuses;
+            //auto lower_corner = _center - radiuses;
+            //return Bounds3 {lower_corner, upper_corner};
+            return object_to_world->t_bounds3(object_bound());
         }
 };
 };

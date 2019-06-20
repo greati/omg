@@ -29,6 +29,8 @@ class Object {
 
         virtual bool intersect(const Ray& ray) = 0;
 
+        virtual Bounds3 object_bound() const = 0;
+
         virtual Bounds3 world_bound() const = 0;
 };
 };
