@@ -39,7 +39,7 @@ raytracer:
               obj_file: "../examples/objs/new_teapot_body.obj"
               material: grey
               clockwise: false
-              compute_normals: true
+              compute_normals: false
               transform:
                   - type: scale
                     xyz: [1.5, 1.5, 1.5]
