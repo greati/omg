@@ -166,7 +166,7 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
         // Put it in the stack
         transStack.push(*t);
         // Update current
-        curTrans = (*t) * curTrans;
+        curTrans = curTrans * (*t);
     }
 
     if (type == "aggregate") {
@@ -230,7 +230,8 @@ std::shared_ptr<Primitive> YAMLParser::parse(const YAML::Node& node) {
     if (is_transformed) {
         // update cur transform
         auto t = transStack.top();
-        curTrans = inverse(t) * curTrans;
+        //curTrans = inverse(t) * curTrans;
+        curTrans = curTrans * inverse(t);
         // pop stack
         transStack.pop();
     }

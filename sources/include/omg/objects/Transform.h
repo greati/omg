@@ -323,7 +323,8 @@ class Transform {
         inline static std::shared_ptr<Transform> compose(const std::vector<std::shared_ptr<Transform>>& ts) {
             Transform transform = Transform(); 
             for (auto& t : ts) {
-                transform = (*t) * transform;
+                //transform = (*t) * transform;
+                transform = transform * (*t);
             }
             return std::make_shared<Transform>(transform);
         }

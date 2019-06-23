@@ -1,0 +1,89 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [10, 10, 10]
+            - [10, 10, 10]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: orthographic
+        position: [0, 10.0, 0]
+        target: [0.0, 0.0, 0.0]
+        up: [0.0, 0.0, -1.0]
+        vpdims: [-8.0, 8, -6.0, 6]
+        width: 800
+        height: 600
+    scene:
+        objects:
+            - type: aggregate
+              structure:
+                  type: list
+              objects:
+                  - type: triangle_mesh
+                    name: celestial_plane
+                    obj_file: '../examples/objs/plane.obj'
+                    bfc: false
+                    clockwise: true
+                    material: grey
+                    transform:
+                        - type: translation
+                          delta: [0, 0.5, 0]
+                  - type: sphere
+                    name: mars
+                    material: redish
+                    radius: 0.5
+                    center: [0.0, 0.0, 0.0]
+                    transform:
+                        - type: translation
+                          delta: [0.0, 0.0, 0.0]
+                  - type: sphere
+                    name: jupyter
+                    material: yellow
+                    radius: 0.5
+                    center: [0.0, 0.0, 0.0]
+                    transform:
+                        - type: rotation
+                          axis: [0.0, 1.0, 0.0]
+                          angle: 25.0
+                        - type: translation
+                          delta: [5.0, 0.0, 0.0]
+        materials:
+            - type: blinn
+              label: grey
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.659, 0.383, 0.077]
+              specular: [0.0, 0.0, 0.0]
+              mirror: [0.2, 0.2, 0.2]
+              glossiness: 0
+            - type: blinn
+              label: cyan
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.1, 0.9, 0.9]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+            - type: blinn
+              label: redish
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.2, 0.1]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 64
+            - type: blinn
+              label: greenish
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.2, 0.9, 0.2]
+              specular: [0.8, 0.8, 0.8]
+              glossiness: 256
+            - type: blinn
+              label: yellow
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.9, 0.9, 0.1]
+              specular: [0.8, 0.8, 0.1]
+              glossiness: 128
+        lights:
+            - type: directional
+              intensity: [229.5, 229.5, 229.5]
+              direction: [5.0, 8.0, 0.0]
+    settings:
+        integrators:
+            - type: blinn
