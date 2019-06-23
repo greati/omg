@@ -195,7 +195,7 @@ class Transform {
             auto ax = tao::unitize(axis);
             float sin_theta = std::sin(tao::geometry::radians(theta));
             float cos_theta = std::cos(tao::geometry::radians(theta));
-            Matrix4x4 mat;
+            Matrix4x4 mat = Matrix4x4::identity();
             // first basis vector
             mat(0, 0) = ax(0) * ax(0) + (1 - ax(0) * ax(0)) * cos_theta;
             mat(0, 1) = ax(0) * ax(1) * (1 - cos_theta) - ax(2) * sin_theta;
