@@ -8,7 +8,7 @@ raytracer:
             - [153, 204, 255]
     camera:
         type: perspective
-        position: [0.0, -90.0, 30.0]
+        position: [0.0, 0.0, 10.0]
         target: [0.0, 0.0, 0.0]
         up: [0.0, 1.0, 0.0]
         v_angle: 25.0
@@ -26,13 +26,11 @@ raytracer:
               compute_normals: true
               transform:
                   - type: scale
-                    xyz: [40, 40, 40]
-                  - type: rotation_x
-                    angle: 90.0
-                  - type: rotation_z
+                    xyz: [5, 5, 5]
+                  - type: rotation_y
                     angle: 90.0
                   - type: translation
-                    delta: [0, 5, 2]
+                    delta: [1, 0, 0]
             - type: triangle_mesh
               label: mesh1
               bfc: false
@@ -42,32 +40,24 @@ raytracer:
               compute_normals: false
               transform:
                   - type: scale
-                    xyz: [1.5, 1.5, 1.5]
+                    xyz: [0.1, 0.1, 0.1]
+                  - type: rotation
+                    axis: [0, 1, 0]
+                    angle: 90
                   - type: rotation_x
-                    angle: 90
-                  - type: rotation_z
-                    angle: 90
-                  - type: rotation_y
-                    angle: 30
+                    angle: 35
                   - type: translation
-                    delta: [-28.0, 5, 10]
+                    delta: [20.0, -5.0, -28.0]
             - type: triangle_mesh
               label: plane
               bfc: true
+              obj_file: '../examples/objs/plane.obj'
               material: cyan
               ntriangles: 2
               clockwise: true
-              indices: [0, 1, 2, 0, 2, 3]
-              vertices:
-                  - [-30.0, 30.5, -1.0]  
-                  - [30.0, 30.5, -1.0]  
-                  - [30.0, -30.5, -1.0]  
-                  - [-30.0, -30.5, -1.0]
-              normals:
-                  - [0, 0, 1]
-                  - [0, 0, 1]
-                  - [0, 0, 1]
-                  - [0, 0, 1]
+              transform:
+                  - type: translation
+                    delta: [0, -1.0, 0]
         materials:
             - type: blinn
               label: grey
@@ -83,21 +73,17 @@ raytracer:
               glossiness: 8
             - type: blinn
               label: cyan
-              ambient: [0.1, 0.1, 0.1]
+              ambient: [0.0, 0.0, 0.0]
               diffuse: [0.1, 0.4, 0.9]
               specular: [0.8, 0.8, 0.8]
-              mirror: [0.9, 0.9, 0.9]
+              mirror: [0.2, 0.2, 0.2]
               glossiness: 128
         lights:
             - type: ambient
               intensity: [25.5, 25.5, 25.5]
             - type: directional
-              #intensity: [229.5, 135, 112.5]
               intensity: [229.5, 229.5, 229.5]
-              direction: [-5.0, -5.0, 10.0]
-            - type: directional
-              intensity: [229.5, 229.5, 229.5]
-              direction: [5.0, -5.0, 10.0]
+              direction: [5, 5, 5]
     settings:
         integrators:
             - type: blinn
