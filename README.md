@@ -67,4 +67,4 @@ execute:
 - [ ] Accelerators
     - [x] BVH
     - [ ] KDTree
-- [ ] Geometric transformations
+- [x] Geometric transformations
