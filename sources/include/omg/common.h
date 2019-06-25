@@ -11,6 +11,8 @@ namespace omg {
 
     using RealValue = float;
 
+    using Matrix4x4 = tao::Mat<float, 4, 4>;
+
     /** Represents a 3d vector */
     using Vec3 = tao::Vec3<RealValue>;
 

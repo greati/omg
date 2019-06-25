@@ -30,7 +30,7 @@ class SurfaceInteraction {
 
         SurfaceInteraction() {/*empty*/}
 
-	SurfaceInteraction(const Point3& p) : _p {p} {/* empty */}
+	    SurfaceInteraction(const Point3& p) : _p {p} {/* empty */}
         
         SurfaceInteraction(const Point3& p, const Vec3& n,
                 const Vec3& wo, float time, const Point2& uv,

@@ -17,7 +17,7 @@ var searchData=
   ['setnumnormals',['SetNumNormals',['../classcy_1_1_tri_mesh.html#aae2471b77847c8a15ec42ea4bcd4355e',1,'cy::TriMesh']]],
   ['setnumtexverts',['SetNumTexVerts',['../classcy_1_1_tri_mesh.html#afcd5630009a54c86b414d4c9ab15dca0',1,'cy::TriMesh']]],
   ['setnumvertex',['SetNumVertex',['../classcy_1_1_tri_mesh.html#a5111afec31edabbc6a665bacf02e67fe',1,'cy::TriMesh']]],
-  ['sphere',['Sphere',['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere']]],
+  ['sphere',['Sphere',['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere(float radius, const Point3 &amp;center)'],['../classomg_1_1_sphere.html#a156fe48691f107d7a04774bdc640959e',1,'omg::Sphere::Sphere(float radius, const Point3 &amp;center, const std::shared_ptr&lt; Transform &gt; &amp;object_to_world, const std::shared_ptr&lt; Transform &gt; &amp;world_to_object)']]],
   ['standardlogger',['StandardLogger',['../class_standard_logger.html#aa037227d1766af8b649e46849d466d8c',1,'StandardLogger']]],
   ['start_5fnext_5fsample',['start_next_sample',['../classomg_1_1_sampler.html#ae2b33610cc24dced31dd8d15b4778cba',1,'omg::Sampler']]],
   ['start_5fpixel',['start_pixel',['../classomg_1_1_sampler.html#aa4a2172276ec0bec3e717b7e035872d5',1,'omg::Sampler']]],

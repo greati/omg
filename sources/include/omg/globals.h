@@ -12,6 +12,7 @@ namespace omg {
         return (n * MachineEpsilon) / (1 - n * MachineEpsilon);
     }
 
+
 };
 
 #endif

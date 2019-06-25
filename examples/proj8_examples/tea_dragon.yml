@@ -1,0 +1,89 @@
+raytracer:
+    background:
+        type: gradient
+        colors:
+            - [10, 10, 10]
+            - [10, 10, 10]
+            - [153, 204, 255]
+            - [153, 204, 255]
+    camera:
+        type: perspective
+        position: [0.0, 0.0, 10.0]
+        target: [0.0, 0.0, 0.0]
+        up: [0.0, 1.0, 0.0]
+        v_angle: 25.0
+        fdist: 1.0
+        width: 1800
+        height: 900
+    scene:
+        objects:
+            - type: triangle_mesh
+              label: dragon
+              bfc: false
+              obj_file: "../examples/objs/dragon.obj"
+              material: dark_green
+              clockwise: false
+              compute_normals: true
+              transform:
+                  - type: scale
+                    xyz: [5, 5, 5]
+                  - type: rotation_y
+                    angle: 90.0
+                  - type: translation
+                    delta: [1, 0, 0]
+            - type: triangle_mesh
+              label: mesh1
+              bfc: false
+              obj_file: "../examples/objs/new_teapot_body.obj"
+              material: grey
+              clockwise: false
+              compute_normals: false
+              transform:
+                  - type: scale
+                    xyz: [0.1, 0.1, 0.1]
+                  - type: rotation
+                    axis: [0, 1, 0]
+                    angle: 90
+                  - type: rotation_x
+                    angle: 35
+                  - type: translation
+                    delta: [20.0, -5.0, -28.0]
+            - type: triangle_mesh
+              label: plane
+              bfc: true
+              obj_file: '../examples/objs/plane.obj'
+              material: cyan
+              ntriangles: 2
+              clockwise: true
+              transform:
+                  - type: translation
+                    delta: [0, -1.0, 0]
+        materials:
+            - type: blinn
+              label: grey
+              ambient: [0.1, 0.1, 0.1]
+              diffuse: [0.7, 0.7, 0.7]
+              specular: [0.0, 0.0, 0.0]
+              glossiness: 8
+            - type: blinn
+              label: dark_green
+              ambient: [0.3, 0.3, 0.3]
+              diffuse: [0.2, 0.5, 0.2]
+              specular: [0.0, 0.0, 0.0]
+              glossiness: 8
+            - type: blinn
+              label: cyan
+              ambient: [0.0, 0.0, 0.0]
+              diffuse: [0.1, 0.4, 0.9]
+              specular: [0.8, 0.8, 0.8]
+              mirror: [0.2, 0.2, 0.2]
+              glossiness: 128
+        lights:
+            - type: ambient
+              intensity: [25.5, 25.5, 25.5]
+            - type: directional
+              intensity: [229.5, 229.5, 229.5]
+              direction: [5, 5, 5]
+    settings:
+        integrators:
+            - type: blinn

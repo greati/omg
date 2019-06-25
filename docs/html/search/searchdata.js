@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "_bcdfikmnrtv",
   6: "cprv",
   7: "st",
-  8: "o",
+  8: "iot",
   9: "t"
 };
 

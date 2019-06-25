@@ -18,14 +18,29 @@ Inheritance diagram for omg\+::Object\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{classomg_1_1_object_a9e104624609a4e028e63cef64374979c}\label{classomg_1_1_object_a9e104624609a4e028e63cef64374979c}} 
+{\bfseries Object} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$ \&object\+\_\+to\+\_\+world, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$ \&world\+\_\+to\+\_\+object)
+\item 
 \mbox{\Hypertarget{classomg_1_1_object_a56354058785d04afff686ae41e144970}\label{classomg_1_1_object_a56354058785d04afff686ae41e144970}} 
 virtual bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray, float $\ast$t\+Hit, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$hit\+\_\+record)=0
 \item 
 \mbox{\Hypertarget{classomg_1_1_object_a6bea9275afdd17c67de345043bc0d3fc}\label{classomg_1_1_object_a6bea9275afdd17c67de345043bc0d3fc}} 
 virtual bool {\bfseries intersect} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&ray)=0
 \item 
+\mbox{\Hypertarget{classomg_1_1_object_a72b5a834655ca22225b822364969c452}\label{classomg_1_1_object_a72b5a834655ca22225b822364969c452}} 
+virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries object\+\_\+bound} () const =0
+\item 
 \mbox{\Hypertarget{classomg_1_1_object_a571b05c10d7fb654449d68dda18b65e2}\label{classomg_1_1_object_a571b05c10d7fb654449d68dda18b65e2}} 
 virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} {\bfseries world\+\_\+bound} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_object_ad6bfaee779c617e14437ec3c050af483}\label{classomg_1_1_object_ad6bfaee779c617e14437ec3c050af483}} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$ {\bfseries object\+\_\+to\+\_\+world}
+\item 
+\mbox{\Hypertarget{classomg_1_1_object_a7eaa6c2a3d62ee061863b9ad344aec59}\label{classomg_1_1_object_a7eaa6c2a3d62ee061863b9ad344aec59}} 
+const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$ {\bfseries world\+\_\+to\+\_\+object}
 \end{DoxyCompactItemize}
 
 

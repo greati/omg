@@ -2,6 +2,8 @@
 #define _RTRACER_ENGINE_
 
 #include "omg/raytracer/RaytracerRunningSettings.h"
+#include "omg/raytracer/TransformCache.h"
+#include "printer/NetpbmPrinter.h"
 
 namespace omg {
 /**
@@ -20,6 +22,8 @@ class RaytracerEngine {
         std::shared_ptr<Parser> _parser = std::make_shared<YAMLParser>();
 
     public:
+
+        inline static TransformCache transform_cache;
 
         enum class SourceType {
             FROM_FILE = 0,

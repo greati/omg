@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ncols',['ncols',['../classtao_1_1deprecated_1_1_mat.html#a59ab064a967f1f98bfc20f141c93080a',1,'tao::deprecated::Mat::ncols()'],['../classtao_1_1_mat.html#a267e7b8c107a77c25777111a7add6b60',1,'tao::Mat::ncols()']]],
+  ['neq',['neq',['../classomg_1_1_transform.html#afdef3520d417d8ea15a2f1674a6e41a6',1,'omg::Transform']]],
   ['nf',['NF',['../classcy_1_1_tri_mesh.html#a2f702fb021982a136f1f89ec14727bad',1,'cy::TriMesh']]],
   ['nm',['NM',['../classcy_1_1_tri_mesh.html#a8fd188cf85fda75cc3983d02581acb22',1,'cy::TriMesh']]],
   ['norm',['norm',['../classtao_1_1deprecated_1_1_col.html#a8501c1119f984d66f4a9172fa079bf6a',1,'tao::deprecated::Col::norm()'],['../classtao_1_1deprecated_1_1_row.html#aee5789eadcc7de529f38226e2f959d1c',1,'tao::deprecated::Row::norm()'],['../namespacetao.html#ac35e732bcf5d8bfb7df27de9fc96ba08',1,'tao::norm()']]],

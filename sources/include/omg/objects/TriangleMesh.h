@@ -22,18 +22,22 @@ struct TriangleMesh {
     std::unique_ptr<Vec3[]> normals;
     std::unique_ptr<Point2[]> uvs;
 
-    TriangleMesh(int n_triangles, const int *indices, int n_vertices,
+    TriangleMesh(
+            const std::shared_ptr<Transform>& object_to_world,
+            int n_triangles, const int *indices, int n_vertices,
             const Point3 *ps, const Vec3* ns, const Point2* uvs, bool compute_normals = false) 
     : n_triangles {n_triangles}, n_vertices {n_vertices},
     vertex_indices {indices, indices + 3 * n_triangles }, compute_normals {compute_normals} {
         
         points.reset(new Point3[n_vertices]);
-        for (int i {0}; i < n_vertices; ++i)
-            points[i] = ps[i];
+        for (int i {0}; i < n_vertices; ++i) {
+            points[i] = object_to_world->t_point3(ps[i]);
+        }
 
         normals.reset(new Vec3[n_vertices]);
-        for (int i {0}; i < n_vertices; ++i)
-            normals[i] = ns[i];
+        for (int i {0}; i < n_vertices; ++i) {
+            normals[i] = object_to_world->t_normal3(ns[i]);
+        }
 
         //TODO
         //this->uvs.reset(new Point2[n_vertices]);

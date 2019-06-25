@@ -62,6 +62,7 @@ add_executable(raytracer
     src/parsing/obj/CyObjParser.cpp
     src/accelerators/BVHAccel.cpp
     src/globals.cpp
+    src/objects/Bounds3.cpp
     )
 target_link_libraries(raytracer PRIVATE lodepng PUBLIC yaml-cpp PUBLIC tao)
 target_include_directories(raytracer PUBLIC include PUBLIC extern/tao/sources/include PUBLIC ${yamlcpp_SOURCE_DIR}/include)
@@ -108,6 +109,7 @@ set(test_sources ${test_sources}
     tests/main.cpp
     tests/ray_tests.cpp
     tests/camera_tests.cpp
+    tests/transform_tests.cpp
 )
 
 add_executable(maintest ${test_sources})

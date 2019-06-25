@@ -1,0 +1,353 @@
+\hypertarget{classomg_1_1_transform}{}\section{omg\+::Transform Class Reference}
+\label{classomg_1_1_transform}\index{omg::Transform@{omg::Transform}}
+
+
+Represents a geometric transform.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a5f3df5dcc5bc6bec80e4cb96eb6d276e}\label{classomg_1_1_transform_a5f3df5dcc5bc6bec80e4cb96eb6d276e}} 
+{\bfseries Transform} (const \mbox{\hyperlink{classtao_1_1_mat}{Matrix4x4}} \&mat)
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_ad352c006b6a14aa94e5c5c3d201d6394}\label{classomg_1_1_transform_ad352c006b6a14aa94e5c5c3d201d6394}} 
+{\bfseries Transform} (const \mbox{\hyperlink{classtao_1_1_mat}{Matrix4x4}} \&mat, const \mbox{\hyperlink{classtao_1_1_mat}{Matrix4x4}} \&m\+Inv)
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a043ba204cad00fcf48293409c29f076b}\label{classomg_1_1_transform_a043ba204cad00fcf48293409c29f076b}} 
+bool \mbox{\hyperlink{classomg_1_1_transform_a043ba204cad00fcf48293409c29f076b}{eq}} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t2, double precision=0.\+001)
+\begin{DoxyCompactList}\small\item\em Test for equality with precision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a2abe54a9d5d4d534472442a078272f85}\label{classomg_1_1_transform_a2abe54a9d5d4d534472442a078272f85}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t1)
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_afdef3520d417d8ea15a2f1674a6e41a6}\label{classomg_1_1_transform_afdef3520d417d8ea15a2f1674a6e41a6}} 
+bool \mbox{\hyperlink{classomg_1_1_transform_afdef3520d417d8ea15a2f1674a6e41a6}{neq}} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t2, double precision=0.\+001)
+\begin{DoxyCompactList}\small\item\em Test for equality with precision. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_aab6f9ac55ff825731c75e4517eeafa3e}\label{classomg_1_1_transform_aab6f9ac55ff825731c75e4517eeafa3e}} 
+bool {\bfseries operator!=} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t1)
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a55a68835062e9c14de477645b22697ec}\label{classomg_1_1_transform_a55a68835062e9c14de477645b22697ec}} 
+bool \mbox{\hyperlink{classomg_1_1_transform_a55a68835062e9c14de477645b22697ec}{is\+\_\+identity}} () const
+\begin{DoxyCompactList}\small\item\em Check if this is an identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \mbox{\hyperlink{classomg_1_1_transform_a79a0ead7866a67287ce3b26ad318ef51}{t\+\_\+point3}} (const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&p) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} a point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_transform_ae8e4083fbf3d02114e6dc7a21019b3f2}{t\+\_\+vec3}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&v) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} a vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \mbox{\hyperlink{classomg_1_1_transform_a3b9a9ce03a3eeeaac14c6393c50dfcd9}{t\+\_\+normal3}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&n) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} a normal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_ray}{Ray}} \mbox{\hyperlink{classomg_1_1_transform_ac96fd6a112b9ab99335a7b84b86f7dc2}{t\+\_\+ray}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&r) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} a ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_transform_a5a4c1f700874ad7325bf58b3320f45c1}{t\+\_\+bounds3}} (const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&b) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} bounds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \mbox{\hyperlink{classomg_1_1_transform_ae3467c19d88d48710c22fdca82a7c81e}{t\+\_\+si}} (const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&b) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classomg_1_1_transform}{Transform}} surface interaction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a2fe0e2cbc567250803021f7fcc96c11e}\label{classomg_1_1_transform_a2fe0e2cbc567250803021f7fcc96c11e}} 
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a2fe0e2cbc567250803021f7fcc96c11e}{operator $\ast$}} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t2) const
+\begin{DoxyCompactList}\small\item\em Composition of transformations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a961fbb3fffba14758dd755b4db8aa63b}\label{classomg_1_1_transform_a961fbb3fffba14758dd755b4db8aa63b}} 
+bool {\bfseries swap\+\_\+handedness} () const
+\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a87e6f457d6a8c14b783a1bffbb1f2bab}\label{classomg_1_1_transform_a87e6f457d6a8c14b783a1bffbb1f2bab}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t2) const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a5aa09545d3fae8f71e36a22cafe67285}{make\+\_\+translate}} (const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&delta)
+\begin{DoxyCompactList}\small\item\em The translation transform. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a2b019384f6c6406b926435d29e0a9d40}{make\+\_\+scale}} (float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Make a scale transformation matrix. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a95df27f1a663e5b43c678a3528d9096c}{make\+\_\+rotateX}} (float theta)
+\begin{DoxyCompactList}\small\item\em Make a rotation matrix around the X axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a31915f4d8125beac27eb97f811583e8b}{make\+\_\+rotateY}} (float theta)
+\begin{DoxyCompactList}\small\item\em Make a rotation matrix around the Y axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_aca812cd5996e0e0711be1845c060797b}{make\+\_\+rotateZ}} (float theta)
+\begin{DoxyCompactList}\small\item\em Make a rotation matrix around the Z axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a749e019617a935bc3666f7dc3b0ac529}{make\+\_\+rotate}} (float theta, const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&axis)
+\begin{DoxyCompactList}\small\item\em Make a rotation matrix around an arbitrary axis. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_ad5808d16287c7ee7dd3933db91cd0a22}\label{classomg_1_1_transform_ad5808d16287c7ee7dd3933db91cd0a22}} 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$ {\bfseries compose} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_transform}{Transform}} $>$$>$ \&ts)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a31b9af404ee2dd732645cf796dc1aa62}{inverse}} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t)
+\begin{DoxyCompactList}\small\item\em Produces the inverse transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} \mbox{\hyperlink{classomg_1_1_transform_a10d88784f95b7d578a498fe5d3ee6fa8}{transpose}} (const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t)
+\begin{DoxyCompactList}\small\item\em Produces the transpose transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classomg_1_1_transform_a67902cb7ce8a41d0f379dc6b2b7d75a0}\label{classomg_1_1_transform_a67902cb7ce8a41d0f379dc6b2b7d75a0}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a geometric transform. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_transform_a749e019617a935bc3666f7dc3b0ac529}\label{classomg_1_1_transform_a749e019617a935bc3666f7dc3b0ac529}} 
+\index{omg::Transform@{omg::Transform}!make\_rotate@{make\_rotate}}
+\index{make\_rotate@{make\_rotate}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_rotate()}{make\_rotate()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+rotate (\begin{DoxyParamCaption}\item[{float}]{theta,  }\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{axis }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Make a rotation matrix around an arbitrary axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & in degress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotation transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a95df27f1a663e5b43c678a3528d9096c}\label{classomg_1_1_transform_a95df27f1a663e5b43c678a3528d9096c}} 
+\index{omg::Transform@{omg::Transform}!make\_rotateX@{make\_rotateX}}
+\index{make\_rotateX@{make\_rotateX}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_rotateX()}{make\_rotateX()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+rotateX (\begin{DoxyParamCaption}\item[{float}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Make a rotation matrix around the X axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & in degress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotation transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a31915f4d8125beac27eb97f811583e8b}\label{classomg_1_1_transform_a31915f4d8125beac27eb97f811583e8b}} 
+\index{omg::Transform@{omg::Transform}!make\_rotateY@{make\_rotateY}}
+\index{make\_rotateY@{make\_rotateY}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_rotateY()}{make\_rotateY()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+rotateY (\begin{DoxyParamCaption}\item[{float}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Make a rotation matrix around the Y axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & in degress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotation transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_aca812cd5996e0e0711be1845c060797b}\label{classomg_1_1_transform_aca812cd5996e0e0711be1845c060797b}} 
+\index{omg::Transform@{omg::Transform}!make\_rotateZ@{make\_rotateZ}}
+\index{make\_rotateZ@{make\_rotateZ}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_rotateZ()}{make\_rotateZ()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+rotateZ (\begin{DoxyParamCaption}\item[{float}]{theta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Make a rotation matrix around the Z axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & in degress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the rotation transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a2b019384f6c6406b926435d29e0a9d40}\label{classomg_1_1_transform_a2b019384f6c6406b926435d29e0a9d40}} 
+\index{omg::Transform@{omg::Transform}!make\_scale@{make\_scale}}
+\index{make\_scale@{make\_scale}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_scale()}{make\_scale()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+scale (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Make a scale transformation matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scale transform 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a5aa09545d3fae8f71e36a22cafe67285}\label{classomg_1_1_transform_a5aa09545d3fae8f71e36a22cafe67285}} 
+\index{omg::Transform@{omg::Transform}!make\_translate@{make\_translate}}
+\index{make\_translate@{make\_translate}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{make\_translate()}{make\_translate()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classomg_1_1_transform}{Transform}} omg\+::\+Transform\+::make\+\_\+translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{delta }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The translation transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & a delta vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the translation transfom 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a5a4c1f700874ad7325bf58b3320f45c1}\label{classomg_1_1_transform_a5a4c1f700874ad7325bf58b3320f45c1}} 
+\index{omg::Transform@{omg::Transform}!t\_bounds3@{t\_bounds3}}
+\index{t\_bounds3@{t\_bounds3}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_bounds3()}{t\_bounds3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} omg\+::\+Transform\+::t\+\_\+bounds3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} bounds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & bounds3 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting bounds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a3b9a9ce03a3eeeaac14c6393c50dfcd9}\label{classomg_1_1_transform_a3b9a9ce03a3eeeaac14c6393c50dfcd9}} 
+\index{omg::Transform@{omg::Transform}!t\_normal3@{t\_normal3}}
+\index{t\_normal3@{t\_normal3}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_normal3()}{t\_normal3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} omg\+::\+Transform\+::t\+\_\+normal3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} a normal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting normal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_a79a0ead7866a67287ce3b26ad318ef51}\label{classomg_1_1_transform_a79a0ead7866a67287ce3b26ad318ef51}} 
+\index{omg::Transform@{omg::Transform}!t\_point3@{t\_point3}}
+\index{t\_point3@{t\_point3}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_point3()}{t\_point3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} omg\+::\+Transform\+::t\+\_\+point3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_af85242d35fdacf829d32a6f9b95f3e35}{Point3}} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} a point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_ac96fd6a112b9ab99335a7b84b86f7dc2}\label{classomg_1_1_transform_ac96fd6a112b9ab99335a7b84b86f7dc2}} 
+\index{omg::Transform@{omg::Transform}!t\_ray@{t\_ray}}
+\index{t\_ray@{t\_ray}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_ray()}{t\_ray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_ray}{Ray}} omg\+::\+Transform\+::t\+\_\+ray (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{r }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_ae3467c19d88d48710c22fdca82a7c81e}\label{classomg_1_1_transform_ae3467c19d88d48710c22fdca82a7c81e}} 
+\index{omg::Transform@{omg::Transform}!t\_si@{t\_si}}
+\index{t\_si@{t\_si}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_si()}{t\_si()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} omg\+::\+Transform\+::t\+\_\+si (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} surface interaction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & surface interaction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting surface interaction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classomg_1_1_transform_ae8e4083fbf3d02114e6dc7a21019b3f2}\label{classomg_1_1_transform_ae8e4083fbf3d02114e6dc7a21019b3f2}} 
+\index{omg::Transform@{omg::Transform}!t\_vec3@{t\_vec3}}
+\index{t\_vec3@{t\_vec3}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{t\_vec3()}{t\_vec3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} omg\+::\+Transform\+::t\+\_\+vec3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceomg_a45a9482677fee9933ff369b49894e316}{Vec3}} \&}]{v }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classomg_1_1_transform}{Transform}} a vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting vector 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_transform_a31b9af404ee2dd732645cf796dc1aa62}\label{classomg_1_1_transform_a31b9af404ee2dd732645cf796dc1aa62}} 
+\index{omg::Transform@{omg::Transform}!inverse@{inverse}}
+\index{inverse@{inverse}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{inverse}{inverse}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_transform}{Transform}} inverse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Produces the inverse transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & a transform \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classomg_1_1_transform_a10d88784f95b7d578a498fe5d3ee6fa8}\label{classomg_1_1_transform_a10d88784f95b7d578a498fe5d3ee6fa8}} 
+\index{omg::Transform@{omg::Transform}!transpose@{transpose}}
+\index{transpose@{transpose}!omg::Transform@{omg::Transform}}
+\subsubsection{\texorpdfstring{transpose}{transpose}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classomg_1_1_transform}{Transform}} transpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Produces the transpose transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & a transform \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Transform.\+h\end{DoxyCompactItemize}
