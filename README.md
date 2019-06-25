@@ -1,5 +1,7 @@
 # omg - Open Machinery for Graphics
 
+![star](examples/imgs/tea_dragon.png)
+
 **omg** is a library for computer graphics applications that provides
 some executables, like a ready-to-go raytracer that uses YAML
 scene descriptions to produce 3D images.
