@@ -20,7 +20,7 @@ var searchData=
   ['setnumtexverts',['SetNumTexVerts',['../classcy_1_1_tri_mesh.html#afcd5630009a54c86b414d4c9ab15dca0',1,'cy::TriMesh']]],
   ['setnumvertex',['SetNumVertex',['../classcy_1_1_tri_mesh.html#a5111afec31edabbc6a665bacf02e67fe',1,'cy::TriMesh']]],
   ['solidbackground',['SolidBackground',['../classomg_1_1_solid_background.html',1,'omg']]],
-  ['sphere',['Sphere',['../classomg_1_1_sphere.html',1,'omg::Sphere'],['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere()']]],
+  ['sphere',['Sphere',['../classomg_1_1_sphere.html',1,'omg::Sphere'],['../classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db',1,'omg::Sphere::Sphere(float radius, const Point3 &amp;center)'],['../classomg_1_1_sphere.html#a156fe48691f107d7a04774bdc640959e',1,'omg::Sphere::Sphere(float radius, const Point3 &amp;center, const std::shared_ptr&lt; Transform &gt; &amp;object_to_world, const std::shared_ptr&lt; Transform &gt; &amp;world_to_object)']]],
   ['splitmethod',['SplitMethod',['../classomg_1_1_b_v_h_accel.html#a76a87ca6ffce37773ad59bc4d540c33f',1,'omg::BVHAccel']]],
   ['spotlight',['SpotLight',['../classomg_1_1_spot_light.html',1,'omg']]],
   ['standardlogger',['StandardLogger',['../class_standard_logger.html',1,'StandardLogger'],['../class_standard_logger.html#aa037227d1766af8b649e46849d466d8c',1,'StandardLogger::StandardLogger()']]],

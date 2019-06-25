@@ -1,0 +1,108 @@
+\hypertarget{classomg_1_1_transformed_primitive}{}\section{omg\+::Transformed\+Primitive Class Reference}
+\label{classomg_1_1_transformed_primitive}\index{omg::TransformedPrimitive@{omg::TransformedPrimitive}}
+
+
+Represents transformed primitive to be rendered in the screen.  
+
+
+
+
+{\ttfamily \#include $<$Transformed\+Primitive.\+h$>$}
+
+Inheritance diagram for omg\+::Transformed\+Primitive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classomg_1_1_transformed_primitive}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classomg_1_1_transformed_primitive_ae3b897fd51fb7cff84d73bbe8168b068}\label{classomg_1_1_transformed_primitive_ae3b897fd51fb7cff84d73bbe8168b068}} 
+{\bfseries Transformed\+Primitive} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classomg_1_1_primitive}{Primitive}} $>$ \&primitive, const \mbox{\hyperlink{classomg_1_1_transform}{Transform}} \&primitive\+\_\+to\+\_\+world)
+\item 
+bool \mbox{\hyperlink{classomg_1_1_transformed_primitive_ab2ec675cf03eb5b8e59679c737e12ec4}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&r, \mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$interaction) const
+\begin{DoxyCompactList}\small\item\em Determines if the object intersects with a ray. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classomg_1_1_transformed_primitive_a74303debd3737dd5d73de33507e36ecf}{intersect}} (const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&r) const
+\begin{DoxyCompactList}\small\item\em Only check if intersection occurred. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} \mbox{\hyperlink{classomg_1_1_transformed_primitive_a5478871a0d44380d5e64301746d6774b}{world\+\_\+bound}} () const
+\begin{DoxyCompactList}\small\item\em The world bound of this primitive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents transformed primitive to be rendered in the screen. 
+
+\begin{DoxyAuthor}{Author}
+Vitor Greati 
+\end{DoxyAuthor}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classomg_1_1_transformed_primitive_ab2ec675cf03eb5b8e59679c737e12ec4}\label{classomg_1_1_transformed_primitive_ab2ec675cf03eb5b8e59679c737e12ec4}} 
+\index{omg::TransformedPrimitive@{omg::TransformedPrimitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::TransformedPrimitive@{omg::TransformedPrimitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool omg\+::\+Transformed\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray,  }\item[{\mbox{\hyperlink{classomg_1_1_surface_interaction}{Surface\+Interaction}} $\ast$}]{interaction }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determines if the object intersects with a ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+{\em interaction} & collect information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the object intersects with the ray 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a51f78d3f52794ae02e18688dff75414c}{omg\+::\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_transformed_primitive_a74303debd3737dd5d73de33507e36ecf}\label{classomg_1_1_transformed_primitive_a74303debd3737dd5d73de33507e36ecf}} 
+\index{omg::TransformedPrimitive@{omg::TransformedPrimitive}!intersect@{intersect}}
+\index{intersect@{intersect}!omg::TransformedPrimitive@{omg::TransformedPrimitive}}
+\subsubsection{\texorpdfstring{intersect()}{intersect()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual bool omg\+::\+Transformed\+Primitive\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classomg_1_1_ray}{Ray}} \&}]{ray }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Only check if intersection occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if intersection occurred 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a139c012a57ad2322c5bef078b5d7e653}{omg\+::\+Primitive}}.
+
+\mbox{\Hypertarget{classomg_1_1_transformed_primitive_a5478871a0d44380d5e64301746d6774b}\label{classomg_1_1_transformed_primitive_a5478871a0d44380d5e64301746d6774b}} 
+\index{omg::TransformedPrimitive@{omg::TransformedPrimitive}!world\_bound@{world\_bound}}
+\index{world\_bound@{world\_bound}!omg::TransformedPrimitive@{omg::TransformedPrimitive}}
+\subsubsection{\texorpdfstring{world\_bound()}{world\_bound()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classomg_1_1_bounds3}{Bounds3}} omg\+::\+Transformed\+Primitive\+::world\+\_\+bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+The world bound of this primitive. 
+
+\begin{DoxyReturn}{Returns}
+the world bound 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classomg_1_1_primitive_a457b29547bc918cf8874b24f5168ff86}{omg\+::\+Primitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vitorgreati/git-\/repos/omg/sources/include/omg/objects/Transformed\+Primitive.\+h\end{DoxyCompactItemize}

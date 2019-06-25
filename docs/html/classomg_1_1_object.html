@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">3.0.0</span>
+   &#160;<span id="projectnumber">3.1.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -69,6 +69,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classomg_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">omg::Object Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -92,15 +93,30 @@ Inheritance diagram for omg::Object:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a9e104624609a4e028e63cef64374979c"><td class="memItemLeft" align="right" valign="top"><a id="a9e104624609a4e028e63cef64374979c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;object_to_world, const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;world_to_object)</td></tr>
+<tr class="separator:a9e104624609a4e028e63cef64374979c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56354058785d04afff686ae41e144970"><td class="memItemLeft" align="right" valign="top"><a id="a56354058785d04afff686ae41e144970"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record)=0</td></tr>
 <tr class="separator:a56354058785d04afff686ae41e144970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bea9275afdd17c67de345043bc0d3fc"><td class="memItemLeft" align="right" valign="top"><a id="a6bea9275afdd17c67de345043bc0d3fc"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray)=0</td></tr>
 <tr class="separator:a6bea9275afdd17c67de345043bc0d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b5a834655ca22225b822364969c452"><td class="memItemLeft" align="right" valign="top"><a id="a72b5a834655ca22225b822364969c452"></a>
+virtual <a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>object_bound</b> () const =0</td></tr>
+<tr class="separator:a72b5a834655ca22225b822364969c452"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a571b05c10d7fb654449d68dda18b65e2"><td class="memItemLeft" align="right" valign="top"><a id="a571b05c10d7fb654449d68dda18b65e2"></a>
 virtual <a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const =0</td></tr>
 <tr class="separator:a571b05c10d7fb654449d68dda18b65e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:ad6bfaee779c617e14437ec3c050af483"><td class="memItemLeft" align="right" valign="top"><a id="ad6bfaee779c617e14437ec3c050af483"></a>
+const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>object_to_world</b></td></tr>
+<tr class="separator:ad6bfaee779c617e14437ec3c050af483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eaa6c2a3d62ee061863b9ad344aec59"><td class="memItemLeft" align="right" valign="top"><a id="a7eaa6c2a3d62ee061863b9ad344aec59"></a>
+const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>world_to_object</b></td></tr>
+<tr class="separator:a7eaa6c2a3d62ee061863b9ad344aec59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents an object. </p>

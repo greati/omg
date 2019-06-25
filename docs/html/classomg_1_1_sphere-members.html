@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">3.0.0</span>
+   &#160;<span id="projectnumber">3.1.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -74,11 +74,16 @@ $(function() {
 
 <p>This is the complete list of members for <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classomg_1_1_sphere.html#ad05c4f0083c55288119c0d1f7dc7f300">intersect</a>(const Ray &amp;ray, float *tHit, SurfaceInteraction *hit_record) override</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>intersect</b>(const Ray &amp;ray) override (defined in <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classomg_1_1_sphere.html#a707391273156f6f28f869fc3f1cb6aaa">intersect</a>(const Ray &amp;wray, float *tHit, SurfaceInteraction *hit_record) override</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>intersect</b>(const Ray &amp;wray) override (defined in <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Object</b>() (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db">Sphere</a>(float radius, const Point3 &amp;center)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>world_bound</b>() const (defined in <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>Object</b>(const std::shared_ptr&lt; Transform &gt; &amp;object_to_world, const std::shared_ptr&lt; Transform &gt; &amp;world_to_object) (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>object_bound</b>() const override (defined in <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>object_to_world</b> (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db">Sphere</a>(float radius, const Point3 &amp;center)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classomg_1_1_sphere.html#a156fe48691f107d7a04774bdc640959e">Sphere</a>(float radius, const Point3 &amp;center, const std::shared_ptr&lt; Transform &gt; &amp;object_to_world, const std::shared_ptr&lt; Transform &gt; &amp;world_to_object)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>world_bound</b>() const override (defined in <a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a>)</td><td class="entry"><a class="el" href="classomg_1_1_sphere.html">omg::Sphere</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>world_to_object</b> (defined in <a class="el" href="classomg_1_1_object.html">omg::Object</a>)</td><td class="entry"><a class="el" href="classomg_1_1_object.html">omg::Object</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

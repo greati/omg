@@ -22,7 +22,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">omg
-   &#160;<span id="projectnumber">3.0.0</span>
+   &#160;<span id="projectnumber">3.1.0</span>
    </div>
    <div id="projectbrief">Open Machinery for Graphics</div>
   </td>
@@ -94,16 +94,37 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a81f9a5180b9c883ce00669d4af4d38db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#a81f9a5180b9c883ce00669d4af4d38db">Sphere</a> (float radius, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;center)</td></tr>
 <tr class="memdesc:a81f9a5180b9c883ce00669d4af4d38db"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classomg_1_1_sphere.html" title="Represents a sphere.">Sphere</a> center.  <a href="#a81f9a5180b9c883ce00669d4af4d38db">More...</a><br /></td></tr>
 <tr class="separator:a81f9a5180b9c883ce00669d4af4d38db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05c4f0083c55288119c0d1f7dc7f300"><td class="memItemLeft" align="right" valign="top"><a id="ad05c4f0083c55288119c0d1f7dc7f300"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#ad05c4f0083c55288119c0d1f7dc7f300">intersect</a> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record) override</td></tr>
-<tr class="memdesc:ad05c4f0083c55288119c0d1f7dc7f300"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the sphere intersect with a ray. <br /></td></tr>
-<tr class="separator:ad05c4f0083c55288119c0d1f7dc7f300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e7eb85961d4b2d0f384ea51144cbb95"><td class="memItemLeft" align="right" valign="top"><a id="a4e7eb85961d4b2d0f384ea51144cbb95"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;ray) override</td></tr>
-<tr class="separator:a4e7eb85961d4b2d0f384ea51144cbb95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d0a05e361f98cad7e0d83da4ebc0849"><td class="memItemLeft" align="right" valign="top"><a id="a5d0a05e361f98cad7e0d83da4ebc0849"></a>
-<a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const</td></tr>
-<tr class="separator:a5d0a05e361f98cad7e0d83da4ebc0849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156fe48691f107d7a04774bdc640959e"><td class="memItemLeft" align="right" valign="top"><a id="a156fe48691f107d7a04774bdc640959e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#a156fe48691f107d7a04774bdc640959e">Sphere</a> (float radius, const <a class="el" href="namespaceomg.html#af85242d35fdacf829d32a6f9b95f3e35">Point3</a> &amp;center, const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;object_to_world, const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;world_to_object)</td></tr>
+<tr class="memdesc:a156fe48691f107d7a04774bdc640959e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic constructor. <br /></td></tr>
+<tr class="separator:a156fe48691f107d7a04774bdc640959e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a707391273156f6f28f869fc3f1cb6aaa"><td class="memItemLeft" align="right" valign="top"><a id="a707391273156f6f28f869fc3f1cb6aaa"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classomg_1_1_sphere.html#a707391273156f6f28f869fc3f1cb6aaa">intersect</a> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;wray, float *tHit, <a class="el" href="classomg_1_1_surface_interaction.html">SurfaceInteraction</a> *hit_record) override</td></tr>
+<tr class="memdesc:a707391273156f6f28f869fc3f1cb6aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the sphere intersect with a ray. <br /></td></tr>
+<tr class="separator:a707391273156f6f28f869fc3f1cb6aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c835cd36b4e462d47747c1b65d851a"><td class="memItemLeft" align="right" valign="top"><a id="aa0c835cd36b4e462d47747c1b65d851a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>intersect</b> (const <a class="el" href="classomg_1_1_ray.html">Ray</a> &amp;wray) override</td></tr>
+<tr class="separator:aa0c835cd36b4e462d47747c1b65d851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1917eefd9b7c2104c2cf80346b053467"><td class="memItemLeft" align="right" valign="top"><a id="a1917eefd9b7c2104c2cf80346b053467"></a>
+<a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>object_bound</b> () const override</td></tr>
+<tr class="separator:a1917eefd9b7c2104c2cf80346b053467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af504ff473cf420a9a52b21cbea6de10b"><td class="memItemLeft" align="right" valign="top"><a id="af504ff473cf420a9a52b21cbea6de10b"></a>
+<a class="el" href="classomg_1_1_bounds3.html">Bounds3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>world_bound</b> () const override</td></tr>
+<tr class="separator:af504ff473cf420a9a52b21cbea6de10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classomg_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classomg_1_1_object')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classomg_1_1_object.html">omg::Object</a></td></tr>
+<tr class="memitem:a9e104624609a4e028e63cef64374979c inherit pub_methods_classomg_1_1_object"><td class="memItemLeft" align="right" valign="top"><a id="a9e104624609a4e028e63cef64374979c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Object</b> (const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;object_to_world, const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt; &amp;world_to_object)</td></tr>
+<tr class="separator:a9e104624609a4e028e63cef64374979c inherit pub_methods_classomg_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_classomg_1_1_object"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classomg_1_1_object')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classomg_1_1_object.html">omg::Object</a></td></tr>
+<tr class="memitem:ad6bfaee779c617e14437ec3c050af483 inherit pub_attribs_classomg_1_1_object"><td class="memItemLeft" align="right" valign="top"><a id="ad6bfaee779c617e14437ec3c050af483"></a>
+const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>object_to_world</b></td></tr>
+<tr class="separator:ad6bfaee779c617e14437ec3c050af483 inherit pub_attribs_classomg_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eaa6c2a3d62ee061863b9ad344aec59 inherit pub_attribs_classomg_1_1_object"><td class="memItemLeft" align="right" valign="top"><a id="a7eaa6c2a3d62ee061863b9ad344aec59"></a>
+const std::shared_ptr&lt; <a class="el" href="classomg_1_1_transform.html">Transform</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>world_to_object</b></td></tr>
+<tr class="separator:a7eaa6c2a3d62ee061863b9ad344aec59 inherit pub_attribs_classomg_1_1_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a sphere. </p>
